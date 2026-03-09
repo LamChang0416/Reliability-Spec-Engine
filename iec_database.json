@@ -1,0 +1,211 @@
+{
+  "1": {
+    "K": {
+      "1K2": {
+        "parameters": {"Temperature": "+5°C to +40°C", "Relative Humidity": "5% to 85%", "Description": "溫濕度受控的室內倉儲"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "+5°C, 16h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+40°C, 16h"}
+        ]
+      },
+      "1K3": {
+        "parameters": {"Temperature": "-5°C to +45°C", "Relative Humidity": "5% to 95%", "Description": "無溫濕度控制的封閉建築物倉儲"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-5°C, 72h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+45°C, 72h"},
+          {"Test": "Damp Heat", "Standard": "IEC 60068-2-30", "Condition": "+40°C, 95% RH, 2 cycles"}
+        ]
+      },
+      "1K5": {
+        "parameters": {"Temperature": "-40°C to +70°C", "Relative Humidity": "10% to 100%", "Description": "具備極端溫差的防雨棚或遮蔽倉儲"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-40°C, 72h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+70°C, 72h"}
+        ]
+      }
+    },
+    "M": {
+      "1M2": {
+        "parameters": {"Vibration": "Low significance", "Shock": "Free fall up to 0.25m", "Description": "一般倉儲搬運與堆疊產生的輕微衝擊"},
+        "tests": [
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "40 m/s² (4G), 22ms"},
+          {"Test": "Free Fall", "Standard": "IEC 60068-2-31", "Condition": "Drop height 0.25m"}
+        ]
+      }
+    }
+  },
+  "2": {
+    "K": {
+      "2K1": {
+        "parameters": {"Temperature": "+20°C to +30°C", "Relative Humidity": "20% to 75%", "Description": "高度受控的封閉運輸 (如特製空調氣墊車)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "+20°C, 16h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+30°C, 16h"}
+        ]
+      },
+      "2K2": {
+        "parameters": {"Temperature": "-20°C to +60°C", "Relative Humidity": "Up to 100%", "Description": "一般封閉運輸 (標準貨櫃/卡車車廂)，無溫濕度控制"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-20°C, 72h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+60°C, 72h"},
+          {"Test": "Damp Heat", "Standard": "IEC 60068-2-30", "Condition": "+40°C, 93% RH, 2 cycles"},
+          {"Test": "Change of Temp", "Standard": "IEC 60068-2-14", "Condition": "-20°C to +60°C, 5 cycles"}
+        ]
+      },
+      "2K3": {
+        "parameters": {"Temperature": "-40°C to +70°C", "Relative Humidity": "Up to 100%", "Description": "具備通風的無遮蔽運輸 (如船隻甲板或開篷卡車)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-40°C, 72h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+70°C, 72h"},
+          {"Test": "Change of Temp", "Standard": "IEC 60068-2-14", "Condition": "-40°C to +70°C, 5 cycles"}
+        ]
+      },
+      "2K4": {
+        "parameters": {"Temperature": "-40°C to +70°C", "Solar Radiation": "Up to 1120 W/m²", "Precipitation": "Rain, Snow, Hail", "Description": "完全開放的戶外極端運輸"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-40°C, 72h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+70°C, 72h"},
+          {"Test": "Solar Radiation", "Standard": "IEC 60068-2-5", "Condition": "Procedure B, 3 cycles"},
+          {"Test": "Water (Rain)", "Standard": "IEC 60068-2-18", "Condition": "Method Rb, 10 min/surface"}
+        ]
+      }
+    },
+    "M": {
+      "2M1": {
+        "parameters": {"Vibration": "Low level random vibration", "Shock": "Free fall < 0.25m", "Description": "極度小心的搬運與避震運輸 (如高階伺服器專車)"},
+        "tests": [
+          {"Test": "Random Vibration", "Standard": "IEC 60068-2-64", "Condition": "ASD 0.1 m²/s³, 10-200Hz, 30min/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "50 m/s² (5G), 11ms, 3 shocks/dir"},
+          {"Test": "Free Fall", "Standard": "IEC 60068-2-31", "Condition": "Drop height 0.25m, 2 falls"}
+        ]
+      },
+      "2M2": {
+        "parameters": {"Vibration": "Standard road/rail/air vibration", "Shock": "Free fall < 1.0m", "Description": "一般標準貨運運輸與物流搬運"},
+        "tests": [
+          {"Test": "Random Vibration", "Standard": "IEC 60068-2-64", "Condition": "ASD 1.0 m²/s³, 10-200Hz, 30min/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "150 m/s² (15G), 11ms, 3 shocks/dir"},
+          {"Test": "Free Fall", "Standard": "IEC 60068-2-31", "Condition": "Drop height 1.0m, 2 falls"}
+        ]
+      },
+      "2M3": {
+        "parameters": {"Vibration": "High level random, rough roads", "Shock": "Free fall < 1.2m, rough handling", "Description": "惡劣路況、粗暴搬運或無包裝的重型運輸"},
+        "tests": [
+          {"Test": "Random Vibration", "Standard": "IEC 60068-2-64", "Condition": "ASD 3.0 m²/s³, 10-200Hz, 30min/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "300 m/s² (30G), 18ms, 3 shocks/dir"},
+          {"Test": "Free Fall", "Standard": "IEC 60068-2-31", "Condition": "Drop height 1.2m, 2 falls"}
+        ]
+      }
+    }
+  },
+  "3": {
+    "K": {
+      "3K1": {
+        "parameters": {"Temperature": "+20°C to +25°C", "Relative Humidity": "20% to 75%", "Description": "等級 1：溫室等級的極度受控 (如: 恆溫恆濕的無塵室)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "+20°C, 16h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+25°C, 16h"}
+        ]
+      },
+      "3K2": {
+        "parameters": {"Temperature": "+15°C to +30°C", "Relative Humidity": "10% to 75%", "Description": "等級 2：持續受控的舒適圈 (如: 醫療設備室、高階機房)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "+15°C, 16h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+30°C, 16h"}
+        ]
+      },
+      "3K3": {
+        "parameters": {"Temperature": "+5°C to +40°C", "Relative Humidity": "5% to 85%", "Description": "等級 3：伺服器的主戰場 (如: 允許輕微波動的商用機房)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "+5°C, 16h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+40°C, 16h"},
+          {"Test": "Damp Heat", "Standard": "IEC 60068-2-78", "Condition": "+40°C, 85% RH, 4 days"}
+        ]
+      },
+      "3K5": {
+        "parameters": {"Temperature": "-5°C to +45°C", "Relative Humidity": "5% to 95%", "Special": "Condensation may occur", "Description": "等級 5：無溫控的嚴苛邊緣 (如: 會滴冷凝水的鐵皮廠房)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-5°C, 16h"},
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "+45°C, 16h"},
+          {"Test": "Temp Change", "Standard": "IEC 60068-2-14", "Condition": "-5°C to +45°C, 2 cycles"}
+        ]
+      }
+    },
+    "M": {
+      "3M1": {
+        "parameters": {"Vibration": "Negligible", "Description": "等級 1：最安靜的舒適圈 (完全無震動)"},
+        "tests": [{"Test": "Vibration", "Standard": "IEC 60068-2-6", "Condition": "Not required"}]
+      },
+      "3M2": {
+        "parameters": {"Sine Vibration": "1.5 mm, 5 m/s²", "Shock": "40 m/s², 22 ms", "Description": "等級 2：一般標準防護 (偶有輕微共振)"},
+        "tests": [
+          {"Test": "Vibration", "Standard": "IEC 60068-2-6", "Condition": "5 m/s², 10 sweeps/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "4G, 22ms"}
+        ]
+      },
+      "3M3": {
+        "parameters": {"Sine Vibration": "3.0 mm, 10 m/s²", "Shock": "100 m/s², 11 ms", "Description": "等級 3：典型工業標準 (明顯震動，如鄰近冰水主機)"},
+        "tests": [
+          {"Test": "Vibration", "Standard": "IEC 60068-2-6", "Condition": "1G, 10 sweeps/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "10G, 11ms"}
+        ]
+      },
+      "3M5": {
+        "parameters": {"Sine Vibration": "10.0 mm, 50 m/s²", "Shock": "250 m/s², 6 ms", "Description": "等級 5：重工業級的摧殘 (高達 5G 震動，強固型設備專屬)"},
+        "tests": [
+          {"Test": "Vibration", "Standard": "IEC 60068-2-6", "Condition": "5G, 10 sweeps/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "25G, 6ms"}
+        ]
+      }
+    }
+  },
+  "5": {
+    "M": {
+      "5M2": {
+        "parameters": {"Vibration": "Random + Sine", "Shock": "300 m/s²", "Description": "一般商用車輛、卡車與重型機具裝備"},
+        "tests": [
+          {"Test": "Random Vibration", "Standard": "IEC 60068-2-64", "Condition": "ASD by mounting location"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "30G, 18ms"}
+        ]
+      },
+      "5M3": {
+        "parameters": {"Vibration": "Severe Random", "Shock": "500 m/s²", "Description": "越野車輛、軍用載具或引擎周邊"},
+        "tests": [
+          {"Test": "Random Vibration", "Standard": "IEC 60068-2-64", "Condition": "High level ASD, 30min/axis"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "50G, 11ms"}
+        ]
+      }
+    }
+  },
+  "6": {
+    "K": {
+      "6K4": {
+        "parameters": {"Temperature": "-25°C to +70°C", "Description": "無防護之露天甲板 (暴露於海象與日照)"},
+        "tests": [
+          {"Test": "Cold", "Standard": "IEC 60068-2-1", "Condition": "-25°C, 16h"},
+          {"Test": "Salt Mist", "Standard": "IEC 60068-2-52", "Condition": "Severity 1"}
+        ]
+      }
+    }
+  },
+  "7": {
+    "M": {
+      "7M3": {
+        "parameters": {"Shock": "Free fall 1.0m", "Description": "粗暴搬運、經常摔落之強固平板"},
+        "tests": [
+          {"Test": "Free Fall", "Standard": "IEC 60068-2-31", "Condition": "Drop height 1.0m"},
+          {"Test": "Shock", "Standard": "IEC 60068-2-27", "Condition": "100G, 6ms"}
+        ]
+      }
+    }
+  },
+  "9": {
+    "K": {
+      "9K2": {
+        "parameters": {"Internal Temp Rise": "Ambient + 15°C", "Description": "產品外殼內部微氣候 (含中度發熱元件)"},
+        "tests": [
+          {"Test": "Dry Heat", "Standard": "IEC 60068-2-2", "Condition": "Max ambient + 15K"}
+        ]
+      }
+    }
+  }
+}
