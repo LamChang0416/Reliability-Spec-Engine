@@ -1,0 +1,781 @@
+{
+  "Method 500.6 - Low Pressure (Altitude)": {
+    "Procedure I - Storage / Air Transport": {
+      "Transport Aircraft Cargo Bay": {
+        "parameters": {
+          "Description": "模擬非加壓機艙或高海拔運輸環境",
+          "Altitude": "4,572 m (15,000 ft)",
+          "Pressure": "57.2 kPa (8.3 psia)",
+          "Temperature": "依據所選氣候區決定 (通常配合低溫)",
+          "Rate of Change": "≤ 10 m/s (2,000 ft/min)"
+        },
+        "tests": [
+          {"Test": "Altitude Storage", "Condition": "Maintain 57.2 kPa for minimum 1 hour"}
+        ]
+      }
+    },
+    "Procedure II - Operation / Air Carriage": {
+      "Operational Altitude": {
+        "parameters": {
+          "Description": "模擬設備於高海拔地區正常運作",
+          "Altitude": "4,572 m (15,000 ft) 或依據系統規格",
+          "Pressure": "57.2 kPa (8.3 psia)",
+          "Rate of Change": "≤ 10 m/s (2,000 ft/min)"
+        },
+        "tests": [
+          {"Test": "Operational Check", "Condition": "Perform functional test while at minimum pressure"}
+        ]
+      }
+    },
+    "Procedure III - Rapid Decompression": {
+      "Pressurized Aircraft Cabin": {
+        "parameters": {
+          "Description": "模擬飛機加壓艙突然破裂 (爆發性減壓)",
+          "Initial Altitude": "2,438 m (8,000 ft) [Cabin Pressure]",
+          "Final Altitude": "12,192 m (40,000 ft) [Flight Altitude]",
+          "Decompression Time": "≤ 15 seconds (Rapid) or ≤ 0.1 seconds (Explosive)"
+        },
+        "tests": [
+          {"Test": "Decompression", "Condition": "Rapid drop from 8,000ft to 40,000ft within 15 seconds"}
+        ]
+      }
+    }
+  },
+  "Method 501.6 - High Temperature": {
+    "Procedure I - Storage": {
+      "Basic Hot (A2)": {
+        "parameters": {
+          "Description": "多數地區 (不含極端沙漠) 的標準高溫倉儲 (Table 501.5-II)",
+          "Peak Ambient": "43°C (110°F)",
+          "Peak Induced": "63°C (145°F)",
+          "Humidity": "14% to 44% RH",
+          "Cycle Duration": "24 hours per cycle"
+        },
+        "tests": [
+          {"Cycle Phase": "Minimum", "Temperature": "30°C (86°F)", "Duration": "Hold"},
+          {"Cycle Phase": "Peak", "Temperature": "63°C (145°F)", "Duration": "Peak time"},
+          {"Cycle Phase": "Total Cycles", "Temperature": "7 continuous cycles (168 hours)", "Duration": "Total"}
+        ]
+      },
+      "Hot Dry (A1)": {
+        "parameters": {
+          "Description": "極端沙漠氣候高溫倉儲 (如中東、北非) (Table 501.5-II)",
+          "Peak Ambient": "49°C (120°F)",
+          "Peak Induced": "71°C (160°F)",
+          "Humidity": "3% to 8% RH"
+        },
+        "tests": [
+          {"Cycle Phase": "Minimum", "Temperature": "33°C (91°F)", "Duration": "Hold"},
+          {"Cycle Phase": "Peak", "Temperature": "71°C (160°F)", "Duration": "Peak time"},
+          {"Cycle Phase": "Total Cycles", "Temperature": "7 continuous cycles (168 hours)", "Duration": "Total"}
+        ]
+      }
+    },
+    "Procedure II - Operation": {
+      "Basic Hot (A2) Operational": {
+        "parameters": {
+          "Description": "標準高溫運作環境",
+          "Peak Ambient": "43°C (110°F)",
+          "Rate of Change": "≤ 3°C/min"
+        },
+        "tests": [
+          {"Test": "Stabilization", "Condition": "Temperature rate of change < 2.0°C/hour"},
+          {"Test": "Functional Test", "Condition": "Operate at peak temperature for minimum 2 hours"}
+        ]
+      }
+    }
+  },
+  "Method 502.5 - Low Temperature": {
+    "Procedure I - Storage": {
+      "Basic Cold (C1)": {
+        "parameters": {
+          "Description": "涵蓋多數歐洲及北美之標準低溫倉儲 (Table 502.5-I)",
+          "Temperature": "-33°C (-27°F)",
+          "Duration": "24 hours after stabilization",
+          "Rate of Change": "≤ 3°C/min"
+        },
+        "tests": [
+          {"Test": "Storage", "Condition": "Maintain -33°C for 24 hours"}
+        ]
+      },
+      "Cold (C2)": {
+        "parameters": {
+          "Description": "極寒地區 (如阿拉斯加、西伯利亞) 倉儲",
+          "Temperature": "-46°C (-51°F)",
+          "Duration": "24 hours after stabilization"
+        },
+        "tests": [
+          {"Test": "Storage", "Condition": "Maintain -46°C for 24 hours"}
+        ]
+      }
+    },
+    "Procedure II - Operation": {
+      "Basic Cold (C1) Operational": {
+        "parameters": {
+          "Description": "標準低溫開機與運作",
+          "Temperature": "-32°C (-25°F)",
+          "Stabilization": "Temperature rate of change < 2.0°C/hour"
+        },
+        "tests": [
+          {"Test": "Cold Boot / Operate", "Condition": "Power on and maintain operation until thermally stabilized"}
+        ]
+      }
+    }
+  },
+  "Method 503.6 - Temperature Shock": {
+    "Procedure I-A - One-Way Shock": {
+      "Extreme Transfer (e.g., Space/Air drop)": {
+        "parameters": {
+          "Description": "模擬設備僅經歷一次極端的溫度轉換（如從溫暖機艙空投至極寒高空）",
+          "High Temperature": "71°C (160°F)",
+          "Low Temperature": "-51°C (-60°F)",
+          "Transfer Time": "≤ 1 minute"
+        },
+        "tests": [
+          {"Phase": "Transfer", "Condition": "Transfer from T-initial to T-final within 1 min"},
+          {"Phase": "Dwell", "Condition": "Hold at T-final until thermally stabilized"}
+        ]
+      }
+    },
+    "Procedure I-B - Single Cycle Shock": {
+      "Flight Environment Transfer": {
+        "parameters": {
+          "Description": "模擬單次來回的溫度衝擊（例如起飛至高空後再降落回地面）",
+          "Transfer Time": "≤ 1 minute between extremes"
+        },
+        "tests": [
+          {"Phase": "Transfer 1", "Condition": "Ambient to Extreme 1, hold until stable"},
+          {"Phase": "Transfer 2", "Condition": "Extreme 1 to Extreme 2, hold until stable"},
+          {"Phase": "Return", "Condition": "Extreme 2 back to Ambient"}
+        ]
+      }
+    },
+    "Procedure I-C - Multi-Cycle Shocks": {
+      "Thermal Shock (A1 to C2)": {
+        "parameters": {
+          "Description": "模擬航空運輸或極端環境中的快速溫變",
+          "High Temperature": "71°C (160°F) [Hot Dry Induced]",
+          "Low Temperature": "-51°C (-60°F) [Severe Cold]",
+          "Transfer Time": "≤ 1 minute",
+          "Dwell Time": "Determined by item thermal mass"
+        },
+        "tests": [
+          {"Phase": "Cycle 1-3", "Action": "Transfer from -51°C to 71°C within 1 min, hold until stabilized"},
+          {"Phase": "Evaluation", "Action": "Conduct visual and functional test after 3 full cycles"}
+        ]
+      }
+    }
+  },
+  "Method 507.6 - Humidity": {
+    "Procedure I - Induced (Storage/Transit) and Natural Cycles": {
+      "Natural Diurnal Cycle": {
+        "parameters": {
+          "Description": "模擬設備在自然氣候中經歷數十天的日夜溫濕度緩慢變化 (Table 507.6-I)",
+          "Cycle Profile": "Continuous 24-hour variation tracking real-world climatic data",
+          "Test Duration": "Up to 45 cycles (1080 hours) for severe environments"
+        },
+        "tests": [
+          {"Phase": "Cycling", "Condition": "Follow specified 24-hr temperature/humidity profile (e.g., B3 Damp Tropical)"}
+        ]
+      }
+    },
+    "Procedure II - Aggravated": {
+      "Aggravated Cycle": {
+        "parameters": {
+          "Description": "加速驗證產品對濕氣穿透與腐蝕的抵抗力",
+          "Temperature Range": "30°C to 60°C",
+          "Humidity Range": "95% ± 4% RH to 85% RH",
+          "Total Cycles": "10 cycles (240 hours)"
+        },
+        "tests": [
+          {"Step": "Ramp Up", "Condition": "30°C to 60°C over 2 hours, RH > 95%"},
+          {"Step": "Hold High", "Condition": "Maintain 60°C at 95% RH for 6 hours"},
+          {"Step": "Ramp Down", "Condition": "60°C to 30°C over 8 hours, RH > 85%"},
+          {"Step": "Hold Low", "Condition": "Maintain 30°C at 95% RH for 8 hours"}
+        ]
+      }
+    }
+  },
+  "Method 514.7 - Vibration": {
+    "Procedure I - General Vibration": {
+      "Category 4 - Truck/Trailer - Secured Cargo": {
+        "parameters": {
+          "Description": "一般輪型車輛路面運輸 (固定貨物) (Figure 514.7C-1,2,3)",
+          "Test Type": "Broadband Random",
+          "Frequency Range": "5 to 500 Hz",
+          "Test Duration": "1 hr/axis (Equivalent to 1000 miles)"
+        },
+        "tests": [
+          {"Axis": "Transverse (橫向)", "g rms": "0.73", "Profile": "0.00015 g²/Hz at 5Hz to 0.00015 at 500Hz"},
+          {"Axis": "Longitudinal (縱向)", "g rms": "0.95", "Profile": "0.00065 g²/Hz at 5Hz to 0.00065 at 500Hz"},
+          {"Axis": "Vertical (垂直)", "g rms": "1.04", "Profile": "0.01500 g²/Hz at 5Hz to 0.01500 at 500Hz"}
+        ]
+      },
+      "Category 7 - Aircraft - Jet Cargo": {
+        "parameters": {
+          "Description": "噴射貨機運輸環境 (Figure 514.7D-1)",
+          "Test Type": "Broadband Random",
+          "Frequency Range": "15 to 2000 Hz",
+          "Test Duration": "1 hr/axis"
+        },
+        "tests": [
+          {"Axis": "All 3 Axes (Takeoff/Landing)", "g rms": "7.2", "Profile": "0.04 g²/Hz (15-100Hz), -6dB/oct to 300Hz"},
+          {"Axis": "All 3 Axes (Cruise)", "g rms": "1.0", "Profile": "Low level random profile per specific aircraft"}
+        ]
+      },
+      "Category 14 - Rotary Wing Aircraft": {
+        "parameters": {
+          "Description": "直升機機載設備震動 (Sine-on-Random 混合波型) (Figure 514.7D-3)",
+          "Test Type": "Sine-on-Random (SOR)",
+          "Rotor Frequency": "Determined by specific helicopter blade pass frequency (e.g., 1P, 2P, 4P)",
+          "Test Duration": "4 hrs/axis"
+        },
+        "tests": [
+          {"Axis": "All 3 axes", "Condition": "Vibration levels are dependent on materiel mounting location and aircraft specific rotor speeds"}
+        ]
+      },
+      "Category 20 - Ground Vehicles - Ground Mobile": {
+        "parameters": {
+          "Description": "安裝於輪型或履帶車輛上的設備於越野或顛簸路面行駛之震動 (Figure 514.7E-1)",
+          "Test Type": "Broadband Random",
+          "Frequency Range": "5 to 500 Hz",
+          "Test Duration": "40 min/axis (Equivalent to 500 miles)"
+        },
+        "tests": [
+          {"Axis": "Vertical (垂直)", "g rms": "1.90", "Profile": "0.02 g²/Hz at 5Hz to 0.002 at 500Hz"},
+          {"Axis": "Transverse (橫向)", "g rms": "0.92", "Profile": "0.004 g²/Hz at 5Hz to 0.001 at 500Hz"},
+          {"Axis": "Longitudinal (縱向)", "g rms": "1.20", "Profile": "0.006 g²/Hz at 5Hz to 0.002 at 500Hz"}
+        ]
+      },
+      "Category 24 - General Minimal Integrity": {
+        "parameters": {
+          "Description": "最低基本完整性測試 (非特定運輸環境，確保基本組裝品質) (Figure 514.7E-1)",
+          "Test Type": "Broadband Random",
+          "Frequency Range": "20 to 2000 Hz",
+          "Test Duration": "1 hr/axis (Total 3 hours)"
+        },
+        "tests": [
+          {"Axis": "All 3 Axes", "g rms": "7.70", "Profile": "0.04 g²/Hz from 20 to 1000Hz, rolling off at -6dB/octave to 2000Hz"}
+        ]
+      }
+    },
+    "Procedure II - Loose Cargo Transportation": {
+      "Category 5 - Loose Cargo": {
+        "parameters": {
+          "Description": "未固定的鬆散貨物在車輛運輸過程中的彈跳與碰撞測試 (Figure 514.7C-4)",
+          "Test Apparatus": "Package Tester (Bounce Machine)",
+          "Motion": "25.4 mm (1.0 inch) peak-to-peak circular synchronous motion",
+          "Frequency": "Typically 4 to 5 Hz (240 to 300 RPM to achieve 1/16 inch gap)",
+          "Test Duration": "20 minutes (Equivalent to 150 miles)"
+        },
+        "tests": [
+          {"Phase": "Bounce Test", "Condition": "Item must be free to bounce, strike the bed, and collide with fences"}
+        ]
+      }
+    }
+  },
+  "Method 516.7 - Shock": {
+    "Procedure I - Functional Shock": {
+      "Standard Operational Shock": {
+        "parameters": {
+          "Description": "模擬設備運作時可能遭遇的碰撞或衝擊 (確保結構與功能正常)",
+          "Pulse Shape": "Terminal Peak Sawtooth (後峰鋸齒波)",
+          "Peak Acceleration": "40 g (Default for generic ground equipment)",
+          "Pulse Duration": "11 ms",
+          "Number of Shocks": "3 shocks per direction, 6 directions (Total 18 shocks)"
+        },
+        "tests": [
+          {"Test": "Axis X", "Condition": "+X (3 shocks), -X (3 shocks) while operating"},
+          {"Test": "Axis Y", "Condition": "+Y (3 shocks), -Y (3 shocks) while operating"},
+          {"Test": "Axis Z", "Condition": "+Z (3 shocks), -Z (3 shocks) while operating"}
+        ]
+      }
+    },
+    "Procedure II - Materiel to be Packaged": {
+      "Pre-packaging Assessment": {
+        "parameters": {
+          "Description": "在產品尚未加上緩衝包裝前進行的衝擊測試，以決定後續所需的包裝保護等級",
+          "Test Item State": "Bare materiel (無包裝裸機)",
+          "Pulse Shape": "Tailored to expected handling environment (e.g., half-sine or sawtooth)"
+        },
+        "tests": [
+          {"Phase": "Assessment", "Condition": "Subject bare materiel to shocks representing logistical handling"},
+          {"Phase": "Evaluation", "Condition": "Determine minimum packaging mitigation requirements based on damage limits"}
+        ]
+      }
+    },
+    "Procedure III - Fragility": {
+      "Critical Velocity & Acceleration": {
+        "parameters": {
+          "Description": "破壞性測試，用於精確找出產品的「臨界損壞界線」(Fragility Level)",
+          "Step Increment": "Gradually increase shock severity (velocity change and peak acceleration)",
+          "Objective": "Develop a damage boundary curve"
+        },
+        "tests": [
+          {"Phase": "Velocity Step Test", "Condition": "Increase velocity change until critical velocity (Vc) is found"},
+          {"Phase": "Acceleration Step Test", "Condition": "Increase peak acceleration until critical acceleration (Ac) is found"}
+        ]
+      }
+    },
+    "Procedure IV - Transit Drop": {
+      "Packaged Equipment Drop": {
+        "parameters": {
+          "Description": "模擬設備在物流搬運、裝卸過程中的意外跌落 (Table 516.7-VI)",
+          "Drop Surface": "2-inch plywood backed by solid concrete",
+          "Number of Drops": "26 drops (Covering all faces, edges, and corners)"
+        },
+        "tests": [
+          {"Weight": "Under 45.4 kg (100 lbs)", "Drop Height": "122 cm (48 inches) - 26 drops"},
+          {"Weight": "45.4 to 90.7 kg (100 to 200 lbs)", "Drop Height": "76 cm (30 inches) - 26 drops"},
+          {"Weight": "90.7 to 454 kg (200 to 1000 lbs)", "Drop Height": "61 cm (24 inches) - Drops determined by handling equipment limitations"}
+        ]
+      }
+    },
+    "Procedure V - Crash Hazard Shock Test": {
+      "Ground/Flight Vehicle Crash": {
+        "parameters": {
+          "Description": "模擬載具發生墜毀事故時，確保設備不會脫落變成高速拋射物傷及乘員 (非運作測試)",
+          "Pulse Shape": "Terminal Peak Sawtooth",
+          "Peak Acceleration (Ground)": "75 g",
+          "Pulse Duration (Ground)": "6 ms",
+          "Number of Shocks": "2 shocks per direction (Total 12 shocks)"
+        },
+        "tests": [
+          {"Test": "Non-Operating Shock", "Condition": "Apply crash profile to mounting points"},
+          {"Test": "Safety Verification", "Condition": "Verify equipment remains captive on its mounts and does not shed hazardous parts"}
+        ]
+      }
+    },
+    "Procedure VI - Bench Handling": {
+      "Maintenance/Repair Drop": {
+        "parameters": {
+          "Description": "模擬設備在工作台上進行維修、組裝或檢驗時的意外傾倒或滑落",
+          "Drop Surface": "Solid wood bench top at least 4.25 cm (1.675 inches) thick",
+          "Test Item State": "Unpackaged, operating or non-operating"
+        },
+        "tests": [
+          {"Phase": "45-Degree Drop", "Condition": "Raise opposite edge until 45 degrees or balance point, let drop freely"},
+          {"Phase": "4-Inch Drop", "Condition": "Raise opposite edge to 10 cm (4 inches) above bench, let drop freely"},
+          {"Phase": "Repetition", "Condition": "Repeat for all practical edges on the base face"}
+        ]
+      }
+    },
+    "Procedure VII - Pendulum Impact": {
+      "Large Assembly Impact": {
+        "parameters": {
+          "Description": "針對體積龐大且沉重（超過 454 公斤），無法在一般跌落機台上測試的大型貨物",
+          "Impact Velocity": "Equivalent to specified drop heights for the item's weight class",
+          "Barrier": "Solid concrete or steel unyielding barrier"
+        },
+        "tests": [
+          {"Phase": "Suspension", "Condition": "Suspend the test item by cables so it acts as a pendulum"},
+          {"Phase": "Impact", "Condition": "Pull back and release to strike the barrier at the target velocity on all 4 sides"}
+        ]
+      }
+    },
+    "Procedure VIII - Catapult Launch/Arrested Landing": {
+      "Aircraft Carrier Operations": {
+        "parameters": {
+          "Description": "專屬海軍航空兵：模擬艦載機在航空母艦上透過彈射器起飛，以及捕捉索降落時產生的極端縱向瞬態衝擊",
+          "Acceleration Profile": "Specific to aircraft platform and catapult/arresting gear system",
+          "Mounting": "Must replicate exact aircraft structural mounting dynamics"
+        },
+        "tests": [
+          {"Phase": "Catapult Launch", "Condition": "Apply specified longitudinal acceleration transient mimicking steam or EMALS catapult"},
+          {"Phase": "Arrested Landing", "Condition": "Apply specified deceleration transient mimicking arresting wire engagement"}
+        ]
+      }
+    }
+  },
+  "Method 506.6 - Rain": {
+    "Procedure I - Rain and Blowing Rain": {
+      "Blowing Rain": {
+        "parameters": {
+          "Description": "模擬戶外設備遭遇狂風暴雨的環境",
+          "Rainfall Rate": "1.7 mm/min (4 in/hr)",
+          "Wind Velocity": "18 m/s (40 mph)",
+          "Test Duration": "30 minutes per face"
+        },
+        "tests": [
+          {"Face": "All exposed faces", "Condition": "Continuous spray with specified wind velocity"}
+        ]
+      }
+    },
+    "Procedure III - Drip": {
+      "Condensation / Leakage Drip": {
+        "parameters": {
+          "Description": "模擬設備處於有遮蔽物的環境（如機艙內、帳篷內），受到上方冷凝水或輕微漏水的滴落",
+          "Drip Rate": "280 +30/-0 L/m²/hr (7 gal/ft²/hr)",
+          "Water Pressure": "Falling from dispenser located 1 meter above test item",
+          "Test Duration": "15 minutes"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "Subject item to steady drip for 15 minutes"},
+          {"Phase": "Inspection", "Condition": "Verify no water pooling or ingress affecting safety/function"}
+        ]
+      }
+    }
+  },
+  "Method 509.5 - Salt Fog": {
+    "Procedure I - Aggravated Screening": {
+      "Standard Salt Fog": {
+        "parameters": {
+          "Description": "加速評估保護性塗層與表面處理的抗腐蝕能力",
+          "Salt Solution": "5% ± 1% NaCl by weight",
+          "Fallout Rate": "1 to 3 ml/80 cm²/hr",
+          "Chamber Temperature": "35°C ± 2°C (95°F ± 3.6°F)"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "24 hours continuous salt fog spray"},
+          {"Phase": "Drying", "Condition": "24 hours at standard ambient conditions"},
+          {"Phase": "Cycle", "Condition": "Repeat Exposure and Drying for a total of 2 cycles (96 hours)"}
+        ]
+      }
+    }
+  },
+  "Method 510.5 - Sand and Dust": {
+    "Procedure I - Blowing Dust": {
+      "Desert Dust Environment": {
+        "parameters": {
+          "Description": "模擬設備在乾燥、微塵環境中的運作與防塵能力 (< 149 μm)",
+          "Dust Concentration": "10.6 ± 7 g/m³ (0.3 ± 0.2 g/ft³)",
+          "Wind Velocity": "1.5 to 8.9 m/s (300 to 1750 ft/min)",
+          "Temperature": "Standard Ambient & High Operating Temperature"
+        },
+        "tests": [
+          {"Phase": "Ambient Blow", "Condition": "6 hours at standard ambient temperature"},
+          {"Phase": "High Temp Blow", "Condition": "6 hours at high operating temperature"}
+        ]
+      }
+    },
+    "Procedure II - Blowing Sand": {
+      "Desert Sand Environment": {
+        "parameters": {
+          "Description": "模擬設備遭遇強風捲起較大沙粒的侵蝕與穿透效應 (150 to 850 μm)",
+          "Sand Concentration": "1.1 ± 0.3 g/m³ or 2.2 ± 0.5 g/m³",
+          "Wind Velocity": "18 m/s to 29 m/s (40 mph to 65 mph)"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "90 minutes per vulnerable face"}
+        ]
+      }
+    }
+  },
+  "Method 512.5 - Immersion": {
+    "Procedure I - Immersion": {
+      "Shallow Water Immersion": {
+        "parameters": {
+          "Description": "模擬設備部分或完全浸入水中的密封性",
+          "Water Depth": "1 meter (3.3 feet) covering the uppermost point",
+          "Duration": "30 minutes",
+          "Temperature Differential": "Test item temperature 27°C above water temperature"
+        },
+        "tests": [
+          {"Test": "Pre-conditioning", "Condition": "Heat test item to establish temperature differential"},
+          {"Test": "Immersion", "Condition": "Submerge for 30 minutes, observe for bubbles/leaks"}
+        ]
+      }
+    }
+  },
+  "Method 504.1 - Contamination by Fluids": {
+    "Procedure II - Small Items": {
+      "Occasional Exposure": {
+        "parameters": {
+          "Description": "模擬設備偶爾暴露於化學流體（如潤滑油、燃料、清潔劑）的抵抗力",
+          "Fluid Temperature": "Standard Ambient or Specific Operating Temp",
+          "Exposure Method": "Immersion, Spray, or Brush",
+          "Exposure Time": "8 to 24 hours depending on fluid type"
+        },
+        "tests": [
+          {"Phase": "Application", "Condition": "Apply specified fluid to completely cover vulnerable surfaces"},
+          {"Phase": "Incubation", "Condition": "Maintain at test temperature for 8 hours"},
+          {"Phase": "Examination", "Condition": "Inspect for material degradation, swelling, or structural failure"}
+        ]
+      }
+    }
+  },
+  "Method 505.5 - Solar Radiation (Sunshine)": {
+    "Procedure I - Cycling (Thermal Effects)": {
+      "Hot Dry (A1) Worldwide Deployment": {
+        "parameters": {
+          "Description": "評估太陽輻射產生的熱效應（如外殼變形、內部過熱）",
+          "Irradiance": "Maximum 1120 W/m² (355 Btu/ft²/hr)",
+          "Spectral Energy": "Conforms to Table 505.5-I (UV, Visible, IR)",
+          "Chamber Temperature": "Peak 49°C (120°F)",
+          "Cycle Duration": "24-hour diurnal cycle"
+        },
+        "tests": [
+          {"Cycle": "Minimum of 3 cycles", "Condition": "Continuous 24-hr cycles of varying irradiance and temperature"},
+          {"Test": "Operational Evaluation", "Condition": "Operate equipment during peak temperature and irradiance phase"}
+        ]
+      }
+    },
+    "Procedure II - Steady State (Actinic Effects)": {
+      "Accelerated Photodegradation": {
+        "parameters": {
+          "Description": "評估太陽輻射造成的化學/光化學破壞（如褪色、塑膠脆化）",
+          "Irradiance": "1120 W/m² continuous",
+          "Chamber Temperature": "49°C (120°F)",
+          "Duration": "Ten 24-hour cycles (Total 240 hours)"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "20 hours of continuous irradiance"},
+          {"Phase": "Dark Cycle", "Condition": "4 hours of darkness per cycle to allow thermal gradients to dissipate"}
+        ]
+      }
+    }
+  },
+  "Method 508.6 - Fungus": {
+    "Procedure I - Fungal Growth": {
+      "Standard US/European Spores": {
+        "parameters": {
+          "Description": "評估設備材質是否會支持黴菌生長並導致功能損壞",
+          "Test Microorganisms": "Aspergillus niger, Penicillium funiculosum, etc. (Table 508.6-I)",
+          "Temperature": "30°C ± 1°C (86°F ± 2°F)",
+          "Humidity": "Minimum 95% RH",
+          "Incubation Period": "28 Days (Minimum)"
+        },
+        "tests": [
+          {"Phase": "Inoculation", "Condition": "Spray mixed spore suspension evenly over test item"},
+          {"Phase": "Incubation", "Condition": "Maintain 30°C and >95% RH for 28 days"},
+          {"Phase": "Evaluation", "Condition": "Visual inspection by trained mycologist (Do not wipe or clean before inspection)"}
+        ]
+      }
+    }
+  },
+  "Method 511.5 - Explosive Atmosphere": {
+    "Procedure I - Operation in Explosive Atmosphere": {
+      "Fuel-Air Mixture": {
+        "parameters": {
+          "Description": "驗證設備在充滿易燃油氣的環境中運作時，不會產生火花引燃爆炸",
+          "Explosive Mixture": "n-hexane (己烷) and air",
+          "Altitude Limits": "Site ambient up to 12,192 m (40,000 ft)",
+          "Temperature": "Maximum operating temperature of the test item"
+        },
+        "tests": [
+          {"Phase": "Chamber Prep", "Condition": "Introduce explosive mixture at simulated altitudes"},
+          {"Phase": "Operation", "Condition": "Operate test item, actuating all switches and contacts"},
+          {"Phase": "Verification", "Condition": "Detonate mixture at end of test to verify mixture was explosive"}
+        ]
+      }
+    }
+  },
+  "Method 513.6 - Acceleration": {
+    "Procedure II - Operational Test": {
+      "Fighter Aircraft / Helicopter": {
+        "parameters": {
+          "Description": "模擬航空器高G力轉向時的結構與功能承受力",
+          "Acceleration Level": "Dependent on aircraft type (e.g., 9G for fighters)",
+          "Test Apparatus": "Centrifuge",
+          "Duration": "1 minute per axis per direction"
+        },
+        "tests": [
+          {"Axis": "Forward/Aft (+/- X)", "Condition": "Maintain G-level for 1 minute while operating"},
+          {"Axis": "Up/Down (+/- Z)", "Condition": "Maintain G-level for 1 minute while operating"},
+          {"Axis": "Left/Right (+/- Y)", "Condition": "Maintain G-level for 1 minute while operating"}
+        ]
+      }
+    }
+  },
+  "Method 515.7 - Acoustic Noise": {
+    "Procedure I - Diffuse Field Acoustic Noise": {
+      "Standard Acoustic Testing": {
+        "parameters": {
+          "Description": "模擬設備暴露於高強度聲波場（如飛機引擎、火箭發射）引起的微震動與疲勞",
+          "Overall Sound Pressure Level (OASPL)": "Typically 130 to 165 dB (re 20 μPa)",
+          "Frequency Range": "20 Hz to 10,000 Hz",
+          "Duration": "30 minutes per condition (or specific flight profile)"
+        },
+        "tests": [
+          {"Phase": "Operation", "Condition": "Subject to broad-band random acoustic noise field"},
+          {"Phase": "Inspection", "Condition": "Check for acoustic-induced fatigue and component chafing"}
+        ]
+      }
+    }
+  },
+  "Method 517.2 - Pyroshock": {
+    "Procedure I - Near-Field with Real Configuration": {
+      "Pyrotechnic Device Firing": {
+        "parameters": {
+          "Description": "模擬爆炸螺栓或分離火工品引爆時產生的高頻、高G值衝擊",
+          "Frequency Range": "Up to 1,000,000 Hz (Typically analyzed to 100,000 Hz)",
+          "Peak Acceleration": "Can exceed 100,000 g",
+          "Duration": "Less than 20 milliseconds"
+        },
+        "tests": [
+          {"Phase": "Firing", "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration"},
+          {"Phase": "Data Capture", "Condition": "High-speed transient data acquisition (min 1M samples/sec)"}
+        ]
+      }
+    }
+  },
+  "Method 518.2 - Acidic Atmosphere": {
+    "Procedure I - Acidic Atmosphere": {
+      "Corrosive Industrial/Exhaust Environment": {
+        "parameters": {
+          "Description": "評估設備在酸性氣體（如燃燒廢氣、工業污染）下的抗腐蝕與抗化學破壞能力",
+          "Acid Solution": "Sulfuric Acid (H2SO4) and Nitric Acid (HNO3)",
+          "pH Level": "4.17 (Simulating severe acid rain/atmosphere)",
+          "Chamber Temperature": "35°C (95°F)"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "3 periods of 2 hours spraying followed by 22 hours storage"},
+          {"Phase": "Total Duration", "Condition": "72 hours minimum"}
+        ]
+      }
+    }
+  },
+  "Method 519.7 - Gunfire Shock": {
+    "Procedure I - Direct Operation": {
+      "Aircraft/Vehicle Mounted Gunfire": {
+        "parameters": {
+          "Description": "模擬機載或車載機砲連續射擊產生的週期性強烈震動與衝擊波",
+          "Firing Rate": "Repetitive pulse (e.g., 20 to 100 Hz corresponding to gun firing rate)",
+          "Vibration Type": "Sine-on-random or complex repetitive transient",
+          "Duration": "Equivalent to actual mission firing time"
+        },
+        "tests": [
+          {"Phase": "Vibration Sweep", "Condition": "Apply specified gunfire shock response spectrum (SRS)"}
+        ]
+      }
+    }
+  },
+  "Method 520.4 - Combined Environments": {
+    "Procedure I - Engineering Development": {
+      "Temp/Humidity/Vibration/Altitude": {
+        "parameters": {
+          "Description": "模擬飛行器在實際任務中同時遭遇溫度、濕度、震動與氣壓變化的複合影響",
+          "Profile": "Mission-specific diurnal and flight cycles",
+          "Transition Rates": "Dependent on specific aircraft climb/dive capabilities"
+        },
+        "tests": [
+          {"Phase": "Combined Cycle", "Condition": "Simultaneous application of vibration, thermal, and altitude stress"},
+          {"Phase": "Functional Check", "Condition": "Continuously operate and monitor during cycle"}
+        ]
+      }
+    }
+  },
+  "Method 521.4 - Icing/Freezing Rain": {
+    "Procedure I - Icing": {
+      "Marine/Aircraft Accumulation": {
+        "parameters": {
+          "Description": "驗證設備在結冰環境下（如除冰設備、天線）的操作與解凍效能",
+          "Ice Thickness": "13 mm (0.5 in) for general equipment, up to 75 mm (3 in) for marine",
+          "Pre-chill Temperature": "Between -10°C and 0°C (14°F to 32°F)"
+        },
+        "tests": [
+          {"Phase": "Pre-cooling", "Condition": "Stabilize test item below freezing"},
+          {"Phase": "Ice Accretion", "Condition": "Spray super-cooled water until desired thickness is achieved"},
+          {"Phase": "Operation", "Condition": "Attempt to operate equipment or deploy de-icing mechanisms"}
+        ]
+      }
+    }
+  },
+  "Method 522.2 - Ballistic Shock": {
+    "Procedure I - Hull and Turret": {
+      "Armor Impact Shock": {
+        "parameters": {
+          "Description": "模擬裝甲車輛遭受到非貫穿性彈砲擊中時，裝甲傳遞的高頻破壞性衝擊",
+          "Shock Level": "Very high momentum exchange (SRS often > 10,000 g at high frequencies)",
+          "Simulator": "Ballistic shock machine (BSM) or light gas gun"
+        },
+        "tests": [
+          {"Phase": "Impact", "Condition": "Apply specified SRS profile to item mounting points"},
+          {"Phase": "Assessment", "Condition": "Verify structural integrity and absence of hazardous fragment shedding"}
+        ]
+      }
+    }
+  },
+  "Method 523.4 - Vibro-Acoustic/Temperature": {
+    "Procedure I - External Stores": {
+      "Aircraft Store Environment": {
+        "parameters": {
+          "Description": "專門用於掛載於軍機外部的裝備（飛彈、莢艙），綜合氣動噪音、震動與溫度的破壞",
+          "Vibration": "Aerodynamic flow-induced random vibration",
+          "Acoustic": "Engine exhaust and boundary layer noise",
+          "Temperature": "Aerodynamic heating profile"
+        },
+        "tests": [
+          {"Phase": "Captive Carry", "Condition": "Simultaneous application of three stresses per mission profile"}
+        ]
+      }
+    }
+  },
+  "Method 524.1 - Freeze / Thaw": {
+    "Procedure I - Diurnal Cycling Effects": {
+      "Freezing and Thawing Cycle": {
+        "parameters": {
+          "Description": "模擬環境水分滲入設備縫隙後結冰膨脹，再融化產生的物理結構破壞",
+          "Cold Phase": "Below -10°C (14°F)",
+          "Warm Phase": "Standard Ambient (melt phase)",
+          "Moisture Element": "Sufficient water/moisture to penetrate crevices"
+        },
+        "tests": [
+          {"Phase": "Cycling", "Condition": "Repeated transition between freezing and thawing"},
+          {"Phase": "Inspection", "Condition": "Inspect for cracked seals, housing separation, and component distortion"}
+        ]
+      }
+    }
+  },
+  "Method 525.1 - Time Waveform Replication": {
+    "Procedure I - Single Exciter TWR": {
+      "Field Data Replication": {
+        "parameters": {
+          "Description": "將實地錄製的複雜時域波形（而非簡化的頻譜）直接在實驗室振動台上重播",
+          "Control Methodology": "Closed-loop inverse transfer function control",
+          "Data Source": "Actual measured field acceleration data"
+        },
+        "tests": [
+          {"Phase": "System ID", "Condition": "Determine system transfer function using low-level random"},
+          {"Phase": "Replication", "Condition": "Iteratively correct drive signal to match target field waveform"}
+        ]
+      }
+    }
+  },
+  "Method 526.1 - Rail Impact": {
+    "Procedure I - Rail Impact": {
+      "Railcar Humping/Coupling": {
+        "parameters": {
+          "Description": "模擬火車車廂在調車場進行連結作業時的劇烈縱向撞擊",
+          "Impact Speed": "12.9 to 13.4 km/h (8.0 to 8.3 mph)",
+          "Buffer Type": "Standard railcar draft gears",
+          "Vehicle": "Flatcar carrying the test item"
+        },
+        "tests": [
+          {"Phase": "Impact", "Condition": "Subject test item to specified impact velocity in both longitudinal directions"}
+        ]
+      }
+    }
+  },
+  "Method 527.1 - Multi-Exciter": {
+    "Procedure I - Multi-Axis Testing": {
+      "MIMO Vibration": {
+        "parameters": {
+          "Description": "多軸多激振器同步測試，模擬比單軸更真實的 3D 空間複合動態破壞",
+          "Control Type": "Multiple Input Multiple Output (MIMO)",
+          "Degrees of Freedom": "Up to 6 DOF (translation and rotation)"
+        },
+        "tests": [
+          {"Phase": "Multi-axis Excitation", "Condition": "Simultaneous control of phase and amplitude across multiple shakers"}
+        ]
+      }
+    }
+  },
+  "Method 528.1 - Mechanical Vibrations of Shipboard Equipment": {
+    "Procedure I - Environmental Vibration": {
+      "Type I / Type II Naval Shipboard": {
+        "parameters": {
+          "Description": "專門規範美國海軍水面艦與潛艦搭載設備的長期環境與螺旋槳激振力",
+          "Frequency Range": "4 Hz to 50 Hz",
+          "Amplitude": "Displacement controlled (e.g., up to 0.030 inches single amplitude)",
+          "Excitation Source": "Ship propulsion systems and wave action"
+        },
+        "tests": [
+          {"Phase": "Exploratory", "Condition": "Identify resonances between 4 to 50 Hz"},
+          {"Phase": "Variable Frequency", "Condition": "Sweep and dwell at identified shipboard resonant frequencies"},
+          {"Phase": "Endurance", "Condition": "2 hours per axis at resonant point"}
+        ]
+      }
+    }
+  }
+}

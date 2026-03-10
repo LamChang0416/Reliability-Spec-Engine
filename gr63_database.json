@@ -1,0 +1,211 @@
+{
+  "Section 4.1 - Temperature and Humidity (溫濕度)": {
+    "Operating Environments (運作環境)": {
+      "Normal Operating Conditions": {
+        "parameters": {
+          "Description": "設備在電信機房內的正常長期運作環境",
+          "Temperature Range": "5°C to 40°C (41°F to 104°F)",
+          "Relative Humidity": "5% to 85% RH",
+          "Max Absolute Humidity": "0.024 kg water/kg dry air"
+        },
+        "tests": [
+          {"Phase": "Low Temp", "Condition": "Operate continuously at 5°C"},
+          {"Phase": "High Temp", "Condition": "Operate continuously at 40°C"}
+        ]
+      },
+      "Short-Term Operating Conditions": {
+        "parameters": {
+          "Description": "模擬機房空調失效或極端氣候下的短期運作極限 (不超過 96 小時)",
+          "Temperature Range": "-5°C to 50°C (23°F to 122°F)",
+          "Relative Humidity": "5% to 90% RH",
+          "Max Absolute Humidity": "0.024 kg water/kg dry air"
+        },
+        "tests": [
+          {"Phase": "Cold Start", "Condition": "Soak at -5°C, then power on and operate"},
+          {"Phase": "High Temp Excursion", "Condition": "Operate at 50°C for up to 96 hours"}
+        ]
+      }
+    },
+    "Transportation and Storage (運輸與儲存)": {
+      "Packaged Equipment": {
+        "parameters": {
+          "Description": "設備處於包裝狀態下的極端儲存與運輸環境",
+          "Temperature Range": "-40°C to 70°C (-40°F to 158°F)",
+          "Relative Humidity": "Up to 93% RH",
+          "Rate of Change": "Maximum 30°C/hr (86°F/hr)"
+        },
+        "tests": [
+          {"Phase": "Low Temp Storage", "Condition": "Soak at -40°C for 72 hours"},
+          {"Phase": "High Temp Storage", "Condition": "Soak at 70°C for 72 hours"},
+          {"Phase": "High Humidity", "Condition": "Soak at 40°C and 93% RH for 96 hours"}
+        ]
+      }
+    }
+  },
+  "Section 4.3 - Equipment Handling (設備搬運與跌落)": {
+    "Packaged Equipment Drop (包裝跌落)": {
+      "Free-Fall Drop Test": {
+        "parameters": {
+          "Description": "模擬包裝物在物流過程中的自由落體跌落 (高度依重量而定)",
+          "Drop Surface": "Concrete or equivalent non-yielding surface",
+          "Sequence": "Typically 1 bottom, 1 top, 2 sides, 2 ends, 1 corner, 1 edge (or similar profiling)"
+        },
+        "tests": [
+          {"Weight": "0 to 10 kg (0 to 22 lbs)", "Drop Height": "1000 mm (39.4 in)"},
+          {"Weight": "10 to 25 kg (22 to 55 lbs)", "Drop Height": "750 mm (29.5 in)"},
+          {"Weight": "25 to 50 kg (55 to 110 lbs)", "Drop Height": "600 mm (23.6 in)"},
+          {"Weight": "Over 50 kg (110 lbs)", "Drop Height": "Specific incline/rotational tests apply"}
+        ]
+      }
+    },
+    "Unpackaged Equipment Drop (裸機搬運)": {
+      "Installation and Handling": {
+        "parameters": {
+          "Description": "模擬設備拆箱後在機房內搬運、安裝進機架時的意外滑落",
+          "Test Condition": "Equipment in typical un-packaged installation state"
+        },
+        "tests": [
+          {"Type": "Hand-held Equipment", "Drop Height": "1000 mm (39.4 in) onto concrete"},
+          {"Type": "Rack-mounted Equipment", "Drop Height": "75 mm to 100 mm (depending on weight) or rotational edge drop"}
+        ]
+      }
+    }
+  },
+  "Section 4.4 - Earthquake and Office Vibration (地震與辦公室震動)": {
+    "Earthquake Environment (地震測試)": {
+      "Zone 4 Seismic Test": {
+        "parameters": {
+          "Description": "NEBS 最著名的抗震測試：模擬強烈地震發生時，機架與設備的結構完整性與功能性",
+          "Waveform": "Synthesized waveform matching the Required Response Spectrum (RRS)",
+          "Frequency Range": "1 Hz to 50 Hz",
+          "Acceleration Level": "Peak acceleration often around 4.4g to 5.0g (dependent on upper floor limits)"
+        },
+        "tests": [
+          {"Phase": "Resonance Search", "Condition": "0.2g sine sweep from 1 to 50 Hz on each axis (X, Y, Z)"},
+          {"Phase": "Seismic Waveform", "Condition": "Apply Zone 4 waveform independently on each of 3 axes"},
+          {"Phase": "Requirement", "Condition": "No structural failure, no service interruption (or self-recovery)"}
+        ]
+      }
+    },
+    "Office Vibration (機房/辦公室常規震動)": {
+      "Continuous Environmental Vibration": {
+        "parameters": {
+          "Description": "模擬機房內空調系統、發電機或附近交通造成的長期低頻震動",
+          "Frequency Range": "0.1 Hz to 100 Hz",
+          "Test Type": "Sine sweep or low-level random"
+        },
+        "tests": [
+          {"Phase": "Vibration Test", "Condition": "Apply specified profile (e.g., 0.1g acceleration limit at higher frequencies)"}
+        ]
+      }
+    }
+  },
+  "Section 4.1.3 - Altitude (海拔高度)": {
+    "Operating Altitude": {
+      "Standard Elevation": {
+        "parameters": {
+          "Description": "設備在不同海拔高度的正常運作環境溫度極限",
+          "Low to Mid Altitude": "-61 m to 1829 m (-200 ft to 6000 ft)",
+          "High Altitude": "1829 m to 3960 m (6000 ft to 13000 ft)"
+        },
+        "tests": [
+          {"Phase": "Standard Altitude", "Condition": "Operate at 40°C up to 1829m "},
+          {"Phase": "High Altitude", "Condition": "Operate at 30°C from 1829m to 3960m "}
+        ]
+      }
+    }
+  },
+  "Section 4.2 - Fire Resistance (防火與阻燃)": {
+    "Equipment Assembly Fire Tests": {
+      "Frame-Level Fire Test": {
+        "parameters": {
+          "Description": "評估整機櫃設備在火災發生時的阻燃與火勢蔓延控制能力 (ATIS-0600319.2008)",
+          "Peak Heat Release": "≤ 150 kW ",
+          "Average Heat Release": "≤ 100 kW over 30 minutes",
+          "Self-Extinguishment": "Flames extinguished by 15 minutes "
+        },
+        "tests": [
+          {"Phase": "Ignition", "Condition": "Ignite methane line burner within equipment"},
+          {"Phase": "Fire Spread", "Condition": "Fire shall not spread beyond the EUT confines"},
+          {"Phase": "Smoke Observation", "Condition": "No visible smoke at 20 minutes"}
+        ]
+      },
+      "Shelf-Level Fire Test": {
+        "parameters": {
+          "Description": "評估單一機箱/插槽設備的阻燃能力",
+          "Peak Heat Release": "≤ 50 kW [cite: 828]",
+          "Average Heat Release": "≤ 35 kW over 15 minutes"
+        },
+        "tests": [
+          {"Phase": "Ignition", "Condition": "Apply burner; monitor thermal and physical spread"},
+          {"Phase": "Extinguishment", "Condition": "Flames extinguished by 15 minutes "}
+        ]
+      }
+    }
+  },
+  "Section 4.4.5 - Transportation Vibration (運輸震動)": {
+    "Packaged Equipment Vibration": {
+      "Commercial Transportation": {
+        "parameters": {
+          "Description": "模擬設備在包裝狀態下，經由卡車、鐵路、空運或海運時的隨機震動",
+          "Frequency Range": "1 Hz to 500 Hz",
+          "Reference Standard": "ETSI EN 300 019-2-2 V2.1.2 [cite: 909]"
+        },
+        "tests": [
+          {"Phase": "Random Vibration", "Condition": "Apply specified low-level random vibration with transient peaks"}
+        ]
+      }
+    }
+  },
+  "Section 4.5 - Airborne Contaminants (空氣污染物)": {
+    "Gaseous Contaminants Test (混合氣體腐蝕)": {
+      "Indoor Environment (CO / Data Center)": {
+        "parameters": {
+          "Description": "模擬受控環境中的腐蝕性氣體 (10天測試模擬15年壽命)",
+          "Temperature/Humidity": "30°C ± 1.0°C, 70% ± 3% RH",
+          "Gas Concentrations": "10 ppb Cl2, 10 ppb H2S, 200 ppb NO2, 100 ppb SO2 "
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "10 days continuous exposure to mixed flowing gas"},
+          {"Phase": "Evaluation", "Condition": "Verify operational functionality post-exposure"}
+        ]
+      },
+      "Outdoor Environment (Ventilated OSP)": {
+        "parameters": {
+          "Description": "模擬戶外非氣密機櫃的嚴苛腐蝕環境",
+          "Gas Concentrations": "20 ppb Cl2, 100 ppb H2S, 200 ppb NO2, 200 ppb SO2 "
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "10 days continuous exposure to mixed flowing gas"}
+        ]
+      }
+    },
+    "Hygroscopic Dust (吸濕性微塵)": {
+      "PWA Insulation Resistance": {
+        "parameters": {
+          "Description": "測試電路板在吸濕性粉塵污染下的絕緣電阻下降情況 (GR-1274-CORE)"
+        },
+        "tests": [
+          {"Phase": "Dust Deposition", "Condition": "Apply standard synthetic dust"},
+          {"Phase": "Humidity Cycle", "Condition": "Measure surface insulation resistance during high humidity"}
+        ]
+      }
+    }
+  },
+  "Section 4.6 - Acoustic Noise (聲學噪音)": {
+    "Airborne Acoustic Noise": {
+      "Operating Noise Levels": {
+        "parameters": {
+          "Description": "規範設備正常運作時的聲功率級上限，保障機房人員聽力",
+          "Measurement Method": "ANSI/ASA S12.10 / ISO 7779",
+          "Telecom Room Limit": "78 dB (LWAd) at 27°C ",
+          "Power Room Limit": "83 dB (LWAd) at 27°C "
+        },
+        "tests": [
+          {"Phase": "Normal Operation", "Condition": "Measure declared A-weighted sound power level at 27°C"},
+          {"Phase": "Max Fan Speed", "Condition": "Measure sound power level at maximum intended-design fan speed"}
+        ]
+      }
+    }
+  }
+}

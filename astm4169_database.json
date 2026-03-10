@@ -1,0 +1,235 @@
+{
+  "DC - Distribution Cycles (運輸情境)": {
+    "General & Common Cycles": {
+      "DC-1: General Cycle (未定義具體運輸)": {
+        "parameters": {
+          "Description": "適用於未定義具體運輸工具的常規貨運 (最通用的綜合測試)",
+          "Assurance Level": "Usually Level I, II, or III (Default is often II)"
+        },
+        "tests": [
+          {"Sequence": "1", "Schedule": "A", "Test Element": "Handling - Manual & Mechanical (搬運與跌落)"},
+          {"Sequence": "2", "Schedule": "C", "Test Element": "Vehicle Stacking (車載堆疊抗壓)"},
+          {"Sequence": "3", "Schedule": "F", "Test Element": "Loose-Load Vibration (鬆散負載震動)"},
+          {"Sequence": "4", "Schedule": "G", "Test Element": "Simulated Rail Switching (模擬鐵路衝擊)"},
+          {"Sequence": "5", "Schedule": "E", "Test Element": "Vehicle Vibration (車載震動)"},
+          {"Sequence": "6", "Schedule": "J", "Test Element": "Concentrated Impact (集中衝擊)"},
+          {"Sequence": "7", "Schedule": "A", "Test Element": "Handling - Manual & Mechanical (末端搬運)"}
+        ]
+      },
+      "DC-3: Single Package Environment": {
+        "parameters": {
+          "Description": "單一包裹小件運輸 (如 FedEx, UPS 的單獨配送)，限重 150 lb 以下"
+        },
+        "tests": [
+          {"Sequence": "1", "Schedule": "A", "Test Element": "Handling - Manual (搬運與跌落)"},
+          {"Sequence": "2", "Schedule": "D or C", "Test Element": "Stacked Vibration or Vehicle Stacking"},
+          {"Sequence": "3", "Schedule": "F", "Test Element": "Loose-Load Vibration"},
+          {"Sequence": "4", "Schedule": "E", "Test Element": "Vehicle Vibration"},
+          {"Sequence": "5", "Schedule": "J", "Test Element": "Concentrated Impact"},
+          {"Sequence": "6", "Schedule": "A", "Test Element": "Handling - Manual (末端搬運)"}
+        ]
+      },
+      "DC-13: Air (Commuter) and Motor Freight": {
+        "parameters": {
+          "Description": "區域空運與卡車聯運 (包含空運高頻震動與低壓考量)"
+        },
+        "tests": [
+          {"Sequence": "1", "Schedule": "A", "Test Element": "Handling (搬運)"},
+          {"Sequence": "2", "Schedule": "C", "Test Element": "Vehicle Stacking"},
+          {"Sequence": "3", "Schedule": "F", "Test Element": "Loose-Load Vibration"},
+          {"Sequence": "4", "Schedule": "E", "Test Element": "Vehicle Vibration"},
+          {"Sequence": "5", "Schedule": "I", "Test Element": "Low Pressure (Hazard) (低壓測試)"},
+          {"Sequence": "6", "Schedule": "A", "Test Element": "Handling (末端搬運)"}
+        ]
+      }
+    }
+  },
+  "Schedule A - Handling (跌落與搬運)": {
+    "Manual Handling (手動跌落測試)": {
+      "0 to 20 lb (0 to 9.1 kg)": {
+        "parameters": {
+          "Description": "小型包裹手動搬運跌落測試 (ASTM D4169-09 Table 2)",
+          "Drop Surface": "Rigid, non-yielding surface (Concrete/Steel)",
+          "Number of Drops": "Typically 6 drops (Base, edges, corners)"
+        },
+        "tests": [
+          {"Assurance Level": "Level I (High)", "Drop Height": "24 in (610 mm)"},
+          {"Assurance Level": "Level II (Medium)", "Drop Height": "15 in (381 mm)"},
+          {"Assurance Level": "Level III (Low)", "Drop Height": "9 in (229 mm)"}
+        ]
+      },
+      "20 to 40 lb (9.1 to 18.1 kg)": {
+        "parameters": {"Description": "中型包裹手動搬運跌落測試"},
+        "tests": [
+          {"Assurance Level": "Level I", "Drop Height": "21 in (533 mm)"},
+          {"Assurance Level": "Level II", "Drop Height": "13 in (330 mm)"},
+          {"Assurance Level": "Level III", "Drop Height": "8 in (203 mm)"}
+        ]
+      },
+      "40 to 60 lb (18.1 to 27.2 kg)": {
+        "parameters": {"Description": "中大型包裹手動搬運跌落測試"},
+        "tests": [
+          {"Assurance Level": "Level I", "Drop Height": "18 in (457 mm)"},
+          {"Assurance Level": "Level II", "Drop Height": "12 in (305 mm)"},
+          {"Assurance Level": "Level III", "Drop Height": "7 in (178 mm)"}
+        ]
+      },
+      "60 to 80 lb (27.2 to 36.3 kg)": {
+        "parameters": {"Description": "重型包裹手動搬運跌落測試"},
+        "tests": [
+          {"Assurance Level": "Level I", "Drop Height": "15 in (381 mm)"},
+          {"Assurance Level": "Level II", "Drop Height": "10 in (254 mm)"},
+          {"Assurance Level": "Level III", "Drop Height": "6 in (152 mm)"}
+        ]
+      }
+    },
+    "Mechanical Handling (機械搬運)": {
+      "Forklift / Pallet Jack (堆高機/棧板車)": {
+        "parameters": {
+          "Description": "針對棧板或大型木箱的機械搬運衝擊",
+          "Test Types": "Rotational Drop (旋轉跌落), Incline Impact (斜坡衝擊)"
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "Rotational Drop Height": "12 in (305 mm)", "Impact Velocity": "5.75 ft/s (1.75 m/s)"},
+          {"Assurance Level": "Level II", "Rotational Drop Height": "9 in (229 mm)", "Impact Velocity": "4.0 ft/s (1.22 m/s)"},
+          {"Assurance Level": "Level III", "Rotational Drop Height": "6 in (152 mm)", "Impact Velocity": "3.0 ft/s (0.91 m/s)"}
+        ]
+      }
+    }
+  },
+  "Schedule B - Warehouse Stacking (倉庫堆疊抗壓)": {
+    "Compression Test (靜態抗壓)": {
+      "Standard Warehouse Stacking": {
+        "parameters": {
+          "Description": "模擬倉庫內長時間靜態堆疊的抗壓能力",
+          "Formula": "L = M x J x [(H-h)/h] x F",
+          "M": "Mass of one package",
+          "H": "Maximum height of stack (usually 90 in / 2.27 m if unknown)",
+          "h": "Height of one package"
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "F Factor (Safety Factor)": "3.0", "Condition": "Apply load, maintain for specified time or use machine to yield"},
+          {"Assurance Level": "Level II", "F Factor (Safety Factor)": "2.0", "Condition": "Typical for standard warehousing"},
+          {"Assurance Level": "Level III", "F Factor (Safety Factor)": "1.5", "Condition": "Low severity warehousing"}
+        ]
+      }
+    }
+  },
+  "Schedule C - Vehicle Stacking (車載堆疊抗壓)": {
+    "Dynamic Compression (動態抗壓)": {
+      "Motor Freight / Rail (卡車與鐵路)": {
+        "parameters": {
+          "Description": "模擬卡車或火車運輸過程中，因車廂顛簸造成的動態堆疊應力 (F Factor 取決於貨物密度)",
+          "Formula": "L = M x J x [(H-h)/h] x F",
+          "H (Motor Freight)": "Typically 108 in (2.7 m)",
+          "H (Rail)": "Typically 120 in (3.0 m)"
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "F Factor (Density < 50 lb/ft³)": "10.0", "F Factor (Density > 50 lb/ft³)": "7.0"},
+          {"Assurance Level": "Level II", "F Factor (Density < 50 lb/ft³)": "7.0", "F Factor (Density > 50 lb/ft³)": "5.0"},
+          {"Assurance Level": "Level III", "F Factor (Density < 50 lb/ft³)": "5.0", "F Factor (Density > 50 lb/ft³)": "4.0"}
+        ]
+      }
+    }
+  },
+  "Schedule D & E - Vibration (堆疊與車載震動)": {
+    "Random Vibration (隨機震動)": {
+      "Truck Profile (卡車頻譜)": {
+        "parameters": {
+          "Description": "模擬卡車運輸的隨機震動頻譜 ",
+          "Frequency Range": "1 to 200 Hz ",
+          "Duration": "180 minutes "
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "Overall g rms": "0.73", "PSD Peak": "0.02 g²/Hz at 4-16 Hz "},
+          {"Assurance Level": "Level II", "Overall g rms": "0.52", "PSD Peak": "0.01 g²/Hz at 4-16 Hz "},
+          {"Assurance Level": "Level III", "Overall g rms": "0.37", "PSD Peak": "0.005 g²/Hz at 4-16 Hz "}
+        ]
+      },
+      "Air Profile (飛機頻譜)": {
+        "parameters": {
+          "Description": "模擬航空運輸的隨機震動頻譜 ",
+          "Frequency Range": "2 to 300 Hz ",
+          "Duration": "180 minutes "
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "Overall g rms": "1.49", "PSD Peak": "0.02 g²/Hz at 12-100 Hz "},
+          {"Assurance Level": "Level II", "Overall g rms": "1.05", "PSD Peak": "0.01 g²/Hz at 12-100 Hz "},
+          {"Assurance Level": "Level III", "Overall g rms": "0.74", "PSD Peak": "0.005 g²/Hz at 12-100 Hz "}
+        ]
+      }
+    }
+  },
+  "Schedule F - Loose Load Vibration (鬆散負載震動)": {
+    "Repetitive Shock (重複性衝擊)": {
+      "Loose Load Transportation": {
+        "parameters": {
+          "Description": "模擬散裝貨物在運輸過程中的彈跳與碰撞 [cite: 317]",
+          "Dwell Time Distribution": "50% along normal vertical shipping axis, 50% evenly along all other possible orientations [cite: 321]"
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "Dwell Time": "60 min [cite: 338, 339]"},
+          {"Assurance Level": "Level II", "Dwell Time": "40 min [cite: 338, 339]"},
+          {"Assurance Level": "Level III", "Dwell Time": "30 min [cite: 338, 340]"}
+        ]
+      }
+    }
+  },
+  "Schedule G - Simulated Rail Switching (模擬鐵路衝擊)": {
+    "Longitudinal Shock (縱向衝擊)": {
+      "Railcar Coupling Impact": {
+        "parameters": {
+          "Description": "模擬火車車廂調度時的劇烈縱向撞擊 [cite: 342]",
+          "Shock Duration": "40 ± 10 ms for standard draft gear [cite: 344]"
+        },
+        "tests": [
+          {"Assurance Level": "Level I", "Impacts": "2 impacts at 8 mph (3.58 m/s), 1 impact at 6 mph (2.68 m/s) "},
+          {"Assurance Level": "Level II", "Impacts": "2 impacts at 6 mph (2.68 m/s), 1 impact at 4 mph (1.79 m/s) "},
+          {"Assurance Level": "Level III", "Impacts": "1 impact at 6 mph (2.68 m/s), 2 impacts at 4 mph (1.79 m/s) "}
+        ]
+      }
+    }
+  },
+  "Schedule H - Environmental Hazard (環境危害)": {
+    "Cyclic Exposure (循環暴露)": {
+      "Military/Harsh Environment": {
+        "parameters": {
+          "Description": "模擬軍事分發或嚴苛環境的快速溫濕度變化 [cite: 360]",
+          "Water Spray Level I": "4 ± 0.5 in./h (100 ± 10 mm/h) [cite: 363]",
+          "Water Spray Level II": "2 ± 0.5 in./h (50 ± 10 mm/h) [cite: 363]"
+        },
+        "tests": [
+          {"Phase": "Hot & Wet", "Condition": "160 ± 5 °F (71 ± 2 °C) with Water Spray, varying durations [cite: 368]"},
+          {"Phase": "Cold", "Condition": "-65 ± 5 °F (-54 ± 2 °C), varying durations [cite: 368]"},
+          {"Phase": "Requirement", "Condition": "Cyclic sequence repeated on three consecutive days [cite: 368]"}
+        ]
+      }
+    }
+  },
+  "Schedule I - Low Pressure Hazard (低壓危害)": {
+    "High Altitude (高海拔)": {
+      "Feeder Aircraft / Mountain Pass": {
+        "parameters": {
+          "Description": "模擬非加壓機艙或高山運輸的低壓環境 [cite: 374, 375]",
+          "Expected Altitude": "4267 m (14,000 ft) if not known precisely [cite: 380]"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "Maintain equivalent pressure for 60 min [cite: 380]"}
+        ]
+      }
+    }
+  },
+  "Schedule J - Concentrated Impact (集中衝擊)": {
+    "Low Level Impact (低強度衝擊)": {
+      "Sorting and Transit Hazard": {
+        "parameters": {
+          "Description": "模擬包裹分揀與運輸時遭受的集中衝擊（適用於單層瓦楞紙箱或薄膜包裝） [cite: 383, 384]",
+          "Impact Energy": "4.0 ft-lbf (5.4 J) "
+        },
+        "tests": [
+          {"Phase": "Impact", "Condition": "Cylindrical mass falling a vertical drop distance of 32 in. (0.8 m) "}
+        ]
+      }
+    }
+  }
+}
