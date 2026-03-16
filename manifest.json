@@ -1,0 +1,38 @@
+{
+  "name": "Reliability Spec Engine",
+  "short_name": "SpecEngine",
+  "description": "Four-in-one reliability standards reference: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, IEC 60721-3",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0f2c",
+  "theme_color": "#0a0f2c",
+  "orientation": "any",
+  "lang": "zh-TW",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "MIL-STD-810H",
+      "url": "./index.html#mil",
+      "description": "Jump to MIL-STD-810H"
+    },
+    {
+      "name": "GR-63 Issue 5",
+      "url": "./index.html#gr63",
+      "description": "Jump to GR-63 CORE"
+    }
+  ]
+}

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0f2c">
+<meta name="description" content="Four-in-one reliability standards reference: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, IEC 60721-3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SpecEngine">
+<title>🛡️ Reliability Spec Engine</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0f2c;--bg2:#0d1b3e;--bg3:#1a3a6b;
+  --blue:#63b3ed;--blue2:#90cdf4;--blue3:#bee3f8;
+  --text:#e2e8f0;--muted:#94a3b8;--dim:#4a5568;
+  --green:#68d391;--card:#0d1447;
+}
+body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,var(--bg) 0%,#0d1b3e 50%,#0f2050 100%);color:var(--text);min-height:100vh;font-size:14px}
+
+/* HEADER */
+header{padding:16px 20px;border-bottom:1px solid rgba(99,179,237,.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(13,27,62,.6);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
+.logo{font-size:1.3rem;font-weight:700;background:linear-gradient(90deg,var(--blue),var(--blue2),var(--blue3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-btn{background:rgba(26,58,107,.6);border:1px solid rgba(99,179,237,.3);color:var(--blue2);border-radius:8px;padding:6px 14px;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;transition:all .2s}
+.lang-btn:hover,.lang-btn.active{background:var(--bg3);border-color:var(--blue);color:var(--blue3)}
+.search-wrap{position:relative}
+#searchInput{background:rgba(13,27,62,.8);border:1px solid rgba(99,179,237,.25);border-radius:8px;color:var(--text);padding:7px 12px 7px 32px;width:200px;font-family:inherit;font-size:13px;outline:none;transition:border-color .2s}
+#searchInput:focus{border-color:var(--blue)}
+#searchInput::placeholder{color:var(--dim)}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:13px}
+
+/* TABS */
+.tabs{display:flex;gap:4px;padding:14px 20px 0;background:rgba(13,27,62,.4);flex-wrap:wrap}
+.tab-btn{border:none;background:transparent;color:var(--muted);padding:10px 16px;border-radius:10px 10px 0 0;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.tab-btn:hover{color:var(--blue2);background:rgba(26,58,107,.3)}
+.tab-btn.active{color:var(--blue2);border-bottom-color:var(--blue);background:rgba(26,58,107,.5)}
+.badge{display:inline-block;background:rgba(26,58,107,.8);color:var(--blue);border:1px solid rgba(99,179,237,.3);border-radius:12px;padding:1px 8px;font-size:10px;font-weight:700;margin-left:5px;vertical-align:middle}
+.new-badge{background:rgba(34,84,61,.8);color:var(--green);border-color:rgba(104,211,145,.3)}
+
+/* MAIN */
+main{padding:20px;max-width:1200px;margin:0 auto}
+
+/* PANELS */
+.panel{display:none}.panel.active{display:block}
+.panel-caption{color:var(--muted);font-size:12px;margin-bottom:16px;padding:8px 12px;background:rgba(13,27,62,.5);border-radius:8px;border-left:3px solid var(--blue)}
+
+/* GRID */
+.grid-2{display:grid;grid-template-columns:1fr 1.5fr;gap:20px}
+@media(max-width:720px){.grid-2{grid-template-columns:1fr}}
+
+/* SELECTORS */
+.sel-section h3{color:var(--blue2);font-size:15px;margin-bottom:12px}
+.sel-group{margin-bottom:14px}
+.sel-group label{display:block;color:var(--muted);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+select{width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:8px;color:var(--text);padding:9px 12px;font-family:inherit;font-size:13px;outline:none;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2363b3ed' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+select:focus{border-color:var(--blue)}
+select option{background:#0d1b3e}
+
+/* RESULT */
+.result-section h3{color:var(--blue2);font-size:15px;margin-bottom:12px}
+.result-banner{background:linear-gradient(135deg,rgba(26,58,107,.6),rgba(30,64,128,.5));border:1px solid rgba(99,179,237,.25);border-top:3px solid var(--blue);border-radius:12px;padding:14px 18px;margin-bottom:14px}
+.result-banner h4{color:var(--blue2);font-size:1rem;margin-bottom:4px}
+.result-desc{color:var(--muted);font-size:12px;line-height:1.5}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:14px}
+.metric{background:rgba(13,20,71,.7);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:12px 14px}
+.metric-label{color:var(--dim);font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.metric-value{color:var(--blue3);font-size:14px;font-weight:600;line-height:1.3;word-break:break-word}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:10px;border:1px solid rgba(99,179,237,.15);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;background:rgba(13,20,71,.5)}
+th{background:rgba(26,58,107,.6);color:var(--blue2);font-size:11px;font-weight:600;padding:10px 12px;text-align:left;text-transform:uppercase;letter-spacing:.05em}
+td{color:var(--text);font-size:12px;padding:9px 12px;border-top:1px solid rgba(99,179,237,.08)}
+tr:hover td{background:rgba(99,179,237,.05)}
+
+/* BTNS */
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.btn{padding:8px 16px;border-radius:8px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(99,179,237,.3);transition:all .2s}
+.btn-dl{background:rgba(26,58,107,.7);color:var(--blue2)}
+.btn-dl:hover{background:var(--bg3);border-color:var(--blue);box-shadow:0 0 10px rgba(99,179,237,.2)}
+.btn-src{background:rgba(34,84,61,.4);color:var(--green);border-color:rgba(104,211,145,.3)}
+.btn-src:hover{background:rgba(34,84,61,.7)}
+.btn-src:is(a){text-decoration:none;display:inline-block}
+
+/* SOURCE LINKS */
+.src-links{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+
+/* SEARCH RESULTS */
+#searchResults{margin-bottom:20px}
+.sr-card{background:linear-gradient(135deg,rgba(26,58,107,.4),rgba(30,64,128,.3));border:1px solid rgba(99,179,237,.2);border-left:3px solid var(--blue);border-radius:10px;padding:12px 16px;margin-bottom:8px}
+.sr-std{color:var(--blue);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.sr-path{color:var(--blue2);font-size:13px;font-weight:600;margin:2px 0}
+.sr-desc{color:var(--muted);font-size:12px;line-height:1.4}
+.sr-count{color:var(--blue2);font-weight:600;margin-bottom:10px;font-size:14px}
+
+/* INSTALL BANNER */
+#installBanner{display:none;background:linear-gradient(135deg,rgba(34,84,61,.5),rgba(39,103,73,.4));border:1px solid rgba(104,211,145,.3);border-radius:10px;padding:12px 16px;margin-bottom:16px;align-items:center;justify-content:space-between;gap:10px}
+.install-text{color:var(--green);font-size:13px;font-weight:500}
+#installBtn{background:rgba(34,84,61,.8);border:1px solid rgba(104,211,145,.5);color:var(--green);padding:6px 14px;border-radius:8px;font-family:inherit;font-weight:600;cursor:pointer;font-size:12px}
+.offline-badge{display:none;background:rgba(34,84,61,.4);border:1px solid rgba(104,211,145,.3);color:var(--green);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:600}
+.offline-badge.visible{display:inline-block}
+
+/* EMPTY STATE */
+.empty{color:var(--dim);text-align:center;padding:30px;font-size:13px}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🛡️ <span id="appTitle">Reliability Spec Engine</span></div>
+  <div class="header-right">
+    <span class="offline-badge" id="offlineBadge">✈ Offline</span>
+    <button class="lang-btn active" id="btnZH" onclick="setLang('ZH')">中文</button>
+    <button class="lang-btn" id="btnEN" onclick="setLang('EN')">EN</button>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input id="searchInput" type="search" placeholder="Search specs..." oninput="doSearch(this.value)">
+    </div>
+  </div>
+</header>
+
+<div id="installBanner">
+  <span class="install-text">📱 <span data-zh="安裝至主畫面，支援離線查閱" data-en="Install to home screen for offline access"></span></span>
+  <button id="installBtn">Install / 安裝</button>
+</div>
+
+<div class="tabs" id="tabBar">
+  <button class="tab-btn active" onclick="showTab('iec',this)" id="tabIEC">
+    🛡️ IEC 60721-3<span class="badge">2019</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('mil',this)" id="tabMIL">
+    🎖️ MIL-STD-<span class="tab-ver">810H</span><span class="badge new-badge">810H</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('astm',this)" id="tabASTM">
+    📦 ASTM D4169<span class="badge new-badge">-22</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('gr63',this)" id="tabGR63">
+    🏢 GR-63<span class="badge new-badge">Issue 5</span>
+  </button>
+</div>
+
+<main>
+  <div id="searchResults"></div>
+
+  <!-- IEC Panel -->
+  <div class="panel active" id="panel-iec">
+    <p class="panel-caption" data-zh="IEC 60721-3：環境分類與測試轉換矩陣" data-en="IEC 60721-3: Environmental Classification & Test Conversion Matrix"></p>
+    <div class="src-links">
+      <a class="btn btn-src" href="https://webstore.iec.ch/publication/60947" target="_blank" rel="noopener">🔗 IEC Webstore</a>
+    </div>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 規格選擇" data-en="① Select Criteria"></h3>
+        <div class="sel-group"><label data-zh="位置分類" data-en="Location Class"></label><select id="iec-l1" onchange="buildL2('iec')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="環境因子" data-en="Environmental Factor"></label><select id="iec-l2" onchange="buildL3('iec')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="嚴苛等級" data-en="Severity Class"></label><select id="iec-l3" onchange="showResult('iec')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 查詢結果" data-en="② Results"></h3>
+        <div id="iec-result"><div class="empty" data-zh="← 請先選擇規格" data-en="← Please select criteria"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MIL Panel -->
+  <div class="panel" id="panel-mil">
+    <p class="panel-caption" data-zh="MIL-STD-810H (2019)：軍規環境工程與實驗室測試裁適 | 已從 810G 全面升版" data-en="MIL-STD-810H (2019): Environmental Engineering & Lab Test Tailoring | Updated from 810G"></p>
+    <div class="src-links">
+      <a class="btn btn-src" href="https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=36026" target="_blank" rel="noopener">🔗 DLA QuickSearch (Official)</a>
+      <a class="btn btn-src" href="https://www.atec.army.mil/publications/Mil-Std-810H/Mil-Std-810H.pdf" target="_blank" rel="noopener">🔗 Direct PDF</a>
+    </div>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 測試裁適選擇" data-en="① Tailoring Selection"></h3>
+        <div class="sel-group"><label data-zh="測試方法" data-en="Test Method"></label><select id="mil-l1" onchange="buildL2('mil')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="程序" data-en="Procedure"></label><select id="mil-l2" onchange="buildL3('mil')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="類別 / 條件" data-en="Category / Condition"></label><select id="mil-l3" onchange="showResult('mil')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
+        <div id="mil-result"><div class="empty" data-zh="← 請先選擇方法" data-en="← Please select a method"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASTM Panel -->
+  <div class="panel" id="panel-astm">
+    <p class="panel-caption" data-zh="ASTM D4169-22 (2022)：包裝與運輸系統性能測試規範 | 新增電商 Schedule C" data-en="ASTM D4169-22 (2022): Performance Testing of Shipping Containers | New Schedule C for e-commerce"></p>
+    <div class="src-links">
+      <a class="btn btn-src" href="https://www.astm.org/d4169-22.html" target="_blank" rel="noopener">🔗 ASTM Official</a>
+      <a class="btn btn-src" href="https://compass.astm.org/document/?contentCode=ASTM%7CD4169-22" target="_blank" rel="noopener">🔗 ASTM Compass</a>
+    </div>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 測試排程選擇" data-en="① Schedule Selection"></h3>
+        <div class="sel-group"><label data-zh="排程 / 循環" data-en="Schedule / Cycle"></label><select id="astm-l1" onchange="buildL2('astm')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試類型" data-en="Test Type"></label><select id="astm-l2" onchange="buildL3('astm')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="特定條件" data-en="Specific Condition"></label><select id="astm-l3" onchange="showResult('astm')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
+        <div id="astm-result"><div class="empty" data-zh="← 請先選擇排程" data-en="← Please select a schedule"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GR63 Panel -->
+  <div class="panel" id="panel-gr63">
+    <p class="panel-caption" data-zh="GR-63-CORE Issue 5 (2022)：NEBS 物理保護規範 – 電信機房 | Zone 4 升至 1.0g" data-en="GR-63-CORE Issue 5 (2022): NEBS Physical Protection – Telecom CO | Zone 4 updated to 1.0g"></p>
+    <div class="src-links">
+      <a class="btn btn-src" href="https://telecom-info.njdepot.ericsson.se/site-cgi/ido/docs.cgi?action=get&docno=GR-63-CORE" target="_blank" rel="noopener">🔗 Ericsson NEBS</a>
+      <a class="btn btn-src" href="https://www.etsi.org/deliver/etsi_en/300400_300499/300386/" target="_blank" rel="noopener">🔗 ETSI (EU Equivalent)</a>
+    </div>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 章節選擇" data-en="① Section Selection"></h3>
+        <div class="sel-group"><label data-zh="章節" data-en="Section"></label><select id="gr63-l1" onchange="buildL2('gr63')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="類別" data-en="Category"></label><select id="gr63-l2" onchange="buildL3('gr63')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="條件" data-en="Condition"></label><select id="gr63-l3" onchange="showResult('gr63')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
+        <div id="gr63-result"><div class="empty" data-zh="← 請先選擇章節" data-en="← Please select a section"></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+// ─── State ────────────────────────────────────────────────────────────────
+let LANG = 'ZH';
+const DBS = { iec: null, mil: null, astm: null, gr63: null };
+const DB_FILES = {
+  iec:  'iec_database.json',
+  mil:  'mil810_database.json',
+  astm: 'astm4169_database.json',
+  gr63: 'gr63_database.json'
+};
+const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','Description']);
+
+// ─── Lang ─────────────────────────────────────────────────────────────────
+function setLang(l) {
+  LANG = l;
+  document.getElementById('btnZH').classList.toggle('active', l==='ZH');
+  document.getElementById('btnEN').classList.toggle('active', l==='EN');
+  document.querySelectorAll('[data-zh]').forEach(el => {
+    el.textContent = l==='ZH' ? el.dataset.zh : el.dataset.en;
+  });
+  // Refresh search placeholder
+  document.getElementById('searchInput').placeholder = l==='ZH' ? '搜尋規範關鍵字...' : 'Search specs...';
+  // Re-render active result
+  ['iec','mil','astm','gr63'].forEach(s => {
+    const l3 = document.getElementById(s+'-l3');
+    if (l3 && l3.value) showResult(s);
+    else {
+      const el = document.querySelector(`#${s}-result .empty`);
+      if (el) el.textContent = el.dataset[l.toLowerCase()];
+    }
+  });
+}
+
+// ─── Tab ──────────────────────────────────────────────────────────────────
+function showTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+  if (!DBS[id]) loadDB(id);
+}
+
+// ─── Load DB ───────────────────────────────────────────────────────────────
+async function loadDB(std) {
+  try {
+    const r = await fetch(DB_FILES[std]);
+    DBS[std] = await r.json();
+    buildL1(std);
+  } catch(e) {
+    console.error('Failed to load', DB_FILES[std], e);
+  }
+}
+
+function buildL1(std) {
+  const sel = document.getElementById(std+'-l1');
+  sel.innerHTML = '<option value="">-- Select --</option>';
+  Object.keys(DBS[std]).forEach(k => {
+    const o = document.createElement('option');
+    o.value = k; o.textContent = k;
+    sel.appendChild(o);
+  });
+}
+function buildL2(std) {
+  const v1 = document.getElementById(std+'-l1').value;
+  const sel = document.getElementById(std+'-l2');
+  const sel3 = document.getElementById(std+'-l3');
+  sel.innerHTML = '<option value="">-- Select --</option>';
+  sel3.innerHTML = '<option value="">-- Select --</option>';
+  sel.disabled = !v1; sel3.disabled = true;
+  document.getElementById(std+'-result').innerHTML = `<div class="empty">${LANG==='ZH'?'← 請繼續選擇':'← Continue selection'}</div>`;
+  if (!v1 || !DBS[std][v1]) return;
+  Object.keys(DBS[std][v1]).forEach(k => {
+    const o = document.createElement('option');
+    o.value = k; o.textContent = k;
+    sel.appendChild(o);
+  });
+}
+function buildL3(std) {
+  const v1 = document.getElementById(std+'-l1').value;
+  const v2 = document.getElementById(std+'-l2').value;
+  const sel = document.getElementById(std+'-l3');
+  sel.innerHTML = '<option value="">-- Select --</option>';
+  sel.disabled = !v2;
+  document.getElementById(std+'-result').innerHTML = `<div class="empty">${LANG==='ZH'?'← 請繼續選擇':'← Continue selection'}</div>`;
+  if (!v2 || !DBS[std][v1][v2]) return;
+  Object.keys(DBS[std][v1][v2]).forEach(k => {
+    const o = document.createElement('option');
+    o.value = k; o.textContent = k;
+    sel.appendChild(o);
+  });
+}
+
+// ─── Show Result ───────────────────────────────────────────────────────────
+function showResult(std) {
+  const v1 = document.getElementById(std+'-l1').value;
+  const v2 = document.getElementById(std+'-l2').value;
+  const v3 = document.getElementById(std+'-l3').value;
+  const box = document.getElementById(std+'-result');
+  if (!v1||!v2||!v3) { box.innerHTML=`<div class="empty">${LANG==='ZH'?'← 請完成選擇':'← Complete selection'}</div>`; return; }
+  const entry = DBS[std]?.[v1]?.[v2]?.[v3];
+  if (!entry) { box.innerHTML='<div class="empty">No data</div>'; return; }
+  const params = entry.parameters || {};
+  const desc = LANG==='ZH' ? (params.Description_ZH||params.Description||'') : (params.Description_EN||params.Description_ZH||'');
+  const tests = entry.tests || [];
+
+  // Metrics
+  const metricHTML = Object.entries(params)
+    .filter(([k])=>!SKIP_KEYS.has(k))
+    .map(([k,v])=>`<div class="metric"><div class="metric-label">${k}</div><div class="metric-value">${v}</div></div>`)
+    .join('');
+
+  // Table
+  let tableHTML = '';
+  if (tests.length) {
+    const cols = Object.keys(tests[0]);
+    tableHTML = `<div class="table-wrap"><table>
+      <tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr>
+      ${tests.map(row=>`<tr>${cols.map(c=>`<td>${row[c]??''}</td>`).join('')}</tr>`).join('')}
+    </table></div>`;
+  }
+
+  // Store for download
+  box._entry = entry;
+  box._prefix = `${std.toUpperCase()}_${v3.replace(/[^a-zA-Z0-9]/g,'_').slice(0,20)}`;
+
+  box.innerHTML = `
+    <div class="result-banner">
+      <h4>🎯 ${v3}</h4>
+      <div class="result-desc">${desc}</div>
+    </div>
+    <div class="metrics">${metricHTML}</div>
+    ${tableHTML}
+    <div class="btn-row">
+      <button class="btn btn-dl" onclick="dlJSON('${std}')">📥 JSON</button>
+      ${tests.length?`<button class="btn btn-dl" onclick="dlCSV('${std}')">📥 CSV</button>`:''}
+    </div>`;
+}
+
+// ─── Download ──────────────────────────────────────────────────────────────
+function dlJSON(std) {
+  const box = document.getElementById(std+'-result');
+  if (!box._entry) return;
+  const blob = new Blob([JSON.stringify(box._entry,null,2)],{type:'application/json'});
+  triggerDl(blob, box._prefix+'.json');
+}
+function dlCSV(std) {
+  const box = document.getElementById(std+'-result');
+  if (!box._entry?.tests?.length) return;
+  const tests = box._entry.tests;
+  const cols = Object.keys(tests[0]);
+  const csv = [cols.join(','), ...tests.map(r=>cols.map(c=>'"'+(r[c]??'')+'"').join(','))].join('\n');
+  triggerDl(new Blob(['\uFEFF'+csv],{type:'text/csv'}), box._prefix+'.csv');
+}
+function triggerDl(blob, name) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ─── Search ────────────────────────────────────────────────────────────────
+function doSearch(q) {
+  const box = document.getElementById('searchResults');
+  if (!q || q.length < 2) { box.innerHTML=''; return; }
+  const ql = q.toLowerCase();
+  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5' };
+  let results = [];
+  Object.entries(DBS).forEach(([std, db]) => {
+    if (!db) return;
+    Object.entries(db).forEach(([l1,l1v]) => {
+      if (typeof l1v!=='object') return;
+      Object.entries(l1v).forEach(([l2,l2v]) => {
+        if (typeof l2v!=='object') return;
+        Object.entries(l2v).forEach(([l3,entry]) => {
+          if (typeof entry!=='object') return;
+          const hay = JSON.stringify(entry).toLowerCase();
+          if (hay.includes(ql)||l1.toLowerCase().includes(ql)||l2.toLowerCase().includes(ql)||l3.toLowerCase().includes(ql)) {
+            const p = entry.parameters||{};
+            const desc = LANG==='ZH'?(p.Description_ZH||p.Description||''):(p.Description_EN||p.Description_ZH||'');
+            results.push({ std: STD_LABELS[std], path:`${l1} › ${l2} › ${l3}`, desc });
+          }
+        });
+      });
+    });
+  });
+  if (!results.length) {
+    box.innerHTML=`<div class="sr-card"><div class="sr-desc">${LANG==='ZH'?'找不到符合結果':'No results found'}</div></div>`;
+    return;
+  }
+  box.innerHTML = `<div class="sr-count">${LANG==='ZH'?`🔍 找到 <b>${results.length}</b> 條結果`:`🔍 Found <b>${results.length}</b> results`}</div>`
+    + results.slice(0,30).map(r=>`
+      <div class="sr-card">
+        <div class="sr-std">${r.std}</div>
+        <div class="sr-path">📌 ${r.path}</div>
+        <div class="sr-desc">${r.desc}</div>
+      </div>`).join('');
+}
+
+// ─── PWA / Service Worker ──────────────────────────────────────────────────
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const banner = document.getElementById('installBanner');
+  banner.style.display = 'flex';
+  document.getElementById('installBtn').onclick = async () => {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome==='accepted') banner.style.display='none';
+    deferredPrompt = null;
+  };
+});
+window.addEventListener('appinstalled', () => {
+  document.getElementById('installBanner').style.display='none';
+});
+window.addEventListener('online',  () => document.getElementById('offlineBadge').classList.remove('visible'));
+window.addEventListener('offline', () => document.getElementById('offlineBadge').classList.add('visible'));
+if (!navigator.onLine) document.getElementById('offlineBadge').classList.add('visible');
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  setLang('ZH');
+  loadDB('iec'); // Preload first tab
+});
+</script>
+</body>
+</html>
