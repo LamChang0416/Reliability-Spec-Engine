@@ -86,12 +86,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 .btn{padding:8px 16px;border-radius:8px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;border:1px solid rgba(99,179,237,.3);transition:all .2s}
 .btn-dl{background:rgba(26,58,107,.7);color:var(--blue2)}
 .btn-dl:hover{background:var(--bg3);border-color:var(--blue);box-shadow:0 0 10px rgba(99,179,237,.2)}
-.btn-src{background:rgba(34,84,61,.4);color:var(--green);border-color:rgba(104,211,145,.3)}
-.btn-src:hover{background:rgba(34,84,61,.7)}
-.btn-src:is(a){text-decoration:none;display:inline-block}
 
-/* SOURCE LINKS */
-.src-links{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 
 /* SEARCH RESULTS */
 #searchResults{margin-bottom:20px}
@@ -158,9 +153,6 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <!-- IEC Panel -->
   <div class="panel active" id="panel-iec">
     <p class="panel-caption" data-zh="IEC 60721-3：環境分類與測試轉換矩陣" data-en="IEC 60721-3: Environmental Classification & Test Conversion Matrix"></p>
-    <div class="src-links">
-      <a class="btn btn-src" href="https://webstore.iec.ch/publication/60947" target="_blank" rel="noopener">🔗 IEC Webstore</a>
-    </div>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 規格選擇" data-en="① Select Criteria"></h3>
@@ -178,10 +170,6 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <!-- MIL Panel -->
   <div class="panel" id="panel-mil">
     <p class="panel-caption" data-zh="MIL-STD-810H (2019)：軍規環境工程與實驗室測試裁適 | 已從 810G 全面升版" data-en="MIL-STD-810H (2019): Environmental Engineering & Lab Test Tailoring | Updated from 810G"></p>
-    <div class="src-links">
-      <a class="btn btn-src" href="https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=36026" target="_blank" rel="noopener">🔗 DLA QuickSearch (Official)</a>
-      <a class="btn btn-src" href="https://www.atec.army.mil/publications/Mil-Std-810H/Mil-Std-810H.pdf" target="_blank" rel="noopener">🔗 Direct PDF</a>
-    </div>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試裁適選擇" data-en="① Tailoring Selection"></h3>
@@ -198,11 +186,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- ASTM Panel -->
   <div class="panel" id="panel-astm">
-    <p class="panel-caption" data-zh="ASTM D4169-22 (2022)：包裝與運輸系統性能測試規範 | 新增電商 Schedule C" data-en="ASTM D4169-22 (2022): Performance Testing of Shipping Containers | New Schedule C for e-commerce"></p>
-    <div class="src-links">
-      <a class="btn btn-src" href="https://www.astm.org/d4169-22.html" target="_blank" rel="noopener">🔗 ASTM Official</a>
-      <a class="btn btn-src" href="https://compass.astm.org/document/?contentCode=ASTM%7CD4169-22" target="_blank" rel="noopener">🔗 ASTM Compass</a>
-    </div>
+    <p class="panel-caption" data-zh="ASTM D4169-22 (2022)：包裝與運輸系統性能測試規範 | 18種配送循環 DC1–DC18，Schedule A–H" data-en="ASTM D4169-22 (2022): Performance Testing of Shipping Containers | 18 Distribution Cycles DC1–DC18, Schedule A–H"></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試排程選擇" data-en="① Schedule Selection"></h3>
@@ -220,10 +204,6 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <!-- GR63 Panel -->
   <div class="panel" id="panel-gr63">
     <p class="panel-caption" data-zh="GR-63-CORE Issue 5 (2022)：NEBS 物理保護規範 – 電信機房 | Zone 4 升至 1.0g" data-en="GR-63-CORE Issue 5 (2022): NEBS Physical Protection – Telecom CO | Zone 4 updated to 1.0g"></p>
-    <div class="src-links">
-      <a class="btn btn-src" href="https://telecom-info.njdepot.ericsson.se/site-cgi/ido/docs.cgi?action=get&docno=GR-63-CORE" target="_blank" rel="noopener">🔗 Ericsson NEBS</a>
-      <a class="btn btn-src" href="https://www.etsi.org/deliver/etsi_en/300400_300499/300386/" target="_blank" rel="noopener">🔗 ETSI (EU Equivalent)</a>
-    </div>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 章節選擇" data-en="① Section Selection"></h3>
@@ -292,12 +272,40 @@ async function loadDB(std) {
   }
 }
 
+// IEC 60721-3 location class descriptions
+const IEC_CLASS_ZH = {
+  '1':'1 — 儲存環境 Storage',
+  '2':'2 — 運輸環境 Transportation',
+  '3':'3 — 室內定點使用 Stationary Indoor',
+  '4':'4 — 戶外定點使用 Stationary Outdoor',
+  '5':'5 — 地面車輛環境 Ground Vehicle',
+  '6':'6 — 船舶環境 Ship / Marine',
+  '7':'7 — 攜帶式與行動設備 Portable / Non-stationary',
+  '9':'9 — 產品內部微氣候 Microclimates Inside Products'
+};
+const IEC_CLASS_EN = {
+  '1':'1 — Storage',
+  '2':'2 — Transportation',
+  '3':'3 — Stationary Indoor Use',
+  '4':'4 — Stationary Outdoor Use',
+  '5':'5 — Ground Vehicle',
+  '6':'6 — Ship / Marine',
+  '7':'7 — Portable / Non-stationary',
+  '9':'9 — Microclimates Inside Products'
+};
+
 function buildL1(std) {
   const sel = document.getElementById(std+'-l1');
   sel.innerHTML = '<option value="">-- Select --</option>';
   Object.keys(DBS[std]).forEach(k => {
     const o = document.createElement('option');
-    o.value = k; o.textContent = k;
+    o.value = k;
+    // For IEC, show descriptive class name; others use the key directly
+    if (std === 'iec') {
+      o.textContent = (LANG==='ZH' ? IEC_CLASS_ZH[k] : IEC_CLASS_EN[k]) || k;
+    } else {
+      o.textContent = k;
+    }
     sel.appendChild(o);
   });
 }
