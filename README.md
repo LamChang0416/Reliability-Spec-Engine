@@ -2,12 +2,12 @@
 
 > **八合一可靠度規範查詢工具 · Eight-in-One Reliability Standards Reference**
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://Lam-Reliability.github.io/Reliability-Spec-Engine/)
-[![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://Lam-Reliability.github.io/Reliability-Spec-Engine/)
-[![Standards](https://img.shields.io/badge/Standards-8%20in%201-orange)](https://github.com/Lam-Reliability/Reliability-Spec-Engine)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://LamChang0416.github.io/Reliability-Spec-Engine/)
+[![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://LamChang0416.github.io/Reliability-Spec-Engine/)
+[![Standards](https://img.shields.io/badge/Standards-8%20in%201-orange)](https://github.com/LamChang0416/Reliability-Spec-Engine)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-# [🚀 Launch Spec Engine 2.0](https://Lam-Reliability.github.io/Reliability-Spec-Engine/)
+# [🚀 Launch Spec Engine 2.0](https://LamChang0416.github.io/Reliability-Spec-Engine/)
 
 ---
 
@@ -54,7 +54,7 @@
 ### Option A — GitHub Pages (Recommended / 推薦)
 Just open in any browser — no installation needed:
 ```
-https://Lam-Reliability.github.io/Reliability-Spec-Engine/
+https://LamChang0416.github.io/Reliability-Spec-Engine/
 ```
 On mobile: tap **Share → Add to Home Screen** to install as an app.
 
@@ -114,7 +114,7 @@ Reliability-Spec-Engine/
 ## 👨‍🔧 Author · 作者
 
 **Lam** — Reliability Engineer  
-[GitHub](https://github.com/Lam-Reliability)
+[GitHub](https://github.com/LamChang0416)
 
 ---
 
