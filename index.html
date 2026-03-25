@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0f2c">
-<meta name="description" content="Five-in-one reliability standards reference: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, IEC 60721-3, Telcordia SR-332 Issue 4">
+<meta name="description" content="Six-in-one reliability standards reference: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, IEC 60721-3, Telcordia SR-332 Issue 4, ISTA">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpecEngine">
@@ -148,6 +148,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <button class="tab-btn" onclick="showTab('sr332',this)" id="tabSR332">
     📈 SR-332<span class="badge new-badge">Issue 4</span>
   </button>
+  <button class="tab-btn" onclick="showTab('ista',this)" id="tabISTA">
+    📦 ISTA<span class="badge new-badge">2024 更新</span>
+  </button>
 </div>
 
 <main>
@@ -237,18 +240,36 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
     </div>
   </div>
+
+  <!-- ISTA Panel -->
+  <div class="panel" id="panel-ista">
+    <p class="panel-caption" data-zh="ISTA 國際安全運輸協會：包裝運輸性能測試 | 涵蓋 1A, 2A, 3A, 6-Amazon SIOC" data-en="ISTA Packaging Testing Standards | Including 1A, 2A, 3A, 6-Amazon SIOC"></p>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 測試程序選擇" data-en="① Select Procedure"></h3>
+        <div class="sel-group"><label data-zh="測試程序" data-en="Procedure"></label><select id="ista-l1" onchange="buildL2('ista')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="包裹類型/重量" data-en="Package Type"></label><select id="ista-l2" onchange="buildL3('ista')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試序列" data-en="Test Sequence"></label><select id="ista-l3" onchange="showResult('ista')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
+        <div id="ista-result"><div class="empty" data-zh="← 請先選擇測試程序" data-en="← Please select a procedure"></div></div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <script>
 // ─── State ────────────────────────────────────────────────────────────────
 let LANG = 'ZH';
-const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null };
+const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null };
 const DB_FILES = {
   iec:  'iec_database.json',
   mil:  'mil810_database.json',
   astm: 'astm4169_database.json',
   gr63: 'gr63_database.json',
-  sr332: 'sr332_database.json'
+  sr332: 'sr332_database.json',
+  ista: 'ista_database.json'
 };
 const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','Description']);
 
@@ -263,7 +284,7 @@ function setLang(l) {
   // Refresh search placeholder
   document.getElementById('searchInput').placeholder = l==='ZH' ? '搜尋規範關鍵字...' : 'Search specs...';
   // Re-render active result
-  ['iec','mil','astm','gr63','sr332'].forEach(s => {
+  ['iec','mil','astm','gr63','sr332','ista'].forEach(s => {
     const l3 = document.getElementById(s+'-l3');
     if (l3 && l3.value) showResult(s);
     else {
@@ -434,7 +455,7 @@ function doSearch(q) {
   const box = document.getElementById('searchResults');
   if (!q || q.length < 2) { box.innerHTML=''; return; }
   const ql = q.toLowerCase();
-  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332' };
+  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA' };
   let results = [];
   Object.entries(DBS).forEach(([std, db]) => {
     if (!db) return;

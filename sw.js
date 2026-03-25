@@ -1,4 +1,4 @@
-const CACHE_NAME = 'reliability-spec-v1.1';
+const CACHE_NAME = 'reliability-spec-v1.2';
 const ASSETS = [
   './',
   './index.html',
@@ -9,7 +9,8 @@ const ASSETS = [
   './gr63_database.json',
   './astm4169_database.json',
   './iec_database.json',
-  './sr332_database.json'
+  './sr332_database.json',
+  './ista_database.json'
 ];
 
 // Install: cache all assets

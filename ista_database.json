@@ -1,0 +1,163 @@
+{
+  "ISTA 1A (Non-Simulation Integrity, < 150 lb)": {
+    "Standard Package (標準包裹)": {
+      "Sequence 1 - Fixed Displacement Vibration": {
+        "parameters": {
+          "Standard": "ISTA 1A",
+          "Description_ZH": "非模擬完整度測試：基礎定頻振動 (Fixed Displacement Vibration)",
+          "Description_EN": "Non-Simulation Integrity Test: Fixed Displacement Vibration",
+          "Vibration Type": "Rotary or Vertical Linear (25.4mm peak-to-peak)",
+          "Frequency": "Determined by lifting package ~1.6mm from table",
+          "Duration": "14,200 vibratory impacts"
+        },
+        "tests": [
+          {"Step": "1", "Action": "Find resonance frequency where 1.6mm shim can be inserted"},
+          {"Step": "2", "Action": "Vibrate for total 14,200 cycles"}
+        ]
+      },
+      "Sequence 2 - Drop Test (基礎跌落)": {
+        "parameters": {
+          "Standard": "ISTA 1A",
+          "Description_ZH": "非模擬完整度測試：依據重量決定跌落高度的一次性衝擊 (Shock Test)",
+          "Description_EN": "Non-Simulation Integrity Test: Drop height determined by weight",
+          "Drop Sequence": "10 drops (1 corner, 3 edges, 6 faces)"
+        },
+        "tests": [
+          {"Weight": "0 - 9.5 kg (0 - 21 lb)", "Drop Height (mm)": "760", "Drop Height (in)": "30"},
+          {"Weight": "9.5 - 18 kg (21 - 41 lb)", "Drop Height (mm)": "610", "Drop Height (in)": "24"},
+          {"Weight": "18 - 27 kg (41 - 61 lb)", "Drop Height (mm)": "460", "Drop Height (in)": "18"},
+          {"Weight": "27 - 45 kg (61 - 100 lb)", "Drop Height (mm)": "310", "Drop Height (in)": "12"},
+          {"Weight": "45 - 68 kg (100 - 150 lb)", "Drop Height (mm)": "200", "Drop Height (in)": "8"}
+        ]
+      }
+    }
+  },
+  "ISTA 2A (Partial Simulation, < 150 lb)": {
+    "Standard Package (標準包裹)": {
+      "Sequence 1 - Atmospheric Conditioning": {
+        "parameters": {
+          "Standard": "ISTA 2A",
+          "Description_ZH": "部分模擬性能測試：溫濕度前處理與處理",
+          "Description_EN": "Partial Simulation: Temperature and Humidity Conditioning",
+          "Duration": "72 hours typical"
+        },
+        "tests": [
+          {"Condition": "Cold", "Temp": "-29°C", "Humidity": "Uncontrolled"},
+          {"Condition": "Hot/Humid", "Temp": "38°C", "Humidity": "85% RH"},
+          {"Condition": "Hot/Dry", "Temp": "60°C", "Humidity": "15% RH"}
+        ]
+      },
+      "Sequence 2 - Compression (抗壓)": {
+        "parameters": {
+          "Standard": "ISTA 2A",
+          "Description_ZH": "機器加壓或靜態重壓測試 (Machine Apply & Release, or Dead Weight)",
+          "Description_EN": "Compression test using machine or dead weight",
+          "Force Calculation": "Weight of equivalent static load × Compensating factor"
+        },
+        "tests": [
+          {"Method": "Machine Apply and Release", "Requirement": "Calculate load based on stacking height"},
+          {"Method": "Machine Apply and Hold", "Requirement": "Hold calculated load for 1 hour"},
+          {"Method": "Dead Weight", "Requirement": "Apply static load for given hours"}
+        ]
+      },
+      "Sequence 3 - Random Vibration & Drop": {
+        "parameters": {
+          "Standard": "ISTA 2A",
+          "Description_ZH": "結合隨機振動 (Random Vibration) 與跌落 (Drop)。與 1A 不同，2A 使用隨機振動頻譜。",
+          "Description_EN": "Uses Random Vibration profile followed by Drop test",
+          "Overall Grms": "1.15 Grms",
+          "Duration": "1 hour top face up, 1/2 hour bottom face up",
+          "Drop Sequence": "10 drops based on weight (Same table as 1A)"
+        },
+        "tests": [
+          {"Frequency Hz": "1", "PSD (g²/Hz)": "0.0001"},
+          {"Frequency Hz": "4", "PSD (g²/Hz)": "0.01"},
+          {"Frequency Hz": "100", "PSD (g²/Hz)": "0.01"},
+          {"Frequency Hz": "200", "PSD (g²/Hz)": "0.001"}
+        ]
+      }
+    }
+  },
+  "ISTA 3A (General Simulation, Parcel < 150 lb)": {
+    "Standard Package (< 70kg / 150lb)": {
+      "Sequence 1 - Drop (跌落測試)": {
+        "parameters": {
+          "Standard": "ISTA 3A",
+          "Description_ZH": "最常用的包裹快遞跌落模擬。分兩次跌落序列 (Sequence 3 & Sequence 6)。",
+          "Description_EN": "Most common parcel delivery drop simulation. Pre- and post-vibration drops.",
+          "Drop Sequence": "9 drops total (Edge, corner, faces)"
+        },
+        "tests": [
+          {"Package Weight": "Less than 32 kg (70 lb)", "Drop Height": "460 mm (18 in)"},
+          {"Package Weight": "32 kg to 70 kg (70-150 lb)", "Drop Height": "300 mm (12 in)"},
+          {"Note": "Small bags/pouches drop height", "Drop Height": "610 mm (24 in)"}
+        ]
+      },
+      "Sequence 2 - Random Vibration (隨機振動)": {
+        "parameters": {
+          "Standard": "ISTA 3A",
+          "Description_ZH": "包裹快遞車輛隨機振動光譜 (Pick-Up & Delivery Vehicle Spectrum)。包含有頂部負載 (Top Load) 與無負載。",
+          "Description_EN": "Pick-Up and Delivery vehicle random vibration spectrum (with and without top load).",
+          "Overall Grms": "0.53 (Top Load) / 0.46 (No Top Load)",
+          "Duration": "Various based on orientation"
+        },
+        "tests": [
+          {"Frequency Hz": "1", "PSD (g²/Hz)": "0.0007"},
+          {"Frequency Hz": "3", "PSD (g²/Hz)": "0.02"},
+          {"Frequency Hz": "5", "PSD (g²/Hz)": "0.02"},
+          {"Frequency Hz": "12", "PSD (g²/Hz)": "0.001"},
+          {"Frequency Hz": "100", "PSD (g²/Hz)": "0.001"},
+          {"Frequency Hz": "200", "PSD (g²/Hz)": "0.00001"}
+        ]
+      }
+    },
+    "Small / Flat / Elongated (特殊型包裹)": {
+      "Sequence 1 - Hazard Drop / Rotational (危害衝擊)": {
+        "parameters": {
+          "Standard": "ISTA 3A",
+          "Description_ZH": "針對扁平 (Flat) 或長條形 (Elongated) 包裹的特殊旋轉邊緣跌落與橋接衝擊 (Hazard Box Impact)。",
+          "Description_EN": "Rotational edge drops and concentrated bridge impacts for flat/elongated packages.",
+          "Hazard Box Impact Height": "400 mm (16 in)",
+          "Rotational Drop Height": "200 mm (8 in)"
+        },
+        "tests": [
+          {"Package Type": "Flat", "Test": "Rotational Edge Drop", "Height": "200 mm"},
+          {"Package Type": "Elongated", "Test": "Rotational Edge Drop", "Height": "200 mm"},
+          {"Package Type": "Flat/Elongated", "Test": "Hazard Block Impact", "Height": "400 mm"}
+        ]
+      }
+    }
+  },
+  "ISTA 6-Amazon.com-SIOC (Type A, Parcel < 50 lb)": {
+    "Type A (Standard < 50 lb)": {
+      "Sequence - Free-Fall Drop (自由跌落)": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon.com-SIOC",
+          "Description_ZH": "亞馬遜 SIOC Type A 原箱出貨跌落測試，模擬出貨轉運站至消費者的物流跌落。",
+          "Description_EN": "Amazon SIOC Type A drop profile for items < 50 lb shipping in own container.",
+          "Drop Sequence": "9 drops total (Face, corner, edge)"
+        },
+        "tests": [
+          {"Drop 1": "1st Face (weakest)", "Height": "460 mm (18 in)"},
+          {"Drop 2": "2nd Face", "Height": "460 mm (18 in)"},
+          {"Drop 8": "Corner (most fragile)", "Height": "460 mm (18 in) or 910 mm (36 in)"},
+          {"Drop 9": "Hazard block impact", "Details": "Using standard hazard block"}
+        ]
+      },
+      "Sequence - Random Vibration (運輸振動)": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon.com-SIOC",
+          "Description_ZH": "亞馬遜專屬的隨機振動頻譜，包含含頂部負載 (With Top Load) 階段。",
+          "Description_EN": "Amazon specific random vibration profile mimicking their transit network.",
+          "Overall Grms (Face 1,3,4)": "0.53 Grms",
+          "Overall Grms (Face 2,5,6)": "0.46 Grms"
+        },
+        "tests": [
+          {"Phase": "Face 3 (Bottom) Top Load", "Duration": "Face 3 (Bottom) Top Load", "Grms": "0.53"},
+          {"Phase": "Face 4 (Top) Top Load", "Duration": "Face 4 (Top) Top Load", "Grms": "0.53"},
+          {"Phase": "Face 2, 5, 6 (No Load)", "Duration": "Various", "Grms": "0.46"}
+        ]
+      }
+    }
+  }
+}
