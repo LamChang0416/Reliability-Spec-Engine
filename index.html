@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -23,33 +24,40 @@
 }
 body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,var(--bg) 0%,#0d1b3e 50%,#0f2050 100%);color:var(--text);min-height:100vh;font-size:14px}
 
-/* HEADER */
-header{padding:16px 20px;border-bottom:1px solid rgba(99,179,237,.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(13,27,62,.6);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
-.logo{font-size:1.3rem;font-weight:700;background:linear-gradient(90deg,var(--blue),var(--blue2),var(--blue3));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center}
+/* LAYOUT 2.0 */
+.app-container{display:flex;height:100vh;overflow:hidden}
+.sidebar{width:260px;background:rgba(13,27,62,0.85);border-right:1px solid rgba(99,179,237,.15);display:flex;flex-direction:column;backdrop-filter:blur(15px);z-index:200;flex-shrink:0;transition:transform 0.3s ease}
+.sidebar-header{padding:16px 20px;border-bottom:1px solid rgba(99,179,237,.15);display:flex;align-items:center;justify-content:space-between;height:68px}
+.sidebar-nav{flex:1;overflow-y:auto;padding:20px 15px}
+.nav-group{margin-bottom:24px}
+.nav-title{color:var(--dim);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;padding-left:10px}
+.main-content{flex:1;display:flex;flex-direction:column;overflow-x:hidden;overflow-y:auto}
+header{padding:16px 20px;border-bottom:1px solid rgba(99,179,237,.15);display:flex;align-items:center;justify-content:flex-end;gap:10px;background:rgba(13,27,62,.6);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100;height:68px}
+.logo{font-size:1.2rem;font-weight:700;background:linear-gradient(90deg,var(--blue),var(--blue2),var(--blue3));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center}
 .author-badge{font-size:10px;color:var(--muted);border:1px solid rgba(94,163,184,.3);border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:500;letter-spacing:0.05em;-webkit-text-fill-color:var(--muted)}
-.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.lang-btn{background:rgba(26,58,107,.6);border:1px solid rgba(99,179,237,.3);color:var(--blue2);border-radius:8px;padding:6px 14px;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;transition:all .2s}
-.lang-btn:hover,.lang-btn.active{background:var(--bg3);border-color:var(--blue);color:var(--blue3)}
-.search-wrap{position:relative}
-#searchInput{background:rgba(13,27,62,.8);border:1px solid rgba(99,179,237,.25);border-radius:8px;color:var(--text);padding:7px 12px 7px 32px;width:200px;font-family:inherit;font-size:13px;outline:none;transition:border-color .2s}
-#searchInput:focus{border-color:var(--blue)}
-#searchInput::placeholder{color:var(--dim)}
-.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:13px}
+.header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;flex:1;justify-content:flex-end}
+.mobile-menu-btn{display:none;background:transparent;border:none;color:var(--blue2);font-size:24px;cursor:pointer}
+@media(max-width:850px){
+  .sidebar{position:fixed;height:100%;transform:translateX(-100%);box-shadow:5px 0 15px rgba(0,0,0,0.5)}
+  .sidebar.open{transform:translateX(0)}
+  header{justify-content:space-between}
+  .mobile-menu-btn{display:block}
+}
 
-/* TABS */
-.tabs{display:flex;gap:4px;padding:14px 20px 0;background:rgba(13,27,62,.4);flex-wrap:wrap}
-.tab-btn{border:none;background:transparent;color:var(--muted);padding:10px 16px;border-radius:10px 10px 0 0;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+/* TABS (Now serving as Sidebar Buttons) */
+.tab-btn{width:100%;text-align:left;border:none;background:transparent;color:var(--muted);padding:10px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;transition:all .2s;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
 .tab-btn:hover{color:var(--blue2);background:rgba(26,58,107,.3)}
-.tab-btn.active{color:var(--blue2);border-bottom-color:var(--blue);background:rgba(26,58,107,.5)}
-.badge{display:inline-block;background:rgba(26,58,107,.8);color:var(--blue);border:1px solid rgba(99,179,237,.3);border-radius:12px;padding:1px 8px;font-size:10px;font-weight:700;margin-left:5px;vertical-align:middle}
+.tab-btn.active{color:var(--blue2);background:rgba(26,58,107,.5);box-shadow:inset 3px 0 0 var(--blue)}
+.badge{display:inline-block;background:rgba(26,58,107,.8);color:var(--blue);border:1px solid rgba(99,179,237,.3);border-radius:12px;padding:1px 8px;font-size:10px;font-weight:700;margin-left:5px}
 .new-badge{background:rgba(34,84,61,.8);color:var(--green);border-color:rgba(104,211,145,.3)}
 
 /* MAIN */
-main{padding:20px;max-width:1200px;margin:0 auto}
+main{padding:24px;max-width:1200px;margin:0 auto;width:100%}
 
 /* PANELS */
 .panel{display:none}.panel.active{display:block}
-.panel-caption{color:var(--muted);font-size:12px;margin-bottom:16px;padding:8px 12px;background:rgba(13,27,62,.5);border-radius:8px;border-left:3px solid var(--blue)}
+.panel-caption{font-size:13.5px;line-height:1.6;color:var(--blue3);margin-bottom:24px;padding:14px 18px;background:linear-gradient(90deg,rgba(13,20,71,0.8),rgba(13,20,71,0.2));border:1px solid rgba(99,179,237,0.15);border-left:4px solid var(--blue);border-radius:4px;font-family:'Inter',sans-serif;letter-spacing:0.02em;box-shadow:0 4px 6px rgba(0,0,0,0.1)}
+.panel-caption::before{content:'DOCUMENT SCOPE';display:block;font-size:10px;color:rgba(99,179,237,0.7);font-weight:700;letter-spacing:0.1em;margin-bottom:8px;font-family:monospace}
 
 /* GRID */
 .grid-2{display:grid;grid-template-columns:1fr 1.5fr;gap:20px}
@@ -98,9 +106,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
 .sr-count{color:var(--blue2);font-weight:600;margin-bottom:10px;font-size:14px}
 
 /* INSTALL BANNER */
-#installBanner{display:none;background:linear-gradient(135deg,rgba(34,84,61,.5),rgba(39,103,73,.4));border:1px solid rgba(104,211,145,.3);border-radius:10px;padding:12px 16px;margin-bottom:16px;align-items:center;justify-content:space-between;gap:10px}
-.install-text{color:var(--green);font-size:13px;font-weight:500}
-#installBtn{background:rgba(34,84,61,.8);border:1px solid rgba(104,211,145,.5);color:var(--green);padding:6px 14px;border-radius:8px;font-family:inherit;font-weight:600;cursor:pointer;font-size:12px}
+#installBanner{display:none;margin:auto 15px 15px;padding-top:15px;border-top:1px solid rgba(99,179,237,.15)}
+#installBtn{width:100%;background:rgba(26,58,107,.4);border:1px solid rgba(99,179,237,.3);color:var(--blue2);padding:10px 14px;border-radius:8px;font-family:inherit;font-weight:600;cursor:pointer;font-size:12px;transition:all .2s;white-space:nowrap}
+#installBtn:hover{background:rgba(26,58,107,.8);color:var(--blue3);box-shadow:0 0 10px rgba(99,179,237,.2)}
 .offline-badge{display:none;background:rgba(34,84,61,.4);border:1px solid rgba(104,211,145,.3);color:var(--green);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:600}
 .offline-badge.visible{display:inline-block}
 
@@ -115,56 +123,95 @@ tr:hover td{background:rgba(99,179,237,.05)}
 </head>
 <body>
 
-<header>
-  <div class="logo">🛡️ <span id="appTitle">Reliability Spec Engine</span><span class="author-badge">by Lam</span></div>
-  <div class="header-right">
-    <span class="offline-badge" id="offlineBadge">✈ Offline</span>
-    <button class="lang-btn active" id="btnZH" onclick="setLang('ZH')">中文</button>
-    <button class="lang-btn" id="btnEN" onclick="setLang('EN')">EN</button>
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input id="searchInput" type="search" placeholder="Search specs..." oninput="doSearch(this.value)">
+<div class="app-container">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">🛡️ <span id="appTitle">Spec Engine 2.0</span><span class="author-badge">by Lam</span></div>
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">✕</button>
     </div>
-  </div>
-</header>
+    <div class="sidebar-nav" id="tabBar">
+      <div class="nav-group">
+        <div class="nav-title" data-zh="工作區" data-en="Workspace"></div>
+        <button class="tab-btn active" onclick="showTab('dashboard',this)" id="tabDASH">
+          🏠 Dashboard <span class="badge new-badge">首頁</span>
+        </button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-title" data-zh="國防與電信" data-en="Defense & Telecom"></div>
+        <button class="tab-btn" onclick="showTab('mil',this)" id="tabMIL">
+          🎖️ MIL-STD-810H<span class="badge">810H</span>
+        </button>
+        <button class="tab-btn" onclick="showTab('gr63',this)" id="tabGR63">
+          🏢 GR-63-CORE<span class="badge">Iss 5</span>
+        </button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-title" data-zh="包裝與運輸" data-en="Packaging & Transit"></div>
+        <button class="tab-btn" onclick="showTab('astm',this)" id="tabASTM">
+          📦 ASTM D4169<span class="badge">-22</span>
+        </button>
+        <button class="tab-btn" onclick="showTab('ista',this)" id="tabISTA">
+          📦 ISTA<span class="badge new-badge">2024</span>
+        </button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-title" data-zh="環境與防護" data-en="Environment & Protection"></div>
+        <button class="tab-btn" onclick="showTab('iec60068',this)" id="tabIEC60068">
+          🔬 IEC 60068<span class="badge">v2023+</span>
+        </button>
+        <button class="tab-btn" onclick="showTab('ip',this)" id="tabIP">
+          💧 IP Code<span class="badge new-badge">IEC 60529</span>
+        </button>
+        <button class="tab-btn" onclick="showTab('iec',this)" id="tabIEC">
+          🛡️ IEC 60721-3<span class="badge">2019</span>
+        </button>
+        <button class="tab-btn" onclick="showTab('sr332',this)" id="tabSR332">
+          📈 SR-332<span class="badge">Iss 4</span>
+        </button>
+      </div>
+    </div>
+    <div id="installBanner">
+      <button id="installBtn">📱 <span data-zh="安裝桌面版 (支援離線)" data-en="Install App (Offline)"></span></button>
+    </div>
+  </aside>
 
-<div id="installBanner">
-  <span class="install-text">📱 <span data-zh="安裝至主畫面，支援離線查閱" data-en="Install to home screen for offline access"></span></span>
-  <button id="installBtn">Install / 安裝</button>
-</div>
+  <!-- MAIN CONTENT -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+      <div class="header-right">
+        <span class="offline-badge" id="offlineBadge">✈ Offline</span>
+        <div class="unit-toggle" style="display:flex;background:rgba(26,58,107,.6);border:1px solid rgba(99,179,237,.3);border-radius:8px;overflow:hidden;">
+          <button id="btnSI" class="lang-btn active" style="border:none;border-radius:0;border-right:1px solid rgba(99,179,237,.3);" onclick="setUnit('SI')">SI (公制)</button>
+          <button id="btnIMP" class="lang-btn" style="border:none;border-radius:0;" onclick="setUnit('IMP')">IMP (英制)</button>
+        </div>
+        <button class="lang-btn active" id="btnZH" onclick="setLang('ZH')">中文</button>
+        <button class="lang-btn" id="btnEN" onclick="setLang('EN')">EN</button>
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input id="searchInput" type="search" placeholder="Search specs..." oninput="doSearch(this.value)">
+        </div>
+      </div>
+    </header>
 
-<div class="tabs" id="tabBar">
-  <button class="tab-btn active" onclick="showTab('iec',this)" id="tabIEC">
-    🛡️ IEC 60721-3<span class="badge">2019</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('mil',this)" id="tabMIL">
-    🎖️ MIL-STD-<span class="tab-ver">810H</span><span class="badge new-badge">810H</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('astm',this)" id="tabASTM">
-    📦 ASTM D4169<span class="badge new-badge">-22</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('gr63',this)" id="tabGR63">
-    🏢 GR-63<span class="badge new-badge">Issue 5</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('sr332',this)" id="tabSR332">
-    📈 SR-332<span class="badge new-badge">Issue 4</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('ista',this)" id="tabISTA">
-    📦 ISTA<span class="badge new-badge">2024 更新</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('iec60068',this)" id="tabIEC60068">
-    🔬 IEC 60068<span class="badge new-badge">v2023+</span>
-  </button>
-  <button class="tab-btn" onclick="showTab('ip',this)" id="tabIP">
-    💧 IP Code<span class="badge new-badge">IEC 60529</span>
-  </button>
-</div>
+    <main>
+      <div id="searchResults"></div>
 
-<main>
-  <div id="searchResults"></div>
+      <!-- Dashboard Panel -->
+      <div class="panel active" id="panel-dashboard">
+        <div class="result-banner">
+          <h4 data-zh="👋 歡迎來到 Spec Engine 2.0" data-en="👋 Welcome to Spec Engine 2.0"></h4>
+          <div class="result-desc" data-zh="你可以從左側面板查詢八大規範。查閱時點擊「📌 釘選」可將常用規格釘至此處。" data-en="Explore 8 major standards from the sidebar. Click '📌 Pin' when viewing a spec to save it here."></div>
+        </div>
+        <h3 style="color:var(--blue2); margin-top:24px; font-size:15px;" data-zh="📌 我的最愛 (Pinned Specs)" data-en="📌 Pinned Specs"></h3>
+        <div id="pinGrid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:15px; margin-top:10px;">
+           <div class="empty" id="emptyPin" data-zh="目前沒有釘選的規範。" data-en="No pinned specs yet."></div>
+        </div>
+      </div>
 
   <!-- IEC Panel -->
-  <div class="panel active" id="panel-iec">
+  <div class="panel" id="panel-iec">
     <p class="panel-caption" data-zh="【環境條件分類】IEC 60721-3 定義了產品在各類運輸、儲存與操作環境下可能遭遇的嚴苛度分類，為實驗室建立測試基準。" data-en="【Environmental Classification】IEC 60721-3 defines severity classes for transportation, storage, and operation environments to establish testing baselines."></p>
     <div class="grid-2">
       <div class="sel-section">
@@ -300,9 +347,27 @@ tr:hover td{background:rgba(99,179,237,.05)}
   </div>
 </main>
 
+</div>
+</div>
+
 <script>
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', function(e) {
+  const sidebar = document.getElementById('sidebar');
+  if (window.innerWidth <= 850 && sidebar.classList.contains('open')) {
+    if (!sidebar.contains(e.target) && !e.target.closest('.mobile-menu-btn')) {
+      sidebar.classList.remove('open');
+    }
+  }
+});
+
 // ─── State ────────────────────────────────────────────────────────────────
 let LANG = 'ZH';
+let CURRENT_UNIT = 'SI';
 const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null, iec60068: null, ip: null };
 const DB_FILES = {
   iec:  'iec_database.json',
@@ -335,6 +400,29 @@ function setLang(l) {
       if (el) el.textContent = el.dataset[l.toLowerCase()];
     }
   });
+  if (typeof renderDashboard === 'function') renderDashboard();
+}
+
+function setUnit(u) {
+  CURRENT_UNIT = u;
+  document.getElementById('btnSI').classList.toggle('active', u==='SI');
+  document.getElementById('btnIMP').classList.toggle('active', u==='IMP');
+  // Re-render active result
+  ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(s => {
+    const l3 = document.getElementById(s+'-l3');
+    if (l3 && l3.value) showResult(s);
+  });
+}
+
+function convertUnit(v) {
+  if (typeof v !== 'string' || CURRENT_UNIT === 'SI') return v;
+  // Celsius to Fahrenheit
+  let out = v.replace(/(-?\d+(?:\.\d+)?)\s*°C/g, (m, p1) => Math.round((parseFloat(p1) * 9/5) + 32) + ' °F');
+  // mm to inch
+  out = out.replace(/(\d+(?:\.\d+)?)\s*mm/g, (m, p1) => (parseFloat(p1) / 25.4).toFixed(2) + ' inch');
+  // kg to lbs
+  out = out.replace(/(\d+(?:\.\d+)?)\s*kg(?!\/)/g, (m, p1) => (parseFloat(p1) * 2.20462).toFixed(2) + ' lbs');
+  return out;
 }
 
 // ─── Tab ──────────────────────────────────────────────────────────────────
@@ -440,7 +528,7 @@ function showResult(std) {
   // Metrics
   const metricHTML = Object.entries(params)
     .filter(([k])=>!SKIP_KEYS.has(k))
-    .map(([k,v])=>`<div class="metric"><div class="metric-label">${k}</div><div class="metric-value">${v}</div></div>`)
+    .map(([k,v])=>`<div class="metric"><div class="metric-label">${k}</div><div class="metric-value">${convertUnit(v)}</div></div>`)
     .join('');
 
   // Table
@@ -448,8 +536,8 @@ function showResult(std) {
   if (tests.length) {
     const cols = Object.keys(tests[0]);
     tableHTML = `<div class="table-wrap"><table>
-      <tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr>
-      ${tests.map(row=>`<tr>${cols.map(c=>`<td>${row[c]??''}</td>`).join('')}</tr>`).join('')}
+      <tr>${cols.map(c=>`<th>${convertUnit(c)}</th>`).join('')}</tr>
+      ${tests.map(row=>`<tr>${cols.map(c=>`<td>${convertUnit(row[c]??'')}</td>`).join('')}</tr>`).join('')}
     </table></div>`;
   }
 
@@ -457,17 +545,181 @@ function showResult(std) {
   box._entry = entry;
   box._prefix = `${std.toUpperCase()}_${v3.replace(/[^a-zA-Z0-9]/g,'_').slice(0,20)}`;
 
+  let chartWrap = `<div id="chartWrap" style="display:none; margin-bottom:14px; background:rgba(13,20,71,.5); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:20px; position:relative;"><canvas id="profileChart" style="max-height:220px;"></canvas></div>`;
+
   box.innerHTML = `
     <div class="result-banner">
       <h4>🎯 ${v3}</h4>
       <div class="result-desc">${desc}</div>
     </div>
     <div class="metrics">${metricHTML}</div>
+    ${chartWrap}
     ${tableHTML}
     <div class="btn-row">
+      <button class="btn btn-dl" onclick="togglePin('${std}', '${v1.replace(/'/g,"\\'").replace(/"/g,'&quot;')}', '${v2.replace(/'/g,"\\'").replace(/"/g,'&quot;')}', '${v3.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">📌 Pin to Dashboard</button>
       <button class="btn btn-dl" onclick="dlJSON('${std}')">📥 JSON</button>
       ${tests.length?`<button class="btn btn-dl" onclick="dlCSV('${std}')">📥 CSV</button>`:''}
     </div>`;
+
+  // Plot Chart if possible
+  setTimeout(()=>renderChart(tests), 50);
+}
+
+let activeChart = null;
+function renderChart(tests) {
+  const wrap = document.getElementById('chartWrap');
+  if (!wrap || !tests || !tests.length || !window.Chart) return;
+  
+  const cols = Object.keys(tests[0]||{});
+  if (cols.length < 2) return; // Need at least X and Y
+  
+  // X-axis is the first column
+  const xCol = cols[0];
+  // Y-axis are the remaining columns
+  const yCols = cols.slice(1);
+  
+  // Exclude columns that clearly aren't numbers (like Remarks)
+  const validYCols = yCols.filter(c => !c.toLowerCase().includes('remark') && !c.toLowerCase().includes('note'));
+  
+  if (validYCols.length > 0) {
+    wrap.style.display = 'block';
+    
+    // Extract labels
+    let labels = tests.map((row, i) => String(row[xCol] || (i+1)));
+    
+    // Nice gradient colors for multiple lines
+    const colors = [
+      { border: '#68d391', bg: 'rgba(104,211,145,0.1)', pt: '#63b3ed' },
+      { border: '#f6ad55', bg: 'rgba(246,173,85,0.1)', pt: '#ed8936' },
+      { border: '#fc8181', bg: 'rgba(252,129,129,0.1)', pt: '#f56565' },
+      { border: '#63b3ed', bg: 'rgba(99,179,237,0.1)', pt: '#4299e1' }
+    ];
+    
+    let datasets = validYCols.map((yCol, i) => {
+      let dataPts = tests.map(row => {
+        let raw = String(row[yCol] || '');
+        // Extract the numbers after unit conversion
+        let convStr = convertUnit(raw);
+        let val = parseFloat(convStr);
+        return isNaN(val) ? null : val;
+      });
+      
+      let color = colors[i % colors.length];
+      
+      return {
+        label: convertUnit(yCol), // Convert unit in the legend label too
+        data: dataPts,
+        borderColor: color.border,
+        backgroundColor: color.bg,
+        borderWidth: 2,
+        pointBackgroundColor: color.pt,
+        pointBorderColor: '#0a0f2c',
+        pointRadius: 4,
+        fill: i === 0, // only fill the first line to avoid mess
+        tension: 0.2, // slight curve
+        spanGaps: true
+      };
+    });
+
+    if (activeChart) activeChart.destroy();
+    
+    const ctx = document.getElementById('profileChart').getContext('2d');
+    activeChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: datasets.length > 1, labels: { color: '#e2e8f0', font: {family: 'Inter'} } },
+          title: { display: true, text: 'Test Profile Visualization', color: '#90cdf4', font:{size: 13, family: 'Inter'} }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(99,179,237,0.1)' }, title: { display: true, text: xCol, color:'#94a3b8', font:{size: 11} }, ticks:{color:'#e2e8f0'} },
+          y: { grid: { color: 'rgba(99,179,237,0.1)' }, title: { display: false }, ticks:{color:'#e2e8f0'} }
+        }
+      }
+    });
+  }
+}
+
+// ─── Pinned Specs (Dashboard) ──────────────────────────────────────────────
+let pinnedSpecs = JSON.parse(localStorage.getItem('specEnginePins') || '[]');
+
+function togglePin(std, v1, v2, v3) {
+  const id = `${std}|${v1}|${v2}|${v3}`;
+  const idx = pinnedSpecs.findIndex(p => p.id === id);
+  if (idx > -1) {
+    pinnedSpecs.splice(idx, 1);
+  } else {
+    pinnedSpecs.push({ id, std, v1, v2, v3 });
+  }
+  localStorage.setItem('specEnginePins', JSON.stringify(pinnedSpecs));
+  renderDashboard();
+  
+  // Show a quick transient toast or alert
+  const msg = LANG === 'ZH' ? '釘選狀態已更新！' : 'Pin status updated!';
+  const badge = document.createElement('div');
+  badge.textContent = msg;
+  badge.style.cssText = 'position:fixed;top:80px;right:20px;background:var(--green);color:var(--bg);padding:8px 16px;border-radius:8px;font-weight:bold;z-index:999;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+  document.body.appendChild(badge);
+  setTimeout(()=>badge.remove(), 2000);
+}
+
+function renderDashboard() {
+  const grid = document.getElementById('pinGrid');
+  if (!grid) return;
+  if (pinnedSpecs.length === 0) {
+    grid.innerHTML = `<div class="empty" id="emptyPin">${LANG==='ZH'?'目前沒有釘選的規範。':'No pinned specs yet.'}</div>`;
+    return;
+  }
+  
+  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068', ip:'💧 IP Code (IEC)' };
+  
+  grid.innerHTML = pinnedSpecs.map(p => {
+    let desc = '';
+    if (DBS[p.std] && DBS[p.std][p.v1] && DBS[p.std][p.v1][p.v2] && DBS[p.std][p.v1][p.v2][p.v3]) {
+      const params = DBS[p.std][p.v1][p.v2][p.v3].parameters || {};
+      desc = LANG==='ZH' ? (params.Description_ZH||params.Description||'') : (params.Description_EN||params.Description_ZH||'');
+    }
+    
+    // Safely escape quotes for onclick
+    const sv1 = p.v1.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    const sv2 = p.v2.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    const sv3 = p.v3.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    
+    return `
+      <div class="sr-card" style="cursor:pointer; position:relative; min-height:120px;" onclick="loadAndShowPinned('${p.std}','${sv1}','${sv2}','${sv3}')">
+        <button style="position:absolute; right:12px; top:12px; background:transparent; border:none; color:rgba(255,255,255,0.4); cursor:pointer; font-size:14px; transition:color 0.2s;" onmouseover="this.style.color='#f56565'" onmouseout="this.style.color='rgba(255,255,255,0.4)'" onclick="event.stopPropagation(); togglePin('${p.std}','${sv1}','${sv2}','${sv3}')">✖</button>
+        <div class="sr-std">${STD_LABELS[p.std] || p.std}</div>
+        <div class="sr-path" style="font-size:14px; margin:8px 0; color:var(--blue2);">🎯 ${p.v3}</div>
+        <div class="sr-path" style="font-size:10px; color:var(--muted); margin-bottom:8px;">📌 ${p.v1} › ${p.v2}</div>
+        <div class="sr-desc" style="display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-size:11px; color:#a0aec0;">${desc}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function loadAndShowPinned(std, v1, v2, v3) {
+  if (!DBS[std]) {
+    await loadDB(std);
+  }
+  // Automatically switch tab
+  showTab(std, document.getElementById('tab' + std.toUpperCase()));
+  // If on mobile, close sidebar automatically when clicking a pin
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar && sidebar.classList.contains('open')) sidebar.classList.remove('open');
+  
+  // Set and trigger selects
+  const sl1 = document.getElementById(std+'-l1');
+  if(sl1) { sl1.value = v1; buildL2(std); }
+  const sl2 = document.getElementById(std+'-l2');
+  if(sl2) { sl2.value = v2; buildL3(std); }
+  const sl3 = document.getElementById(std+'-l3');
+  if(sl3) { sl3.value = v3; showResult(std); }
 }
 
 // ─── Download ──────────────────────────────────────────────────────────────
@@ -559,7 +811,8 @@ if ('serviceWorker' in navigator) {
 // ─── Init ─────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   setLang('ZH');
-  loadDB('iec'); // Preload first tab
+  ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(loadDB);
+  renderDashboard();
 });
 </script>
 </body>

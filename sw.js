@@ -1,4 +1,4 @@
-const CACHE_NAME = 'reliability-spec-v1.4';
+const CACHE_NAME = 'reliability-spec-v1.5';
 const ASSETS = [
   './',
   './index.html',
@@ -12,7 +12,8 @@ const ASSETS = [
   './sr332_database.json',
   './ista_database.json',
   './iec60068_database.json',
-  './ip_code_database.json'
+  './ip_code_database.json',
+  'https://cdn.jsdelivr.net/npm/chart.js'
 ];
 
 // Install: cache all assets
@@ -40,8 +41,8 @@ self.addEventListener('fetch', event => {
     caches.match(event.request).then(cached => {
       if (cached) return cached;
       return fetch(event.request).then(response => {
-        // Cache new network responses for our origin
-        if (response && response.status === 200 && response.type === 'basic') {
+        // Cache new network responses for our origin and cors (CDN)
+        if (response && response.status === 200 && (response.type === 'basic' || response.type === 'cors')) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         }
