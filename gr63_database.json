@@ -110,37 +110,68 @@
     }
   },
   "Section 6 - Airborne Contaminants": {
-    "Acoustic Noise": {
-      "Equipment Acoustic Emission Limit": {
+    "Acoustic Noise (聲學噪音)": {
+      "Equipment Subassembly Acoustic Emission": {
         "parameters": {
           "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "設備自身發出的噪音必須低於規定上限，保護機房操作人員",
-          "Description_EN": "Equipment self-emitted noise limits to protect CO personnel",
-          "Sound Pressure Level (SPL)": "≤ 75 dBA at 1.0 meter (bystander position)",
-          "Measurement Standard": "ISO 7779 / ECMA-74",
-          "Measurement Distance": "1.0 meter from equipment surfaces"
+          "Description_ZH": "機房設備運作時發出的噪音限制，保護長期值班人員聽力。依據室溫條件嚴格分級。",
+          "Description_EN": "Equipment self-emitted noise limits to protect Central Office personnel.",
+          "Limit at Standard Ambient (≤27°C)": "≤ 75 dBA Sound Power (Lw) or SPL at 1.0 m",
+          "Limit at High Temp Excursion": "≤ 85 dBA (Fans at max speed)",
+          "Office Room Limit": "≤ 65 dBA Limit for typical office environments"
         },
         "tests": [
-          {"Phase": "Acoustic Measurement", "Condition": "Measure SPL on all 4 horizontal sides at 1.0 m"},
-          {"Phase": "Peak Identification", "Condition": "Record maximum SPL reading; must not exceed 75 dBA"}
+          {"Measurement State": "Idle at 27°C", "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA"},
+          {"Measurement State": "Full Load at Max Rated Temp", "Condition": "Drive fans to 100%; must be ≤ 85 dBA"}
+        ]
+      }
+    },
+    "Mixed Flowing Gas (MFG 混和氣體腐蝕)": {
+      "Indoor Equipment Gas Exposure": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "模擬工廠或都會區受污染的空氣，驗證金屬端子與 PCB 銅箔的抗腐蝕能力。要求極精確的 ppb 等級毒氣混合。",
+          "Description_EN": "Simulates polluted urban/industrial air to verify contact and PCB corrosion resistance.",
+          "H2S (Hydrogen Sulfide)": "10 ppb",
+          "SO2 (Sulfur Dioxide)": "100 ppb",
+          "Cl2 (Chlorine)": "10 ppb",
+          "NO2 (Nitrogen Dioxide)": "200 ppb",
+          "Duration": "14 days minimum"
+        },
+        "tests": [
+          {"Phase": "Exposure", "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days"},
+          {"Phase": "Evaluation", "Condition": "Inspect for copper creep corrosion and check contact resistance"}
         ]
       }
     }
   },
   "Section 7 - Fire Resistance": {
-    "Equipment Fire Spread": {
-      "Flammability / Smoke Requirements": {
+    "Equipment Fire Spread (設備火災蔓延)": {
+      "Burner Flame Test (開放式火源測試)": {
         "parameters": {
           "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "設備在密集安裝的機房環境中不得助長火勢蔓延",
-          "Description_EN": "Equipment must not propagate fire in high-density CO installation",
-          "Flammability Standard": "UL 94 V-0 for all PCBs and plastic enclosures",
-          "Smoke Toxicity": "Halogen-free materials preferred (per RoHS/REACH)",
-          "Cable Flammability": "Per UL 1666 (vertical flame test for optical/copper cables)"
+          "Description_ZH": "極度嚴苛的網通機房防火測試，使用甲烷燃燒器直接從設備下方點火，確保設備不會助燃。",
+          "Description_EN": "Severe telecommunications fire spread test. Uses a 30-100kW methane burner to ignite equipment directly.",
+          "Ignition Source": "12-kW to 100-kW Fire test burner placed underneath equipment",
+          "Burn Time": "30 minutes continuous ignition",
+          "Self-Extinguish Requirement": "Flames must self-extinguish within 30 seconds after burner is turned off"
         },
         "tests": [
-          {"Phase": "Material Verification", "Condition": "Confirm UL 94 V-0 rated materials for all combustible parts"},
-          {"Phase": "Cable Test", "Condition": "UL 1666 riser flame test for cables exceeding 1.8 m"}
+          {"Phase": "Ignition", "Condition": "Ignite methane burner at base of equipment for 30 minutes"},
+          {"Phase": "Observation", "Condition": "Flames must not spread to adjacent equipment; smoke must be contained"},
+          {"Phase": "Post-Burn", "Condition": "Fire must self-extinguish < 30 sec after removing gas source"}
+        ]
+      },
+      "Needle-Flame / UL Flammability": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "內部組件的針焰與材質防火等級認證。",
+          "Description_EN": "Internal component needle-flame and material combustibility ratings.",
+          "PCB / Plastic Material": "Must be UL 94 V-0 or better",
+          "Cabling": "Must pass UL 1666 vertical tray flame test"
+        },
+        "tests": [
+          {"Phase": "Material Check", "Condition": "Verify all non-metallic parts are UL 94 V-0 or 5VA rated"}
         ]
       }
     }

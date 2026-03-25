@@ -381,46 +381,89 @@
         ]
       }
     },
-    "C": {
+    "C (Chemically Active)": {
       "3C1": {
         "parameters": {
-          "SO2": "0.1 mg/m³",
-          "H2S": "0.01 mg/m³",
-          "Description": "具備嚴格空氣過濾的潔淨室內"
+          "Description": "空氣極度乾淨受控的室內 (如半導體無塵室、高等級 Data Center)",
+          "SO2 (二氧化硫)": "0.1 mg/m³",
+          "H2S (硫化氫)": "0.01 mg/m³",
+          "Cl (氯氣)": "0.01 mg/m³",
+          "NOX (氮氧化物)": "0.1 mg/m³",
+          "NH3 (氨氣)": "0.3 mg/m³"
         },
         "tests": [
           {
             "Test": "Mixed Gas",
             "Standard": "IEC 60068-2-60",
-            "Condition": "Not normally required"
+            "Condition": "Normally not required; pure environments only"
           }
         ]
       },
       "3C2": {
         "parameters": {
-          "SO2": "0.3 to 1.0 mg/m³",
-          "H2S": "0.1 to 0.5 mg/m³",
-          "Description": "一般都會區或輕工業區室內 (金手指腐蝕風險起點)"
+          "Description": "一般都會區與輕工業區室內 (金手指與 PCB 腐蝕風險基準線)",
+          "SO2 (二氧化硫)": "1.0 mg/m³",
+          "H2S (硫化氫)": "0.5 mg/m³",
+          "Cl (氯氣)": "0.1 mg/m³",
+          "NOX (氮氧化物)": "1.0 mg/m³",
+          "NH3 (氨氣)": "3.0 mg/m³"
         },
         "tests": [
           {
             "Test": "Mixed Flowing Gas",
             "Standard": "IEC 60068-2-60",
-            "Condition": "Method 4, 14 days"
+            "Condition": "Method 4 (H2S, NO2, Cl2, SO2 mixed), 14 days"
           }
         ]
       },
       "3C3": {
         "parameters": {
-          "SO2": "1.0 to 3.0 mg/m³",
-          "H2S": "0.5 to 3.0 mg/m³",
-          "Description": "重化工業區室內 (高濃度腐蝕性氣體)"
+          "Description": "重度工業區與化工廠近郊，設備防護塗層需特殊加固 (Conformal Coating)",
+          "SO2 (二氧化硫)": "10.0 mg/m³",
+          "H2S (硫化氫)": "3.0 mg/m³",
+          "Cl (氯氣)": "0.3 mg/m³",
+          "NOX (氮氧化物)": "3.0 mg/m³",
+          "NH3 (氨氣)": "35.0 mg/m³"
         },
         "tests": [
           {
             "Test": "Mixed Flowing Gas",
             "Standard": "IEC 60068-2-60",
-            "Condition": "Method 4, 21 days or Method 1"
+            "Condition": "Method 1 or Method 4 extended to 21 days"
+          }
+        ]
+      },
+      "3C4": {
+        "parameters": {
+          "Description": "極端化工煉油廠內部操作 (面臨強烈侵蝕性有害氣體，極度嚴苛)",
+          "SO2 (二氧化硫)": "40.0 mg/m³",
+          "H2S (硫化氫)": "14.0 mg/m³",
+          "Cl (氯氣)": "1.0 mg/m³",
+          "NOX (氮氧化物)": "12.0 mg/m³",
+          "NH3 (氨氣)": "100.0 mg/m³"
+        },
+        "tests": [
+          {
+            "Test": "Continuous Corrosion Test",
+            "Standard": "IEC 60068-2-42 / 43",
+            "Condition": "High concentration single gas tests (e.g., SO2 25ppm for 21 days)"
+          }
+        ]
+      }
+    },
+    "B (Biological)": {
+      "3B1 / 3B2 / 3B3": {
+        "parameters": {
+          "Standard": "IEC 60721-3-3",
+          "3B1 Description": "無發霉風險、無白蟻與齧齒動物破壞",
+          "3B2 Description": "輕微發霉風險，可能偶爾出現齧齒類 (老鼠)",
+          "3B3 Description": "高熱帶雨林地帶，面臨嚴重的黴菌覆蓋、白蟻群聚與老鼠破壞風險 (需採用防啃咬線材)"
+        },
+        "tests": [
+          {
+            "Test": "Fungus Growth",
+            "Standard": "IEC 60068-2-10",
+            "Condition": "Method J, Spray with mixed fungal spores, incubate 28 days"
           }
         ]
       }

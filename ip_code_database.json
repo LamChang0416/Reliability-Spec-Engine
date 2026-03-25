@@ -1,0 +1,96 @@
+{
+  "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護)": {
+    "IP0X to IP3X (大型異物與工具防護)": {
+      "Protection Scope (防護範圍與定義)": {
+        "parameters": {
+          "Standard": "IEC 60529",
+          "Description_ZH": "防護大面積的人體接觸或是手持工具掉入設備中。",
+          "Description_EN": "Protection against access to hazardous parts and solid foreign objects (humans, tools)."
+        },
+        "tests": [
+          {"Code": "IP0X", "Definition": "無防護 (No protection)", "Test Object": "無"},
+          {"Code": "IP1X", "Definition": "防止 > 50 mm 的固體進入", "Test Object": "直徑 50 mm 的測試球 (Test Sphere)，施加 50N 的推力。不可碰到危險部件。"},
+          {"Code": "IP2X", "Definition": "防止 > 12.5 mm 的固體進入 (防手指)", "Test Object": "標準測試指 (Jointed Test Finger)，直徑 12.5 mm，長度 80 mm，施加 10N 推力。"},
+          {"Code": "IP3X", "Definition": "防止 > 2.5 mm 的固體進入 (防工具)", "Test Object": "直徑 2.5 mm，長度 100 mm 的測試探針 (Test Rod)，施加 3N 推力。"}
+        ]
+      }
+    },
+    "IP4X to IP6X (金屬線與細微粉塵防護)": {
+      "Dust Penetration Scope (細微粉塵防護與檢測)": {
+        "parameters": {
+          "Standard": "IEC 60529",
+          "Description_ZH": "驗證設備氣密性以防止極細微粉塵侵入，常需搭配粉塵實驗箱(Dust Chamber)並對設備內部抽真空。",
+          "Description_EN": "Protection against wires, dust, and completely dust-tight environments."
+        },
+        "tests": [
+          {"Code": "IP4X", "Definition": "防止 > 1.0 mm 的固體進入 (防金屬線)", "Test Object": "直徑 1.0 mm，長度 100 mm 的探針 (Test Wire)，施加 1N 推力。"},
+          {"Code": "IP5X", "Definition": "防塵 (Dust Protected)", "Condition": "滑石粉箱測試 8 小時 (含抽負壓)。", "Pass Criteria": "允許少量粉塵進入，但不應影響設備正常運作或造成短路。"},
+          {"Code": "IP6X", "Definition": "完全防塵 (Dust Tight)", "Condition": "滑石粉箱測試 8 小時 (含內部抽低於大氣壓 20 mbar 的負壓)。", "Pass Criteria": "拆開機殼檢查，內部必須「完全沒有」任何粉塵侵入的痕跡。"}
+        ]
+      }
+    }
+  },
+  "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護)": {
+    "IPX1 to IPX4 (水滴、噴灑與潑濺)": {
+      "Dripping & Splashing (垂直/傾斜水滴與噴灑)": {
+        "parameters": {
+          "Standard": "IEC 60529",
+          "Description_ZH": "測試從室內天花板漏水、戶外下雨、到全方位潑水的各種情境。",
+          "Description_EN": "Protection against vertically falling water drops, spraying, and splashing water."
+        },
+        "tests": [
+          {"Code": "IPX1", "Definition": "垂直滴水 (Falling water drops)", "Condition": "滴水盤每分鐘 1 mm 降雨量，測試 10 分鐘。", "Requirement": "設備直立放置，不得有影響功能之積水。"},
+          {"Code": "IPX2", "Definition": "傾斜 15 度滴水 (Drops when tilted 15°)", "Condition": "滴水盤每分鐘 3 mm 降雨量，外殼四面各傾斜 15 度，每面測試 2.5 分鐘 (共 10 分鐘)。"},
+          {"Code": "IPX3", "Definition": "防噴水 (Spraying water)", "Condition": "擺管測試 (±60°角噴灑)，或噴灑頭測試，水壓約 50-150 kPa，流量 10 L/min，測試 10 分鐘。"},
+          {"Code": "IPX4", "Definition": "防潑水 (Splashing water)", "Condition": "與 IPX3 相同，但擺管測試角度增加至 ±180° (全方位噴灑)，測試時間 10 分鐘，流量 10 L/min。"}
+        ]
+      }
+    },
+    "IPX5 to IPX6 (中高壓強制水柱)": {
+      "Water Jets (噴嘴強制水流衝擊)": {
+        "parameters": {
+          "Standard": "IEC 60529",
+          "Description_ZH": "模擬用水管直接沖洗設備或狂風暴雨的強力水柱衝擊。",
+          "Description_EN": "Protection against water jets and powerful water jets using specific nozzle sizes."
+        },
+        "tests": [
+          {"Code": "IPX5", "Definition": "防低壓水柱 (Water jets)", "Condition": "使用 6.3 mm 直徑噴嘴，距離 2.5 至 3 公尺，流量 12.5 L/min 噴灑所有可能進入水的接縫。", "Duration": "最少 3 分鐘 (每平方公尺 1 分鐘)"},
+          {"Code": "IPX6", "Definition": "防高壓強水柱 (Powerful water jets)", "Condition": "使用較大的 12.5 mm 噴嘴，距離 2.5 至 3 公尺，流量高達 100 L/min 的強制水柱沖洗。", "Duration": "最少 3 分鐘 (每平方公尺 1 分鐘)"}
+        ]
+      }
+    },
+    "IPX7 to IPX9K (浸水與蒸汽清洗)": {
+      "Immersion & Exteme Jets (沒水與蒸氣清洗)": {
+        "parameters": {
+          "Standard": "IEC 60529 (IPX7~IPX9) & ISO 20653 (IP69K)",
+          "Description_ZH": "最嚴苛的水下沉浸測試，以及常見於車用/重工業的高低溫高壓蒸氣噴洗。",
+          "Description_EN": "Immersion at varying depths and the extreme IPX9/IPX9K high-temperature/high-pressure steam jet targets."
+        },
+        "tests": [
+          {"Code": "IPX7", "Definition": "短暫浸水 (Temporary Immersion)", "Condition": "水面下最深處距離設備底部達 1 公尺，至少淹沒設備頂部 15 公分。", "Duration": "30 分鐘"},
+          {"Code": "IPX8", "Definition": "持續浸水 (Continuous Immersion)", "Condition": "由製造商定義，但條件必須比 IPX7 更嚴格。例如：水深 3 公尺，持續 2 小時。或水深 50 公尺 (5 atm)。"},
+          {"Code": "IPX9", "Definition": "高溫高壓水柱 (IEC 標準)", "Condition": "水溫 80°C，水壓 8-10 MPa (80-100 bar)，流量 14-16 L/min，從 0°, 30°, 60°, 90° 的四個角度各噴灑 30 秒 (共 2 分鐘)。此標準專為非車載產品定義。"},
+          {"Code": "IPX9K / IP69K", "Definition": "高壓蒸汽噴洗 (ISO 20653 標準)", "Condition": "此為德國標準發源針對車載電子。參數與 IPX9 幾乎相同 (80°C, 100 bar)，但嚴格要求測試件必須放置於每分鐘 5 圈 (5 rpm) 的旋轉台上測試。"}
+        ]
+      }
+    }
+  },
+  "Additional Letters (附加字母說明)": {
+    "Optional Letters (可選代號)": {
+      "Extra Identifiers (特殊防護字母)": {
+        "parameters": {
+          "Standard": "IEC 60529",
+          "Description_ZH": "接在兩位數字後面的可選標記，用於提供更具體的防護或測試狀態指引。",
+          "Description_EN": "Optional letters added to clarify conditions or specific hazards tested."
+        },
+        "tests": [
+          {"Letter": "a, b, c, d", "Meaning": "依序代表防止以下部位接觸危險零件：手背、手指、工具、金屬線。"},
+          {"Letter": "H", "Meaning": "高壓設備 (High voltage apparatus)。"},
+          {"Letter": "M", "Meaning": "在設備作動狀態下進行進水測試 (Moving during water test)。"},
+          {"Letter": "S", "Meaning": "在設備靜止狀態下進行進水測試 (Stationary during water test)。"},
+          {"Letter": "W", "Meaning": "特定氣候條件 (Weather conditions)，已透過設計驗證能防禦特殊天災。"}
+        ]
+      }
+    }
+  }
+}

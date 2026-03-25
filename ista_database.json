@@ -151,6 +151,86 @@
       }
     }
   },
+  "ISTA 3B (LTL Delivery, Less-Than-Truckload)": {
+    "Standard Package (LTL 零擔卡車)": {
+      "Sequence 1 - Tip/Tip-Over (傾倒翻覆)": {
+        "parameters": {
+          "Standard": "ISTA 3B",
+          "Description_ZH": "模擬 LTL 卡車運輸中，沒有與其他貨物綑綁的獨立包裹因車輛轉彎或煞車導致的傾倒。",
+          "Description_EN": "LTL Tip/Tip-over simulation for unrestrained cargo.",
+          "Tip Angle": "22 degrees"
+        },
+        "tests": [
+          {"Action": "Tip 22 degrees", "Requirement": "If it does not fall over, test passes"}
+        ]
+      },
+      "Sequence 2 - Horizontal Impact (水平撞擊)": {
+        "parameters": {
+          "Standard": "ISTA 3B",
+          "Description_ZH": "模擬堆高機或棧板車在倉庫理貨時的強力撞擊。",
+          "Description_EN": "Forklift or warehouse handling impact simulation.",
+          "Impact Velocity": "Typical 1.2 m/s (48 in/s)"
+        },
+        "tests": [
+          {"Test": "Incline Impact or Horizontal Shock", "Condition": "Apply shock to lowest rigid edge"}
+        ]
+      }
+    }
+  },
+  "ISTA 3E (Unitized Loads, 滿載棧板)": {
+    "Palletized Load (打棧板貨物)": {
+      "Sequence 2 - Compression (抗壓測試)": {
+        "parameters": {
+          "Standard": "ISTA 3E",
+          "Description_ZH": "對整座棧板進行頂部加壓，驗證棧板商品在倉庫疊高時的抗壓能力。",
+          "Description_EN": "Full pallet compression test simulating warehouse stacking.",
+          "F-Factor": "Ranges from 3 to 6 depending on storage conditions"
+        },
+        "tests": [
+          {"Method": "Machine Apply and Release", "Condition": "Load calculated by pallet stacking height"}
+        ]
+      },
+      "Sequence 3 - Random Vibration (隨機振動)": {
+        "parameters": {
+          "Standard": "ISTA 3E",
+          "Description_ZH": "針對滿載棧板的卡車運輸振動頻譜 (鋼板彈簧卡車)。",
+          "Description_EN": "Steel-spring truck random vibration profile for full pallets.",
+          "Overall Grms": "0.54"
+        },
+        "tests": [
+          {"Phase": "Vibration", "Condition": "180 minutes total (or divided by orientation)"}
+        ]
+      },
+      "Sequence 5 - Rotational Edge Drop (棧板邊緣旋轉跌落)": {
+        "parameters": {
+          "Standard": "ISTA 3E",
+          "Description_ZH": "模擬堆高機搬運棧板時意外傾斜落地。",
+          "Description_EN": "Simulates forklift handling drop of the pallet.",
+          "Drop Height": "200 mm (8 in)"
+        },
+        "tests": [
+          {"Action": "Raise one edge of the pallet 8 inches and drop", "Target": "Opposite base edge"}
+        ]
+      }
+    }
+  },
+  "ISTA 6-Amazon.com Over-Boxing (OB)": {
+    "Master Carton (二次外箱包裝)": {
+      "Sequence 3 - Drop (內裝與外箱落摔)": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon Over-Boxing",
+          "Description_ZH": "亞馬遜 Over-Boxing 專屬測試。將原廠產品裝入較大的 Amazon 紙箱並填充緩衝材後進行跌落。",
+          "Description_EN": "Amazon Over-Boxing specific. Vendor product placed inside Amazon master carton with dunnage.",
+          "Drop Sequence": "9 drops (Includes hazard block)"
+        },
+        "tests": [
+          {"Drop 1": "1st Face (weakest)", "Height": "460 mm (18 in)"},
+          {"Drop 8": "Corner", "Height": "910 mm (36 in)"},
+          {"Requirement": "Internal primary package must not rupture"}
+        ]
+      }
+    }
+  },
   "ISTA 6-Amazon.com-SIOC (Parcel Delivery)": {
     "Type A (Standard < 50 lb)": {
       "Sequence 2 - Free-Fall Drop (自由跌落)": {

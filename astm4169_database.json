@@ -1,288 +1,137 @@
 {
-  "DC1 - General Distribution Cycle": {
-    "Schedule A - Handling (Manual & Mechanical)": {
-      "Free-Fall Drop Test (Assurance Level I)": {
+  "DC 1: General schedule (一般寄送)": {
+    "Schedule A - Handling (人工搬運跌落)": {
+      "Drop Test (跌落測試)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 通用配送循環 - 人工與機械搬運跌落測試 (保障等級 I - 高強度)",
-          "Description_EN": "DC1 General Distribution - Manual/Mechanical handling drop test (Assurance Level I - High Intensity)",
-          "Assurance Level": "I (High intensity / Low probability of occurrence)",
-          "Drop Surface": "Concrete or equal rigid surface",
-          "Test Method": "ASTM D5276 Free-fall drop / ASTM D4003 Shock machine"
+          "Description_ZH": "模擬人工搬運與包裹上下貨時的摔落。分為三次不同高度層級的跌落，確保邊角與面受到衝擊。",
+          "Description_EN": "Manual handling drop tests. Drop height is determined by package weight and assurance level.",
+          "Drop Sequence": "One corner, one edge, then remaining faces."
         },
         "tests": [
-          {"Package Weight": "< 4.5 kg (10 lb)", "Drop Height": "91 cm (36 in)", "Drops": "All faces, edges, corners"},
-          {"Package Weight": "4.5–9.1 kg (10–20 lb)", "Drop Height": "76 cm (30 in)", "Drops": "All faces, edges, corners"},
-          {"Package Weight": "9.1–18.1 kg (20–40 lb)", "Drop Height": "61 cm (24 in)", "Drops": "All faces, edges, corners"},
-          {"Package Weight": "18.1–36.3 kg (40–80 lb)", "Drop Height": "46 cm (18 in)", "Drops": "6 faces + 4 edges"},
-          {"Package Weight": "36.3–68.2 kg (80–150 lb)", "Drop Height": "30 cm (12 in)", "Drops": "6 faces only"},
-          {"Package Weight": "> 68.2 kg (150 lb)", "Drop Height": "20 cm (8 in)", "Drops": "6 faces only"}
+          {"Weight": "0 - 9.1 kg (0 - 20 lb)", "Level I Height": "610 mm (24 in)", "Level II Height": "381 mm (15 in)", "Level III Height": "229 mm (9 in)"},
+          {"Weight": "9.1 - 18.1 kg (20 - 40 lb)", "Level I Height": "533 mm (21 in)", "Level II Height": "330 mm (13 in)", "Level III Height": "229 mm (9 in)"},
+          {"Weight": "18.1 - 27.2 kg (40 - 60 lb)", "Level I Height": "457 mm (18 in)", "Level II Height": "305 mm (12 in)", "Level III Height": "229 mm (9 in)"},
+          {"Weight": "27.2 - 45.4 kg (60 - 100 lb)", "Level I Height": "381 mm (15 in)", "Level II Height": "229 mm (9 in)", "Level III Height": "178 mm (7 in)"},
+          {"Weight": "Over 45.4 kg (Over 100 lb)", "Level I Height": "305 mm (12 in)", "Level II Height": "229 mm (9 in)", "Level III Height": "178 mm (7 in)"}
+        ]
+      }
+    },
+    "Schedule C - Vehicle Vibration (車輛振動)": {
+      "Random Vibration - Truck (卡車隨機振動 PSD)": {
+        "parameters": {
+          "Standard": "ASTM D4169-22",
+          "Description_ZH": "模擬公路卡車運輸的隨機振動光譜 (PSD)。工程師可直接輸入此斷點矩陣至振動機台連線軟體。",
+          "Description_EN": "Highway truck transport random vibration PSD profiles. Levels define test severity.",
+          "Test Duration": "180 minutes typical (or specific to DC routing)",
+          "Assurance Level I": "0.73 Grms (Highest Severity, High Value/Custom)",
+          "Assurance Level II": "0.52 Grms (Average Severity, Default)",
+          "Assurance Level III": "0.37 Grms (Lowest Severity)"
+        },
+        "tests": [
+          {"Frequency (Hz)": "1.0", "Level I (g²/Hz)": "0.0001", "Level II (g²/Hz)": "0.00005", "Level III (g²/Hz)": "0.000025"},
+          {"Frequency (Hz)": "4.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
+          {"Frequency (Hz)": "16.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
+          {"Frequency (Hz)": "40.0", "Level I (g²/Hz)": "0.002", "Level II (g²/Hz)": "0.001", "Level III (g²/Hz)": "0.0005"},
+          {"Frequency (Hz)": "80.0", "Level I (g²/Hz)": "0.002", "Level II (g²/Hz)": "0.001", "Level III (g²/Hz)": "0.0005"},
+          {"Frequency (Hz)": "200.0", "Level I (g²/Hz)": "0.00002", "Level II (g²/Hz)": "0.00001", "Level III (g²/Hz)": "0.000005"}
         ]
       },
-      "Free-Fall Drop Test (Assurance Level II)": {
+      "Random Vibration - Air (空運隨機振動 PSD)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 通用配送循環 - 人工與機械搬運跌落測試 (保障等級 II - 中強度)",
-          "Description_EN": "DC1 General Distribution - Drop test Assurance Level II (Medium Intensity)",
-          "Assurance Level": "II (Medium intensity / Medium probability)"
+          "Description_ZH": "模擬飛機貨艙的隨機振動光譜。空運的頻率較高、整體 Grms 能量更強。",
+          "Description_EN": "Air transport random vibration PSD profiles. High frequency focus.",
+          "Test Duration": "120 minutes typical",
+          "Assurance Level I": "1.49 Grms",
+          "Assurance Level II": "1.05 Grms",
+          "Assurance Level III": "0.74 Grms"
         },
         "tests": [
-          {"Package Weight": "< 4.5 kg", "Drop Height": "61 cm (24 in)", "Drops": "6 faces + edges"},
-          {"Package Weight": "4.5–9.1 kg", "Drop Height": "46 cm (18 in)", "Drops": "6 faces + edges"},
-          {"Package Weight": "9.1–18.1 kg", "Drop Height": "38 cm (15 in)", "Drops": "6 faces"},
-          {"Package Weight": "18.1–36.3 kg", "Drop Height": "30 cm (12 in)", "Drops": "6 faces"},
-          {"Package Weight": "> 36.3 kg", "Drop Height": "15 cm (6 in)", "Drops": "6 faces"}
+          {"Frequency (Hz)": "2.0", "Level I (g²/Hz)": "0.0004", "Level II (g²/Hz)": "0.0002", "Level III (g²/Hz)": "0.0001"},
+          {"Frequency (Hz)": "12.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
+          {"Frequency (Hz)": "100.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
+          {"Frequency (Hz)": "300.0", "Level I (g²/Hz)": "0.00002", "Level II (g²/Hz)": "0.00001", "Level III (g²/Hz)": "0.000005"}
         ]
       }
     },
-    "Schedule B - Warehouse Stacking": {
-      "Static Compression Test": {
+    "Schedule D - Stacked Vibration (推疊振動)": {
+      "Vibration under Compressive Load (帶載振動)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 - 倉儲堆疊壓縮測試 (模擬倉庫長期堆疊荷重)",
-          "Description_EN": "DC1 - Warehouse stacking compression test (long-term storage load simulation)",
-          "Test Method": "ASTM D642 or ASTM D4169 Section 13",
-          "Default Stack Height": "108 inches (2.74 m) — standard tractor-trailer height",
-          "Load Formula": "F = (H/h - 1) × W × SF",
-          "Formula Notes": "H=stack height, h=unit height, W=unit weight, SF=safety factor 1.5~2.0",
-          "Test Duration": "1 hour (static) or constant speed to failure (dynamic)"
+          "Description_ZH": "模擬底層包裹在運輸途中承受上方貨物重量時的動態振動破壞力。",
+          "Description_EN": "Simulates dynamic bottom-load compression during vehicle vibration.",
+          "Top Load Formula": "L = W * ((H-h)/h) * F",
+          "Variables": "W: Package weight, H: Stack height, h: Package height"
         },
         "tests": [
-          {"Test": "Static Load", "Condition": "Apply calculated load uniformly on top surface"},
-          {"Test": "Hold", "Condition": "Maintain 1 hour at full load — no collapse allowed"},
-          {"Test": "Post-test", "Condition": "Inspect deformation; functional test of contents"}
+          {"Assurance Level": "I", "Safety Factor (F)": "1.0", "Vibration Profile": "Use Level I PSD"},
+          {"Assurance Level": "II", "Safety Factor (F)": "0.7", "Vibration Profile": "Use Level II PSD"},
+          {"Assurance Level": "III", "Safety Factor (F)": "0.5", "Vibration Profile": "Use Level III PSD"}
         ]
       }
     },
-    "Schedule C - Vehicle Stacking": {
-      "Compression Under Transport Vibration": {
+    "Schedule C/D - Compression (堆碼抗壓公式計算)": {
+      "Machine Apply and Release/Hold (抗壓機壓放試驗)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 - 車輛運輸中的堆疊壓縮 (含濕度、溫度、振動影響)",
-          "Description_EN": "DC1 - Stacking compression during vehicle transport with environmental effects",
-          "Default Stack Height": "108 inches (2.74 m)",
-          "Shipping Density Factor": "12 lb/ft³ (updated from 10 in -22 revision)",
-          "Environmental Factors": "Humidity, temperature, vibration simultaneously"
+          "Description_ZH": "驗證紙箱與包裝材長時間堆疊在外箱上的靜態抗壓強度。使用公式計算目標下壓力 (Load)。",
+          "Description_EN": "Static compression strength evaluation using a testing machine.",
+          "Compression Formula": "Load (L) = W * ((H-h)/h) * F",
+          "W": "Weight of one package",
+          "H": "Maximum stacking height in transit or storage",
+          "h": "Height of one package"
         },
         "tests": [
-          {"Phase": "Load Application", "Condition": "Apply top load per Formula, include environmental conditions"},
-          {"Phase": "Vibration", "Condition": "Apply ASTM D999 vibration while under compression"},
-          {"Phase": "Inspection", "Condition": "Check for bulging, delamination, content damage"}
-        ]
-      }
-    },
-    "Schedule D - Stacked Vibration": {
-      "Vertical Vibration Under Compression": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 - 堆疊狀態下的垂直振動測試 (模擬滿載卡車路面振動)",
-          "Description_EN": "DC1 - Vertical vibration while stacked — simulates loaded truck on road",
-          "Test Method": "ASTM D999 Method A1 (resonance search) or B (fixed frequency)",
-          "Compression Load": "Per Schedule C formula",
-          "Vibration Type": "Fixed displacement or variable frequency"
-        },
-        "tests": [
-          {"Phase": "Resonance Search", "Freq Range": "2–200 Hz", "Action": "Identify resonant frequency of test unit"},
-          {"Phase": "Dwell Vibration", "Duration": "Variable — see Table 1", "Condition": "Vibrate at resonant freq while under top load"},
-          {"Phase": "Inspection", "Duration": "—", "Condition": "Check for container failure or content damage"}
-        ]
-      }
-    },
-    "Schedule E - Vehicle Vibration": {
-      "Random Vibration - Truckload (TL)": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 - 整車 (TL) 隨機振動測試 (模擬卡車路面振動 PSD 頻譜)",
-          "Description_EN": "DC1 - Truckload random vibration PSD profile (road transport simulation)",
-          "Test Method": "ASTM D4728 Random vibration",
-          "Frequency Range": "3 to 200 Hz",
-          "Duration": "60 min/axis (Assurance Level I); 30 min/axis (Level II)",
-          "Axes": "Vertical required; Lateral and Longitudinal optional"
-        },
-        "tests": [
-          {"Freq (Hz)": "3", "PSD (g²/Hz)": "0.001", "Slope": "Start"},
-          {"Freq (Hz)": "6", "PSD (g²/Hz)": "0.01", "Slope": "+6 dB/oct"},
-          {"Freq (Hz)": "20", "PSD (g²/Hz)": "0.01", "Slope": "Flat plateau"},
-          {"Freq (Hz)": "200", "PSD (g²/Hz)": "0.0002", "Slope": "-6 dB/oct"},
-          {"Summary": "Overall", "PSD (g²/Hz)": "~1.12 g rms (Level I)", "Slope": "Per ASTM D4169-22 Table"}
-        ]
-      },
-      "Random Vibration - LTL Motor Freight": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC3 型 LTL 零擔貨運隨機振動 (更嚴苛於整車)",
-          "Description_EN": "LTL Motor Freight - More severe PSD profile than truckload",
-          "Test Method": "ASTM D4728 Random vibration",
-          "Frequency Range": "3 to 200 Hz",
-          "Note": "LTL involves multiple truck transfers — higher cumulative damage"
-        },
-        "tests": [
-          {"Freq (Hz)": "3", "PSD (g²/Hz)": "0.001", "Slope": "Start"},
-          {"Freq (Hz)": "4", "PSD (g²/Hz)": "0.04", "Slope": "+12 dB/oct"},
-          {"Freq (Hz)": "26", "PSD (g²/Hz)": "0.04", "Slope": "Flat plateau"},
-          {"Freq (Hz)": "200", "PSD (g²/Hz)": "0.00066", "Slope": "-6 dB/oct"},
-          {"Summary": "Overall", "PSD (g²/Hz)": "~1.97 g rms", "Slope": "LTL profile — more aggressive"}
-        ]
-      }
-    },
-    "Schedule F - Air Freight Vibration": {
-      "Air Cargo Vibration (Updated D4169-22)": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC1 航空貨運振動 (D4169-22 更新: 6個頻率點，含高中低密度三種等級)",
-          "Description_EN": "Air cargo vibration — D4169-22 updated to 6 frequencies, 3 density levels (no Assurance Level choice needed)",
-          "Key Change vs -09": "Changed from 4 to 6 discrete frequencies (1, 2, 42, 50, 120, 200 Hz); cycles through ALL 3 density levels",
-          "Frequencies": "1, 2, 42, 50, 120, 200 Hz",
-          "Density Levels": "High, Medium, Low — all three levels tested",
-          "Duration": "40 min total per axis (cycling through all 3 levels)"
-        },
-        "tests": [
-          {"Density": "High", "Freq (Hz)": "1, 2, 42, 50, 120, 200", "Amplitude": "Per ASTM D4169-22 Table (High)"},
-          {"Density": "Medium", "Freq (Hz)": "1, 2, 42, 50, 120, 200", "Amplitude": "Per ASTM D4169-22 Table (Medium)"},
-          {"Density": "Low", "Freq (Hz)": "1, 2, 42, 50, 120, 200", "Amplitude": "Per ASTM D4169-22 Table (Low)"},
-          {"Duration": "40 min/axis total", "Note": "Cycle through all 3 levels; overall Grms LOWER than previous D4169 versions"}
-        ]
-      }
-    },
-    "Schedule G - Low Pressure (Altitude)": {
-      "Air Cargo Altitude Simulation": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "航空貨運低氣壓測試 (模擬非加壓貨艙高空低氣壓環境)",
-          "Description_EN": "Air freight low-pressure simulation for non-pressurized cargo holds",
-          "Test Method": "ASTM D6653",
-          "Altitude": "4,572 m (15,000 ft)",
-          "Pressure": "57.2 kPa (8.3 psia)",
-          "Duration": "1 hour at altitude"
-        },
-        "tests": [
-          {"Phase": "Pressure Ramp Down", "Rate": "≤ 10 m/s climb rate equivalent", "Action": "Reduce chamber to 57.2 kPa"},
-          {"Phase": "Hold", "Duration": "1 hour", "Action": "Maintain 57.2 kPa; monitor for gas/liquid leakage"},
-          {"Phase": "Repressurize", "Duration": "—", "Action": "Return to ambient; perform functional test"}
+          {"Assurance Level & Material": "Level I - Corrugated Box", "Safety Factor (F)": "8.0", "Application": "Highest severity storage"},
+          {"Assurance Level & Material": "Level II - Corrugated Box", "Safety Factor (F)": "4.5", "Application": "Standard transit warehouse stacking"},
+          {"Assurance Level & Material": "Level III - Corrugated Box", "Safety Factor (F)": "3.0", "Application": "Short term or low risk stacking"}
         ]
       }
     }
   },
-  "DC3 - Single Package (LTL Motor Freight)": {
-    "Schedule A - Handling": {
-      "Drop Test - Individual Package": {
+  "DC 3: Single package environment (單一小包裹環境)": {
+    "Schedule A - Handling (人工落摔)": {
+      "Drop Test (跌落測試)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC3 - 針對單一包裝零擔貨運的跌落測試 (非棧板)",
-          "Description_EN": "DC3 - Individual package drop for LTL freight (no pallet/skid)",
-          "Assurance Level": "I or II depending on risk",
-          "Note": "DC3 is for single packages without pallet — LTL motor freight"
+          "Description_ZH": "模擬單獨寄送的包裹摔落機率較高，適用於電商或零售單件出貨。",
+          "Description_EN": "Single parcel drop simulation, commonly used for retail shipments."
         },
         "tests": [
-          {"Weight (kg)": "< 4.5", "Drop Height AL-I": "91 cm", "Drop Height AL-II": "61 cm"},
-          {"Weight (kg)": "4.5–9.1", "Drop Height AL-I": "76 cm", "Drop Height AL-II": "46 cm"},
-          {"Weight (kg)": "9.1–18.1", "Drop Height AL-I": "61 cm", "Drop Height AL-II": "38 cm"},
-          {"Weight (kg)": "18.1–36.3", "Drop Height AL-I": "46 cm", "Drop Height AL-II": "30 cm"},
-          {"Weight (kg)": "> 36.3", "Drop Height AL-I": "30 cm", "Drop Height AL-II": "15 cm"}
+          {"Hazard": "Manual Handling", "Action": "Same drops as defined in General Schedule A but typically tested at Level I or II"}
         ]
       }
     },
-    "Schedule E - Vehicle Vibration": {
-      "LTL Random Vibration Profile": {
+    "Schedule I - Low Pressure (低氣壓/空運)": {
+      "Altitude Simulation (高海拔模擬)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC3 LTL 零擔貨運隨機振動 (需經多次裝卸轉運，振動累積嚴苛)",
-          "Description_EN": "DC3 LTL random vibration — multiple truck transfers, more cumulative damage",
-          "Frequency Range": "3 to 200 Hz",
-          "Duration": "60 min/axis (Level I)"
+          "Description_ZH": "模擬飛機貨艙未加壓環境，驗證密封袋、液體瓶罐是否會破裂或滲漏。",
+          "Description_EN": "Un-pressurized cargo hold simulation checking for seal failure.",
+          "Test Pressure": "Usually equivalent to 10,000 to 15,000 ft altitude",
+          "Duration": "60 minutes"
         },
         "tests": [
-          {"Freq (Hz)": "3–4", "PSD": "Ramp to 0.04 g²/Hz", "Slope": "+12 dB/oct"},
-          {"Freq (Hz)": "4–26", "PSD": "0.04 g²/Hz (flat)", "Slope": "Plateau"},
-          {"Freq (Hz)": "26–200", "PSD": "Roll off to 0.00066 g²/Hz", "Slope": "-6 dB/oct"},
-          {"Summary": "Overall ~1.97 g rms", "Note": "Much more aggressive than TL profile"}
+          {"Requirement": "Maintain test pressure", "Action": "Monitor for ballooning, leakage, or burst"}
         ]
       }
     }
   },
-  "DC6 - Rail (Tied Down Load)": {
-    "Schedule A - Handling": {
-      "Railcar Coupling Impact": {
+  "DC 13: Air and motor freight (空運與公路混合)": {
+    "Schedule A, C, F, I (綜合排程)": {
+      "Air Delivery Profile (空運物流連貫測試)": {
         "parameters": {
           "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC6 - 鐵路綁固貨物的調車場車廂連結衝擊測試",
-          "Description_EN": "DC6 - Rail tied-down load, railcar humping/coupling impact",
-          "Test Method": "ASTM D4003 or ISO 2244",
-          "Impact Speed": "6.4 km/h (4 mph) minimum",
-          "Test Setup": "Secure test load on flatcar or simulate coupling"
+          "Description_ZH": "最常見的外銷空運測試循環，包含跌落、空運隨機振動、卡車隨機振動與低壓測試的組合拳。",
+          "Description_EN": "Standard sequence for international air freight including drops, air vib, truck vib, and altitude."
         },
         "tests": [
-          {"Phase": "Coupling Impact", "Speed": "6.4 km/h minimum", "Direction": "Longitudinal both ways"},
-          {"Phase": "Post Impact", "Condition": "Inspect for load shift, container breach, content damage"}
-        ]
-      }
-    },
-    "Schedule E - Vehicle Vibration": {
-      "Rail Transport Vibration": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC6 - 鐵路運輸振動測試",
-          "Description_EN": "DC6 - Rail transport vibration — vertical and lateral profiles",
-          "Test Method": "ASTM D4728 random vibration",
-          "Frequency Range": "1 to 200 Hz",
-          "Duration": "Per ASTM D4169-22 Table (function of journey distance)"
-        },
-        "tests": [
-          {"Freq (Hz)": "1–5", "PSD (g²/Hz)": "0.003–0.015", "Slope": "Rail profile per ASTM"},
-          {"Freq (Hz)": "5–20", "PSD (g²/Hz)": "0.015 flat", "Slope": "Plateau"},
-          {"Freq (Hz)": "20–200", "PSD (g²/Hz)": "Roll off", "Slope": "-3 dB/oct approx"}
-        ]
-      }
-    }
-  },
-  "DC13 - Air Freight (Domestic)": {
-    "Schedule A - Handling": {
-      "Air Freight Drop Test": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC13 - 國內航空貨運搬運跌落測試",
-          "Description_EN": "DC13 - Domestic air freight handling drop test",
-          "Assurance Level": "I or II",
-          "Note": "Air freight handling tends to be rougher than truck — drop heights same as DC1"
-        },
-        "tests": [
-          {"Weight": "< 4.5 kg", "Level I Height": "91 cm", "Level II Height": "61 cm"},
-          {"Weight": "4.5–18.1 kg", "Level I Height": "76 cm", "Level II Height": "46 cm"},
-          {"Weight": "> 18.1 kg", "Level I Height": "61 cm", "Level II Height": "30 cm"}
-        ]
-      }
-    },
-    "Schedule F - Air Freight Vibration": {
-      "Domestic Air Cargo Vibration": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC13 - 國內航空貨運振動測試 (D4169-22 更新 6個頻率點)",
-          "Description_EN": "DC13 - Domestic air cargo vibration — 6-frequency updated profile",
-          "Frequencies": "1, 2, 42, 50, 120, 200 Hz",
-          "Duration": "40 min/axis total (3 density levels)",
-          "Key Change": "D4169-22 removes user choice of Assurance Level for air vibration — all levels tested"
-        },
-        "tests": [
-          {"Level": "High packaging density", "Amplitude": "Higher g-level", "Duration": "~13 min portion"},
-          {"Level": "Medium packaging density", "Amplitude": "Medium g-level", "Duration": "~13 min portion"},
-          {"Level": "Low packaging density", "Amplitude": "Lower g-level", "Duration": "~13 min portion"}
-        ]
-      }
-    },
-    "Schedule G - Low Pressure": {
-      "Domestic Air Altitude": {
-        "parameters": {
-          "Standard": "ASTM D4169-22",
-          "Description_ZH": "DC13 - 國內航空貨運低氣壓 (4,572m 模擬非加壓貨艙)",
-          "Description_EN": "DC13 - 15,000 ft altitude simulation for non-pressurized domestic air cargo",
-          "Altitude": "4,572 m (15,000 ft)",
-          "Pressure": "57.2 kPa (8.3 psia)",
-          "Duration": "1 hour"
-        },
-        "tests": [
-          {"Phase": "Pressurize down to 57.2 kPa", "Rate": "Controlled", "Check": "Seal integrity"},
-          {"Phase": "Hold 1 hour", "Condition": "No leakage", "Check": "Gas/liquid release"},
-          {"Phase": "Return to ambient + functional test", "Condition": "Product operational", "Check": "Pass/Fail"}
+          {"Sequence": "1. Schedule A", "Action": "Handling Drops (First half)"},
+          {"Sequence": "2. Schedule C", "Action": "Truck Random Vibration (e.g. Level II, 60 mins)"},
+          {"Sequence": "3. Schedule I", "Action": "Low Pressure (Altitude)"},
+          {"Sequence": "4. Schedule C", "Action": "Air Random Vibration (e.g. Level II, 120 mins)"},
+          {"Sequence": "5. Schedule A", "Action": "Handling Drops (Second half on different faces)"}
         ]
       }
     }

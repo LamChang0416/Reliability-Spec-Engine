@@ -1,6 +1,6 @@
 # 🛡️ Reliability Spec Engine
 
-> **七合一可靠度規範查詢工具 · Seven-in-One Reliability Standards Reference**
+> **八合一可靠度規範查詢工具 · Eight-in-One Reliability Standards Reference**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
 [![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
@@ -11,9 +11,9 @@
 
 ## 📖 Overview · 專案簡介
 
-**English** | A PWA-based engineering tool that consolidates seven major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load. Created by Lam.
+**English** | A PWA-based engineering tool that consolidates eight major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load. Created by Lam.
 
-**繁體中文** | 一套將七大可靠度與環境測試規範整合於單一介面的 PWA 工具由 **LamChang0416** 獨家開發。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
+**繁體中文** | 一套將八大可靠度與環境測試規範整合於單一介面的 PWA 工具由 **LamChang0416** 獨家開發。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
 
 ---
 
@@ -27,6 +27,7 @@
 | 📦 **ISTA** | 1A, 2A, 3A, 6-Amazon | 包裝與運輸模擬測試 / Safe Transit Association | [ISTA](https://ista.org) |
 | 🛡️ **IEC 60721-3** | 2019 | 環境條件分類 / Environmental condition classification | [IEC Webstore](https://webstore.iec.ch/publication/60947) |
 | 🔬 **IEC 60068-2** | 2025/2023 最新版 | 環境測試方法 / Environmental testing methods | [IEC Webstore](https://webstore.iec.ch/publication/60068) |
+| 💧 **IEC 60529** | + AMD2:2013 | IP 防護等級 (含 IP69K) / Ingress Protection Code | [IEC Webstore](https://webstore.iec.ch/publication/60529) |
 | 📈 **Telcordia SR-332** | Issue 4 (2016) | 硬體可靠度預測程序 / Hardware Reliability Prediction | Telcordia / Ericsson |
 
 ---

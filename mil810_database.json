@@ -52,33 +52,41 @@
       "Basic Hot (A2)": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "多數地區標準高溫倉儲 (Table 501.7-II)",
-          "Description_EN": "Standard hot storage for most worldwide locations (Table 501.7-II)",
+          "Description_ZH": "多數地區標準高溫倉儲 (氣候區 A2, Table 501.7-II)。此為精密 24 小時晝夜循環曲線 (Diurnal Cycle)，重複 7 次。",
+          "Description_EN": "Standard hot storage for most worldwide locations (Table 501.7-II). 24-hour diurnal cycle repeated 7 times.",
           "Peak Ambient": "43°C (110°F)",
           "Peak Induced": "63°C (145°F)",
           "Humidity": "14% to 44% RH",
-          "Cycle Duration": "24 hours per cycle",
-          "Total Cycles": "7 cycles (168 hours)"
+          "Total Cycles": "7 cycles (168 hours total)"
         },
         "tests": [
-          {"Cycle Phase": "Minimum", "Temperature": "30°C (86°F)", "Duration": "Hold"},
-          {"Cycle Phase": "Peak", "Temperature": "63°C (145°F)", "Duration": "Peak time"},
-          {"Cycle Phase": "Total", "Temperature": "7 continuous cycles", "Duration": "168 hours"}
+          {"Hour": "03:00", "Ambient": "30°C", "Induced (Storage)": "30°C (Min)"},
+          {"Hour": "06:00", "Ambient": "30°C", "Induced (Storage)": "34°C"},
+          {"Hour": "09:00", "Ambient": "34°C", "Induced (Storage)": "46°C"},
+          {"Hour": "12:00", "Ambient": "39°C", "Induced (Storage)": "58°C"},
+          {"Hour": "15:00", "Ambient": "43°C (Max)", "Induced (Storage)": "63°C (Max)"},
+          {"Hour": "18:00", "Ambient": "42°C", "Induced (Storage)": "54°C"},
+          {"Hour": "21:00", "Ambient": "35°C", "Induced (Storage)": "38°C"}
         ]
       },
       "Hot Dry (A1)": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "極端沙漠氣候高溫倉儲 (中東、北非) (Table 501.7-II)",
-          "Description_EN": "Extreme desert climate storage – Middle East, North Africa (Table 501.7-II)",
+          "Description_ZH": "極端沙漠氣候高溫倉儲 (中東、北非氣候區 A1)。精密 24 小時晝夜曲線，高溫輻射烤箱效應極強。",
+          "Description_EN": "Extreme desert climate storage – Middle East, North Africa. 24-hour diurnal cycle.",
           "Peak Ambient": "49°C (120°F)",
           "Peak Induced": "71°C (160°F)",
-          "Humidity": "3% to 8% RH"
+          "Humidity": "3% to 8% RH",
+          "Total Cycles": "7 cycles (168 hours total)"
         },
         "tests": [
-          {"Cycle Phase": "Minimum", "Temperature": "33°C (91°F)", "Duration": "Hold"},
-          {"Cycle Phase": "Peak", "Temperature": "71°C (160°F)", "Duration": "Peak time"},
-          {"Cycle Phase": "Total", "Temperature": "7 continuous cycles", "Duration": "168 hours"}
+          {"Hour": "03:00", "Ambient": "33°C", "Induced (Storage)": "33°C (Min)"},
+          {"Hour": "06:00", "Ambient": "33°C", "Induced (Storage)": "35°C"},
+          {"Hour": "09:00", "Ambient": "38°C", "Induced (Storage)": "46°C"},
+          {"Hour": "12:00", "Ambient": "45°C", "Induced (Storage)": "63°C"},
+          {"Hour": "15:00", "Ambient": "49°C (Max)", "Induced (Storage)": "71°C (Max)"},
+          {"Hour": "18:00", "Ambient": "47°C", "Induced (Storage)": "62°C"},
+          {"Hour": "21:00", "Ambient": "38°C", "Induced (Storage)": "44°C"}
         ]
       }
     },
@@ -104,26 +112,34 @@
       "Basic Cold (C1)": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "標準低溫倉儲 – 歐洲及北美 (Table 502.7-I)",
-          "Description_EN": "Standard cold storage – Europe/North America (Table 502.7-I)",
-          "Temperature": "-33°C (-27°F)",
-          "Duration": "24 hours after stabilization",
-          "Rate of Change": "≤ 3°C/min"
+          "Description_ZH": "標準低溫倉儲 (歐洲、北美北部、日韓等地)。日夜溫差循環 24 小時曲線。",
+          "Description_EN": "Standard cold storage diurnal cycle – Europe/North America (Table 502.7-I).",
+          "Peak Ambient": "-21°C",
+          "Min Ambient": "-33°C",
+          "Duration": "24-hour cycle repeated 3 times"
         },
         "tests": [
-          {"Test": "Storage", "Condition": "Maintain -33°C for 24 hours"}
+          {"Hour": "06:00 (Min)", "Temperature": "-33°C"},
+          {"Hour": "12:00", "Temperature": "-25°C"},
+          {"Hour": "15:00 (Max)", "Temperature": "-21°C"},
+          {"Hour": "18:00", "Temperature": "-24°C"},
+          {"Hour": "24:00", "Temperature": "-30°C"}
         ]
       },
       "Cold (C2)": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "極寒地區倉儲 – 阿拉斯加、西伯利亞",
-          "Description_EN": "Severe cold storage – Alaska, Siberia",
-          "Temperature": "-46°C (-51°F)",
-          "Duration": "24 hours after stabilization"
+          "Description_ZH": "嚴寒低溫倉儲 (阿拉斯加、西伯利亞、北極圈邊緣)。日夜溫差循環 24 小時曲線。",
+          "Description_EN": "Severe cold diurnal cycle – Alaska, Siberia, Northern Canada.",
+          "Peak Ambient": "-37°C",
+          "Min Ambient": "-46°C",
+          "Duration": "24-hour cycle repeated 3 times"
         },
         "tests": [
-          {"Test": "Storage", "Condition": "Maintain -46°C for 24 hours"}
+          {"Hour": "06:00 (Min)", "Temperature": "-46°C"},
+          {"Hour": "12:00", "Temperature": "-41°C"},
+          {"Hour": "15:00 (Max)", "Temperature": "-37°C"},
+          {"Hour": "24:00", "Temperature": "-44°C"}
         ]
       }
     },
@@ -131,13 +147,13 @@
       "Basic Cold (C1) Operational": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "標準低溫開機與運作",
-          "Description_EN": "Standard cold start and operation",
-          "Temperature": "-32°C (-25°F)",
-          "Stabilization": "Temperature rate of change < 2.0°C/hour"
+          "Description_ZH": "標準低溫開機與持續運作 (Constant Temperature 恆溫開機法)",
+          "Description_EN": "Standard cold start and continuous operation (Methodology: Constant Temp).",
+          "Temperature": "-32°C (-25°F)"
         },
         "tests": [
-          {"Test": "Cold Boot / Operate", "Condition": "Power on and maintain operation until thermally stabilized"}
+          {"Test": "Cold Boot", "Condition": "Soak at -32°C until stabilized, then power ON"},
+          {"Test": "Operate", "Condition": "Maintain operation and monitor functions"}
         ]
       }
     }
@@ -202,17 +218,18 @@
       "Hot Dry (A1) Worldwide Deployment": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "評估太陽輻射產生的熱效應 (外殼變形、內部過熱)",
-          "Description_EN": "Evaluate solar thermal effects – housing deformation, internal overheating",
+          "Description_ZH": "評估太陽輻射產生的熱效應。除了全光譜 1,120 W/m² 以外，嚴格規定了紅外/紫外/可見光的能量佔比。",
+          "Description_EN": "Evaluate solar thermal effects. Strict spectral energy distribution enforcement.",
           "Irradiance": "Maximum 1,120 W/m² (355 Btu/ft²/hr)",
-          "Spectral Energy": "Conforms to Table 505.7-I (UV, Visible, IR)",
           "Chamber Temperature": "Peak 49°C (120°F)",
-          "Cycle Duration": "24-hour diurnal cycle",
-          "Minimum Cycles": "3 cycles"
+          "Cycle Duration": "24-hour diurnal cycle (Minimum 3 cycles)"
         },
         "tests": [
-          {"Cycle": "Minimum of 3 cycles", "Condition": "Continuous 24-hr cycles of varying irradiance and temperature"},
-          {"Test": "Operational Evaluation", "Condition": "Operate equipment during peak temperature and irradiance phase"}
+          {"Spectral Region": "Ultraviolet B (280-320 nm)", "Energy Limits": "5.0 W/m² (0.45%)"},
+          {"Spectral Region": "Ultraviolet A (320-400 nm)", "Energy Limits": "63 W/m² (5.63%)"},
+          {"Spectral Region": "Visible (400-780 nm)", "Energy Limits": "577 W/m² (51.52%)"},
+          {"Spectral Region": "Infrared (780-3000 nm)", "Energy Limits": "475 W/m² (42.40%)"},
+          {"Cycle Profile": "Diurnal", "Energy Limits": "Varies by hour (Peak irradiance at noon)"}
         ]
       }
     },

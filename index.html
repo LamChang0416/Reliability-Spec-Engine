@@ -155,6 +155,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <button class="tab-btn" onclick="showTab('iec60068',this)" id="tabIEC60068">
     🔬 IEC 60068<span class="badge new-badge">v2023+</span>
   </button>
+  <button class="tab-btn" onclick="showTab('ip',this)" id="tabIP">
+    💧 IP Code<span class="badge new-badge">IEC 60529</span>
+  </button>
 </div>
 
 <main>
@@ -278,12 +281,29 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
     </div>
   </div>
+
+  <!-- IP Code Panel -->
+  <div class="panel" id="panel-ip">
+    <p class="panel-caption" data-zh="【IP 防水防塵等級】IEC 60529 (與 ISO 20653) 定義了電子設備防護固體異物與液體侵入的能力，廣泛應用於消費性電子、工控與車載系統。" data-en="【Ingress Protection】IEC 60529 (and ISO 20653) defines the protection of enclosures against the ingress of solid foreign objects and water."></p>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 防護指標選擇" data-en="① Select Protection Code"></h3>
+        <div class="sel-group"><label data-zh="防護類別" data-en="Protection Category"></label><select id="ip-l1" onchange="buildL2('ip')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="子類別" data-en="Subcategory"></label><select id="ip-l2" onchange="buildL3('ip')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="防護等級" data-en="IP Rating Parameter"></label><select id="ip-l3" onchange="showResult('ip')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
+        <div id="ip-result"><div class="empty" data-zh="← 請先選擇防護類別" data-en="← Please select a protection category"></div></div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <script>
 // ─── State ────────────────────────────────────────────────────────────────
 let LANG = 'ZH';
-const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null, iec60068: null };
+const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null, iec60068: null, ip: null };
 const DB_FILES = {
   iec:  'iec_database.json',
   mil:  'mil810_database.json',
@@ -291,7 +311,8 @@ const DB_FILES = {
   gr63: 'gr63_database.json',
   sr332: 'sr332_database.json',
   ista: 'ista_database.json',
-  iec60068: 'iec60068_database.json'
+  iec60068: 'iec60068_database.json',
+  ip: 'ip_code_database.json'
 };
 const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','Description']);
 
@@ -306,7 +327,7 @@ function setLang(l) {
   // Refresh search placeholder
   document.getElementById('searchInput').placeholder = l==='ZH' ? '搜尋規範關鍵字...' : 'Search specs...';
   // Re-render active result
-  ['iec','mil','astm','gr63','sr332','ista','iec60068'].forEach(s => {
+  ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(s => {
     const l3 = document.getElementById(s+'-l3');
     if (l3 && l3.value) showResult(s);
     else {
@@ -477,7 +498,7 @@ function doSearch(q) {
   const box = document.getElementById('searchResults');
   if (!q || q.length < 2) { box.innerHTML=''; return; }
   const ql = q.toLowerCase();
-  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068' };
+  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068', ip:'💧 IP Code (IEC)' };
   let results = [];
   Object.entries(DBS).forEach(([std, db]) => {
     if (!db) return;
