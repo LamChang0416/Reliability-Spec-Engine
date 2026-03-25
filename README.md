@@ -2,10 +2,12 @@
 
 > **八合一可靠度規範查詢工具 · Eight-in-One Reliability Standards Reference**
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
-[![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
-[![Standards](https://img.shields.io/badge/Standards-4%20in%201-orange)](https://github.com/LamChang0416/Reliability-Spec-Engine)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://Lam-Reliability.github.io/Reliability-Spec-Engine/)
+[![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://Lam-Reliability.github.io/Reliability-Spec-Engine/)
+[![Standards](https://img.shields.io/badge/Standards-8%20in%201-orange)](https://github.com/Lam-Reliability/Reliability-Spec-Engine)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
+# [🚀 Launch Spec Engine 2.0](https://Lam-Reliability.github.io/Reliability-Spec-Engine/)
 
 ---
 
@@ -13,7 +15,7 @@
 
 **English** | A PWA-based engineering tool that consolidates eight major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load. Created by Lam.
 
-**繁體中文** | 一套將八大可靠度與環境測試規範整合於單一介面的 PWA 工具由 **LamChang0416** 獨家開發。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
+**繁體中文** | 一套將八大可靠度與環境測試規範整合於單一介面的 PWA 工具，由 **Lam** 獨家開發。支援跨規範關鍵字搜尋、測試參數查閱、**動態熱分布圖表 (Thermal Profiles)** 與數據匯出，首次載入後**完整支援離線使用**。
 
 ---
 
@@ -38,9 +40,12 @@
 - 📊 **Metric Card Display / 參數卡片展示** — Key values (temperature, g-level, duration) highlighted clearly
 - 📥 **Export JSON & CSV / 資料匯出** — One-click export for test plan documentation
 - 🌐 **Bilingual ZH/EN / 中英文切換** — Full interface in Traditional Chinese and English
+- 📈 **Data Viz / 數據視覺化** — Dynamic Chart.js line graphs for thermal and environmental profiles
+- 🧪 **Unit Toggle / 單位切換** — Instantly switch between SI (Metric) and Imperial units
 - ✈️ **Offline Support / 離線查閱** — Service Worker caches all databases; works without internet
 - 📱 **PWA Installable / 可安裝至主畫面** — Add to iOS/Android home screen for native app experience
 - 🔖 **Source Links / 規範來源連結** — Direct links to official standard publishers
+- 📌 **Pinned Dashboard / 首頁釘選** — Save frequently used specs to your personal workspace
 
 ---
 
@@ -49,7 +54,7 @@
 ### Option A — GitHub Pages (Recommended / 推薦)
 Just open in any browser — no installation needed:
 ```
-https://lamchang0416.github.io/Reliability-Spec-Engine/
+https://Lam-Reliability.github.io/Reliability-Spec-Engine/
 ```
 On mobile: tap **Share → Add to Home Screen** to install as an app.
 
@@ -93,8 +98,8 @@ Reliability-Spec-Engine/
 
 ## 📝 Version History · 版本記錄
 
-| Date | Change |
-|------|--------|
+| **2026-03** | **Spec Engine 2.0: 重大改版。新增左側導覽排版、資料視覺化圖表、公英制轉換、首頁釘選功能** |
+| 2026-03 | 加入 IP Code (IEC 60529) 與 IP69K；進化為八合一 PWA |
 | 2026-03 | 加入 IEC 60068 與 作者標示 Lam；擴充為七合一 PWA |
 | 2026-03 | 加入 ISTA 包裝運輸測試標準；擴充為六合一 PWA |
 | 2026-03 | 加入 Telcordia SR-332 Issue 4；擴充為五合一 PWA |
@@ -108,8 +113,8 @@ Reliability-Spec-Engine/
 
 ## 👨‍🔧 Author · 作者
 
-**LamChang0416** — Reliability Engineer  
-[GitHub](https://github.com/LamChang0416)
+**Lam** — Reliability Engineer  
+[GitHub](https://github.com/Lam-Reliability)
 
 ---
 
