@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0f2c">
-<meta name="description" content="Six-in-one reliability standards reference: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, IEC 60721-3, Telcordia SR-332 Issue 4, ISTA">
+<meta name="description" content="Seven-in-one reliability standards reference: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, IEC 60721-3, Telcordia SR-332 Issue 4, ISTA, IEC 60068-2">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpecEngine">
-<title>🛡️ Reliability Spec Engine</title>
+<title>🛡️ Reliability Spec Engine (by Lam)</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,8 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,var(--bg) 
 
 /* HEADER */
 header{padding:16px 20px;border-bottom:1px solid rgba(99,179,237,.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(13,27,62,.6);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
-.logo{font-size:1.3rem;font-weight:700;background:linear-gradient(90deg,var(--blue),var(--blue2),var(--blue3));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo{font-size:1.3rem;font-weight:700;background:linear-gradient(90deg,var(--blue),var(--blue2),var(--blue3));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center}
+.author-badge{font-size:10px;color:var(--muted);border:1px solid rgba(94,163,184,.3);border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:500;letter-spacing:0.05em;-webkit-text-fill-color:var(--muted)}
 .header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .lang-btn{background:rgba(26,58,107,.6);border:1px solid rgba(99,179,237,.3);color:var(--blue2);border-radius:8px;padding:6px 14px;cursor:pointer;font-family:inherit;font-weight:600;font-size:13px;transition:all .2s}
 .lang-btn:hover,.lang-btn.active{background:var(--bg3);border-color:var(--blue);color:var(--blue3)}
@@ -115,7 +116,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 <body>
 
 <header>
-  <div class="logo">🛡️ <span id="appTitle">Reliability Spec Engine</span></div>
+  <div class="logo">🛡️ <span id="appTitle">Reliability Spec Engine</span><span class="author-badge">by Lam</span></div>
   <div class="header-right">
     <span class="offline-badge" id="offlineBadge">✈ Offline</span>
     <button class="lang-btn active" id="btnZH" onclick="setLang('ZH')">中文</button>
@@ -151,6 +152,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <button class="tab-btn" onclick="showTab('ista',this)" id="tabISTA">
     📦 ISTA<span class="badge new-badge">2024 更新</span>
   </button>
+  <button class="tab-btn" onclick="showTab('iec60068',this)" id="tabIEC60068">
+    🔬 IEC 60068<span class="badge new-badge">v2023+</span>
+  </button>
 </div>
 
 <main>
@@ -158,7 +162,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- IEC Panel -->
   <div class="panel active" id="panel-iec">
-    <p class="panel-caption" data-zh="IEC 60721-3：環境分類與測試轉換矩陣" data-en="IEC 60721-3: Environmental Classification & Test Conversion Matrix"></p>
+    <p class="panel-caption" data-zh="【環境條件分類】IEC 60721-3 定義了產品在各類運輸、儲存與操作環境下可能遭遇的嚴苛度分類，為實驗室建立測試基準。" data-en="【Environmental Classification】IEC 60721-3 defines severity classes for transportation, storage, and operation environments to establish testing baselines."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 規格選擇" data-en="① Select Criteria"></h3>
@@ -175,7 +179,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- MIL Panel -->
   <div class="panel" id="panel-mil">
-    <p class="panel-caption" data-zh="MIL-STD-810H (2019)：軍規環境工程與實驗室測試裁適 | 已從 810G 全面升版" data-en="MIL-STD-810H (2019): Environmental Engineering & Lab Test Tailoring | Updated from 810G"></p>
+    <p class="panel-caption" data-zh="【美軍防護標準】MIL-STD-810H 是美軍最廣泛使用的環境工程與實驗室測試裁適規範，適用於強固型產品與國防科技驗證。" data-en="【Military Standard】MIL-STD-810H is a widely used environmental engineering and lab testing guideline for rugged and defense products."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試裁適選擇" data-en="① Tailoring Selection"></h3>
@@ -192,7 +196,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- ASTM Panel -->
   <div class="panel" id="panel-astm">
-    <p class="panel-caption" data-zh="ASTM D4169-22 (2022)：包裝與運輸系統性能測試規範 | 18種配送循環 DC1–DC18，Schedule A–H" data-en="ASTM D4169-22 (2022): Performance Testing of Shipping Containers | 18 Distribution Cycles DC1–DC18, Schedule A–H"></p>
+    <p class="panel-caption" data-zh="【包裝運輸性能測試】ASTM D4169-22 是全球極具代表性的運輸模擬測試，涵蓋各類卡車、鐵路、航空的震動與跌落配送循環 (18 Cycles)。" data-en="【Packaging & Transport】ASTM D4169-22 is a global standard for performance testing of shipping containers, covering truck, rail, and air transit distributions."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試排程選擇" data-en="① Schedule Selection"></h3>
@@ -209,7 +213,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- GR63 Panel -->
   <div class="panel" id="panel-gr63">
-    <p class="panel-caption" data-zh="GR-63-CORE Issue 5 (2022)：NEBS 物理保護規範 – 電信機房 | Zone 4 升至 1.0g" data-en="GR-63-CORE Issue 5 (2022): NEBS Physical Protection – Telecom CO | Zone 4 updated to 1.0g"></p>
+    <p class="panel-caption" data-zh="【電信機房物理保護】GR-63-CORE 是北美 NEBS 設施標準，針對網通與伺服器設備的地震、空間、散熱與溫濕度進行嚴格規範。" data-en="【Telecom CO Physical Protection】GR-63-CORE is a NEBS standard for networking and server equipment, focusing on earthquake, spatial, thermal, and climate constraints."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 章節選擇" data-en="① Section Selection"></h3>
@@ -226,7 +230,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- SR-332 Panel -->
   <div class="panel" id="panel-sr332">
-    <p class="panel-caption" data-zh="Telcordia SR-332 Issue 4 (2016)：電信設備硬體可靠度預測程序 | Method I, II, III" data-en="Telcordia SR-332 Issue 4 (2016): Reliability Prediction Procedure for Electronic Equipment | Methods I, II, III"></p>
+    <p class="panel-caption" data-zh="【電信硬體壽命預估】Telcordia SR-332 透過零件計數法 (Parts Count) 與實驗/現場數據結合，預測電子產品的整機 FIT 與 MTBF 首命。" data-en="【Hardware Reliability Prediction】Telcordia SR-332 predicts FIT and MTBF of electronic products using Parts Count method combined with lab/field data."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 預測條件選擇" data-en="① Prediction Criteria"></h3>
@@ -243,7 +247,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- ISTA Panel -->
   <div class="panel" id="panel-ista">
-    <p class="panel-caption" data-zh="ISTA 國際安全運輸協會：包裝運輸性能測試 | 涵蓋 1A, 2A, 3A, 6-Amazon SIOC" data-en="ISTA Packaging Testing Standards | Including 1A, 2A, 3A, 6-Amazon SIOC"></p>
+    <p class="panel-caption" data-zh="【國際安全運輸協會】全球通用的包裝安全運輸測試，包含各式常規包裹跌落、以及 Amazon 電商物流專用的入庫寄送測試標準。" data-en="【Safe Transit Association】Global packaging and shipping tests, including standard parcel drops and Amazon's SIOC e-commerce fulfillment standards."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試程序選擇" data-en="① Select Procedure"></h3>
@@ -257,19 +261,37 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
     </div>
   </div>
+
+  <!-- IEC 60068 Panel -->
+  <div class="panel" id="panel-iec60068">
+    <p class="panel-caption" data-zh="【環境測試方法】IEC 60068-2 是最基礎且廣泛使用的核心標準，定義了高低溫、熱衝擊、震動與機械衝擊等單一實驗室物理測試的方法與嚴苛度。" data-en="【Environmental Testing Methods】IEC 60068-2 defines core lab physical testing methods like cold, dry heat, thermal shock, vibration, and mechanical shock."></p>
+    <div class="grid-2">
+      <div class="sel-section">
+        <h3 data-zh="① 測試類別選擇" data-en="① Select Test Category"></h3>
+        <div class="sel-group"><label data-zh="測試大類別" data-en="Test Category"></label><select id="iec60068-l1" onchange="buildL2('iec60068')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="具體測試方法" data-en="Specific Method"></label><select id="iec60068-l2" onchange="buildL3('iec60068')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="嚴苛度與參數" data-en="Severity / Parameters"></label><select id="iec60068-l3" onchange="showResult('iec60068')" disabled><option value="">-- Select --</option></select></div>
+      </div>
+      <div class="result-section">
+        <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
+        <div id="iec60068-result"><div class="empty" data-zh="← 請先選擇測試大類別" data-en="← Please select a test category"></div></div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <script>
 // ─── State ────────────────────────────────────────────────────────────────
 let LANG = 'ZH';
-const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null };
+const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null, iec60068: null };
 const DB_FILES = {
   iec:  'iec_database.json',
   mil:  'mil810_database.json',
   astm: 'astm4169_database.json',
   gr63: 'gr63_database.json',
   sr332: 'sr332_database.json',
-  ista: 'ista_database.json'
+  ista: 'ista_database.json',
+  iec60068: 'iec60068_database.json'
 };
 const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','Description']);
 
@@ -284,7 +306,7 @@ function setLang(l) {
   // Refresh search placeholder
   document.getElementById('searchInput').placeholder = l==='ZH' ? '搜尋規範關鍵字...' : 'Search specs...';
   // Re-render active result
-  ['iec','mil','astm','gr63','sr332','ista'].forEach(s => {
+  ['iec','mil','astm','gr63','sr332','ista','iec60068'].forEach(s => {
     const l3 = document.getElementById(s+'-l3');
     if (l3 && l3.value) showResult(s);
     else {
@@ -455,7 +477,7 @@ function doSearch(q) {
   const box = document.getElementById('searchResults');
   if (!q || q.length < 2) { box.innerHTML=''; return; }
   const ql = q.toLowerCase();
-  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA' };
+  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068' };
   let results = [];
   Object.entries(DBS).forEach(([std, db]) => {
     if (!db) return;

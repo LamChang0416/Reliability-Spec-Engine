@@ -1,0 +1,121 @@
+{
+  "Temperature (溫濕度相關測試)": {
+    "Test A: Cold (IEC 60068-2-1:2007)": {
+      "Ad/Ae: Cold for heat-dissipating specimen (漸變溫低溫測試)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-1",
+          "Description_ZH": "評估產品(發熱物體)在無人為控制溫度的冷環境下，儲存或運作的適應性。",
+          "Description_EN": "Test A: Evaluation of heat-dissipating products in non-temperature controlled cold conditions.",
+          "Temperature (°C)": "-65, -55, -40, -25, -10, -5, +5",
+          "Duration (hours)": "2, 16, 72, 96 (Typical recommended durations)",
+          "Rate of Change": "≤ 1 °C/min (5 min average)"
+        },
+        "tests": [
+          {"Step": "1. Pre-conditioning", "Action": "室溫下放置"},
+          {"Step": "2. Initial Test", "Action": "量測產品外觀與電氣功能"},
+          {"Step": "3. Conditioning", "Action": "降溫至指定低溫並駐留指定時間"},
+          {"Step": "4. Recovery", "Action": "升溫回室溫並恢復"},
+          {"Step": "5. Final Test", "Action": "確認功能是否正常發揮"}
+        ]
+      }
+    },
+    "Test B: Dry heat (IEC 60068-2-2:2007)": {
+      "Bd/Be: Dry heat for heat-dissipating specimen (發熱體高溫測試)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-2",
+          "Description_ZH": "驗證散熱零件及設備在高溫乾熱儲存或運作下的耐受性。注意：不適用於空氣流通大於1m/s的腔體。",
+          "Description_EN": "Test B: Verification of heat-dissipating equipment under dry heat conditions.",
+          "Temperature (°C)": "+200, +175, +155, +125, +100, +85, +70, +55, +40, +30",
+          "Duration (hours)": "2, 16, 72, 96",
+          "Rate of Change": "≤ 1 °C/min (5 min average)"
+        },
+        "tests": [
+          {"Step": "Thermal Equilibrium", "Action": "確認產品本體內部溫度已達平衡才開始計算駐留時間"},
+          {"Step": "Function Check", "Action": "運作中之產品需確認滿載或指定負載時的溫度表現"}
+        ]
+      }
+    },
+    "Test N: Change of temperature (IEC 60068-2-14:2023)": {
+      "Test Na: Rapid change of temperature (兩箱/三箱冷熱衝擊)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-14",
+          "Version": "2023 最新版修訂 (Seventh Edition)",
+          "Description_ZH": "檢驗產品承受溫度極端且快速變化的能力。通常用於發掘產品的熱機械應力(CTE mismatch)潛在缺陷。",
+          "Description_EN": "Test Na: Rapid change of temperature (Thermal Shock), evaluating thermal mechanical stress limits.",
+          "Transition Time": "t2 ≤ 3 minutes",
+          "Dwell Time": "t1 depends on specimen heat capacity (e.g. 30min, 1hr)",
+          "Number of Cycles": "5, 10, 50, 100, 200, 300 cycles"
+        },
+        "tests": [
+          {"Step": "Cycle Profile", "Action": "在高低溫槽間轉移，確保介面或吃錫點(Solder joints)受到疲勞拉扯"}
+        ]
+      },
+      "Test Nb: Change of temperature with specified rate (單箱溫迴圈變化)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-14",
+          "Description_ZH": "規定溫變率的溫度循環(Temperature cycling)。較常模擬真實環境的日夜轉換，而非瞬間的熱衝擊。",
+          "Description_EN": "Test Nb: Temperature cycling with controlled rate of change.",
+          "Rate of Change": "e.g., 1 K/min, 3 K/min, 5 K/min, 10 K/min",
+          "Dwell Time": "Dependent on thermal equilibrium",
+          "Number of Cycles": "2, 5, 10, 20, 50, 100 cycles"
+        },
+        "tests": [
+          {"Step": "Cycle Profile", "Action": "單一 Chamber 內設定溫變率升降"}
+        ]
+      }
+    }
+  },
+  "Vibration (振動測試)": {
+    "Test Fc: Vibration Sinusoidal (IEC 60068-2-6:2007)": {
+      "Resonance Search and Dwell (正弦振動: 掃頻與駐留)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-6",
+          "Description_ZH": "尋找產品結構共振點並進行耐久駐留測試。常用於驗證內部機構件、螺絲防鬆脫等。",
+          "Description_EN": "Test Fc: Sinusoidal vibration for exploring structural resonances.",
+          "Frequency Range": "Often 10 Hz to 500 Hz or 150 Hz",
+          "Cross-over Frequency": "Typically 57-62 Hz for amplitude/displacement swap",
+          "Sweep Rate": "1 Octave/min"
+        },
+        "tests": [
+          {"Sequence": "1. Resonance Search", "Action": "掃頻尋找共振峰值 (Q factor ≥ 2.0)"},
+          {"Sequence": "2. Endurance Testing", "Action": "在共振點駐留 (如 30 分鐘) 或連續掃頻 (如 10, 20 sweep cycles)"}
+        ]
+      }
+    },
+    "Test Fh: Broadband Random Vibration (IEC 60068-2-64:2008+AMD1:2019)": {
+      "Random Vibration Profile (寬頻隨機振動)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-64",
+          "Version": "2008+AMD1:2019 CSV",
+          "Description_ZH": "模擬裝備在各種運輸工具或操作環境下會受到的寬頻譜連續振動。移除舊版 Method 1/2 的分法。",
+          "Description_EN": "Test Fh: Broadband random vibration simulation over complex frequency spectra.",
+          "ASD / PSD": "Acceleration Spectral Density (m²/s³) or (g²/Hz)",
+          "Axes": "Three mutually perpendicular axes (X, Y, Z)"
+        },
+        "tests": [
+          {"Condition": "General Transportation", "Spectra": "Refer to Table 1 distributions based on vehicle type"},
+          {"Duration": "-", "Action": "e.g., 15 mins to 2 hours per axis"}
+        ]
+      }
+    }
+  },
+  "Shock & Mechanical (衝擊與機械測試)": {
+    "Test Ea: Shock (IEC 60068-2-27:2008)": {
+      "Classical Shock Pulses (經典波形衝擊)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-27",
+          "Description_ZH": "以單發、非重複性的衝擊測試驗證產品機構強度。(包含 Half-sine, Sawtooth 鋸齒波或梯形波)。",
+          "Description_EN": "Test Ea: Classical non-repetitive shock test.",
+          "Common Pulse Shape": "Half-sine (半正弦波) / Final-peak sawtooth (後鋒鋸齒波)",
+          "Number of Shocks": "3 shocks per direction per axis (Total 18 shocks typical)",
+          "Peak Acceleration (A) / Duration (D)": "15g (11ms), 30g (11ms), 50g (11ms), 100g (6ms)"
+        },
+        "tests": [
+          {"Condition": "15g / 11ms Half-Sine", "Application": "一般消費性產品耐摔落模擬"},
+          {"Condition": "30g / 11ms Half-Sine", "Application": "工業電腦或伺服器基本防撞要求"},
+          {"Condition": "100g / 6ms Sawtooth", "Application": "車載或嚴苛軍規應用"}
+        ]
+      }
+    }
+  }
+}

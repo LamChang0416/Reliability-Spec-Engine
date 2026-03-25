@@ -1,6 +1,6 @@
 # 🛡️ Reliability Spec Engine
 
-> **六合一可靠度規範查詢工具 · Six-in-One Reliability Standards Reference**
+> **七合一可靠度規範查詢工具 · Seven-in-One Reliability Standards Reference**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
 [![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
@@ -11,9 +11,9 @@
 
 ## 📖 Overview · 專案簡介
 
-**English** | A PWA-based engineering tool that consolidates six major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load.
+**English** | A PWA-based engineering tool that consolidates seven major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load. Created by Lam.
 
-**繁體中文** | 一套將六大可靠度與環境測試規範整合於單一介面的 PWA 工具。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
+**繁體中文** | 一套將七大可靠度與環境測試規範整合於單一介面的 PWA 工具由 **LamChang0416** 獨家開發。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
 
 ---
 
@@ -26,13 +26,14 @@
 | 📦 **ASTM D4169-22** | 2022 (-09→-22 升版) | 包裝運輸性能測試 / Packaging & transport performance | [ASTM International](https://www.astm.org/d4169-22.html) |
 | 📦 **ISTA** | 1A, 2A, 3A, 6-Amazon | 包裝與運輸模擬測試 / Safe Transit Association | [ISTA](https://ista.org) |
 | 🛡️ **IEC 60721-3** | 2019 | 環境條件分類 / Environmental condition classification | [IEC Webstore](https://webstore.iec.ch/publication/60947) |
+| 🔬 **IEC 60068-2** | 2025/2023 最新版 | 環境測試方法 / Environmental testing methods | [IEC Webstore](https://webstore.iec.ch/publication/60068) |
 | 📈 **Telcordia SR-332** | Issue 4 (2016) | 硬體可靠度預測程序 / Hardware Reliability Prediction | Telcordia / Ericsson |
 
 ---
 
 ## ✨ Features · 主要功能
 
-- 🔍 **Cross-Standard Search / 跨規範搜尋** — Type once, search across all six databases simultaneously
+- 🔍 **Cross-Standard Search / 跨規範搜尋** — Type once, search across all seven databases simultaneously
 - 📊 **Metric Card Display / 參數卡片展示** — Key values (temperature, g-level, duration) highlighted clearly
 - 📥 **Export JSON & CSV / 資料匯出** — One-click export for test plan documentation
 - 🌐 **Bilingual ZH/EN / 中英文切換** — Full interface in Traditional Chinese and English
@@ -83,6 +84,7 @@ Reliability-Spec-Engine/
 ├── astm4169_database.json  # ASTM D4169-22 database
 ├── ista_database.json      # ISTA 1A/2A/3A/6-Amazon database
 ├── iec_database.json       # IEC 60721-3 database
+├── iec60068_database.json  # IEC 60068-2 database
 └── sr332_database.json     # Telcordia SR-332 Issue 4 database
 ```
 
@@ -92,6 +94,7 @@ Reliability-Spec-Engine/
 
 | Date | Change |
 |------|--------|
+| 2026-03 | 加入 IEC 60068 與 作者標示 Lam；擴充為七合一 PWA |
 | 2026-03 | 加入 ISTA 包裝運輸測試標準；擴充為六合一 PWA |
 | 2026-03 | 加入 Telcordia SR-332 Issue 4；擴充為五合一 PWA |
 | 2026-03 | PWA 版本發布；MIL-STD-810H 升版（29 個 Method，新增 529.1）|
