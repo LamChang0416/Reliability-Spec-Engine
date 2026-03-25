@@ -1,0 +1,116 @@
+{
+  "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房)": {
+    "Quality Level I (商業級, 具備相容性抽測與回饋機制)": {
+      "Method I-D - Parts Count (零件計數法)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "Method I-D: 僅採用標準內的通用失效數據 (Generic Data) 進行預估 (無實驗室或現場數據)。環境：地面受控環境 (GB)。",
+          "Description_EN": "Method I-D: Black Box Technique using only generic data. Environment: Ground Benign (GB).",
+          "Environment Factor (πE)": "1.0",
+          "Quality Factor (πQ)": "Level I: 通常介於 1.5 到 3.0",
+          "Operating Temperature": "預設計算基準為 40°C",
+          "Data Input": "Generic device failure rates (λG) from SR-332 Tables"
+        },
+        "tests": [
+          {"Step": "1. 建立BOM", "Action": "列出所有電子與機構零件"},
+          {"Step": "2. 查表取值", "Action": "依據零件類別查詢通用失效率 λG"},
+          {"Step": "3. 乘上係數", "Action": "套用 πE=1.0、對應的 πQ 及溫度/電氣應力係數"},
+          {"Step": "4. 加總計算", "Action": "加總得出整機 FIT 值 (Failures in Time)"}
+        ]
+      },
+      "Method II-D - Lab Data (結合實驗室數據)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "Method II-D: 將實際的實驗室壽命測試數據 (Lab Data) 與通用數據結合，提高預估準確度。環境：GB。",
+          "Description_EN": "Method II-D: Integrates laboratory test data with generic data.",
+          "Environment Factor (πE)": "1.0",
+          "Quality Factor (πQ)": "Level I"
+        },
+        "tests": [
+          {"Step": "Lab Test", "Action": "執行加速壽命測試 (ALT/HALT) 或高溫高濕測試"},
+          {"Step": "Bayesian Update", "Action": "使用貝氏更新公式將實驗室失效數/測試時間與通用先驗數據融合"},
+          {"Step": "Final FIT", "Action": "計算修正後的 FIT 值"}
+        ]
+      },
+      "Method III-D - Field Data (結合現場實際追蹤數據)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "Method III-D: 黑箱法，將現場實際返修數據 (Field Tracking) 與通用數據結合，最為精準。環境：GB。",
+          "Description_EN": "Method III-D: Integrates field tracking data with generic data.",
+          "Environment Factor (πE)": "1.0",
+          "Quality Factor (πQ)": "Level I"
+        },
+        "tests": [
+          {"Step": "Field Tracking", "Action": "收集並過濾有效的現場故障 (RMA) 數據"},
+          {"Step": "Statistical Integration", "Action": "將現場運作時間與失效次數代入 SR-332 公式"},
+          {"Step": "Review", "Action": "得出最終經過現場驗證的 MTBF/FIT"}
+        ]
+      }
+    },
+    "Quality Level II (嚴格級, 具採購規範與批次管控)": {
+      "Method I-D - Parts Count (零件計數法)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "Method I-D: 採用通用數據進行預估。Level II 的品質管控較嚴格，預估 FIT 值會低於 Level I。",
+          "Description_EN": "Method I-D using generic data. Level II implies stricter procurement and batch control.",
+          "Environment Factor (πE)": "1.0",
+          "Quality Factor (πQ)": "Level II: 預設值通常為 1.0",
+          "Data Input": "Generic device failure rates (λG)"
+        },
+        "tests": [
+          {"Step": "Quality Verification", "Action": "確認供應商具備明確的採購規格與進料檢驗(IQC)"},
+          {"Step": "Calculation", "Action": "使用 πQ = 1.0 (或 SR-332 表列較低數值) 進行計算"}
+        ]
+      }
+    },
+    "Quality Level III (最高級, 具週期重新認證與100%篩選)": {
+      "Method I-D - Parts Count (零件計數法)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "Method I-D 預估。Level III 是 SR-332 最高的品質等級，具有最低的 πQ 乘數，預估可靠度最佳。",
+          "Description_EN": "Method I-D. Level III is the highest quality level, resulting in the lowest πQ multiplier and best predicted reliability.",
+          "Environment Factor (πE)": "1.0",
+          "Quality Factor (πQ)": "Level III: 預設為 0.8 或更低"
+        },
+        "tests": [
+          {"Step": "100% Screening", "Action": "確認零件經過 100% 入料篩選或出廠篩選"},
+          {"Step": "Calculation", "Action": "套用最低的 πQ 進行整機 FIT 計算"}
+        ]
+      }
+    }
+  },
+  "GF - Ground Fixed (地面固定且環境不可控, 如戶外電信箱)": {
+    "Quality Level I (商業級, 具備相容性抽測與回饋機制)": {
+      "Method I-D - Parts Count (零件計數法)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "地面固定式設備，承受一定程度的戶外環境應力 (溫度/濕度/灰塵)。預估失效率高於 GB。",
+          "Description_EN": "Ground Fixed equipment, subject to outdoor environmental stresses. Higher predicted failure rate than GB.",
+          "Environment Factor (πE)": "GF (通常為 GB 的 2.0~3.0 倍)",
+          "Quality Factor (πQ)": "Level I"
+        },
+        "tests": [
+          {"Step": "Environmental Adjustment", "Action": "將通用失效數據乘上 GF 環境係數"},
+          {"Step": "Calculation", "Action": "完成所有零件 FIT 累加"}
+        ]
+      }
+    }
+  },
+  "GM - Ground Mobile (地面移動式, 如車載設備)": {
+    "Quality Level I (商業級, 具備相容性抽測與回饋機制)": {
+      "Method I-D - Parts Count (零件計數法)": {
+        "parameters": {
+          "Standard": "Telcordia SR-332 Issue 4",
+          "Description_ZH": "地面移動式設備，承受持續的振動、衝擊與劇烈溫度變化。環境係數極高。",
+          "Description_EN": "Ground Mobile equipment, subject to continuous vibration, shock, and temperature variations.",
+          "Environment Factor (πE)": "GM (通常為 GB 的 4.0~6.0 倍)",
+          "Quality Factor (πQ)": "Level I"
+        },
+        "tests": [
+          {"Step": "Environmental Adjustment", "Action": "將通用失效數據乘上極高的 GM 環境係數"},
+          {"Step": "Calculation", "Action": "計算最終整機 FIT，通常遠高於固定式設備"}
+        ]
+      }
+    }
+  }
+}

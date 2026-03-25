@@ -1,6 +1,6 @@
 # 🛡️ Reliability Spec Engine
 
-> **四合一可靠度規範查詢工具 · Four-in-One Reliability Standards Reference**
+> **五合一可靠度規範查詢工具 · Five-in-One Reliability Standards Reference**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?logo=github)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
 [![PWA](https://img.shields.io/badge/PWA-Installable-blue?logo=pwa)](https://lamchang0416.github.io/Reliability-Spec-Engine/)
@@ -11,9 +11,9 @@
 
 ## 📖 Overview · 專案簡介
 
-**English** | A PWA-based engineering tool that consolidates four major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load.
+**English** | A PWA-based engineering tool that consolidates five major reliability and environmental test standards into a single, mobile-friendly reference. Search across all standards, view test parameters, and export data for your test plans — all available **offline** after first load.
 
-**繁體中文** | 一套將四大可靠度與環境測試規範整合於單一介面的 PWA 工具。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
+**繁體中文** | 一套將五大可靠度與環境測試規範整合於單一介面的 PWA 工具。支援跨規範關鍵字搜尋、測試參數查閱與資料匯出，首次載入後**完整支援離線使用**，可安裝至手機主畫面。
 
 ---
 
@@ -25,12 +25,13 @@
 | 🏢 **GR-63-CORE Issue 5** | 2022 (Issue 4→5 升版) | 電信機房 NEBS 規範 / Telecom CO physical protection | [Ericsson NEBS](https://telecom-info.njdepot.ericsson.se/site-cgi/ido/docs.cgi?action=get&docno=GR-63-CORE) |
 | 📦 **ASTM D4169-22** | 2022 (-09→-22 升版) | 包裝運輸性能測試 / Packaging & transport performance | [ASTM International](https://www.astm.org/d4169-22.html) |
 | 🛡️ **IEC 60721-3** | 2019 | 環境條件分類 / Environmental condition classification | [IEC Webstore](https://webstore.iec.ch/publication/60947) |
+| 📈 **Telcordia SR-332** | Issue 4 (2016) | 硬體可靠度預測程序 / Hardware Reliability Prediction | Telcordia / Ericsson |
 
 ---
 
 ## ✨ Features · 主要功能
 
-- 🔍 **Cross-Standard Search / 跨規範搜尋** — Type once, search across all four databases simultaneously
+- 🔍 **Cross-Standard Search / 跨規範搜尋** — Type once, search across all five databases simultaneously
 - 📊 **Metric Card Display / 參數卡片展示** — Key values (temperature, g-level, duration) highlighted clearly
 - 📥 **Export JSON & CSV / 資料匯出** — One-click export for test plan documentation
 - 🌐 **Bilingual ZH/EN / 中英文切換** — Full interface in Traditional Chinese and English
@@ -79,7 +80,8 @@ Reliability-Spec-Engine/
 ├── mil810_database.json    # MIL-STD-810H database
 ├── gr63_database.json      # GR-63 Issue 5 database
 ├── astm4169_database.json  # ASTM D4169-22 database
-└── iec_database.json       # IEC 60721-3 database
+├── iec_database.json       # IEC 60721-3 database
+└── sr332_database.json     # Telcordia SR-332 Issue 4 database
 ```
 
 ---
@@ -88,6 +90,7 @@ Reliability-Spec-Engine/
 
 | Date | Change |
 |------|--------|
+| 2026-03 | 加入 Telcordia SR-332 Issue 4；擴充為五合一 PWA |
 | 2026-03 | PWA 版本發布；MIL-STD-810H 升版（29 個 Method，新增 529.1）|
 | 2026-03 | GR-63 Issue 5 升版（Zone 4 地震值 0.5g→1.0g；ASHRAE A3/A4）|
 | 2026-03 | ASTM D4169-22 升版（新 Schedule C 電商場景）|
