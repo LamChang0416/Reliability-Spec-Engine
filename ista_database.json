@@ -89,8 +89,7 @@
         },
         "tests": [
           {"Package Weight": "Less than 32 kg (70 lb)", "Drop Height": "460 mm (18 in)"},
-          {"Package Weight": "32 kg to 70 kg (70-150 lb)", "Drop Height": "300 mm (12 in)"},
-          {"Note": "Small bags/pouches drop height", "Drop Height": "610 mm (24 in)"}
+          {"Package Weight": "32 kg to 70 kg (70-150 lb)", "Drop Height": "300 mm (12 in)"}
         ]
       },
       "Sequence 2 - Random Vibration (隨機振動)": {
@@ -98,8 +97,7 @@
           "Standard": "ISTA 3A",
           "Description_ZH": "包裹快遞車輛隨機振動光譜 (Pick-Up & Delivery Vehicle Spectrum)。包含有頂部負載 (Top Load) 與無負載。",
           "Description_EN": "Pick-Up and Delivery vehicle random vibration spectrum (with and without top load).",
-          "Overall Grms": "0.53 (Top Load) / 0.46 (No Top Load)",
-          "Duration": "Various based on orientation"
+          "Overall Grms": "0.53 (Top Load) / 0.46 (No Top Load)"
         },
         "tests": [
           {"Frequency Hz": "1", "PSD (g²/Hz)": "0.0007"},
@@ -111,26 +109,51 @@
         ]
       }
     },
-    "Small / Flat / Elongated (特殊型包裹)": {
-      "Sequence 1 - Hazard Drop / Rotational (危害衝擊)": {
+    "Small Package (體積 < 800in³, 重量 < 10lb)": {
+      "Sequence 3 - Drop (袋裝跌落測試)": {
         "parameters": {
           "Standard": "ISTA 3A",
-          "Description_ZH": "針對扁平 (Flat) 或長條形 (Elongated) 包裹的特殊旋轉邊緣跌落與橋接衝擊 (Hazard Box Impact)。",
-          "Description_EN": "Rotational edge drops and concentrated bridge impacts for flat/elongated packages.",
-          "Hazard Box Impact Height": "400 mm (16 in)",
+          "Description_ZH": "由於體積與重量小，通常被裝在快遞袋中運送，跌落高度較高。",
+          "Drop Height": "610 mm (24 in)",
+          "Drop Sequence": "7 drops total"
+        },
+        "tests": [
+          {"Drop": "1-3", "Target": "Edges (longest, shortest, intermediate)"},
+          {"Drop": "4", "Target": "Face (largest)"},
+          {"Drop": "5-6", "Target": "Faces (intermediate, smallest)"},
+          {"Drop": "7", "Target": "Bottom / Same drop as Drop 1"}
+        ]
+      }
+    },
+    "Flat / Elongated (扁平與長條型包裹)": {
+      "Sequence 4 - Rotational Edge Drop (旋轉邊緣跌落)": {
+        "parameters": {
+          "Standard": "ISTA 3A",
+          "Description_ZH": "針對重心偏移的長條或扁平包裹，將一端墊高，另一端從 200mm 抬起落下撞擊。",
           "Rotational Drop Height": "200 mm (8 in)"
         },
         "tests": [
-          {"Package Type": "Flat", "Test": "Rotational Edge Drop", "Height": "200 mm"},
-          {"Package Type": "Elongated", "Test": "Rotational Edge Drop", "Height": "200 mm"},
-          {"Package Type": "Flat/Elongated", "Test": "Hazard Block Impact", "Height": "400 mm"}
+          {"Face": "Face 3 (Bottom)", "Action": "Raise one edge 200mm from rigid floor and drop"},
+          {"Face": "Face 4 (Top) or Side", "Action": "Raise corresponding edge 200mm and drop"}
+        ]
+      },
+      "Sequence 5 - Hazard Block Impact (重錘橋接衝擊)": {
+        "parameters": {
+          "Standard": "ISTA 3A",
+          "Description_ZH": "模擬貨運過程中尖銳物品砸中包裹最脆弱的無支撐中央點 (橋接撞擊 Bridge Impact)。",
+          "Hazard Box Weight": "Minimum 4.1 kg (9 lb)",
+          "Hazard Drop Height": "400 mm (16 in)"
+        },
+        "tests": [
+          {"Step": "1. Support Setup", "Action": "Support opposite ends of package resting on blocks"},
+          {"Step": "2. Impact", "Action": "Free fall hazard box from 400mm onto unsupported center"}
         ]
       }
     }
   },
-  "ISTA 6-Amazon.com-SIOC (Type A, Parcel < 50 lb)": {
+  "ISTA 6-Amazon.com-SIOC (Parcel Delivery)": {
     "Type A (Standard < 50 lb)": {
-      "Sequence - Free-Fall Drop (自由跌落)": {
+      "Sequence 2 - Free-Fall Drop (自由跌落)": {
         "parameters": {
           "Standard": "ISTA 6-Amazon.com-SIOC",
           "Description_ZH": "亞馬遜 SIOC Type A 原箱出貨跌落測試，模擬出貨轉運站至消費者的物流跌落。",
@@ -144,7 +167,7 @@
           {"Drop 9": "Hazard block impact", "Details": "Using standard hazard block"}
         ]
       },
-      "Sequence - Random Vibration (運輸振動)": {
+      "Sequence 3 - Random Vibration (運輸振動)": {
         "parameters": {
           "Standard": "ISTA 6-Amazon.com-SIOC",
           "Description_ZH": "亞馬遜專屬的隨機振動頻譜，包含含頂部負載 (With Top Load) 階段。",
@@ -153,9 +176,61 @@
           "Overall Grms (Face 2,5,6)": "0.46 Grms"
         },
         "tests": [
-          {"Phase": "Face 3 (Bottom) Top Load", "Duration": "Face 3 (Bottom) Top Load", "Grms": "0.53"},
-          {"Phase": "Face 4 (Top) Top Load", "Duration": "Face 4 (Top) Top Load", "Grms": "0.53"},
-          {"Phase": "Face 2, 5, 6 (No Load)", "Duration": "Various", "Grms": "0.46"}
+          {"Phase": "Face 3 (Bottom) Top Load", "Duration": "Depends on face, typ. 30min-1hr", "Grms": "0.53"},
+          {"Phase": "Face 4 (Top) Top Load", "Duration": "Depends on face", "Grms": "0.53"},
+          {"Phase": "Face 2, 5, 6 (No Load)", "Duration": "15min to 30min per face", "Grms": "0.46"}
+        ]
+      }
+    },
+    "Type B (Standard 50 lb - 100 lb)": {
+      "Sequence 2 - Free-Fall Drop (中級重量跌落)": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon.com-SIOC",
+          "Description_ZH": "Type B 的重量較重 (23kg - 45kg)，跌落高度相較 Type A 下降至 300mm。",
+          "Drop Sequence": "9 drops total"
+        },
+        "tests": [
+          {"Drop 1-7": "Faces and Edges", "Height": "300 mm (12 in)"},
+          {"Drop 8": "Corner (Fragile)", "Height": "300 mm (12 in) or 610 mm (24 in for fragile items)"},
+          {"Drop 9": "Hazard block impact", "Height": "400 mm onto center of Face 3"}
+        ]
+      }
+    },
+    "Type C (Standard > 100 lb)": {
+      "Sequence 2 - Drop & Rotational (重型裝載跌落)": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon.com-SIOC",
+          "Description_ZH": "Type C 重達 45 公斤以上，手持搬運困難，故主要測試機具搬運造成的邊緣旋轉跌落 (Rotational Drops)。",
+          "Free Drop Height": "200 mm (8 in)",
+          "Rotational Drop Height": "200 mm (8 in)"
+        },
+        "tests": [
+          {"Drop 1": "Free fall Drop", "Height": "200 mm (8 in)", "Note": "Only if manageable"},
+          {"Drop 2": "Rotational Flat Drop", "Height": "200 mm (8 in)", "Note": "Raise one end"},
+          {"Drop 3": "Rotational Edge Drop", "Height": "200 mm (8 in)", "Note": "Raise longest bottom edge"}
+        ]
+      }
+    },
+    "Type D (LTL Delivery < 100 lb)": {
+      "Sequence 3 - Tip / Tip-Over (傾倒翻覆)": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon.com-SIOC",
+          "Description_ZH": "模擬卡車零擔(LTL)運輸中，未採棧板固定的直立單一貨物重心偏移傾倒。",
+          "Tip Angle": "22 degrees"
+        },
+        "tests": [
+          {"Action 1": "Tip structure 22 degrees", "Requirement": "If it falls back to vertical, test passes"},
+          {"Action 2": "Tip-Over", "Requirement": "If it tips past 22 deg, allow it to fall fully to rigid floor"}
+        ]
+      },
+      "Sequence 4 - Concentrated Edge Impact": {
+        "parameters": {
+          "Standard": "ISTA 6-Amazon.com-SIOC",
+          "Description_ZH": "LTL 獨有：模擬堆疊或搬運時其他重型貨品的邊角砸向本包裹。",
+          "Free Fall Drop": "from height of 1000mm (40 in)"
+        },
+        "tests": [
+          {"Step": "Drop Object", "Action": "Drop edge of another standardized dense box onto specimen"}
         ]
       }
     }

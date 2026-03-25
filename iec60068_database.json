@@ -56,11 +56,43 @@
           "Description_ZH": "規定溫變率的溫度循環(Temperature cycling)。較常模擬真實環境的日夜轉換，而非瞬間的熱衝擊。",
           "Description_EN": "Test Nb: Temperature cycling with controlled rate of change.",
           "Rate of Change": "e.g., 1 K/min, 3 K/min, 5 K/min, 10 K/min",
-          "Dwell Time": "Dependent on thermal equilibrium",
           "Number of Cycles": "2, 5, 10, 20, 50, 100 cycles"
         },
         "tests": [
           {"Step": "Cycle Profile", "Action": "單一 Chamber 內設定溫變率升降"}
+        ]
+      }
+    },
+    "Test Db: Damp heat, cyclic (IEC 60068-2-30:2005)": {
+      "12h + 12h cycle (濕熱循環凝露測試)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-30",
+          "Description_ZH": "在高濕度下施加溫度循環，使產品表面產生凝露(Condensation)，驗證材料抗鏽蝕與呼吸效應導致的進水。",
+          "Description_EN": "Test Db: Temperature cycling at high humidity, causing condensation on the specimen.",
+          "Upper Temp": "40°C or 55°C",
+          "Humidity": "≥ 93% RH (Up to 98% RH during temp rise)",
+          "Cycle Duration": "24 hours (12h heat + 12h cool down)",
+          "Cycles": "2, 6, 12, 21, or 56 cycles"
+        },
+        "tests": [
+          {"Phase": "Temp Rise (3h)", "Action": "升溫至上限溫度 (凝露發生)"},
+          {"Phase": "High Temp Dwell (9h)", "Action": "維持高溫與 93% RH"},
+          {"Phase": "Temp Fall (3-6h)", "Action": "降溫回 25°C"},
+          {"Phase": "Low Temp Dwell", "Action": "維持 25°C 至少 95% RH 直到滿 24 小時"}
+        ]
+      }
+    },
+    "Test Cab: Damp heat, steady state (IEC 60068-2-78:2012)": {
+      "Steady state (恆定濕熱測試)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-78",
+          "Description_ZH": "驗證產品長時間處於高濕度無凝露環境下的電氣與材料退化狀況。",
+          "Description_EN": "Test Cab: Evaluation of products under long-term high humidity (non-condensing) conditions.",
+          "Temperature / Humidity": "30°C/93%, 40°C/93%, 85°C/85% 等",
+          "Test Duration": "12, 16, 24, 48, 96, 240, 504, 1008 hours"
+        },
+        "tests": [
+          {"Step": "Conditioning", "Action": "在特定溫濕度下長時間駐留，過程不得產生凝露"}
         ]
       }
     }
@@ -73,16 +105,15 @@
           "Description_ZH": "尋找產品結構共振點並進行耐久駐留測試。常用於驗證內部機構件、螺絲防鬆脫等。",
           "Description_EN": "Test Fc: Sinusoidal vibration for exploring structural resonances.",
           "Frequency Range": "Often 10 Hz to 500 Hz or 150 Hz",
-          "Cross-over Frequency": "Typically 57-62 Hz for amplitude/displacement swap",
           "Sweep Rate": "1 Octave/min"
         },
         "tests": [
           {"Sequence": "1. Resonance Search", "Action": "掃頻尋找共振峰值 (Q factor ≥ 2.0)"},
-          {"Sequence": "2. Endurance Testing", "Action": "在共振點駐留 (如 30 分鐘) 或連續掃頻 (如 10, 20 sweep cycles)"}
+          {"Sequence": "2. Endurance Testing", "Action": "在共振點駐留 (如 30 分鐘) 或連續掃頻"}
         ]
       }
     },
-    "Test Fh: Broadband Random Vibration (IEC 60068-2-64:2008+AMD1:2019)": {
+    "Test Fh: Broadband Random Vibration (IEC 60068-2-64:2008+AMD1)": {
       "Random Vibration Profile (寬頻隨機振動)": {
         "parameters": {
           "Standard": "IEC 60068-2-64",
@@ -93,8 +124,7 @@
           "Axes": "Three mutually perpendicular axes (X, Y, Z)"
         },
         "tests": [
-          {"Condition": "General Transportation", "Spectra": "Refer to Table 1 distributions based on vehicle type"},
-          {"Duration": "-", "Action": "e.g., 15 mins to 2 hours per axis"}
+          {"Condition": "General Transportation", "Spectra": "Refer to Table 1 distributions based on vehicle type"}
         ]
       }
     }
@@ -107,13 +137,71 @@
           "Description_ZH": "以單發、非重複性的衝擊測試驗證產品機構強度。(包含 Half-sine, Sawtooth 鋸齒波或梯形波)。",
           "Description_EN": "Test Ea: Classical non-repetitive shock test.",
           "Common Pulse Shape": "Half-sine (半正弦波) / Final-peak sawtooth (後鋒鋸齒波)",
-          "Number of Shocks": "3 shocks per direction per axis (Total 18 shocks typical)",
-          "Peak Acceleration (A) / Duration (D)": "15g (11ms), 30g (11ms), 50g (11ms), 100g (6ms)"
+          "Number of Shocks": "3 shocks per direction per axis (Total 18 shocks typical)"
         },
         "tests": [
           {"Condition": "15g / 11ms Half-Sine", "Application": "一般消費性產品耐摔落模擬"},
           {"Condition": "30g / 11ms Half-Sine", "Application": "工業電腦或伺服器基本防撞要求"},
           {"Condition": "100g / 6ms Sawtooth", "Application": "車載或嚴苛軍規應用"}
+        ]
+      }
+    },
+    "Test Ec: Rough handling shocks (IEC 60068-2-31:2008)": {
+      "Free fall (自由跌落與傾倒)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-31",
+          "Description_ZH": "模擬產品在搬運維修時不慎掉落，或在桌面上被推倒的粗魯處理 (Free fall & Topple)。",
+          "Description_EN": "Test Ec: Free fall and topple simulating rough handling during servicing or transit.",
+          "Surface": "Smooth, hard, rigid surface (Steel or Concrete)"
+        },
+        "tests": [
+          {"Condition": "Free Fall (設備跌落)", "Height (mm)": "25, 50, 100, 250, 500, 1000", "Application": "依據設備重量與使用情境"},
+          {"Condition": "Topple (傾倒)", "Action": "將設備傾斜置於特定邊緣，使其自由倒下撞擊桌面", "Application": "機櫃或直立式設備"}
+        ]
+      }
+    }
+  },
+  "Corrosion & Pressure (腐蝕與大氣壓力)": {
+    "Test Ka: Salt mist (IEC 60068-2-11:2021)": {
+      "Continuous Salt Mist (連續中性鹽霧)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-11",
+          "Description_ZH": "連續噴灑 5% 中性鹽水，驗證金屬機殼與表面塗層的防鏽蝕能力。",
+          "Description_EN": "Test Ka: Continuous 5% neutral salt spray for evaluating protective coatings.",
+          "Temperature": "35°C",
+          "Concentration": "5% ± 1% NaCl",
+          "pH Range": "6.5 to 7.2"
+        },
+        "tests": [
+          {"Severity": "Common Durations", "Action": "16h, 24h, 48h, 96h, 168h, 336h, 672h"}
+        ]
+      }
+    },
+    "Test Kb: Salt mist, cyclic (IEC 60068-2-52:2017)": {
+      "Cyclic Salt Mist (循環鹽霧測試)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-52",
+          "Description_ZH": "交替進行鹽霧噴灑與高溫高濕儲存。比連續鹽霧更嚴苛，更貼近車載、船舶等海島型真實環境的鏽蝕加速。",
+          "Description_EN": "Test Kb: Alternating salt spray and damp heat storage, simulating marine environments."
+        },
+        "tests": [
+          {"Severity": "Severity 1 (e.g. 室內海洋環境)", "Profile": "4 cycles of 2h spray (15-35°C) -> 7 days Damp (40°C, 93%)"},
+          {"Severity": "Severity 3 (e.g. 船舶室外)", "Profile": "1 cycle = 2h spray -> 22h Damp. Repeated 4 times"}
+        ]
+      }
+    },
+    "Test M: Low air pressure (IEC 60068-2-13:2021)": {
+      "Altitude Simulation (高海拔低壓模擬)": {
+        "parameters": {
+          "Standard": "IEC 60068-2-13",
+          "Description_ZH": "模擬空運機艙失壓，或安裝於高山地區(如青藏高原)的低氣壓環境，驗證密封件破裂或風扇散熱效能下降。",
+          "Description_EN": "Test M: High-altitude operations causing seal failure or limited air convection."
+        },
+        "tests": [
+          {"Altitude (m/ft)": "2000 m (6562 ft)", "Pressure": "800 hPa", "Note": "設備最高操作海拔"},
+          {"Altitude (m/ft)": "3000 m (9843 ft)", "Pressure": "700 hPa", "Note": "設備最高操作海拔"},
+          {"Altitude (m/ft)": "4000 m (13123 ft)", "Pressure": "600 hPa", "Note": "西藏或安地斯山脈操作"},
+          {"Altitude (m/ft)": "15000 m (49213 ft)", "Pressure": "11.6 hPa", "Note": "未加壓航空艙貨運模擬"}
         ]
       }
     }
