@@ -112,6 +112,13 @@ tr:hover td{background:rgba(99,179,237,.05)}
 .offline-badge{display:none;background:rgba(34,84,61,.4);border:1px solid rgba(104,211,145,.3);color:var(--green);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:600}
 .offline-badge.visible{display:inline-block}
 
+/* TOGGLES */
+.toggle-group{display:flex;align-items:center;background:rgba(13,27,62,.8);border:1px solid rgba(99,179,237,.3);border-radius:20px;padding:3px;gap:2px;margin-right:8px}
+.toggle-label{color:var(--dim);font-size:11px;font-weight:600;padding:0 8px;text-transform:uppercase;letter-spacing:0.05em}
+.toggle-btn{background:transparent;border:none;color:var(--muted);padding:4px 12px;border-radius:16px;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+.toggle-btn:hover{color:var(--blue2)}
+.toggle-btn.active{background:var(--blue);color:var(--bg);box-shadow:0 2px 5px rgba(0,0,0,0.2)}
+
 /* EMPTY STATE */
 .empty{color:var(--dim);text-align:center;padding:30px;font-size:13px}
 
@@ -182,12 +189,19 @@ tr:hover td{background:rgba(99,179,237,.05)}
       <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
       <div class="header-right">
         <span class="offline-badge" id="offlineBadge">✈ Offline</span>
-        <div class="unit-toggle" style="display:flex;background:rgba(26,58,107,.6);border:1px solid rgba(99,179,237,.3);border-radius:8px;overflow:hidden;">
-          <button id="btnSI" class="lang-btn active" style="border:none;border-radius:0;border-right:1px solid rgba(99,179,237,.3);" onclick="setUnit('SI')">SI (公制)</button>
-          <button id="btnIMP" class="lang-btn" style="border:none;border-radius:0;" onclick="setUnit('IMP')">IMP (英制)</button>
+        
+        <div class="toggle-group">
+          <span class="toggle-label" data-zh="📏 單位" data-en="📏 Unit"></span>
+          <button id="btnSI" class="toggle-btn active" onclick="setUnit('SI')">SI</button>
+          <button id="btnIMP" class="toggle-btn" onclick="setUnit('IMP')">IMP</button>
         </div>
-        <button class="lang-btn active" id="btnZH" onclick="setLang('ZH')">中文</button>
-        <button class="lang-btn" id="btnEN" onclick="setLang('EN')">EN</button>
+        
+        <div class="toggle-group">
+          <span class="toggle-label" data-zh="🌐 語言" data-en="🌐 Lang"></span>
+          <button id="btnZH" class="toggle-btn active" onclick="setLang('ZH')">中</button>
+          <button id="btnEN" class="toggle-btn" onclick="setLang('EN')">EN</button>
+        </div>
+        
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
           <input id="searchInput" type="search" placeholder="Search specs..." oninput="doSearch(this.value)">
@@ -789,12 +803,17 @@ window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   deferredPrompt = e;
   const banner = document.getElementById('installBanner');
-  banner.style.display = 'flex';
+  banner.style.display = 'block';
   document.getElementById('installBtn').onclick = async () => {
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome==='accepted') banner.style.display='none';
-    deferredPrompt = null;
+    const pwd = prompt(LANG==='ZH' ? '🔐 請輸入授權密碼以安裝桌面版：' : '🔐 Enter authorization password to install:');
+    if (pwd === 'Lam0416') {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome==='accepted') banner.style.display='none';
+      deferredPrompt = null;
+    } else if (pwd !== null) {
+      alert(LANG==='ZH' ? '❌ 密碼錯誤，拒絕存取！' : '❌ Incorrect password, access denied!');
+    }
   };
 });
 window.addEventListener('appinstalled', () => {
