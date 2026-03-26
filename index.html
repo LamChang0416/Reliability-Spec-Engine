@@ -202,7 +202,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
       <div class="nav-group">
         <div class="nav-title" data-zh="🛠️ 工具筱" data-en="🛠️ Toolbox"></div>
-        <button class="tab-btn" onclick="showTab('vibcalc',this)" id="tabVIBCALC">
+        <button class="tab-btn" onclick="showTab('vibcalc',this);setTimeout(vcInit,80)" id="tabVIBCALC">
           〰️ <span data-zh="振動計算器" data-en="Vib Calculator"></span><span class="badge new-badge">NEW</span>
         </button>
       </div>
@@ -1382,12 +1382,7 @@ function vcInit() {
   }
 }
 
-// Hook into showTab to initialize the calculator on first open
-const _origShowTab = showTab;
-function showTab(id, btn) {
-  _origShowTab(id, btn);
-  if (id === 'vibcalc') { setTimeout(vcInit, 80); }
-}
+
 
 </script>
 </body>
