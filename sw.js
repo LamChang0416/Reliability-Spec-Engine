@@ -1,4 +1,4 @@
-const CACHE_NAME = 'reliability-spec-v1.6';
+const CACHE_NAME = 'reliability-spec-v1.7';
 const ASSETS = [
   './',
   './index.html',
@@ -13,7 +13,8 @@ const ASSETS = [
   './ista_database.json',
   './iec60068_database.json',
   './ip_code_database.json',
-  'https://cdn.jsdelivr.net/npm/chart.js'
+  'https://cdn.jsdelivr.net/npm/chart.js',
+  'https://cdn.plot.ly/plotly-2.27.0.min.js'
 ];
 
 // Install: cache all assets

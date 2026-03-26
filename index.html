@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -118,6 +119,16 @@ tr:hover td{background:rgba(99,179,237,.05)}
 .toggle-btn{background:transparent;border:none;color:var(--muted);padding:4px 12px;border-radius:16px;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
 .toggle-btn:hover{color:var(--blue2)}
 .toggle-btn.active{background:var(--blue);color:var(--bg);box-shadow:0 2px 5px rgba(0,0,0,0.2)}
+
+/* VIB ANALYSIS PANEL */
+.vib-panel{background:rgba(13,20,71,.6);border:1px solid rgba(99,179,237,.15);border-top:3px solid #00d284;border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.vib-panel-title{color:#00d284;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.vib-metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:12px}
+.vib-metric{background:rgba(0,210,132,.06);border:1px solid rgba(0,210,132,.2);border-radius:8px;padding:10px 12px}
+.vib-metric-label{color:#94a3b8;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.vib-metric-value{color:#00d284;font-size:15px;font-weight:700}
+.vib-metric-unit{color:#64748b;font-size:11px;font-weight:400;margin-left:3px}
+.psd-plot{width:100%;height:260px;border-radius:8px;overflow:hidden;margin-top:10px}
 
 /* EMPTY STATE */
 .empty{color:var(--dim);text-align:center;padding:30px;font-size:13px}
@@ -575,8 +586,134 @@ function showResult(std) {
       ${tests.length?`<button class="btn btn-dl" onclick="dlCSV('${std}')">📥 CSV</button>`:''}
     </div>`;
 
-  // Plot Chart if possible
-  setTimeout(()=>renderChart(tests), 50);
+  // Route to vibration or thermal chart
+  setTimeout(()=>{
+    const cols = tests.length ? Object.keys(tests[0]) : [];
+    const isVib = cols.some(c => /freq|hz|psd|grms|g²|vibr|acceler/i.test(c))
+                  || (params['g rms'] || params['Grms'] || params['Profile']);
+    const hasPSD = params['Profile'] || cols.some(c => /psd|g²\/hz/i.test(c));
+    if (isVib) {
+      renderVibAnalysis(params, tests, v1 + ' ' + v3);
+    } else {
+      renderChart(tests);
+    }
+  }, 50);
+}
+
+// ─── VIBRATION ANALYSIS ENGINE ─────────────────────────────────────────────
+// Embedded PSD breakpoint library (Hz, g²/Hz) for known standard profiles
+const VIB_PSD_PROFILES = {
+  // MIL-STD-810H Method 514.8
+  'cat 4':         [{f:10,p:0.015},{f:40,p:0.015},{f:500,p:0.00015}],          // Cat 4 US Highway Truck (1.04 Grms)
+  'cat24':         [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],            // Cat 24 Minimal Integrity (7.70 Grms)
+  'cat 24':        [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
+  'minimal integrity': [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
+  'general minimal integrity': [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
+  // GR-63 NEBS
+  'transportation': [{f:5,p:0.001},{f:20,p:0.01},{f:500,p:0.01}],              // GR-63 Transportation (2.21 Grms)
+  'gr-63 trans':   [{f:5,p:0.001},{f:20,p:0.01},{f:500,p:0.01}],
+  // ISTA / ASTM D4169
+  'ista 3a':       [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  'ista_3a':       [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  '3a':            [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  'amazon':        [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  '6-amazon':      [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  'schedule a':    [{f:3,p:0.0007},{f:12,p:0.00785},{f:20,p:0.00785},{f:50,p:0.0008},{f:100,p:0.0008},{f:200,p:0.0002}], // ASTM D4169 DC1
+  'schedule b':    [{f:3,p:0.0003},{f:6,p:0.003},{f:15,p:0.003},{f:40,p:0.0004},{f:80,p:0.0004},{f:200,p:0.0001}],
+};
+
+function calcGrmsFromPSD(pts) {
+  // Numerical integration: trapezoid on Log-Log scale (power-law segments)
+  let area = 0;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const f1=pts[i].f, w1=pts[i].p, f2=pts[i+1].f, w2=pts[i+1].p;
+    if (f1<=0||w1<=0||f2<=f1||w2<=0) continue;
+    const m = Math.log(w2/w1) / Math.log(f2/f1);
+    if (Math.abs(m+1) < 0.0001) { area += w1*f1*Math.log(f2/f1); }
+    else { area += (w2*f2 - w1*f1) / (m+1); }
+  }
+  return Math.sqrt(Math.max(0, area));
+}
+
+function findPSDProfile(specLabel) {
+  const lbl = specLabel.toLowerCase();
+  for (const [key, pts] of Object.entries(VIB_PSD_PROFILES)) {
+    if (lbl.includes(key)) return pts;
+  }
+  return null;
+}
+
+function renderVibAnalysis(params, tests, specLabel) {
+  const wrap = document.getElementById('chartWrap');
+  if (!wrap) return;
+
+  // Try to find a known PSD profile based on the selected spec label
+  const psdPts = findPSDProfile(specLabel);
+
+  // Extract Grms from the parameters dict (might be already stored as e.g. "1.04" or "1.04 g")
+  const rawGrms = params['g rms'] || params['Grms'] || params['grms'] || '';
+  const storedGrms = parseFloat(String(rawGrms).replace(/[^\d.]/g, '')) || null;
+
+  // Compute Grms from PSD profile if available
+  const computedGrms = psdPts ? calcGrmsFromPSD(psdPts) : null;
+  const grms = computedGrms || storedGrms || null;
+
+  // If no vibration data at all, fall back to thermal chart
+  if (!grms && !psdPts) { renderChart(tests); return; }
+
+  const G_CONST = 9.80665;
+  const peakG   = grms ? (3 * grms).toFixed(2) : '--';
+  const peakV   = grms ? (3 * grms * G_CONST / (2 * Math.PI * 50)).toFixed(3) : '--'; // at 50Hz estimate
+  const grmsDisp = grms ? (grms * 9.80665 / (2 * Math.PI * 50)**2 * 1000 * 6).toFixed(2) : '--';
+
+  wrap.style.display = 'block';
+  wrap.innerHTML = `
+    <div class="vib-panel">
+      <div class="vib-panel-title">〰️ Vibration Profile Analysis (Auto-Feed)</div>
+      <div class="vib-metrics">
+        <div class="vib-metric">
+          <div class="vib-metric-label">Grms (RMS Accel)</div>
+          <div class="vib-metric-value">${grms ? grms.toFixed(3) : (storedGrms||'--')}<span class="vib-metric-unit">g</span></div>
+        </div>
+        <div class="vib-metric">
+          <div class="vib-metric-label">3σ Peak (Max)</div>
+          <div class="vib-metric-value">${peakG}<span class="vib-metric-unit">g</span></div>
+        </div>
+        <div class="vib-metric">
+          <div class="vib-metric-label">Peak Velocity ≈</div>
+          <div class="vib-metric-value">${peakV}<span class="vib-metric-unit">m/s</span></div>
+        </div>
+        <div class="vib-metric">
+          <div class="vib-metric-label">P-P Disp ≈</div>
+          <div class="vib-metric-value">${grmsDisp}<span class="vib-metric-unit">mm</span></div>
+        </div>
+      </div>
+      ${psdPts ? '<div id="psdPlotDiv" class="psd-plot"></div>' : '<div style="color:#64748b;font-size:11px;padding:4px 0">PSD Frequency Breakpoints: profile linked from standard database</div>'}
+    </div>`;
+
+  // Render Plotly Log-Log chart when PSD breakpoints available
+  if (psdPts && window.Plotly) {
+    const trace = {
+      x: psdPts.map(d=>d.f),
+      y: psdPts.map(d=>d.p),
+      mode: 'lines+markers',
+      type: 'scatter',
+      name: 'PSD Profile',
+      line: {color:'#00d284', width:3, shape:'linear'},
+      marker: {size:7, color:'#ffffff', line:{color:'#00d284',width:2}},
+      fill: 'tozeroy',
+      fillcolor: 'rgba(0,210,132,0.05)'
+    };
+    const layout = {
+      margin: {l:55,r:15,t:15,b:45},
+      paper_bgcolor:'rgba(13,20,71,0)',
+      plot_bgcolor:'rgba(13,20,71,0)',
+      xaxis:{title:'Frequency (Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
+      yaxis:{title:'PSD (g²/Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
+      showlegend:false
+    };
+    Plotly.newPlot('psdPlotDiv', [trace], layout, {displayModeBar:false, responsive:true});
+  }
 }
 
 let activeChart = null;
