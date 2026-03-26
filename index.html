@@ -799,6 +799,21 @@ function renderVibAnalysis(params, tests, specLabel) {
   // Try to find a known PSD profile based on the selected spec label
   const psdPts = findPSDProfile(specLabel);
 
+  // Dynamic extraction from table if present
+  let dynamicPsd = null;
+  if (!psdPts && tests && tests.length > 1) {
+    const keys = Object.keys(tests[0]||{});
+    const fKey = keys.find(k => k.toLowerCase().includes('freq') || k.toLowerCase().includes('hz'));
+    const pKey = keys.find(k => k.toLowerCase().includes('g²/hz') || k.toLowerCase().includes('psd') || k.toLowerCase().includes('level'));
+    if (fKey && pKey) {
+      const parsed = tests.map(row => ({ f: parseFloat(row[fKey]), p: parseFloat(row[pKey]) })).filter(d => !isNaN(d.f) && !isNaN(d.p));
+      if (parsed.length > 1) {
+        dynamicPsd = parsed.sort((a,b) => a.f - b.f);
+      }
+    }
+  }
+  const finalPsdPts = psdPts || dynamicPsd;
+
   // Extract Grms from the parameters dict (might be already stored as e.g. "1.04" or "2.2 - 7.3 (varies)")
   const rawGrms = params['g rms'] || params['Grms'] || params['grms'] || '';
   let storedGrms = parseFloat(String(rawGrms).replace(/[^\d.]/g, '')) || null;
@@ -808,11 +823,13 @@ function renderVibAnalysis(params, tests, specLabel) {
   if (isVaries) storedGrms = rawGrms;
 
   // Compute Grms from PSD profile if available
-  const computedGrms = psdPts ? calcGrmsFromPSD(psdPts) : null;
+  const computedGrms = finalPsdPts ? calcGrmsFromPSD(finalPsdPts) : null;
   const grms = computedGrms || (typeof storedGrms === 'number' ? storedGrms : null);
 
+  const isVibLabel = specLabel.toLowerCase().includes('vib') || specLabel.toLowerCase().includes('shock');
+
   // If no vibration data at all, fall back to thermal chart
-  if (!grms && !psdPts && !storedGrms) { renderChart(tests); return; }
+  if (!grms && !finalPsdPts && !storedGrms && !isVibLabel) { renderChart(tests); return; }
 
   // Use the first number found for math estimations if we have a text range
   const mathGrms = grms || parseFloat(String(storedGrms).match(/[\d.]+/)) || 0;
@@ -848,14 +865,14 @@ function renderVibAnalysis(params, tests, specLabel) {
           <div class="vib-metric-value">${grmsDisp}<span class="vib-metric-unit">mm</span></div>
         </div>
       </div>
-      ${psdPts ? '<div id="psdPlotDiv" class="psd-plot"></div>' : '<div style="color:#64748b;font-size:11px;padding:4px 0">PSD Frequency Breakpoints: profile linked from standard database</div>'}
+      ${finalPsdPts ? '<div id="psdPlotDiv" class="psd-plot"></div>' : '<div style="color:#64748b;font-size:11px;padding:4px 0">No PSD Profile available. See table below for test specifications.</div>'}
     </div>`;
 
   // Render Plotly Log-Log chart when PSD breakpoints available
-  if (psdPts && window.Plotly) {
+  if (finalPsdPts && window.Plotly) {
     const trace = {
-      x: psdPts.map(d=>d.f),
-      y: psdPts.map(d=>d.p),
+      x: finalPsdPts.map(d=>d.f),
+      y: finalPsdPts.map(d=>d.p),
       mode: 'lines+markers',
       type: 'scatter',
       name: 'PSD Profile',
