@@ -130,6 +130,18 @@ tr:hover td{background:rgba(99,179,237,.05)}
 .vib-metric-unit{color:#64748b;font-size:11px;font-weight:400;margin-left:3px}
 .psd-plot{width:100%;height:260px;border-radius:8px;overflow:hidden;margin-top:10px}
 
+/* VIB CALCULATOR TABS */
+.vc-tab{background:transparent;border:none;border-bottom:3px solid transparent;color:var(--muted);padding:10px 20px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;margin-bottom:-2px;border-radius:6px 6px 0 0}
+.vc-tab:hover{color:var(--blue2)}
+.vc-tab.active{color:var(--blue2);border-bottom-color:var(--blue);background:rgba(26,58,107,.3)}
+.vc-content{display:none}.vc-content.active{display:block;animation:fadeIn .25s}
+.vc-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.vc-input{background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:6px 8px;font-size:13px;font-family:monospace;text-align:center;width:80%}
+.vc-input:focus{outline:none;border-color:var(--blue)}
+.vc-del{background:transparent;border:1px solid rgba(252,129,129,.5);color:#fc8181;border-radius:4px;width:28px;height:28px;cursor:pointer;font-weight:700;font-size:14px;transition:.2s}
+.vc-del:hover{background:#fc8181;color:white}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
 /* EMPTY STATE */
 .empty{color:var(--dim);text-align:center;padding:30px;font-size:13px}
 
@@ -186,6 +198,12 @@ tr:hover td{background:rgba(99,179,237,.05)}
         </button>
         <button class="tab-btn" onclick="showTab('sr332',this)" id="tabSR332">
           📈 SR-332<span class="badge">Iss 4</span>
+        </button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-title" data-zh="🛠️ 工具筱" data-en="🛠️ Toolbox"></div>
+        <button class="tab-btn" onclick="showTab('vibcalc',this)" id="tabVIBCALC">
+          〰️ <span data-zh="振動計算器" data-en="Vib Calculator"></span><span class="badge new-badge">NEW</span>
         </button>
       </div>
     </div>
@@ -370,7 +388,132 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
     </div>
   </div>
+  <!-- ─── Vibration Calculator Panel ─────────────────────────────────── -->
+  <div class="panel" id="panel-vibcalc">
+    <div class="panel-caption" data-zh="【振動計算器】整合正弦 (Sine) 與隨機 PSD 分析引擎。支援自動計算 Grms、交接頻率與掃頻時間，並內建所有主流可靠度規範的振動頻譜範例。" data-en="[Vibration Calculator] Integrated Sine and Random PSD analysis engine. Auto-computes Grms, crossover frequency, sweep time — with built-in profiles for all major standards."></div>
+
+    <!-- TABS -->
+    <div id="vc-tabs" style="display:flex;gap:6px;margin-bottom:20px;border-bottom:2px solid rgba(99,179,237,.2);padding-bottom:0">
+      <button class="vc-tab active" onclick="vcSwitchTab('sine',this)">〰️ Sine &nbsp;正弦振動</button>
+      <button class="vc-tab" onclick="vcSwitchTab('random',this)">📊 Random &nbsp;隨機 PSD</button>
+    </div>
+
+    <!-- ── SINE TAB ───────────────────────────────────── -->
+    <div id="vc-sine" class="vc-content active">
+      <div class="vc-toolbar">
+        <select id="vcSinePreset" onchange="vcLoadSine()">
+          <option value="">📂 選擇 Sine 規範範例…</option>
+          <optgroup label="IEC 60068-2-6 (正弦掃頻)">
+            <option value="iec_cls1">IEC 60068-2-6 Class 1 — 低嚴苛 (0.5g, 10–150 Hz)</option>
+            <option value="iec_cls2">IEC 60068-2-6 Class 2 — 中嚴苛 (1.0g, 10–150 Hz)</option>
+            <option value="iec_cls3">IEC 60068-2-6 Class 3 — 高嚴苛 (5.0g, 10–150 Hz)</option>
+          </optgroup>
+          <optgroup label="MIL-STD-810H Method 514.8">
+            <option value="mil_sine_basic">Method 514.8 Sine — Basic Transportation (1g, 5–500 Hz)</option>
+          </optgroup>
+          <optgroup label="自訂">
+            <option value="sine_custom">自訂頻率點</option>
+          </optgroup>
+        </select>
+        <button class="btn btn-dl" onclick="vcCalcSine()">⚡ 自動計算交接點與缺失值</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:15px;">
+        <div style="flex:1;min-width:280px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
+          <table style="width:100%;border-collapse:collapse;margin-bottom:10px">
+            <thead><tr>
+              <th style="text-align:center;padding:8px;color:var(--blue2);font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Freq (Hz)</th>
+              <th style="text-align:center;padding:8px;color:#68d391;font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Accel (g Peak)</th>
+              <th style="text-align:center;padding:8px;color:#f6ad55;font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Disp (mm p-p)</th>
+              <th style="width:32px;border-bottom:2px solid rgba(99,179,237,.2)"></th>
+            </tr></thead>
+            <tbody id="vcSineTbody"></tbody>
+          </table>
+          <button class="btn btn-dl" style="width:100%" onclick="vcAddSineRow()">＋ 新增頻率點</button>
+        </div>
+        <div style="flex:1;min-width:250px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
+          <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px">⏱️ 掃頻時間設定</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+            <label style="color:var(--muted);font-size:12px">掃頻速率：</label>
+            <input type="number" id="vcSweepRate" value="1" step="0.1" style="width:60px;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:5px 8px;font-size:13px;text-align:center" oninput="vcUpdateSineTime()">
+            <span style="color:var(--muted);font-size:12px">Oct/min</span>
+            <label style="color:var(--muted);font-size:12px;margin-left:8px">次數：</label>
+            <input type="number" id="vcSweepCount" value="1" style="width:50px;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:5px 8px;font-size:13px;text-align:center" oninput="vcUpdateSineTime()">
+          </div>
+          <div class="vib-metric" style="margin-bottom:0">
+            <div class="vib-metric-label">預估總測試時間</div>
+            <div class="vib-metric-value" id="vcSineTime" style="font-size:18px">--</div>
+          </div>
+          <p style="color:var(--muted);font-size:11px;margin-top:12px;line-height:1.6">*提示：留空的欄位點「自動計算」後，系統依 <em>A = ω²X</em> 補齊，並自動找出交接點 (Crossover)。</p>
+        </div>
+        <div style="flex:1 0 100%;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
+          <div id="vcSinePlot" style="width:100%;height:280px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RANDOM TAB ─────────────────────────────────── -->
+    <div id="vc-random" class="vc-content">
+      <div class="vc-toolbar" style="align-items:flex-start;gap:12px;flex-wrap:wrap">
+        <select id="vcRandPreset" style="flex:1;min-width:260px;max-width:500px" onchange="vcLoadRandom()">
+          <option value="">📂 選擇 Random 規範範例…</option>
+          <optgroup label="MIL-STD-810H Method 514.8">
+            <option value="mil_cat4">Cat 4 — US Highway Truck (1.04 Grms)</option>
+            <option value="mil_cat20">Cat 20 — Ground Vehicle (1.20 Grms)</option>
+            <option value="mil_cat24">Cat 24 — General Minimal Integrity (7.70 Grms)</option>
+          </optgroup>
+          <optgroup label="GR-63-CORE NEBS">
+            <option value="gr63_trans">Transportation Vibration (2.21 Grms)</option>
+          </optgroup>
+          <optgroup label="ISTA">
+            <option value="ista_3a">3A — Over-the-Road Trailer (0.53 Grms)</option>
+            <option value="ista_6amazon">6-Amazon.com OB Type A/B (0.53 Grms)</option>
+          </optgroup>
+          <optgroup label="ASTM D4169-22">
+            <option value="astm_schA">Schedule A — General Road (DC1)</option>
+            <option value="astm_schB">Schedule B — Air Freight (DC1)</option>
+          </optgroup>
+          <optgroup label="IEC 60068-2-64">
+            <option value="iec_M">IEC 60068-2-64 M — 車載中嚴苛 (Medium)</option>
+            <option value="iec_H">IEC 60068-2-64 H — 工業高嚴苛 (High)</option>
+          </optgroup>
+        </select>
+        <div style="display:flex;gap:6px">
+          <button id="vcUnitG"   class="toggle-btn active" onclick="vcSetUnit('G')"  >g²/Hz</button>
+          <button id="vcUnitMs2" class="toggle-btn"        onclick="vcSetUnit('ms2')">(m/s²)²/Hz</button>
+        </div>
+        <div id="vcPtsInfo" style="color:var(--muted);font-size:12px;font-weight:600;padding:5px 12px;background:rgba(13,27,62,.6);border:1px solid rgba(99,179,237,.2);border-radius:12px">4 pts</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:15px;margin-top:12px">
+        <div style="flex:1;min-width:280px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
+          <table style="width:100%;border-collapse:collapse;margin-bottom:10px">
+            <thead><tr>
+              <th style="width:25%;text-align:center;padding:8px;color:var(--blue2);font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Freq (Hz)</th>
+              <th id="vcThPsd" style="width:35%;text-align:center;padding:8px;color:#68d391;font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Value (g²/Hz)</th>
+              <th style="width:25%;text-align:center;padding:8px;color:var(--muted);font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Slope dB/Oct</th>
+              <th style="width:15%;border-bottom:2px solid rgba(99,179,237,.2)"></th>
+            </tr></thead>
+            <tbody id="vcRandTbody"></tbody>
+          </table>
+          <button class="btn btn-dl" style="width:100%" onclick="vcAddRandRow()">＋ 新增轉折點</button>
+        </div>
+        <div style="flex:1;min-width:220px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
+          <div style="color:#00d284;font-size:12px;font-weight:700;margin-bottom:10px">📊 預估測試量值 (3σ)</div>
+          <div class="vib-metrics" style="grid-template-columns:1fr 1fr">
+            <div class="vib-metric"><div class="vib-metric-label">Grms</div><div class="vib-metric-value" id="vcGrms">--<span class="vib-metric-unit" id="vcUnitGrmsLbl">g</span></div></div>
+            <div class="vib-metric"><div class="vib-metric-label">3σ Peak</div><div class="vib-metric-value" id="vcPeak">--<span class="vib-metric-unit" id="vcUnitPeakLbl">G</span></div></div>
+            <div class="vib-metric"><div class="vib-metric-label">Peak Velocity</div><div class="vib-metric-value" id="vcVpeak">--<span class="vib-metric-unit">m/s</span></div></div>
+            <div class="vib-metric"><div class="vib-metric-label">P-P Disp</div><div class="vib-metric-value" id="vcDisp">--<span class="vib-metric-unit">mm</span></div></div>
+          </div>
+        </div>
+        <div style="flex:1 0 100%;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
+          <div id="vcRandPlot" style="width:100%;height:280px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
+
 
 </div>
 </div>
@@ -976,6 +1119,276 @@ window.addEventListener('DOMContentLoaded', () => {
   ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(loadDB);
   renderDashboard();
 });
+// ─── VIBRATION CALCULATOR ENGINE ───────────────────────────────────────────
+const VC_G = 9.80665;
+const VC_LOG2_10 = 10 * Math.log10(2);
+
+// Tab switcher
+function vcSwitchTab(tab, btn) {
+  document.querySelectorAll('.vc-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.vc-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('vc-'+tab).classList.add('active');
+  btn.classList.add('active');
+  if (tab === 'sine') vcUpdateSineChart();
+  if (tab === 'random') vcCalcAndPlotRandom();
+}
+
+// ── SINE LOGIC ──────────────────────────────────────────────────────────────
+const VC_SINE_PRESETS = {
+  // IEC 60068-2-6 — Sine Sweep
+  iec_cls1: [{f:10,a:'',d:0.75},{f:57.5,a:0.5,d:''},{f:150,a:0.5,d:''}],   // 0.75mm p-p below 57.5Hz crossover
+  iec_cls2: [{f:10,a:'',d:1.5}, {f:58.1,a:1.0,d:''},{f:150,a:1.0,d:''}],
+  iec_cls3: [{f:10,a:'',d:3.5}, {f:60.0,a:5.0,d:''},{f:150,a:5.0,d:''}],
+  // MIL-STD-810H Method 514.8 — Sine (Basic Transport Integrity)
+  mil_sine_basic: [{f:5,a:'',d:5.08},{f:15.92,a:1.0,d:''},{f:500,a:1.0,d:''}],
+  // Custom placeholder
+  sine_custom: [{f:10,a:'',d:1.0},{f:100,a:1.0,d:''}]
+};
+
+function vcAddSineRow(f='', a='', d='') {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" oninput="vcUpdateSineChart()"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" value="${a}" step="any" placeholder="Auto" oninput="vcUpdateSineChart()"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" value="${d}" step="any" placeholder="Auto" oninput="vcUpdateSineChart()"></td>
+    <td style="padding:4px;text-align:center"><button class="vc-del" onclick="this.closest('tr').remove();vcUpdateSineChart()">✕</button></td>`;
+  document.getElementById('vcSineTbody').appendChild(tr);
+}
+
+function vcLoadSine() {
+  const k = document.getElementById('vcSinePreset').value;
+  if (!k || !VC_SINE_PRESETS[k]) return;
+  document.getElementById('vcSineTbody').innerHTML = '';
+  VC_SINE_PRESETS[k].forEach(p => vcAddSineRow(p.f, p.a===''?'':p.a, p.d===''?'':p.d));
+  vcCalcSine();
+}
+
+function vcFillSinePoint(pt) {
+  const res = {...pt};
+  if (!isNaN(res.f)) {
+    if (!isNaN(res.d) && isNaN(res.a)) {
+      res.a = Math.pow(2*Math.PI*res.f, 2) * (res.d/2000) / VC_G;
+      res.a = parseFloat(res.a.toFixed(6));
+      res.disp_ctrl = true;
+    } else if (!isNaN(res.a) && isNaN(res.d)) {
+      res.d = (res.a * VC_G * 2000) / Math.pow(2*Math.PI*res.f, 2);
+      res.d = parseFloat(res.d.toFixed(6));
+      res.accel_ctrl = true;
+    }
+  }
+  return res;
+}
+
+function vcCalcSine() {
+  const rows = document.querySelectorAll('#vcSineTbody tr');
+  let data = [];
+  rows.forEach(r => {
+    const inps = r.querySelectorAll('input');
+    data.push({f:parseFloat(inps[0].value), a:parseFloat(inps[1].value), d:parseFloat(inps[2].value)});
+  });
+  data = data.filter(p => !isNaN(p.f)).sort((a,b) => a.f-b.f);
+  let result = [];
+  for (let i = 0; i < data.length - 1; i++) {
+    let p1 = vcFillSinePoint(data[i]);
+    let p2 = vcFillSinePoint(data[i+1]);
+    result.push(p1);
+    if (p1.disp_ctrl && p2.accel_ctrl) {
+      let fc = 22.288 * Math.sqrt(p2.a / p1.d);
+      if (fc > p1.f && fc < p2.f) result.push({f:parseFloat(fc.toFixed(3)), a:parseFloat(p2.a.toFixed(4)), d:parseFloat(p1.d.toFixed(4))});
+    }
+  }
+  if (data.length) result.push(vcFillSinePoint(data[data.length-1]));
+  document.getElementById('vcSineTbody').innerHTML = '';
+  result.forEach(p => vcAddSineRow(p.f, p.a, p.d));
+  vcUpdateSineChart();
+}
+
+function vcUpdateSineTime() {
+  const rows = document.querySelectorAll('#vcSineTbody tr');
+  let freqs = [];
+  rows.forEach(r => { const f=parseFloat(r.querySelectorAll('input')[0].value); if(!isNaN(f)) freqs.push(f); });
+  const el = document.getElementById('vcSineTime');
+  if (freqs.length < 2) { el.textContent='--'; return; }
+  const rate  = parseFloat(document.getElementById('vcSweepRate').value);
+  const count = parseFloat(document.getElementById('vcSweepCount').value);
+  const fMin  = Math.min(...freqs), fMax = Math.max(...freqs);
+  if (fMin<=0 || fMax<=fMin || isNaN(rate)||rate<=0 || isNaN(count)||count<=0) { el.textContent='参數錯誤'; return; }
+  const totalMins = (Math.log2(fMax/fMin)/rate)*count;
+  const h=Math.floor(totalMins/60), m=Math.floor(totalMins%60), s=Math.round((totalMins*60)%60);
+  el.textContent = (h?`${h}h `:'') + `${m}m ${s}s`;
+}
+
+function vcUpdateSineChart() {
+  const rows = document.querySelectorAll('#vcSineTbody tr');
+  let pts = [];
+  rows.forEach(r => {
+    const inps = r.querySelectorAll('input');
+    const f=parseFloat(inps[0].value), a=parseFloat(inps[1].value);
+    if(!isNaN(f)&&!isNaN(a)) pts.push({f,a});
+  });
+  pts.sort((a,b)=>a.f-b.f);
+  vcUpdateSineTime();
+  if (!pts.length || !window.Plotly) return;
+  const trace = {x:pts.map(d=>d.f), y:pts.map(d=>d.a), mode:'lines+markers', type:'scatter',
+    line:{color:'#63b3ed',width:3}, marker:{size:7,color:'#fff',line:{color:'#63b3ed',width:2}}};
+  const layout = {
+    margin:{l:55,r:15,t:15,b:45}, paper_bgcolor:'rgba(13,20,71,0)', plot_bgcolor:'rgba(13,20,71,0)',
+    xaxis:{title:'Frequency (Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
+    yaxis:{title:'Acceleration (g Peak)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
+    showlegend:false
+  };
+  Plotly.newPlot('vcSinePlot', [trace], layout, {displayModeBar:false, responsive:true});
+}
+
+// ── RANDOM LOGIC ─────────────────────────────────────────────────────────────
+let vcRandUnit = 'G';
+const VC_RAND_PROFILES = {
+  mil_cat4:     [{f:10,p:0.015},{f:40,p:0.015},{f:500,p:0.00015}],
+  mil_cat20:    [{f:5,p:0.006},{f:100,p:0.006},{f:500,p:0.002}],
+  mil_cat24:    [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
+  gr63_trans:   [{f:5,p:0.001},{f:20,p:0.01},{f:500,p:0.01}],
+  ista_3a:      [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  ista_6amazon: [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
+  astm_schA:    [{f:3,p:0.0007},{f:12,p:0.00785},{f:20,p:0.00785},{f:50,p:0.0008},{f:100,p:0.0008},{f:200,p:0.0002}],
+  astm_schB:    [{f:5,p:0.0003},{f:20,p:0.002},{f:50,p:0.002},{f:100,p:0.0003},{f:200,p:0.0001}],
+  iec_M:        [{f:5,p:0.0001},{f:20,p:0.01},{f:150,p:0.01},{f:500,p:0.001}],
+  iec_H:        [{f:2,p:0.001},{f:20,p:0.02},{f:300,p:0.02},{f:1000,p:0.002}]
+};
+
+function vcAddRandRow(f='', p='', isFirst=false) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" oninput="vcHandleRandInput(this,'f')"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" value="${p}" step="any" oninput="vcHandleRandInput(this,'p')"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" step="any" oninput="vcHandleRandInput(this,'s')" ${isFirst?'disabled placeholder="N/A"':''}></td>
+    <td style="padding:4px;text-align:center">${isFirst?'':`<button class="vc-del" onclick="this.closest('tr').remove();vcRecalcSlopes()">✕</button>`}</td>`;
+  document.getElementById('vcRandTbody').appendChild(tr);
+}
+
+function vcLoadRandom() {
+  const k = document.getElementById('vcRandPreset').value;
+  if (!k || !VC_RAND_PROFILES[k]) return;
+  if (vcRandUnit !== 'G') vcSetUnit('G');
+  const data = VC_RAND_PROFILES[k];
+  document.getElementById('vcRandTbody').innerHTML = '';
+  data.forEach((pt, i) => vcAddRandRow(pt.f, pt.p, i === 0));
+  vcRecalcSlopes();
+}
+
+function vcSetUnit(u) {
+  if (vcRandUnit === u) return;
+  const factor = (u === 'ms2') ? Math.pow(VC_G,2) : (1/Math.pow(VC_G,2));
+  vcRandUnit = u;
+  document.getElementById('vcUnitG').classList.toggle('active', u==='G');
+  document.getElementById('vcUnitMs2').classList.toggle('active', u==='ms2');
+  document.getElementById('vcThPsd').textContent = u==='ms2'? 'Value ((m/s²)²/Hz)' : 'Value (g²/Hz)';
+  document.getElementById('vcUnitGrmsLbl').textContent = u==='ms2'? 'm/s²' : 'g';
+  document.getElementById('vcUnitPeakLbl').textContent = u==='ms2'? 'm/s²' : 'G';
+  document.querySelectorAll('#vcRandTbody .vc-input').forEach((inp,i) => {
+    if (i % 3 === 1) { // PSD column
+      const v = parseFloat(inp.value);
+      if (!isNaN(v)) inp.value = parseFloat((v*factor).toFixed(8));
+    }
+  });
+  vcCalcAndPlotRandom();
+}
+
+function vcHandleRandInput(el, type) {
+  const rows = Array.from(document.querySelectorAll('#vcRandTbody tr'));
+  const row  = el.closest('tr');
+  const idx  = rows.indexOf(row);
+  if (type === 's' && idx > 0) {
+    const prevInps = rows[idx-1].querySelectorAll('input');
+    const inps     = row.querySelectorAll('input');
+    const pf=parseFloat(prevInps[0].value), pp=parseFloat(prevInps[1].value);
+    const cf=parseFloat(inps[0].value), sl=parseFloat(el.value);
+    if (pf>0&&pp>0&&cf>pf&&!isNaN(sl)) {
+      inps[1].value = (pp * Math.pow(cf/pf, sl/VC_LOG2_10)).toFixed(8);
+    }
+  }
+  vcRecalcSlopes(type, el);
+}
+
+function vcRecalcSlopes(type, activeEl) {
+  const rows = document.querySelectorAll('#vcRandTbody tr');
+  document.getElementById('vcPtsInfo').textContent = rows.length + ' pts';
+  rows.forEach((row, i) => {
+    const inps = row.querySelectorAll('input');
+    const slp  = inps[2];
+    if (i === 0) { slp.disabled=true; slp.value=''; slp.placeholder='N/A'; return; }
+    slp.disabled = false; slp.placeholder = '';
+    const prevInps = rows[i-1].querySelectorAll('input');
+    const f1=parseFloat(prevInps[0].value), w1=parseFloat(prevInps[1].value);
+    const f2=parseFloat(inps[0].value),     w2=parseFloat(inps[1].value);
+    if (f1>0&&w1>0&&f2>f1&&w2>0 && document.activeElement !== slp) {
+      slp.value = ((Math.log10(w2/w1)/Math.log10(f2/f1))*VC_LOG2_10).toFixed(2);
+    }
+  });
+  vcCalcAndPlotRandom();
+}
+
+function vcCalcAndPlotRandom() {
+  const rows = document.querySelectorAll('#vcRandTbody tr');
+  let data = [];
+  rows.forEach(r => {
+    const inps = r.querySelectorAll('input');
+    const f=parseFloat(inps[0].value), p=parseFloat(inps[1].value);
+    if(!isNaN(f)&&!isNaN(p)) data.push({f,p});
+  });
+  data.sort((a,b)=>a.f-b.f);
+  if (data.length < 2) { Plotly.purge('vcRandPlot'); return; }
+
+  let aA=0, aV=0, aD=0;
+  for (let i=0;i<data.length-1;i++) {
+    const f1=data[i].f, w1=data[i].p, f2=data[i+1].f, w2=data[i+1].p;
+    if (f1<=0||w1<=0||f2<=f1||w2<=0) continue;
+    const m = Math.log(w2/w1)/Math.log(f2/f1);
+    if (Math.abs(m+1)<0.0001) aA+=w1*f1*Math.log(f2/f1); else aA+=(w2*f2-w1*f1)/(m+1);
+    const w1m = vcRandUnit==='G' ? w1*Math.pow(VC_G,2) : w1;
+    if (Math.abs(m-1)<0.0001) aV+=(w1m/f1)*Math.log(f2/f1); else aV+=(w1m*Math.pow(f1,-m)/(m-1))*(Math.pow(f2,m-1)-Math.pow(f1,m-1));
+    if (Math.abs(m-3)<0.0001) aD+=(w1m/Math.pow(f1,3))*Math.log(f2/f1); else aD+=(w1m*Math.pow(f1,-m)/(m-3))*(Math.pow(f2,m-3)-Math.pow(f1,m-3));
+  }
+  const grms = Math.sqrt(Math.max(0,aA));
+  const vrms = Math.sqrt(Math.max(0,aV/(4*Math.PI**2)));
+  const drms = Math.sqrt(Math.max(0,aD/(16*Math.PI**4)));
+  document.getElementById('vcGrms').innerHTML  = grms.toFixed(3) + `<span class="vib-metric-unit">${vcRandUnit==='ms2'?'m/s²':'g'}</span>`;
+  document.getElementById('vcPeak').innerHTML  = (3*grms).toFixed(3) + `<span class="vib-metric-unit">${vcRandUnit==='ms2'?'m/s²':'G'}</span>`;
+  document.getElementById('vcVpeak').innerHTML = (3*vrms).toFixed(3) + '<span class="vib-metric-unit">m/s</span>';
+  document.getElementById('vcDisp').innerHTML  = (6*drms*1000).toFixed(3) + '<span class="vib-metric-unit">mm</span>';
+
+  if (!window.Plotly) return;
+  const trace = {x:data.map(d=>d.f), y:data.map(d=>d.p), mode:'lines+markers', type:'scatter',
+    line:{color:'#00d284',width:3}, marker:{size:7,color:'#fff',line:{color:'#00d284',width:2}},
+    fill:'tozeroy', fillcolor:'rgba(0,210,132,0.05)'};
+  const yTitle = vcRandUnit==='ms2'?'(m/s²)²/Hz':'g²/Hz';
+  const layout = {
+    margin:{l:60,r:15,t:15,b:45}, paper_bgcolor:'rgba(13,20,71,0)', plot_bgcolor:'rgba(13,20,71,0)',
+    xaxis:{title:'Frequency (Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
+    yaxis:{title:`PSD (${yTitle})`,type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
+    showlegend:false
+  };
+  Plotly.newPlot('vcRandPlot', [trace], layout, {displayModeBar:false, responsive:true});
+}
+
+// Initialise calculator with default rows when panel is first opened
+function vcInit() {
+  if (document.getElementById('vcRandTbody').children.length === 0) {
+    vcAddRandRow(20,0.0025,true); vcAddRandRow(80,0.01); vcAddRandRow(500,0.0017);
+    vcRecalcSlopes();
+  }
+  if (document.getElementById('vcSineTbody').children.length === 0) {
+    vcAddSineRow(10,'',1.0); vcAddSineRow(100,1.0,'');
+    vcUpdateSineChart();
+  }
+}
+
+// Hook into showTab to initialize the calculator on first open
+const _origShowTab = showTab;
+function showTab(id, btn) {
+  _origShowTab(id, btn);
+  if (id === 'vibcalc') { setTimeout(vcInit, 80); }
+}
+
 </script>
 </body>
 </html>
