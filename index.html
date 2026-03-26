@@ -589,9 +589,14 @@ function showResult(std) {
   // Route to vibration or thermal chart
   setTimeout(()=>{
     const cols = tests.length ? Object.keys(tests[0]) : [];
-    const isVib = cols.some(c => /freq|hz|psd|grms|g²|vibr|acceler/i.test(c))
-                  || (params['g rms'] || params['Grms'] || params['Profile']);
-    const hasPSD = params['Profile'] || cols.some(c => /psd|g²\/hz/i.test(c));
+    // Normalize: remove spaces for column matching (handles "G RMS" -> "GRMS")
+    const colsNorm = cols.map(c => c.replace(/\s/g,'').toLowerCase());
+    // Also check the method/category name directly (most reliable)
+    const specName = (v1 + ' ' + v2 + ' ' + v3).toLowerCase();
+    const isVib = specName.includes('vibration') || specName.includes('shock')
+                  || colsNorm.some(c => /freq|hz|psd|grms|vibr|acceler/.test(c))
+                  || Object.keys(params).some(k => k.replace(/\s/g,'').toLowerCase().includes('grms'))
+                  || !!params['g rms'] || !!params['Grms'] || !!params['Profile'];
     if (isVib) {
       renderVibAnalysis(params, tests, v1 + ' ' + v3);
     } else {

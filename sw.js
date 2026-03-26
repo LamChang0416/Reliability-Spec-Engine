@@ -1,4 +1,4 @@
-const CACHE_NAME = 'reliability-spec-v1.7';
+const CACHE_NAME = 'reliability-spec-v1.8';
 const ASSETS = [
   './',
   './index.html',
