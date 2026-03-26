@@ -743,7 +743,8 @@ function showResult(std) {
     if (isVib) {
       renderVibAnalysis(params, tests, v1 + ' ' + v3);
     } else {
-      renderChart(tests);
+      // Per user request: DO NOT show Test profile visualization for non-vibration tests.
+      // renderChart(tests); 
     }
   }, 50);
 }
@@ -828,8 +829,8 @@ function renderVibAnalysis(params, tests, specLabel) {
 
   const isVibLabel = specLabel.toLowerCase().includes('vib') || specLabel.toLowerCase().includes('shock');
 
-  // If no vibration data at all, fall back to thermal chart
-  if (!grms && !finalPsdPts && !storedGrms && !isVibLabel) { renderChart(tests); return; }
+  // If no vibration data at all, abort rendering visualizer entirely
+  if (!grms && !finalPsdPts && !storedGrms && !isVibLabel) { return; }
 
   // Use the first number found for math estimations if we have a text range
   const mathGrms = grms || parseFloat(String(storedGrms).match(/[\d.]+/)) || 0;
