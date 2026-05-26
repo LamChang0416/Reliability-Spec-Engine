@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "Reliability Spec Engine 2.0",
   "short_name": "SpecEngine",
-  "description": "Nine-in-one reliability engineering workstation: MIL-STD-810H, GR-63 CORE, ASTM D4169-22, IEC 60721-3, IEC 60068-2, IEC 60529 (IP Code), Telcordia SR-332, ISTA, and Vibration Calculator",
+  "description": "Reliability Spec Engine 3.0: 9-in-1 standard specs with Vibration Calculator, Photo Processing, and Automated PDF Reporting",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0f2c",
@@ -27,17 +27,18 @@
     {
       "name": "MIL-STD-810H",
       "url": "./index.html",
-      "description": "Military environmental testing standard"
+      "description": "Reliability Spec Engine 3.0: 9-in-1 standard specs with Vibration Calculator, Photo Processing, and Automated PDF Reporting"
     },
     {
       "name": "GR-63 CORE Issue 5",
       "url": "./index.html",
-      "description": "NEBS telecom facility standard"
+      "description": "Reliability Spec Engine 3.0: 9-in-1 standard specs with Vibration Calculator, Photo Processing, and Automated PDF Reporting"
     },
     {
       "name": "Vibration Calculator",
       "url": "./index.html",
-      "description": "Sine & Random PSD vibration analysis"
+      "description": "Reliability Spec Engine 3.0: 9-in-1 standard specs with Vibration Calculator, Photo Processing, and Automated PDF Reporting"
     }
   ]
 }
+

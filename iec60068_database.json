@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "IEC 60068-2",
+    "version": "2023-2025",
+    "description": "Environmental testing methods",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:37d7bc61427be229"
+  },
   "Temperature (溫濕度相關測試)": {
     "Test A: Cold (IEC 60068-2-1:2007)": {
       "Ad/Ae: Cold for heat-dissipating specimen (漸變溫低溫測試)": {
@@ -11,11 +20,26 @@
           "Rate of Change": "≤ 1 °C/min (5 min average)"
         },
         "tests": [
-          {"Step": "1. Pre-conditioning", "Action": "室溫下放置"},
-          {"Step": "2. Initial Test", "Action": "量測產品外觀與電氣功能"},
-          {"Step": "3. Conditioning", "Action": "降溫至指定低溫並駐留指定時間"},
-          {"Step": "4. Recovery", "Action": "升溫回室溫並恢復"},
-          {"Step": "5. Final Test", "Action": "確認功能是否正常發揮"}
+          {
+            "Step": "1. Pre-conditioning",
+            "Action": "室溫下放置"
+          },
+          {
+            "Step": "2. Initial Test",
+            "Action": "量測產品外觀與電氣功能"
+          },
+          {
+            "Step": "3. Conditioning",
+            "Action": "降溫至指定低溫並駐留指定時間"
+          },
+          {
+            "Step": "4. Recovery",
+            "Action": "升溫回室溫並恢復"
+          },
+          {
+            "Step": "5. Final Test",
+            "Action": "確認功能是否正常發揮"
+          }
         ]
       }
     },
@@ -30,8 +54,14 @@
           "Rate of Change": "≤ 1 °C/min (5 min average)"
         },
         "tests": [
-          {"Step": "Thermal Equilibrium", "Action": "確認產品本體內部溫度已達平衡才開始計算駐留時間"},
-          {"Step": "Function Check", "Action": "運作中之產品需確認滿載或指定負載時的溫度表現"}
+          {
+            "Step": "Thermal Equilibrium",
+            "Action": "確認產品本體內部溫度已達平衡才開始計算駐留時間"
+          },
+          {
+            "Step": "Function Check",
+            "Action": "運作中之產品需確認滿載或指定負載時的溫度表現"
+          }
         ]
       }
     },
@@ -47,7 +77,10 @@
           "Number of Cycles": "5, 10, 50, 100, 200, 300 cycles"
         },
         "tests": [
-          {"Step": "Cycle Profile", "Action": "在高低溫槽間轉移，確保介面或吃錫點(Solder joints)受到疲勞拉扯"}
+          {
+            "Step": "Cycle Profile",
+            "Action": "在高低溫槽間轉移，確保介面或吃錫點(Solder joints)受到疲勞拉扯"
+          }
         ]
       },
       "Test Nb: Change of temperature with specified rate (單箱溫迴圈變化)": {
@@ -59,7 +92,10 @@
           "Number of Cycles": "2, 5, 10, 20, 50, 100 cycles"
         },
         "tests": [
-          {"Step": "Cycle Profile", "Action": "單一 Chamber 內設定溫變率升降"}
+          {
+            "Step": "Cycle Profile",
+            "Action": "單一 Chamber 內設定溫變率升降"
+          }
         ]
       }
     },
@@ -75,10 +111,22 @@
           "Cycles": "2, 6, 12, 21, or 56 cycles"
         },
         "tests": [
-          {"Phase": "Temp Rise (3h)", "Action": "升溫至上限溫度 (凝露發生)"},
-          {"Phase": "High Temp Dwell (9h)", "Action": "維持高溫與 93% RH"},
-          {"Phase": "Temp Fall (3-6h)", "Action": "降溫回 25°C"},
-          {"Phase": "Low Temp Dwell", "Action": "維持 25°C 至少 95% RH 直到滿 24 小時"}
+          {
+            "Phase": "Temp Rise (3h)",
+            "Action": "升溫至上限溫度 (凝露發生)"
+          },
+          {
+            "Phase": "High Temp Dwell (9h)",
+            "Action": "維持高溫與 93% RH"
+          },
+          {
+            "Phase": "Temp Fall (3-6h)",
+            "Action": "降溫回 25°C"
+          },
+          {
+            "Phase": "Low Temp Dwell",
+            "Action": "維持 25°C 至少 95% RH 直到滿 24 小時"
+          }
         ]
       }
     },
@@ -92,7 +140,10 @@
           "Test Duration": "12, 16, 24, 48, 96, 240, 504, 1008 hours"
         },
         "tests": [
-          {"Step": "Conditioning", "Action": "在特定溫濕度下長時間駐留，過程不得產生凝露"}
+          {
+            "Step": "Conditioning",
+            "Action": "在特定溫濕度下長時間駐留，過程不得產生凝露"
+          }
         ]
       }
     }
@@ -108,8 +159,14 @@
           "Sweep Rate": "1 Octave/min"
         },
         "tests": [
-          {"Sequence": "1. Resonance Search", "Action": "掃頻尋找共振峰值 (Q factor ≥ 2.0)"},
-          {"Sequence": "2. Endurance Testing", "Action": "在共振點駐留 (如 30 分鐘) 或連續掃頻"}
+          {
+            "Sequence": "1. Resonance Search",
+            "Action": "掃頻尋找共振峰值 (Q factor ≥ 2.0)"
+          },
+          {
+            "Sequence": "2. Endurance Testing",
+            "Action": "在共振點駐留 (如 30 分鐘) 或連續掃頻"
+          }
         ]
       }
     },
@@ -124,7 +181,10 @@
           "Axes": "Three mutually perpendicular axes (X, Y, Z)"
         },
         "tests": [
-          {"Condition": "General Transportation", "Spectra": "Refer to Table 1 distributions based on vehicle type"}
+          {
+            "Condition": "General Transportation",
+            "Spectra": "Refer to Table 1 distributions based on vehicle type"
+          }
         ]
       }
     }
@@ -140,12 +200,30 @@
           "Number of Impacts": "3 impacts per weakest enclosure point"
         },
         "tests": [
-          {"Impact": "0.5 J", "Equivalent": "IK04"},
-          {"Impact": "1.0 J", "Equivalent": "IK06"},
-          {"Impact": "2.0 J", "Equivalent": "IK07"},
-          {"Impact": "5.0 J", "Equivalent": "IK08"},
-          {"Impact": "10.0 J", "Equivalent": "IK09"},
-          {"Impact": "20.0 J", "Equivalent": "IK10 (Heavy damage)"}
+          {
+            "Impact": "0.5 J",
+            "Equivalent": "IK04"
+          },
+          {
+            "Impact": "1.0 J",
+            "Equivalent": "IK06"
+          },
+          {
+            "Impact": "2.0 J",
+            "Equivalent": "IK07"
+          },
+          {
+            "Impact": "5.0 J",
+            "Equivalent": "IK08"
+          },
+          {
+            "Impact": "10.0 J",
+            "Equivalent": "IK09"
+          },
+          {
+            "Impact": "20.0 J",
+            "Equivalent": "IK10 (Heavy damage)"
+          }
         ]
       }
     },
@@ -159,9 +237,18 @@
           "Number of Shocks": "3 shocks per direction per axis (Total 18 shocks typical)"
         },
         "tests": [
-          {"Condition": "15g / 11ms Half-Sine", "Application": "一般消費性產品耐摔落模擬"},
-          {"Condition": "30g / 11ms Half-Sine", "Application": "工業電腦或伺服器基本防撞要求"},
-          {"Condition": "100g / 6ms Sawtooth", "Application": "車載或嚴苛軍規應用"}
+          {
+            "Condition": "15g / 11ms Half-Sine",
+            "Application": "一般消費性產品耐摔落模擬"
+          },
+          {
+            "Condition": "30g / 11ms Half-Sine",
+            "Application": "工業電腦或伺服器基本防撞要求"
+          },
+          {
+            "Condition": "100g / 6ms Sawtooth",
+            "Application": "車載或嚴苛軍規應用"
+          }
         ]
       }
     },
@@ -174,8 +261,16 @@
           "Surface": "Smooth, hard, rigid surface (Steel or Concrete)"
         },
         "tests": [
-          {"Condition": "Free Fall (設備跌落)", "Height (mm)": "25, 50, 100, 250, 500, 1000", "Application": "依據設備重量與使用情境"},
-          {"Condition": "Topple (傾倒)", "Action": "將設備傾斜置於特定邊緣，使其自由倒下撞擊桌面", "Application": "機櫃或直立式設備"}
+          {
+            "Condition": "Free Fall (設備跌落)",
+            "Height (mm)": "25, 50, 100, 250, 500, 1000",
+            "Application": "依據設備重量與使用情境"
+          },
+          {
+            "Condition": "Topple (傾倒)",
+            "Action": "將設備傾斜置於特定邊緣，使其自由倒下撞擊桌面",
+            "Application": "機櫃或直立式設備"
+          }
         ]
       }
     }
@@ -192,7 +287,10 @@
           "pH Range": "6.5 to 7.2"
         },
         "tests": [
-          {"Severity": "Common Durations", "Action": "16h, 24h, 48h, 96h, 168h, 336h, 672h"}
+          {
+            "Severity": "Common Durations",
+            "Action": "16h, 24h, 48h, 96h, 168h, 336h, 672h"
+          }
         ]
       }
     },
@@ -204,8 +302,14 @@
           "Description_EN": "Test Kb: Alternating salt spray and damp heat storage, simulating marine environments."
         },
         "tests": [
-          {"Severity": "Severity 1 (e.g. 室內海洋環境)", "Profile": "4 cycles of 2h spray (15-35°C) -> 7 days Damp (40°C, 93%)"},
-          {"Severity": "Severity 3 (e.g. 船舶室外)", "Profile": "1 cycle = 2h spray -> 22h Damp. Repeated 4 times"}
+          {
+            "Severity": "Severity 1 (e.g. 室內海洋環境)",
+            "Profile": "4 cycles of 2h spray (15-35°C) -> 7 days Damp (40°C, 93%)"
+          },
+          {
+            "Severity": "Severity 3 (e.g. 船舶室外)",
+            "Profile": "1 cycle = 2h spray -> 22h Damp. Repeated 4 times"
+          }
         ]
       }
     },
@@ -217,10 +321,26 @@
           "Description_EN": "Test M: High-altitude operations causing seal failure or limited air convection."
         },
         "tests": [
-          {"Altitude (m/ft)": "2000 m (6562 ft)", "Pressure": "800 hPa", "Note": "設備最高操作海拔"},
-          {"Altitude (m/ft)": "3000 m (9843 ft)", "Pressure": "700 hPa", "Note": "設備最高操作海拔"},
-          {"Altitude (m/ft)": "4000 m (13123 ft)", "Pressure": "600 hPa", "Note": "西藏或安地斯山脈操作"},
-          {"Altitude (m/ft)": "15000 m (49213 ft)", "Pressure": "11.6 hPa", "Note": "未加壓航空艙貨運模擬"}
+          {
+            "Altitude (m/ft)": "2000 m (6562 ft)",
+            "Pressure": "800 hPa",
+            "Note": "設備最高操作海拔"
+          },
+          {
+            "Altitude (m/ft)": "3000 m (9843 ft)",
+            "Pressure": "700 hPa",
+            "Note": "設備最高操作海拔"
+          },
+          {
+            "Altitude (m/ft)": "4000 m (13123 ft)",
+            "Pressure": "600 hPa",
+            "Note": "西藏或安地斯山脈操作"
+          },
+          {
+            "Altitude (m/ft)": "15000 m (49213 ft)",
+            "Pressure": "11.6 hPa",
+            "Note": "未加壓航空艙貨運模擬"
+          }
         ]
       }
     }
@@ -236,8 +356,14 @@
           "Method Qk": "Tracer gas method (示蹤氣體法 - 細微漏)"
         },
         "tests": [
-          {"Phase": "Bubble Test", "Action": "浸入加熱矽油或水中，觀察有無連續氣泡冒出"},
-          {"Phase": "Helium Leak", "Action": "量測氦氣洩漏率 (例如 1x10^-8 atm cc/s)"}
+          {
+            "Phase": "Bubble Test",
+            "Action": "浸入加熱矽油或水中，觀察有無連續氣泡冒出"
+          },
+          {
+            "Phase": "Helium Leak",
+            "Action": "量測氦氣洩漏率 (例如 1x10^-8 atm cc/s)"
+          }
         ]
       }
     },
@@ -252,8 +378,14 @@
           "Method Rc": "Immersion (浸水法，類似 IPX7/IPX8)"
         },
         "tests": [
-          {"Method": "Ra 1 / Ra 2", "Condition": "人工降雨 (1-3 mm/min 或 10 mm/min)"},
-          {"Method": "Rc (Immersion)", "Condition": "浸水深度依規定，例如 15cm 或 1m 達 30 分鐘以上"}
+          {
+            "Method": "Ra 1 / Ra 2",
+            "Condition": "人工降雨 (1-3 mm/min 或 10 mm/min)"
+          },
+          {
+            "Method": "Rc (Immersion)",
+            "Condition": "浸水深度依規定，例如 15cm 或 1m 達 30 分鐘以上"
+          }
         ]
       }
     }
@@ -269,8 +401,14 @@
           "Test Tb": "Resistance to soldering heat (耐迴焊爐高溫)"
         },
         "tests": [
-          {"Phase": "Solderability (無鉛錫)", "Condition": "浸入 245°C 錫爐 3 秒，觀察覆蓋率 (>95%)"},
-          {"Phase": "Heat Resistance", "Condition": "浸入 260°C 錫爐 10 秒，觀察元件是否爆裂或焦黑"}
+          {
+            "Phase": "Solderability (無鉛錫)",
+            "Condition": "浸入 245°C 錫爐 3 秒，觀察覆蓋率 (>95%)"
+          },
+          {
+            "Phase": "Heat Resistance",
+            "Condition": "浸入 260°C 錫爐 10 秒，觀察元件是否爆裂或焦黑"
+          }
         ]
       }
     }

@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "ISTA 1A/2A/3A/6-Amazon",
+    "version": "2023",
+    "description": "Safe transit packaging simulation",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:5f004dec08967e7d"
+  },
   "ISTA 1A (Non-Simulation Integrity, < 150 lb)": {
     "Standard Package (標準包裹)": {
       "Sequence 1 - Fixed Displacement Vibration": {
@@ -11,8 +20,14 @@
           "Duration": "14,200 vibratory impacts"
         },
         "tests": [
-          {"Step": "1", "Action": "Find resonance frequency where 1.6mm shim can be inserted"},
-          {"Step": "2", "Action": "Vibrate for total 14,200 cycles"}
+          {
+            "Step": "1",
+            "Action": "Find resonance frequency where 1.6mm shim can be inserted"
+          },
+          {
+            "Step": "2",
+            "Action": "Vibrate for total 14,200 cycles"
+          }
         ]
       },
       "Sequence 2 - Drop Test (基礎跌落)": {
@@ -23,11 +38,31 @@
           "Drop Sequence": "10 drops (1 corner, 3 edges, 6 faces)"
         },
         "tests": [
-          {"Weight": "0 - 9.5 kg (0 - 21 lb)", "Drop Height (mm)": "760", "Drop Height (in)": "30"},
-          {"Weight": "9.5 - 18 kg (21 - 41 lb)", "Drop Height (mm)": "610", "Drop Height (in)": "24"},
-          {"Weight": "18 - 27 kg (41 - 61 lb)", "Drop Height (mm)": "460", "Drop Height (in)": "18"},
-          {"Weight": "27 - 45 kg (61 - 100 lb)", "Drop Height (mm)": "310", "Drop Height (in)": "12"},
-          {"Weight": "45 - 68 kg (100 - 150 lb)", "Drop Height (mm)": "200", "Drop Height (in)": "8"}
+          {
+            "Weight": "0 - 9.5 kg (0 - 21 lb)",
+            "Drop Height (mm)": "760",
+            "Drop Height (in)": "30"
+          },
+          {
+            "Weight": "9.5 - 18 kg (21 - 41 lb)",
+            "Drop Height (mm)": "610",
+            "Drop Height (in)": "24"
+          },
+          {
+            "Weight": "18 - 27 kg (41 - 61 lb)",
+            "Drop Height (mm)": "460",
+            "Drop Height (in)": "18"
+          },
+          {
+            "Weight": "27 - 45 kg (61 - 100 lb)",
+            "Drop Height (mm)": "310",
+            "Drop Height (in)": "12"
+          },
+          {
+            "Weight": "45 - 68 kg (100 - 150 lb)",
+            "Drop Height (mm)": "200",
+            "Drop Height (in)": "8"
+          }
         ]
       }
     }
@@ -42,9 +77,21 @@
           "Duration": "72 hours typical"
         },
         "tests": [
-          {"Condition": "Cold", "Temp": "-29°C", "Humidity": "Uncontrolled"},
-          {"Condition": "Hot/Humid", "Temp": "38°C", "Humidity": "85% RH"},
-          {"Condition": "Hot/Dry", "Temp": "60°C", "Humidity": "15% RH"}
+          {
+            "Condition": "Cold",
+            "Temp": "-29°C",
+            "Humidity": "Uncontrolled"
+          },
+          {
+            "Condition": "Hot/Humid",
+            "Temp": "38°C",
+            "Humidity": "85% RH"
+          },
+          {
+            "Condition": "Hot/Dry",
+            "Temp": "60°C",
+            "Humidity": "15% RH"
+          }
         ]
       },
       "Sequence 2 - Compression (抗壓)": {
@@ -55,9 +102,18 @@
           "Force Calculation": "Weight of equivalent static load × Compensating factor"
         },
         "tests": [
-          {"Method": "Machine Apply and Release", "Requirement": "Calculate load based on stacking height"},
-          {"Method": "Machine Apply and Hold", "Requirement": "Hold calculated load for 1 hour"},
-          {"Method": "Dead Weight", "Requirement": "Apply static load for given hours"}
+          {
+            "Method": "Machine Apply and Release",
+            "Requirement": "Calculate load based on stacking height"
+          },
+          {
+            "Method": "Machine Apply and Hold",
+            "Requirement": "Hold calculated load for 1 hour"
+          },
+          {
+            "Method": "Dead Weight",
+            "Requirement": "Apply static load for given hours"
+          }
         ]
       },
       "Sequence 3 - Random Vibration & Drop": {
@@ -70,10 +126,22 @@
           "Drop Sequence": "10 drops based on weight (Same table as 1A)"
         },
         "tests": [
-          {"Frequency Hz": "1", "PSD (g²/Hz)": "0.0001"},
-          {"Frequency Hz": "4", "PSD (g²/Hz)": "0.01"},
-          {"Frequency Hz": "100", "PSD (g²/Hz)": "0.01"},
-          {"Frequency Hz": "200", "PSD (g²/Hz)": "0.001"}
+          {
+            "Frequency Hz": "1",
+            "PSD (g²/Hz)": "0.0001"
+          },
+          {
+            "Frequency Hz": "4",
+            "PSD (g²/Hz)": "0.01"
+          },
+          {
+            "Frequency Hz": "100",
+            "PSD (g²/Hz)": "0.01"
+          },
+          {
+            "Frequency Hz": "200",
+            "PSD (g²/Hz)": "0.001"
+          }
         ]
       }
     }
@@ -88,8 +156,14 @@
           "Drop Sequence": "9 drops total (Edge, corner, faces)"
         },
         "tests": [
-          {"Package Weight": "Less than 32 kg (70 lb)", "Drop Height": "460 mm (18 in)"},
-          {"Package Weight": "32 kg to 70 kg (70-150 lb)", "Drop Height": "300 mm (12 in)"}
+          {
+            "Package Weight": "Less than 32 kg (70 lb)",
+            "Drop Height": "460 mm (18 in)"
+          },
+          {
+            "Package Weight": "32 kg to 70 kg (70-150 lb)",
+            "Drop Height": "300 mm (12 in)"
+          }
         ]
       },
       "Sequence 2 - Random Vibration (隨機振動)": {
@@ -100,12 +174,30 @@
           "Overall Grms": "0.53 (Top Load) / 0.46 (No Top Load)"
         },
         "tests": [
-          {"Frequency Hz": "1", "PSD (g²/Hz)": "0.0007"},
-          {"Frequency Hz": "3", "PSD (g²/Hz)": "0.02"},
-          {"Frequency Hz": "5", "PSD (g²/Hz)": "0.02"},
-          {"Frequency Hz": "12", "PSD (g²/Hz)": "0.001"},
-          {"Frequency Hz": "100", "PSD (g²/Hz)": "0.001"},
-          {"Frequency Hz": "200", "PSD (g²/Hz)": "0.00001"}
+          {
+            "Frequency Hz": "1",
+            "PSD (g²/Hz)": "0.0007"
+          },
+          {
+            "Frequency Hz": "3",
+            "PSD (g²/Hz)": "0.02"
+          },
+          {
+            "Frequency Hz": "5",
+            "PSD (g²/Hz)": "0.02"
+          },
+          {
+            "Frequency Hz": "12",
+            "PSD (g²/Hz)": "0.001"
+          },
+          {
+            "Frequency Hz": "100",
+            "PSD (g²/Hz)": "0.001"
+          },
+          {
+            "Frequency Hz": "200",
+            "PSD (g²/Hz)": "0.00001"
+          }
         ]
       }
     },
@@ -118,10 +210,22 @@
           "Drop Sequence": "7 drops total"
         },
         "tests": [
-          {"Drop": "1-3", "Target": "Edges (longest, shortest, intermediate)"},
-          {"Drop": "4", "Target": "Face (largest)"},
-          {"Drop": "5-6", "Target": "Faces (intermediate, smallest)"},
-          {"Drop": "7", "Target": "Bottom / Same drop as Drop 1"}
+          {
+            "Drop": "1-3",
+            "Target": "Edges (longest, shortest, intermediate)"
+          },
+          {
+            "Drop": "4",
+            "Target": "Face (largest)"
+          },
+          {
+            "Drop": "5-6",
+            "Target": "Faces (intermediate, smallest)"
+          },
+          {
+            "Drop": "7",
+            "Target": "Bottom / Same drop as Drop 1"
+          }
         ]
       }
     },
@@ -133,8 +237,14 @@
           "Rotational Drop Height": "200 mm (8 in)"
         },
         "tests": [
-          {"Face": "Face 3 (Bottom)", "Action": "Raise one edge 200mm from rigid floor and drop"},
-          {"Face": "Face 4 (Top) or Side", "Action": "Raise corresponding edge 200mm and drop"}
+          {
+            "Face": "Face 3 (Bottom)",
+            "Action": "Raise one edge 200mm from rigid floor and drop"
+          },
+          {
+            "Face": "Face 4 (Top) or Side",
+            "Action": "Raise corresponding edge 200mm and drop"
+          }
         ]
       },
       "Sequence 5 - Hazard Block Impact (重錘橋接衝擊)": {
@@ -145,8 +255,14 @@
           "Hazard Drop Height": "400 mm (16 in)"
         },
         "tests": [
-          {"Step": "1. Support Setup", "Action": "Support opposite ends of package resting on blocks"},
-          {"Step": "2. Impact", "Action": "Free fall hazard box from 400mm onto unsupported center"}
+          {
+            "Step": "1. Support Setup",
+            "Action": "Support opposite ends of package resting on blocks"
+          },
+          {
+            "Step": "2. Impact",
+            "Action": "Free fall hazard box from 400mm onto unsupported center"
+          }
         ]
       }
     }
@@ -161,7 +277,10 @@
           "Tip Angle": "22 degrees"
         },
         "tests": [
-          {"Action": "Tip 22 degrees", "Requirement": "If it does not fall over, test passes"}
+          {
+            "Action": "Tip 22 degrees",
+            "Requirement": "If it does not fall over, test passes"
+          }
         ]
       },
       "Sequence 2 - Horizontal Impact (水平撞擊)": {
@@ -172,7 +291,10 @@
           "Impact Velocity": "Typical 1.2 m/s (48 in/s)"
         },
         "tests": [
-          {"Test": "Incline Impact or Horizontal Shock", "Condition": "Apply shock to lowest rigid edge"}
+          {
+            "Test": "Incline Impact or Horizontal Shock",
+            "Condition": "Apply shock to lowest rigid edge"
+          }
         ]
       }
     }
@@ -187,7 +309,10 @@
           "F-Factor": "Ranges from 3 to 6 depending on storage conditions"
         },
         "tests": [
-          {"Method": "Machine Apply and Release", "Condition": "Load calculated by pallet stacking height"}
+          {
+            "Method": "Machine Apply and Release",
+            "Condition": "Load calculated by pallet stacking height"
+          }
         ]
       },
       "Sequence 3 - Random Vibration (隨機振動)": {
@@ -198,7 +323,10 @@
           "Overall Grms": "0.54"
         },
         "tests": [
-          {"Phase": "Vibration", "Condition": "180 minutes total (or divided by orientation)"}
+          {
+            "Phase": "Vibration",
+            "Condition": "180 minutes total (or divided by orientation)"
+          }
         ]
       },
       "Sequence 5 - Rotational Edge Drop (棧板邊緣旋轉跌落)": {
@@ -209,7 +337,10 @@
           "Drop Height": "200 mm (8 in)"
         },
         "tests": [
-          {"Action": "Raise one edge of the pallet 8 inches and drop", "Target": "Opposite base edge"}
+          {
+            "Action": "Raise one edge of the pallet 8 inches and drop",
+            "Target": "Opposite base edge"
+          }
         ]
       }
     }
@@ -224,9 +355,17 @@
           "Drop Sequence": "9 drops (Includes hazard block)"
         },
         "tests": [
-          {"Drop 1": "1st Face (weakest)", "Height": "460 mm (18 in)"},
-          {"Drop 8": "Corner", "Height": "910 mm (36 in)"},
-          {"Requirement": "Internal primary package must not rupture"}
+          {
+            "Drop 1": "1st Face (weakest)",
+            "Height": "460 mm (18 in)"
+          },
+          {
+            "Drop 8": "Corner",
+            "Height": "910 mm (36 in)"
+          },
+          {
+            "Requirement": "Internal primary package must not rupture"
+          }
         ]
       }
     }
@@ -241,10 +380,22 @@
           "Drop Sequence": "9 drops total (Face, corner, edge)"
         },
         "tests": [
-          {"Drop 1": "1st Face (weakest)", "Height": "460 mm (18 in)"},
-          {"Drop 2": "2nd Face", "Height": "460 mm (18 in)"},
-          {"Drop 8": "Corner (most fragile)", "Height": "460 mm (18 in) or 910 mm (36 in)"},
-          {"Drop 9": "Hazard block impact", "Details": "Using standard hazard block"}
+          {
+            "Drop 1": "1st Face (weakest)",
+            "Height": "460 mm (18 in)"
+          },
+          {
+            "Drop 2": "2nd Face",
+            "Height": "460 mm (18 in)"
+          },
+          {
+            "Drop 8": "Corner (most fragile)",
+            "Height": "460 mm (18 in) or 910 mm (36 in)"
+          },
+          {
+            "Drop 9": "Hazard block impact",
+            "Details": "Using standard hazard block"
+          }
         ]
       },
       "Sequence 3 - Random Vibration (運輸振動)": {
@@ -256,9 +407,21 @@
           "Overall Grms (Face 2,5,6)": "0.46 Grms"
         },
         "tests": [
-          {"Phase": "Face 3 (Bottom) Top Load", "Duration": "Depends on face, typ. 30min-1hr", "Grms": "0.53"},
-          {"Phase": "Face 4 (Top) Top Load", "Duration": "Depends on face", "Grms": "0.53"},
-          {"Phase": "Face 2, 5, 6 (No Load)", "Duration": "15min to 30min per face", "Grms": "0.46"}
+          {
+            "Phase": "Face 3 (Bottom) Top Load",
+            "Duration": "Depends on face, typ. 30min-1hr",
+            "Grms": "0.53"
+          },
+          {
+            "Phase": "Face 4 (Top) Top Load",
+            "Duration": "Depends on face",
+            "Grms": "0.53"
+          },
+          {
+            "Phase": "Face 2, 5, 6 (No Load)",
+            "Duration": "15min to 30min per face",
+            "Grms": "0.46"
+          }
         ]
       }
     },
@@ -270,9 +433,18 @@
           "Drop Sequence": "9 drops total"
         },
         "tests": [
-          {"Drop 1-7": "Faces and Edges", "Height": "300 mm (12 in)"},
-          {"Drop 8": "Corner (Fragile)", "Height": "300 mm (12 in) or 610 mm (24 in for fragile items)"},
-          {"Drop 9": "Hazard block impact", "Height": "400 mm onto center of Face 3"}
+          {
+            "Drop 1-7": "Faces and Edges",
+            "Height": "300 mm (12 in)"
+          },
+          {
+            "Drop 8": "Corner (Fragile)",
+            "Height": "300 mm (12 in) or 610 mm (24 in for fragile items)"
+          },
+          {
+            "Drop 9": "Hazard block impact",
+            "Height": "400 mm onto center of Face 3"
+          }
         ]
       }
     },
@@ -285,9 +457,21 @@
           "Rotational Drop Height": "200 mm (8 in)"
         },
         "tests": [
-          {"Drop 1": "Free fall Drop", "Height": "200 mm (8 in)", "Note": "Only if manageable"},
-          {"Drop 2": "Rotational Flat Drop", "Height": "200 mm (8 in)", "Note": "Raise one end"},
-          {"Drop 3": "Rotational Edge Drop", "Height": "200 mm (8 in)", "Note": "Raise longest bottom edge"}
+          {
+            "Drop 1": "Free fall Drop",
+            "Height": "200 mm (8 in)",
+            "Note": "Only if manageable"
+          },
+          {
+            "Drop 2": "Rotational Flat Drop",
+            "Height": "200 mm (8 in)",
+            "Note": "Raise one end"
+          },
+          {
+            "Drop 3": "Rotational Edge Drop",
+            "Height": "200 mm (8 in)",
+            "Note": "Raise longest bottom edge"
+          }
         ]
       }
     },
@@ -299,8 +483,14 @@
           "Tip Angle": "22 degrees"
         },
         "tests": [
-          {"Action 1": "Tip structure 22 degrees", "Requirement": "If it falls back to vertical, test passes"},
-          {"Action 2": "Tip-Over", "Requirement": "If it tips past 22 deg, allow it to fall fully to rigid floor"}
+          {
+            "Action 1": "Tip structure 22 degrees",
+            "Requirement": "If it falls back to vertical, test passes"
+          },
+          {
+            "Action 2": "Tip-Over",
+            "Requirement": "If it tips past 22 deg, allow it to fall fully to rigid floor"
+          }
         ]
       },
       "Sequence 4 - Concentrated Edge Impact": {
@@ -310,7 +500,10 @@
           "Free Fall Drop": "from height of 1000mm (40 in)"
         },
         "tests": [
-          {"Step": "Drop Object", "Action": "Drop edge of another standardized dense box onto specimen"}
+          {
+            "Step": "Drop Object",
+            "Action": "Drop edge of another standardized dense box onto specimen"
+          }
         ]
       }
     }

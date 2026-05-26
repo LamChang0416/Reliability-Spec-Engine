@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "IEC 60721-3",
+    "version": "2019",
+    "description": "Environmental condition classification",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:024d5eb209b6e6a8"
+  },
   "1": {
     "K": {
       "1K2": {

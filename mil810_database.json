@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "MIL-STD-810H",
+    "version": "2019",
+    "description": "Military environmental testing",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:548270f8468361b7"
+  },
   "Method 500.6 - Low Pressure (Altitude)": {
     "Procedure I - Storage / Air Transport": {
       "Transport Aircraft Cargo Bay": {
@@ -12,7 +21,11 @@
           "Rate of Change": "≤ 10 m/s (2,000 ft/min)"
         },
         "tests": [
-          {"Test": "Altitude Storage", "Condition": "Maintain 57.2 kPa for minimum 1 hour", "Pass Criteria": "No structural/functional degradation"}
+          {
+            "Test": "Altitude Storage",
+            "Condition": "Maintain 57.2 kPa for minimum 1 hour",
+            "Pass Criteria": "No structural/functional degradation"
+          }
         ]
       }
     },
@@ -27,7 +40,11 @@
           "Rate of Change": "≤ 10 m/s (2,000 ft/min)"
         },
         "tests": [
-          {"Test": "Operational Check", "Condition": "Functional test while at minimum pressure", "Pass Criteria": "All functions operational"}
+          {
+            "Test": "Operational Check",
+            "Condition": "Functional test while at minimum pressure",
+            "Pass Criteria": "All functions operational"
+          }
         ]
       }
     },
@@ -42,7 +59,11 @@
           "Decompression Time": "≤ 15 seconds (Rapid) or ≤ 0.1 seconds (Explosive)"
         },
         "tests": [
-          {"Test": "Decompression", "Condition": "Rapid drop from 8,000ft to 40,000ft within 15 seconds", "Pass Criteria": "No hazardous debris; function restored after repressurization"}
+          {
+            "Test": "Decompression",
+            "Condition": "Rapid drop from 8,000ft to 40,000ft within 15 seconds",
+            "Pass Criteria": "No hazardous debris; function restored after repressurization"
+          }
         ]
       }
     }
@@ -60,13 +81,41 @@
           "Total Cycles": "7 cycles (168 hours total)"
         },
         "tests": [
-          {"Hour": "03:00", "Ambient": "30°C", "Induced (Storage)": "30°C (Min)"},
-          {"Hour": "06:00", "Ambient": "30°C", "Induced (Storage)": "34°C"},
-          {"Hour": "09:00", "Ambient": "34°C", "Induced (Storage)": "46°C"},
-          {"Hour": "12:00", "Ambient": "39°C", "Induced (Storage)": "58°C"},
-          {"Hour": "15:00", "Ambient": "43°C (Max)", "Induced (Storage)": "63°C (Max)"},
-          {"Hour": "18:00", "Ambient": "42°C", "Induced (Storage)": "54°C"},
-          {"Hour": "21:00", "Ambient": "35°C", "Induced (Storage)": "38°C"}
+          {
+            "Hour": "03:00",
+            "Ambient": "30°C",
+            "Induced (Storage)": "30°C (Min)"
+          },
+          {
+            "Hour": "06:00",
+            "Ambient": "30°C",
+            "Induced (Storage)": "34°C"
+          },
+          {
+            "Hour": "09:00",
+            "Ambient": "34°C",
+            "Induced (Storage)": "46°C"
+          },
+          {
+            "Hour": "12:00",
+            "Ambient": "39°C",
+            "Induced (Storage)": "58°C"
+          },
+          {
+            "Hour": "15:00",
+            "Ambient": "43°C (Max)",
+            "Induced (Storage)": "63°C (Max)"
+          },
+          {
+            "Hour": "18:00",
+            "Ambient": "42°C",
+            "Induced (Storage)": "54°C"
+          },
+          {
+            "Hour": "21:00",
+            "Ambient": "35°C",
+            "Induced (Storage)": "38°C"
+          }
         ]
       },
       "Hot Dry (A1)": {
@@ -80,13 +129,41 @@
           "Total Cycles": "7 cycles (168 hours total)"
         },
         "tests": [
-          {"Hour": "03:00", "Ambient": "33°C", "Induced (Storage)": "33°C (Min)"},
-          {"Hour": "06:00", "Ambient": "33°C", "Induced (Storage)": "35°C"},
-          {"Hour": "09:00", "Ambient": "38°C", "Induced (Storage)": "46°C"},
-          {"Hour": "12:00", "Ambient": "45°C", "Induced (Storage)": "63°C"},
-          {"Hour": "15:00", "Ambient": "49°C (Max)", "Induced (Storage)": "71°C (Max)"},
-          {"Hour": "18:00", "Ambient": "47°C", "Induced (Storage)": "62°C"},
-          {"Hour": "21:00", "Ambient": "38°C", "Induced (Storage)": "44°C"}
+          {
+            "Hour": "03:00",
+            "Ambient": "33°C",
+            "Induced (Storage)": "33°C (Min)"
+          },
+          {
+            "Hour": "06:00",
+            "Ambient": "33°C",
+            "Induced (Storage)": "35°C"
+          },
+          {
+            "Hour": "09:00",
+            "Ambient": "38°C",
+            "Induced (Storage)": "46°C"
+          },
+          {
+            "Hour": "12:00",
+            "Ambient": "45°C",
+            "Induced (Storage)": "63°C"
+          },
+          {
+            "Hour": "15:00",
+            "Ambient": "49°C (Max)",
+            "Induced (Storage)": "71°C (Max)"
+          },
+          {
+            "Hour": "18:00",
+            "Ambient": "47°C",
+            "Induced (Storage)": "62°C"
+          },
+          {
+            "Hour": "21:00",
+            "Ambient": "38°C",
+            "Induced (Storage)": "44°C"
+          }
         ]
       }
     },
@@ -101,8 +178,14 @@
           "Stabilization": "Temperature change < 2.0°C/hour"
         },
         "tests": [
-          {"Test": "Stabilization", "Condition": "Temperature rate of change < 2.0°C/hour"},
-          {"Test": "Functional Test", "Condition": "Operate at peak temperature for minimum 2 hours"}
+          {
+            "Test": "Stabilization",
+            "Condition": "Temperature rate of change < 2.0°C/hour"
+          },
+          {
+            "Test": "Functional Test",
+            "Condition": "Operate at peak temperature for minimum 2 hours"
+          }
         ]
       }
     }
@@ -119,11 +202,26 @@
           "Duration": "24-hour cycle repeated 3 times"
         },
         "tests": [
-          {"Hour": "06:00 (Min)", "Temperature": "-33°C"},
-          {"Hour": "12:00", "Temperature": "-25°C"},
-          {"Hour": "15:00 (Max)", "Temperature": "-21°C"},
-          {"Hour": "18:00", "Temperature": "-24°C"},
-          {"Hour": "24:00", "Temperature": "-30°C"}
+          {
+            "Hour": "06:00 (Min)",
+            "Temperature": "-33°C"
+          },
+          {
+            "Hour": "12:00",
+            "Temperature": "-25°C"
+          },
+          {
+            "Hour": "15:00 (Max)",
+            "Temperature": "-21°C"
+          },
+          {
+            "Hour": "18:00",
+            "Temperature": "-24°C"
+          },
+          {
+            "Hour": "24:00",
+            "Temperature": "-30°C"
+          }
         ]
       },
       "Cold (C2)": {
@@ -136,10 +234,22 @@
           "Duration": "24-hour cycle repeated 3 times"
         },
         "tests": [
-          {"Hour": "06:00 (Min)", "Temperature": "-46°C"},
-          {"Hour": "12:00", "Temperature": "-41°C"},
-          {"Hour": "15:00 (Max)", "Temperature": "-37°C"},
-          {"Hour": "24:00", "Temperature": "-44°C"}
+          {
+            "Hour": "06:00 (Min)",
+            "Temperature": "-46°C"
+          },
+          {
+            "Hour": "12:00",
+            "Temperature": "-41°C"
+          },
+          {
+            "Hour": "15:00 (Max)",
+            "Temperature": "-37°C"
+          },
+          {
+            "Hour": "24:00",
+            "Temperature": "-44°C"
+          }
         ]
       }
     },
@@ -152,8 +262,14 @@
           "Temperature": "-32°C (-25°F)"
         },
         "tests": [
-          {"Test": "Cold Boot", "Condition": "Soak at -32°C until stabilized, then power ON"},
-          {"Test": "Operate", "Condition": "Maintain operation and monitor functions"}
+          {
+            "Test": "Cold Boot",
+            "Condition": "Soak at -32°C until stabilized, then power ON"
+          },
+          {
+            "Test": "Operate",
+            "Condition": "Maintain operation and monitor functions"
+          }
         ]
       }
     }
@@ -170,8 +286,14 @@
           "Transfer Time": "≤ 1 minute"
         },
         "tests": [
-          {"Phase": "Transfer", "Condition": "Transfer from T-initial to T-final within 1 min"},
-          {"Phase": "Dwell", "Condition": "Hold at T-final until thermally stabilized"}
+          {
+            "Phase": "Transfer",
+            "Condition": "Transfer from T-initial to T-final within 1 min"
+          },
+          {
+            "Phase": "Dwell",
+            "Condition": "Hold at T-final until thermally stabilized"
+          }
         ]
       }
     },
@@ -188,8 +310,14 @@
           "Number of Cycles": "3 full cycles minimum"
         },
         "tests": [
-          {"Phase": "Cycle 1-3", "Action": "Transfer from -51°C to 71°C within 1 min, hold until stabilized"},
-          {"Phase": "Evaluation", "Action": "Conduct visual and functional test after 3 full cycles"}
+          {
+            "Phase": "Cycle 1-3",
+            "Action": "Transfer from -51°C to 71°C within 1 min, hold until stabilized"
+          },
+          {
+            "Phase": "Evaluation",
+            "Action": "Conduct visual and functional test after 3 full cycles"
+          }
         ]
       }
     }
@@ -206,9 +334,18 @@
           "Exposure Time": "8 to 24 hours depending on fluid type"
         },
         "tests": [
-          {"Phase": "Application", "Condition": "Apply specified fluid to completely cover vulnerable surfaces"},
-          {"Phase": "Incubation", "Condition": "Maintain at test temperature for 8 hours"},
-          {"Phase": "Examination", "Condition": "Inspect for material degradation, swelling, or structural failure"}
+          {
+            "Phase": "Application",
+            "Condition": "Apply specified fluid to completely cover vulnerable surfaces"
+          },
+          {
+            "Phase": "Incubation",
+            "Condition": "Maintain at test temperature for 8 hours"
+          },
+          {
+            "Phase": "Examination",
+            "Condition": "Inspect for material degradation, swelling, or structural failure"
+          }
         ]
       }
     }
@@ -225,11 +362,26 @@
           "Cycle Duration": "24-hour diurnal cycle (Minimum 3 cycles)"
         },
         "tests": [
-          {"Spectral Region": "Ultraviolet B (280-320 nm)", "Energy Limits": "5.0 W/m² (0.45%)"},
-          {"Spectral Region": "Ultraviolet A (320-400 nm)", "Energy Limits": "63 W/m² (5.63%)"},
-          {"Spectral Region": "Visible (400-780 nm)", "Energy Limits": "577 W/m² (51.52%)"},
-          {"Spectral Region": "Infrared (780-3000 nm)", "Energy Limits": "475 W/m² (42.40%)"},
-          {"Cycle Profile": "Diurnal", "Energy Limits": "Varies by hour (Peak irradiance at noon)"}
+          {
+            "Spectral Region": "Ultraviolet B (280-320 nm)",
+            "Energy Limits": "5.0 W/m² (0.45%)"
+          },
+          {
+            "Spectral Region": "Ultraviolet A (320-400 nm)",
+            "Energy Limits": "63 W/m² (5.63%)"
+          },
+          {
+            "Spectral Region": "Visible (400-780 nm)",
+            "Energy Limits": "577 W/m² (51.52%)"
+          },
+          {
+            "Spectral Region": "Infrared (780-3000 nm)",
+            "Energy Limits": "475 W/m² (42.40%)"
+          },
+          {
+            "Cycle Profile": "Diurnal",
+            "Energy Limits": "Varies by hour (Peak irradiance at noon)"
+          }
         ]
       }
     },
@@ -244,8 +396,14 @@
           "Duration": "Ten 24-hour cycles (240 hours total)"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "20 hours of continuous irradiance per cycle"},
-          {"Phase": "Dark Cycle", "Condition": "4 hours of darkness per cycle"}
+          {
+            "Phase": "Exposure",
+            "Condition": "20 hours of continuous irradiance per cycle"
+          },
+          {
+            "Phase": "Dark Cycle",
+            "Condition": "4 hours of darkness per cycle"
+          }
         ]
       }
     }
@@ -262,7 +420,10 @@
           "Test Duration": "30 minutes per face"
         },
         "tests": [
-          {"Face": "All exposed faces", "Condition": "Continuous spray with specified wind velocity"}
+          {
+            "Face": "All exposed faces",
+            "Condition": "Continuous spray with specified wind velocity"
+          }
         ]
       }
     },
@@ -277,8 +438,14 @@
           "Test Duration": "15 minutes"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "Subject item to steady drip for 15 minutes"},
-          {"Phase": "Inspection", "Condition": "Verify no water pooling or ingress"}
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject item to steady drip for 15 minutes"
+          },
+          {
+            "Phase": "Inspection",
+            "Condition": "Verify no water pooling or ingress"
+          }
         ]
       }
     }
@@ -294,7 +461,10 @@
           "Test Duration": "Up to 45 cycles (1,080 hours) for severe environments"
         },
         "tests": [
-          {"Phase": "Cycling", "Condition": "Follow 24-hr temperature/humidity profile (e.g., B3 Damp Tropical)"}
+          {
+            "Phase": "Cycling",
+            "Condition": "Follow 24-hr temperature/humidity profile (e.g., B3 Damp Tropical)"
+          }
         ]
       }
     },
@@ -309,10 +479,22 @@
           "Total Cycles": "10 cycles (240 hours)"
         },
         "tests": [
-          {"Step": "Ramp Up", "Condition": "30°C to 60°C over 2 hours, RH > 95%"},
-          {"Step": "Hold High", "Condition": "Maintain 60°C at 95% RH for 6 hours"},
-          {"Step": "Ramp Down", "Condition": "60°C to 30°C over 8 hours, RH > 85%"},
-          {"Step": "Hold Low", "Condition": "Maintain 30°C at 95% RH for 8 hours"}
+          {
+            "Step": "Ramp Up",
+            "Condition": "30°C to 60°C over 2 hours, RH > 95%"
+          },
+          {
+            "Step": "Hold High",
+            "Condition": "Maintain 60°C at 95% RH for 6 hours"
+          },
+          {
+            "Step": "Ramp Down",
+            "Condition": "60°C to 30°C over 8 hours, RH > 85%"
+          },
+          {
+            "Step": "Hold Low",
+            "Condition": "Maintain 30°C at 95% RH for 8 hours"
+          }
         ]
       }
     }
@@ -330,9 +512,18 @@
           "Incubation Period": "28 days minimum"
         },
         "tests": [
-          {"Phase": "Inoculation", "Condition": "Spray mixed spore suspension evenly over test item"},
-          {"Phase": "Incubation", "Condition": "Maintain 30°C and >95% RH for 28 days"},
-          {"Phase": "Evaluation", "Condition": "Visual inspection by trained mycologist (do not clean before inspection)"}
+          {
+            "Phase": "Inoculation",
+            "Condition": "Spray mixed spore suspension evenly over test item"
+          },
+          {
+            "Phase": "Incubation",
+            "Condition": "Maintain 30°C and >95% RH for 28 days"
+          },
+          {
+            "Phase": "Evaluation",
+            "Condition": "Visual inspection by trained mycologist (do not clean before inspection)"
+          }
         ]
       }
     }
@@ -349,9 +540,18 @@
           "Chamber Temperature": "35°C ± 2°C (95°F ± 3.6°F)"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "24 hours continuous salt fog spray"},
-          {"Phase": "Drying", "Condition": "24 hours at standard ambient conditions"},
-          {"Phase": "Cycle", "Condition": "Repeat for total of 2 cycles (96 hours)"}
+          {
+            "Phase": "Exposure",
+            "Condition": "24 hours continuous salt fog spray"
+          },
+          {
+            "Phase": "Drying",
+            "Condition": "24 hours at standard ambient conditions"
+          },
+          {
+            "Phase": "Cycle",
+            "Condition": "Repeat for total of 2 cycles (96 hours)"
+          }
         ]
       }
     }
@@ -368,8 +568,14 @@
           "Temperature": "Standard Ambient & High Operating Temperature"
         },
         "tests": [
-          {"Phase": "Ambient Blow", "Condition": "6 hours at standard ambient temperature"},
-          {"Phase": "High Temp Blow", "Condition": "6 hours at high operating temperature"}
+          {
+            "Phase": "Ambient Blow",
+            "Condition": "6 hours at standard ambient temperature"
+          },
+          {
+            "Phase": "High Temp Blow",
+            "Condition": "6 hours at high operating temperature"
+          }
         ]
       }
     },
@@ -383,7 +589,10 @@
           "Wind Velocity": "18 to 29 m/s (40 to 65 mph)"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "90 minutes per vulnerable face"}
+          {
+            "Phase": "Exposure",
+            "Condition": "90 minutes per vulnerable face"
+          }
         ]
       }
     }
@@ -400,9 +609,18 @@
           "Temperature": "Maximum operating temperature of test item"
         },
         "tests": [
-          {"Phase": "Chamber Prep", "Condition": "Introduce explosive mixture at simulated altitudes"},
-          {"Phase": "Operation", "Condition": "Operate test item, actuating all switches and contacts"},
-          {"Phase": "Verification", "Condition": "Detonate mixture at end of test to verify it was explosive"}
+          {
+            "Phase": "Chamber Prep",
+            "Condition": "Introduce explosive mixture at simulated altitudes"
+          },
+          {
+            "Phase": "Operation",
+            "Condition": "Operate test item, actuating all switches and contacts"
+          },
+          {
+            "Phase": "Verification",
+            "Condition": "Detonate mixture at end of test to verify it was explosive"
+          }
         ]
       }
     }
@@ -419,8 +637,14 @@
           "Temperature Differential": "Test item 27°C above water temperature"
         },
         "tests": [
-          {"Test": "Pre-conditioning", "Condition": "Heat test item to establish temperature differential"},
-          {"Test": "Immersion", "Condition": "Submerge for 30 minutes, observe for bubbles/leaks"}
+          {
+            "Test": "Pre-conditioning",
+            "Condition": "Heat test item to establish temperature differential"
+          },
+          {
+            "Test": "Immersion",
+            "Condition": "Submerge for 30 minutes, observe for bubbles/leaks"
+          }
         ]
       }
     }
@@ -437,9 +661,18 @@
           "Duration": "1 minute per axis per direction"
         },
         "tests": [
-          {"Axis": "Forward/Aft (+/- X)", "Condition": "Maintain G-level for 1 minute while operating"},
-          {"Axis": "Up/Down (+/- Z)", "Condition": "Maintain G-level for 1 minute while operating"},
-          {"Axis": "Left/Right (+/- Y)", "Condition": "Maintain G-level for 1 minute while operating"}
+          {
+            "Axis": "Forward/Aft (+/- X)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          },
+          {
+            "Axis": "Up/Down (+/- Z)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          },
+          {
+            "Axis": "Left/Right (+/- Y)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          }
         ]
       }
     }
@@ -456,9 +689,21 @@
           "Test Duration": "1 hr/axis (≈ 1,000 miles equivalent)"
         },
         "tests": [
-          {"Axis": "Transverse (橫向)", "g rms": "0.73", "Profile": "0.00015 g²/Hz flat 5–500 Hz"},
-          {"Axis": "Longitudinal (縱向)", "g rms": "0.95", "Profile": "0.00065 g²/Hz flat 5–500 Hz"},
-          {"Axis": "Vertical (垂直)", "g rms": "1.04", "Profile": "0.01500 g²/Hz flat 5–500 Hz"}
+          {
+            "Axis": "Transverse (橫向)",
+            "g rms": "0.73",
+            "Profile": "0.00015 g²/Hz flat 5–500 Hz"
+          },
+          {
+            "Axis": "Longitudinal (縱向)",
+            "g rms": "0.95",
+            "Profile": "0.00065 g²/Hz flat 5–500 Hz"
+          },
+          {
+            "Axis": "Vertical (垂直)",
+            "g rms": "1.04",
+            "Profile": "0.01500 g²/Hz flat 5–500 Hz"
+          }
         ]
       },
       "Category 7 - Aircraft (Jet Cargo)": {
@@ -471,8 +716,16 @@
           "Test Duration": "1 hr/axis"
         },
         "tests": [
-          {"Axis": "All 3 Axes (Takeoff/Landing)", "g rms": "7.2", "Profile": "0.04 g²/Hz (15–100 Hz), -6 dB/oct to 300 Hz"},
-          {"Axis": "All 3 Axes (Cruise)", "g rms": "1.0", "Profile": "Low-level random per specific aircraft"}
+          {
+            "Axis": "All 3 Axes (Takeoff/Landing)",
+            "g rms": "7.2",
+            "Profile": "0.04 g²/Hz (15–100 Hz), -6 dB/oct to 300 Hz"
+          },
+          {
+            "Axis": "All 3 Axes (Cruise)",
+            "g rms": "1.0",
+            "Profile": "Low-level random per specific aircraft"
+          }
         ]
       },
       "Category 20 - Ground Vehicles (Mobile)": {
@@ -485,9 +738,21 @@
           "Test Duration": "40 min/axis (≈ 500 miles equivalent)"
         },
         "tests": [
-          {"Axis": "Vertical (垂直)", "g rms": "1.90", "Profile": "0.02 g²/Hz at 5 Hz to 0.002 at 500 Hz"},
-          {"Axis": "Transverse (橫向)", "g rms": "0.92", "Profile": "0.004 g²/Hz at 5 Hz to 0.001 at 500 Hz"},
-          {"Axis": "Longitudinal (縱向)", "g rms": "1.20", "Profile": "0.006 g²/Hz at 5 Hz to 0.002 at 500 Hz"}
+          {
+            "Axis": "Vertical (垂直)",
+            "g rms": "1.90",
+            "Profile": "0.02 g²/Hz at 5 Hz to 0.002 at 500 Hz"
+          },
+          {
+            "Axis": "Transverse (橫向)",
+            "g rms": "0.92",
+            "Profile": "0.004 g²/Hz at 5 Hz to 0.001 at 500 Hz"
+          },
+          {
+            "Axis": "Longitudinal (縱向)",
+            "g rms": "1.20",
+            "Profile": "0.006 g²/Hz at 5 Hz to 0.002 at 500 Hz"
+          }
         ]
       },
       "Category 24 - General Minimal Integrity": {
@@ -500,7 +765,11 @@
           "Test Duration": "1 hr/axis (3 hours total)"
         },
         "tests": [
-          {"Axis": "All 3 Axes", "g rms": "7.70", "Profile": "0.04 g²/Hz (20–1,000 Hz), -6 dB/oct rolloff to 2,000 Hz"}
+          {
+            "Axis": "All 3 Axes",
+            "g rms": "7.70",
+            "Profile": "0.04 g²/Hz (20–1,000 Hz), -6 dB/oct rolloff to 2,000 Hz"
+          }
         ]
       }
     },
@@ -516,7 +785,10 @@
           "Test Duration": "20 minutes (≈ 150 miles equivalent)"
         },
         "tests": [
-          {"Phase": "Bounce Test", "Condition": "Item must be free to bounce, strike bed, and collide with fences"}
+          {
+            "Phase": "Bounce Test",
+            "Condition": "Item must be free to bounce, strike bed, and collide with fences"
+          }
         ]
       }
     }
@@ -533,8 +805,14 @@
           "Duration": "30 minutes per condition"
         },
         "tests": [
-          {"Phase": "Operation", "Condition": "Subject to broad-band random acoustic noise field"},
-          {"Phase": "Inspection", "Condition": "Check for acoustic-induced fatigue and component chafing"}
+          {
+            "Phase": "Operation",
+            "Condition": "Subject to broad-band random acoustic noise field"
+          },
+          {
+            "Phase": "Inspection",
+            "Condition": "Check for acoustic-induced fatigue and component chafing"
+          }
         ]
       }
     }
@@ -552,9 +830,18 @@
           "Number of Shocks": "3 per direction × 6 directions = 18 total"
         },
         "tests": [
-          {"Test": "Axis X", "Condition": "+X (3 shocks), -X (3 shocks) while operating"},
-          {"Test": "Axis Y", "Condition": "+Y (3 shocks), -Y (3 shocks) while operating"},
-          {"Test": "Axis Z", "Condition": "+Z (3 shocks), -Z (3 shocks) while operating"}
+          {
+            "Test": "Axis X",
+            "Condition": "+X (3 shocks), -X (3 shocks) while operating"
+          },
+          {
+            "Test": "Axis Y",
+            "Condition": "+Y (3 shocks), -Y (3 shocks) while operating"
+          },
+          {
+            "Test": "Axis Z",
+            "Condition": "+Z (3 shocks), -Z (3 shocks) while operating"
+          }
         ]
       }
     },
@@ -568,9 +855,18 @@
           "Number of Drops": "26 drops (all faces, edges, and corners)"
         },
         "tests": [
-          {"Weight": "< 45.4 kg (100 lbs)", "Drop Height": "122 cm (48 inches) – 26 drops"},
-          {"Weight": "45.4–90.7 kg (100–200 lbs)", "Drop Height": "76 cm (30 inches) – 26 drops"},
-          {"Weight": "90.7–454 kg (200–1,000 lbs)", "Drop Height": "61 cm (24 inches) – limited drops"}
+          {
+            "Weight": "< 45.4 kg (100 lbs)",
+            "Drop Height": "122 cm (48 inches) – 26 drops"
+          },
+          {
+            "Weight": "45.4–90.7 kg (100–200 lbs)",
+            "Drop Height": "76 cm (30 inches) – 26 drops"
+          },
+          {
+            "Weight": "90.7–454 kg (200–1,000 lbs)",
+            "Drop Height": "61 cm (24 inches) – limited drops"
+          }
         ]
       }
     },
@@ -586,8 +882,14 @@
           "Number of Shocks": "2 per direction (12 total)"
         },
         "tests": [
-          {"Test": "Non-Operating Shock", "Condition": "Apply crash profile to mounting points"},
-          {"Test": "Safety Verification", "Condition": "Verify equipment remains captive on mounts; no hazardous parts shed"}
+          {
+            "Test": "Non-Operating Shock",
+            "Condition": "Apply crash profile to mounting points"
+          },
+          {
+            "Test": "Safety Verification",
+            "Condition": "Verify equipment remains captive on mounts; no hazardous parts shed"
+          }
         ]
       }
     },
@@ -601,9 +903,18 @@
           "Test Item State": "Unpackaged, operating or non-operating"
         },
         "tests": [
-          {"Phase": "45-Degree Drop", "Condition": "Raise opposite edge to 45° or balance point, drop freely"},
-          {"Phase": "4-Inch Drop", "Condition": "Raise opposite edge to 10 cm (4 inches), drop freely"},
-          {"Phase": "Repetition", "Condition": "Repeat for all practical edges on base face"}
+          {
+            "Phase": "45-Degree Drop",
+            "Condition": "Raise opposite edge to 45° or balance point, drop freely"
+          },
+          {
+            "Phase": "4-Inch Drop",
+            "Condition": "Raise opposite edge to 10 cm (4 inches), drop freely"
+          },
+          {
+            "Phase": "Repetition",
+            "Condition": "Repeat for all practical edges on base face"
+          }
         ]
       }
     }
@@ -620,8 +931,14 @@
           "Duration": "< 20 milliseconds"
         },
         "tests": [
-          {"Phase": "Firing", "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration"},
-          {"Phase": "Data Capture", "Condition": "High-speed transient acquisition (min 1M samples/sec)"}
+          {
+            "Phase": "Firing",
+            "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration"
+          },
+          {
+            "Phase": "Data Capture",
+            "Condition": "High-speed transient acquisition (min 1M samples/sec)"
+          }
         ]
       }
     }
@@ -638,8 +955,14 @@
           "Chamber Temperature": "35°C (95°F)"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "3 periods × 2 hours spraying + 22 hours storage"},
-          {"Phase": "Total Duration", "Condition": "72 hours minimum"}
+          {
+            "Phase": "Exposure",
+            "Condition": "3 periods × 2 hours spraying + 22 hours storage"
+          },
+          {
+            "Phase": "Total Duration",
+            "Condition": "72 hours minimum"
+          }
         ]
       }
     }
@@ -656,7 +979,10 @@
           "Duration": "Equivalent to actual mission firing time"
         },
         "tests": [
-          {"Phase": "Vibration Sweep", "Condition": "Apply specified gunfire shock response spectrum (SRS)"}
+          {
+            "Phase": "Vibration Sweep",
+            "Condition": "Apply specified gunfire shock response spectrum (SRS)"
+          }
         ]
       }
     }
@@ -672,8 +998,14 @@
           "Transition Rates": "Per specific aircraft climb/dive capabilities"
         },
         "tests": [
-          {"Phase": "Combined Cycle", "Condition": "Simultaneous application of vibration, thermal, and altitude stress"},
-          {"Phase": "Functional Check", "Condition": "Continuously operate and monitor during cycle"}
+          {
+            "Phase": "Combined Cycle",
+            "Condition": "Simultaneous application of vibration, thermal, and altitude stress"
+          },
+          {
+            "Phase": "Functional Check",
+            "Condition": "Continuously operate and monitor during cycle"
+          }
         ]
       }
     }
@@ -689,9 +1021,18 @@
           "Pre-chill Temperature": "-10°C to 0°C (14°F to 32°F)"
         },
         "tests": [
-          {"Phase": "Pre-cooling", "Condition": "Stabilize test item below freezing"},
-          {"Phase": "Ice Accretion", "Condition": "Spray super-cooled water until desired thickness"},
-          {"Phase": "Operation", "Condition": "Operate equipment or deploy de-icing mechanisms"}
+          {
+            "Phase": "Pre-cooling",
+            "Condition": "Stabilize test item below freezing"
+          },
+          {
+            "Phase": "Ice Accretion",
+            "Condition": "Spray super-cooled water until desired thickness"
+          },
+          {
+            "Phase": "Operation",
+            "Condition": "Operate equipment or deploy de-icing mechanisms"
+          }
         ]
       }
     }
@@ -707,8 +1048,14 @@
           "Simulator": "Ballistic shock machine (BSM) or light gas gun"
         },
         "tests": [
-          {"Phase": "Impact", "Condition": "Apply specified SRS profile to item mounting points"},
-          {"Phase": "Assessment", "Condition": "Verify structural integrity; no hazardous fragment shedding"}
+          {
+            "Phase": "Impact",
+            "Condition": "Apply specified SRS profile to item mounting points"
+          },
+          {
+            "Phase": "Assessment",
+            "Condition": "Verify structural integrity; no hazardous fragment shedding"
+          }
         ]
       }
     }
@@ -725,7 +1072,10 @@
           "Temperature": "Aerodynamic heating profile"
         },
         "tests": [
-          {"Phase": "Captive Carry", "Condition": "Simultaneous application of three stresses per mission profile"}
+          {
+            "Phase": "Captive Carry",
+            "Condition": "Simultaneous application of three stresses per mission profile"
+          }
         ]
       }
     }
@@ -742,8 +1092,14 @@
           "Moisture Element": "Sufficient water to penetrate crevices"
         },
         "tests": [
-          {"Phase": "Cycling", "Condition": "Repeated transition between freezing and thawing"},
-          {"Phase": "Inspection", "Condition": "Inspect for cracked seals, housing separation, component distortion"}
+          {
+            "Phase": "Cycling",
+            "Condition": "Repeated transition between freezing and thawing"
+          },
+          {
+            "Phase": "Inspection",
+            "Condition": "Inspect for cracked seals, housing separation, component distortion"
+          }
         ]
       }
     }
@@ -759,8 +1115,14 @@
           "Data Source": "Actual measured field acceleration data"
         },
         "tests": [
-          {"Phase": "System ID", "Condition": "Determine system transfer function using low-level random"},
-          {"Phase": "Replication", "Condition": "Iteratively correct drive signal to match target field waveform"}
+          {
+            "Phase": "System ID",
+            "Condition": "Determine system transfer function using low-level random"
+          },
+          {
+            "Phase": "Replication",
+            "Condition": "Iteratively correct drive signal to match target field waveform"
+          }
         ]
       }
     }
@@ -777,7 +1139,10 @@
           "Vehicle": "Flatcar carrying the test item"
         },
         "tests": [
-          {"Phase": "Impact", "Condition": "Subject to specified impact velocity in both longitudinal directions"}
+          {
+            "Phase": "Impact",
+            "Condition": "Subject to specified impact velocity in both longitudinal directions"
+          }
         ]
       }
     }
@@ -793,7 +1158,10 @@
           "Degrees of Freedom": "Up to 6 DOF (translation and rotation)"
         },
         "tests": [
-          {"Phase": "Multi-axis Excitation", "Condition": "Simultaneous control of phase and amplitude across multiple shakers"}
+          {
+            "Phase": "Multi-axis Excitation",
+            "Condition": "Simultaneous control of phase and amplitude across multiple shakers"
+          }
         ]
       }
     }
@@ -810,9 +1178,18 @@
           "Excitation Source": "Ship propulsion systems and wave action"
         },
         "tests": [
-          {"Phase": "Exploratory", "Condition": "Identify resonances between 4 to 50 Hz"},
-          {"Phase": "Variable Frequency", "Condition": "Sweep and dwell at identified resonant frequencies"},
-          {"Phase": "Endurance", "Condition": "2 hours per axis at resonant point"}
+          {
+            "Phase": "Exploratory",
+            "Condition": "Identify resonances between 4 to 50 Hz"
+          },
+          {
+            "Phase": "Variable Frequency",
+            "Condition": "Sweep and dwell at identified resonant frequencies"
+          },
+          {
+            "Phase": "Endurance",
+            "Condition": "2 hours per axis at resonant point"
+          }
         ]
       }
     }
@@ -830,9 +1207,18 @@
           "Test Duration": "30 minutes minimum"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "Subject to temperate rain profile for minimum 30 minutes"},
-          {"Phase": "Functional Check", "Condition": "Operate equipment during and after exposure"},
-          {"Phase": "Inspection", "Condition": "Inspect for water ingress at all seals and connectors"}
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject to temperate rain profile for minimum 30 minutes"
+          },
+          {
+            "Phase": "Functional Check",
+            "Condition": "Operate equipment during and after exposure"
+          },
+          {
+            "Phase": "Inspection",
+            "Condition": "Inspect for water ingress at all seals and connectors"
+          }
         ]
       }
     }

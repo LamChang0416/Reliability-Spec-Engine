@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "GR-63-CORE Issue 5",
+    "version": "2022 (Flex 12-20)",
+    "description": "Telecom NEBS physical protection",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:cd1729e51e379b14"
+  },
   "Section 2/3 - Spatial & Facility Planning": {
     "Equipment Framework & Floor Loading": {
       "Facility Planning (機房與設備空間規劃)": {

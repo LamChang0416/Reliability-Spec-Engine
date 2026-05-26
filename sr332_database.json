@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "Telcordia SR-332",
+    "version": "Issue 4 (2016)",
+    "description": "Hardware reliability prediction",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:5eb6784bc6bc364b"
+  },
   "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房)": {
     "Quality Level I (商業級, 具備相容性抽測與回饋機制)": {
       "Method I-D - Parts Count (零件計數法)": {
@@ -12,10 +21,22 @@
           "Data Input": "Generic device failure rates (λG) from SR-332 Tables"
         },
         "tests": [
-          {"Step": "1. 建立BOM", "Action": "列出所有電子與機構零件"},
-          {"Step": "2. 查表取值", "Action": "依據零件類別查詢通用失效率 λG"},
-          {"Step": "3. 乘上係數", "Action": "套用 πE=1.0、對應的 πQ 及溫度/電氣應力係數"},
-          {"Step": "4. 加總計算", "Action": "加總得出整機 FIT 值 (Failures in Time)"}
+          {
+            "Step": "1. 建立BOM",
+            "Action": "列出所有電子與機構零件"
+          },
+          {
+            "Step": "2. 查表取值",
+            "Action": "依據零件類別查詢通用失效率 λG"
+          },
+          {
+            "Step": "3. 乘上係數",
+            "Action": "套用 πE=1.0、對應的 πQ 及溫度/電氣應力係數"
+          },
+          {
+            "Step": "4. 加總計算",
+            "Action": "加總得出整機 FIT 值 (Failures in Time)"
+          }
         ]
       },
       "Method II-D - Lab Data (結合實驗室數據)": {
@@ -27,9 +48,18 @@
           "Quality Factor (πQ)": "Level I"
         },
         "tests": [
-          {"Step": "Lab Test", "Action": "執行加速壽命測試 (ALT/HALT) 或高溫高濕測試"},
-          {"Step": "Bayesian Update", "Action": "使用貝氏更新公式將實驗室失效數/測試時間與通用先驗數據融合"},
-          {"Step": "Final FIT", "Action": "計算修正後的 FIT 值"}
+          {
+            "Step": "Lab Test",
+            "Action": "執行加速壽命測試 (ALT/HALT) 或高溫高濕測試"
+          },
+          {
+            "Step": "Bayesian Update",
+            "Action": "使用貝氏更新公式將實驗室失效數/測試時間與通用先驗數據融合"
+          },
+          {
+            "Step": "Final FIT",
+            "Action": "計算修正後的 FIT 值"
+          }
         ]
       },
       "Method III-D - Field Data (結合現場實際追蹤數據)": {
@@ -41,9 +71,18 @@
           "Quality Factor (πQ)": "Level I"
         },
         "tests": [
-          {"Step": "Field Tracking", "Action": "收集並過濾有效的現場故障 (RMA) 數據"},
-          {"Step": "Statistical Integration", "Action": "將現場運作時間與失效次數代入 SR-332 公式"},
-          {"Step": "Review", "Action": "得出最終經過現場驗證的 MTBF/FIT"}
+          {
+            "Step": "Field Tracking",
+            "Action": "收集並過濾有效的現場故障 (RMA) 數據"
+          },
+          {
+            "Step": "Statistical Integration",
+            "Action": "將現場運作時間與失效次數代入 SR-332 公式"
+          },
+          {
+            "Step": "Review",
+            "Action": "得出最終經過現場驗證的 MTBF/FIT"
+          }
         ]
       }
     },
@@ -58,8 +97,14 @@
           "Data Input": "Generic device failure rates (λG)"
         },
         "tests": [
-          {"Step": "Quality Verification", "Action": "確認供應商具備明確的採購規格與進料檢驗(IQC)"},
-          {"Step": "Calculation", "Action": "使用 πQ = 1.0 (或 SR-332 表列較低數值) 進行計算"}
+          {
+            "Step": "Quality Verification",
+            "Action": "確認供應商具備明確的採購規格與進料檢驗(IQC)"
+          },
+          {
+            "Step": "Calculation",
+            "Action": "使用 πQ = 1.0 (或 SR-332 表列較低數值) 進行計算"
+          }
         ]
       }
     },
@@ -73,8 +118,14 @@
           "Quality Factor (πQ)": "Level III: 預設為 0.8 或更低"
         },
         "tests": [
-          {"Step": "100% Screening", "Action": "確認零件經過 100% 入料篩選或出廠篩選"},
-          {"Step": "Calculation", "Action": "套用最低的 πQ 進行整機 FIT 計算"}
+          {
+            "Step": "100% Screening",
+            "Action": "確認零件經過 100% 入料篩選或出廠篩選"
+          },
+          {
+            "Step": "Calculation",
+            "Action": "套用最低的 πQ 進行整機 FIT 計算"
+          }
         ]
       }
     }
@@ -90,8 +141,14 @@
           "Quality Factor (πQ)": "Level I"
         },
         "tests": [
-          {"Step": "Environmental Adjustment", "Action": "將通用失效數據乘上 GF 環境係數"},
-          {"Step": "Calculation", "Action": "完成所有零件 FIT 累加"}
+          {
+            "Step": "Environmental Adjustment",
+            "Action": "將通用失效數據乘上 GF 環境係數"
+          },
+          {
+            "Step": "Calculation",
+            "Action": "完成所有零件 FIT 累加"
+          }
         ]
       }
     }
@@ -107,8 +164,14 @@
           "Quality Factor (πQ)": "Level I"
         },
         "tests": [
-          {"Step": "Environmental Adjustment", "Action": "將通用失效數據乘上極高的 GM 環境係數"},
-          {"Step": "Calculation", "Action": "計算最終整機 FIT，通常遠高於固定式設備"}
+          {
+            "Step": "Environmental Adjustment",
+            "Action": "將通用失效數據乘上極高的 GM 環境係數"
+          },
+          {
+            "Step": "Calculation",
+            "Action": "計算最終整機 FIT，通常遠高於固定式設備"
+          }
         ]
       }
     }

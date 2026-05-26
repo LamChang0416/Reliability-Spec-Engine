@@ -1,4 +1,13 @@
 {
+  "_meta": {
+    "standard": "ASTM D4169-23",
+    "version": "2023",
+    "description": "Packaging & transport performance testing",
+    "lastUpdated": "2026-05-26",
+    "maintainer": "Lam",
+    "schemaVersion": "2.0",
+    "checksum": "sha256:011a2e5653c5b08d"
+  },
   "DC 1: General schedule (一般寄送)": {
     "Schedule A - Handling (人工搬運跌落)": {
       "Drop Test (跌落測試)": {
@@ -9,11 +18,36 @@
           "Drop Sequence": "One corner, one edge, then remaining faces."
         },
         "tests": [
-          {"Weight": "0 - 9.1 kg (0 - 20 lb)", "Level I Height": "610 mm (24 in)", "Level II Height": "381 mm (15 in)", "Level III Height": "229 mm (9 in)"},
-          {"Weight": "9.1 - 18.1 kg (20 - 40 lb)", "Level I Height": "533 mm (21 in)", "Level II Height": "330 mm (13 in)", "Level III Height": "229 mm (9 in)"},
-          {"Weight": "18.1 - 27.2 kg (40 - 60 lb)", "Level I Height": "457 mm (18 in)", "Level II Height": "305 mm (12 in)", "Level III Height": "229 mm (9 in)"},
-          {"Weight": "27.2 - 45.4 kg (60 - 100 lb)", "Level I Height": "381 mm (15 in)", "Level II Height": "229 mm (9 in)", "Level III Height": "178 mm (7 in)"},
-          {"Weight": "Over 45.4 kg (Over 100 lb)", "Level I Height": "305 mm (12 in)", "Level II Height": "229 mm (9 in)", "Level III Height": "178 mm (7 in)"}
+          {
+            "Weight": "0 - 9.1 kg (0 - 20 lb)",
+            "Level I Height": "610 mm (24 in)",
+            "Level II Height": "381 mm (15 in)",
+            "Level III Height": "229 mm (9 in)"
+          },
+          {
+            "Weight": "9.1 - 18.1 kg (20 - 40 lb)",
+            "Level I Height": "533 mm (21 in)",
+            "Level II Height": "330 mm (13 in)",
+            "Level III Height": "229 mm (9 in)"
+          },
+          {
+            "Weight": "18.1 - 27.2 kg (40 - 60 lb)",
+            "Level I Height": "457 mm (18 in)",
+            "Level II Height": "305 mm (12 in)",
+            "Level III Height": "229 mm (9 in)"
+          },
+          {
+            "Weight": "27.2 - 45.4 kg (60 - 100 lb)",
+            "Level I Height": "381 mm (15 in)",
+            "Level II Height": "229 mm (9 in)",
+            "Level III Height": "178 mm (7 in)"
+          },
+          {
+            "Weight": "Over 45.4 kg (Over 100 lb)",
+            "Level I Height": "305 mm (12 in)",
+            "Level II Height": "229 mm (9 in)",
+            "Level III Height": "178 mm (7 in)"
+          }
         ]
       }
     },
@@ -29,12 +63,42 @@
           "Assurance Level III": "0.37 Grms (Lowest Severity)"
         },
         "tests": [
-          {"Frequency (Hz)": "1.0", "Level I (g²/Hz)": "0.0001", "Level II (g²/Hz)": "0.00005", "Level III (g²/Hz)": "0.000025"},
-          {"Frequency (Hz)": "4.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
-          {"Frequency (Hz)": "16.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
-          {"Frequency (Hz)": "40.0", "Level I (g²/Hz)": "0.002", "Level II (g²/Hz)": "0.001", "Level III (g²/Hz)": "0.0005"},
-          {"Frequency (Hz)": "80.0", "Level I (g²/Hz)": "0.002", "Level II (g²/Hz)": "0.001", "Level III (g²/Hz)": "0.0005"},
-          {"Frequency (Hz)": "200.0", "Level I (g²/Hz)": "0.00002", "Level II (g²/Hz)": "0.00001", "Level III (g²/Hz)": "0.000005"}
+          {
+            "Frequency (Hz)": "1.0",
+            "Level I (g²/Hz)": "0.0001",
+            "Level II (g²/Hz)": "0.00005",
+            "Level III (g²/Hz)": "0.000025"
+          },
+          {
+            "Frequency (Hz)": "4.0",
+            "Level I (g²/Hz)": "0.02",
+            "Level II (g²/Hz)": "0.01",
+            "Level III (g²/Hz)": "0.005"
+          },
+          {
+            "Frequency (Hz)": "16.0",
+            "Level I (g²/Hz)": "0.02",
+            "Level II (g²/Hz)": "0.01",
+            "Level III (g²/Hz)": "0.005"
+          },
+          {
+            "Frequency (Hz)": "40.0",
+            "Level I (g²/Hz)": "0.002",
+            "Level II (g²/Hz)": "0.001",
+            "Level III (g²/Hz)": "0.0005"
+          },
+          {
+            "Frequency (Hz)": "80.0",
+            "Level I (g²/Hz)": "0.002",
+            "Level II (g²/Hz)": "0.001",
+            "Level III (g²/Hz)": "0.0005"
+          },
+          {
+            "Frequency (Hz)": "200.0",
+            "Level I (g²/Hz)": "0.00002",
+            "Level II (g²/Hz)": "0.00001",
+            "Level III (g²/Hz)": "0.000005"
+          }
         ]
       },
       "Random Vibration - Air (空運隨機振動 PSD)": {
@@ -48,10 +112,30 @@
           "Assurance Level III": "0.74 Grms"
         },
         "tests": [
-          {"Frequency (Hz)": "2.0", "Level I (g²/Hz)": "0.0004", "Level II (g²/Hz)": "0.0002", "Level III (g²/Hz)": "0.0001"},
-          {"Frequency (Hz)": "12.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
-          {"Frequency (Hz)": "100.0", "Level I (g²/Hz)": "0.02", "Level II (g²/Hz)": "0.01", "Level III (g²/Hz)": "0.005"},
-          {"Frequency (Hz)": "300.0", "Level I (g²/Hz)": "0.00002", "Level II (g²/Hz)": "0.00001", "Level III (g²/Hz)": "0.000005"}
+          {
+            "Frequency (Hz)": "2.0",
+            "Level I (g²/Hz)": "0.0004",
+            "Level II (g²/Hz)": "0.0002",
+            "Level III (g²/Hz)": "0.0001"
+          },
+          {
+            "Frequency (Hz)": "12.0",
+            "Level I (g²/Hz)": "0.02",
+            "Level II (g²/Hz)": "0.01",
+            "Level III (g²/Hz)": "0.005"
+          },
+          {
+            "Frequency (Hz)": "100.0",
+            "Level I (g²/Hz)": "0.02",
+            "Level II (g²/Hz)": "0.01",
+            "Level III (g²/Hz)": "0.005"
+          },
+          {
+            "Frequency (Hz)": "300.0",
+            "Level I (g²/Hz)": "0.00002",
+            "Level II (g²/Hz)": "0.00001",
+            "Level III (g²/Hz)": "0.000005"
+          }
         ]
       }
     },
@@ -65,9 +149,21 @@
           "Variables": "W: Package weight, H: Stack height, h: Package height"
         },
         "tests": [
-          {"Assurance Level": "I", "Safety Factor (F)": "1.0", "Vibration Profile": "Use Level I PSD"},
-          {"Assurance Level": "II", "Safety Factor (F)": "0.7", "Vibration Profile": "Use Level II PSD"},
-          {"Assurance Level": "III", "Safety Factor (F)": "0.5", "Vibration Profile": "Use Level III PSD"}
+          {
+            "Assurance Level": "I",
+            "Safety Factor (F)": "1.0",
+            "Vibration Profile": "Use Level I PSD"
+          },
+          {
+            "Assurance Level": "II",
+            "Safety Factor (F)": "0.7",
+            "Vibration Profile": "Use Level II PSD"
+          },
+          {
+            "Assurance Level": "III",
+            "Safety Factor (F)": "0.5",
+            "Vibration Profile": "Use Level III PSD"
+          }
         ]
       }
     },
@@ -83,9 +179,21 @@
           "h": "Height of one package"
         },
         "tests": [
-          {"Assurance Level & Material": "Level I - Corrugated Box", "Safety Factor (F)": "8.0", "Application": "Highest severity storage"},
-          {"Assurance Level & Material": "Level II - Corrugated Box", "Safety Factor (F)": "4.5", "Application": "Standard transit warehouse stacking"},
-          {"Assurance Level & Material": "Level III - Corrugated Box", "Safety Factor (F)": "3.0", "Application": "Short term or low risk stacking"}
+          {
+            "Assurance Level & Material": "Level I - Corrugated Box",
+            "Safety Factor (F)": "8.0",
+            "Application": "Highest severity storage"
+          },
+          {
+            "Assurance Level & Material": "Level II - Corrugated Box",
+            "Safety Factor (F)": "4.5",
+            "Application": "Standard transit warehouse stacking"
+          },
+          {
+            "Assurance Level & Material": "Level III - Corrugated Box",
+            "Safety Factor (F)": "3.0",
+            "Application": "Short term or low risk stacking"
+          }
         ]
       }
     }
@@ -99,7 +207,10 @@
           "Description_EN": "Single parcel drop simulation, commonly used for retail shipments."
         },
         "tests": [
-          {"Hazard": "Manual Handling", "Action": "Same drops as defined in General Schedule A but typically tested at Level I or II"}
+          {
+            "Hazard": "Manual Handling",
+            "Action": "Same drops as defined in General Schedule A but typically tested at Level I or II"
+          }
         ]
       }
     },
@@ -113,7 +224,10 @@
           "Duration": "60 minutes"
         },
         "tests": [
-          {"Requirement": "Maintain test pressure", "Action": "Monitor for ballooning, leakage, or burst"}
+          {
+            "Requirement": "Maintain test pressure",
+            "Action": "Monitor for ballooning, leakage, or burst"
+          }
         ]
       }
     }
@@ -127,11 +241,26 @@
           "Description_EN": "Standard sequence for international air freight including drops, air vib, truck vib, and altitude."
         },
         "tests": [
-          {"Sequence": "1. Schedule A", "Action": "Handling Drops (First half)"},
-          {"Sequence": "2. Schedule C", "Action": "Truck Random Vibration (e.g. Level II, 60 mins)"},
-          {"Sequence": "3. Schedule I", "Action": "Low Pressure (Altitude)"},
-          {"Sequence": "4. Schedule C", "Action": "Air Random Vibration (e.g. Level II, 120 mins)"},
-          {"Sequence": "5. Schedule A", "Action": "Handling Drops (Second half on different faces)"}
+          {
+            "Sequence": "1. Schedule A",
+            "Action": "Handling Drops (First half)"
+          },
+          {
+            "Sequence": "2. Schedule C",
+            "Action": "Truck Random Vibration (e.g. Level II, 60 mins)"
+          },
+          {
+            "Sequence": "3. Schedule I",
+            "Action": "Low Pressure (Altitude)"
+          },
+          {
+            "Sequence": "4. Schedule C",
+            "Action": "Air Random Vibration (e.g. Level II, 120 mins)"
+          },
+          {
+            "Sequence": "5. Schedule A",
+            "Action": "Handling Drops (Second half on different faces)"
+          }
         ]
       }
     }

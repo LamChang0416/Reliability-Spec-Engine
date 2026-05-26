@@ -159,54 +159,59 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="logo">🛡️ <span id="appTitle">Spec Engine 2.0</span><span class="author-badge">by Lam</span></div>
-      <button class="mobile-menu-btn" onclick="toggleSidebar()">✕</button>
+      <button class="mobile-menu-btn" onclick="window.toggleSidebar()">✕</button>
     </div>
     <div class="sidebar-nav" id="tabBar">
       <div class="nav-group">
         <div class="nav-title" data-zh="工作區" data-en="Workspace"></div>
-        <button class="tab-btn active" onclick="showTab('dashboard',this)" id="tabDASH">
+        <button class="tab-btn active" onclick="window._showTab('dashboard',this)" id="tabDASH">
           🏠 Dashboard <span class="badge new-badge">首頁</span>
         </button>
       </div>
       <div class="nav-group">
         <div class="nav-title" data-zh="國防與電信" data-en="Defense & Telecom"></div>
-        <button class="tab-btn" onclick="showTab('mil',this)" id="tabMIL">
+        <button class="tab-btn" onclick="window._showTab('mil',this)" id="tabMIL">
           🎖️ MIL-STD-810H<span class="badge">810H</span>
         </button>
-        <button class="tab-btn" onclick="showTab('gr63',this)" id="tabGR63">
+        <button class="tab-btn" onclick="window._showTab('gr63',this)" id="tabGR63">
           🏢 GR-63-CORE<span class="badge">Iss 5</span>
         </button>
       </div>
       <div class="nav-group">
         <div class="nav-title" data-zh="包裝與運輸" data-en="Packaging & Transit"></div>
-        <button class="tab-btn" onclick="showTab('astm',this)" id="tabASTM">
+        <button class="tab-btn" onclick="window._showTab('astm',this)" id="tabASTM">
           📦 ASTM D4169<span class="badge">23</span>
         </button>
-        <button class="tab-btn" onclick="showTab('ista',this)" id="tabISTA">
+        <button class="tab-btn" onclick="window._showTab('ista',this)" id="tabISTA">
           📦 ISTA<span class="badge new-badge">2024</span>
         </button>
       </div>
       <div class="nav-group">
         <div class="nav-title" data-zh="環境與防護" data-en="Environment & Protection"></div>
-        <button class="tab-btn" onclick="showTab('iec60068',this)" id="tabIEC60068">
+        <button class="tab-btn" onclick="window._showTab('iec60068',this)" id="tabIEC60068">
           🔬 IEC 60068<span class="badge">v2023+</span>
         </button>
-        <button class="tab-btn" onclick="showTab('ip',this)" id="tabIP">
+        <button class="tab-btn" onclick="window._showTab('ip',this)" id="tabIP">
           💧 IP Code<span class="badge new-badge">IEC 60529</span>
         </button>
-        <button class="tab-btn" onclick="showTab('iec',this)" id="tabIEC">
+        <button class="tab-btn" onclick="window._showTab('iec',this)" id="tabIEC">
           🛡️ IEC 60721-3<span class="badge">2019</span>
         </button>
-        <button class="tab-btn" onclick="showTab('sr332',this)" id="tabSR332">
+        <button class="tab-btn" onclick="window._showTab('sr332',this)" id="tabSR332">
           📈 SR-332<span class="badge">Iss 4</span>
         </button>
       </div>
       <div class="nav-group">
         <div class="nav-title" data-zh="🛠️ 工具箱" data-en="🛠️ Toolbox"></div>
-        <button class="tab-btn" onclick="showTab('vibcalc',this);setTimeout(vcInit,80)" id="tabVIBCALC">
+        <button class="tab-btn" onclick="window._showTab('vibcalc',this);setTimeout(vcInit,80)" id="tabVIBCALC">
           〰️ <span data-zh="振動計算器" data-en="Vib Calculator"></span><span class="badge new-badge">NEW</span>
         </button>
       </div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title" data-zh="工具" data-en="TOOLS">工具</div>
+      <button class="tab-btn" id="tabPHOTO" onclick="window._showTab('photo', this)" data-zh="📷 照片處理" data-en="📷 Photos">📷 照片處理</button>
+      <button class="tab-btn" id="tabREPORT" onclick="window._showTab('report', this)" data-zh="📄 報告生成器" data-en="📄 Reports">📄 報告生成器</button>
     </div>
     <div id="installBanner">
       <button id="installBtn">📱 <span data-zh="安裝桌面版 (支援離線)" data-en="Install App (Offline)"></span></button>
@@ -216,25 +221,25 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <!-- MAIN CONTENT -->
   <div class="main-content" id="mainContent">
     <header>
-      <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+      <button class="mobile-menu-btn" onclick="window.toggleSidebar()">☰</button>
       <div class="header-right">
         <span class="offline-badge" id="offlineBadge">✈ Offline</span>
         
         <div class="toggle-group">
           <span class="toggle-label" data-zh="📏 單位" data-en="📏 Unit"></span>
-          <button id="btnSI" class="toggle-btn active" onclick="setUnit('SI')">SI</button>
-          <button id="btnIMP" class="toggle-btn" onclick="setUnit('IMP')">IMP</button>
+          <button id="btnSI" class="toggle-btn active" onclick="window._setUnit('SI')">SI</button>
+          <button id="btnIMP" class="toggle-btn" onclick="window._setUnit('IMP')">IMP</button>
         </div>
         
         <div class="toggle-group">
           <span class="toggle-label" data-zh="🌐 語言" data-en="🌐 Lang"></span>
-          <button id="btnZH" class="toggle-btn active" onclick="setLang('ZH')">中</button>
-          <button id="btnEN" class="toggle-btn" onclick="setLang('EN')">EN</button>
+          <button id="btnZH" class="toggle-btn active" onclick="window._setLang('ZH')">中</button>
+          <button id="btnEN" class="toggle-btn" onclick="window._setLang('EN')">EN</button>
         </div>
         
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
-          <input id="searchInput" type="search" placeholder="Search specs..." oninput="doSearch(this.value)">
+          <input id="searchInput" type="search" placeholder="Search specs..." oninput="window._doSearch(this.value)">
         </div>
       </div>
     </header>
@@ -260,9 +265,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 規格選擇" data-en="① Select Criteria"></h3>
-        <div class="sel-group"><label data-zh="位置分類" data-en="Location Class"></label><select id="iec-l1" onchange="buildL2('iec')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="環境因子" data-en="Environmental Factor"></label><select id="iec-l2" onchange="buildL3('iec')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="嚴苛等級" data-en="Severity Class"></label><select id="iec-l3" onchange="showResult('iec')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="位置分類" data-en="Location Class"></label><select id="iec-l1" onchange="window._buildL2('iec')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="環境因子" data-en="Environmental Factor"></label><select id="iec-l2" onchange="window._buildL3('iec')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="嚴苛等級" data-en="Severity Class"></label><select id="iec-l3" onchange="window._showResult('iec')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 查詢結果" data-en="② Results"></h3>
@@ -277,9 +282,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試裁適選擇" data-en="① Tailoring Selection"></h3>
-        <div class="sel-group"><label data-zh="測試方法" data-en="Test Method"></label><select id="mil-l1" onchange="buildL2('mil')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="程序" data-en="Procedure"></label><select id="mil-l2" onchange="buildL3('mil')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="類別 / 條件" data-en="Category / Condition"></label><select id="mil-l3" onchange="showResult('mil')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試方法" data-en="Test Method"></label><select id="mil-l1" onchange="window._buildL2('mil')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="程序" data-en="Procedure"></label><select id="mil-l2" onchange="window._buildL3('mil')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="類別 / 條件" data-en="Category / Condition"></label><select id="mil-l3" onchange="window._showResult('mil')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
@@ -294,9 +299,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試排程選擇" data-en="① Schedule Selection"></h3>
-        <div class="sel-group"><label data-zh="排程 / 循環" data-en="Schedule / Cycle"></label><select id="astm-l1" onchange="buildL2('astm')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="測試類型" data-en="Test Type"></label><select id="astm-l2" onchange="buildL3('astm')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="特定條件" data-en="Specific Condition"></label><select id="astm-l3" onchange="showResult('astm')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="排程 / 循環" data-en="Schedule / Cycle"></label><select id="astm-l1" onchange="window._buildL2('astm')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試類型" data-en="Test Type"></label><select id="astm-l2" onchange="window._buildL3('astm')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="特定條件" data-en="Specific Condition"></label><select id="astm-l3" onchange="window._showResult('astm')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
@@ -311,9 +316,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 章節選擇" data-en="① Section Selection"></h3>
-        <div class="sel-group"><label data-zh="章節" data-en="Section"></label><select id="gr63-l1" onchange="buildL2('gr63')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="類別" data-en="Category"></label><select id="gr63-l2" onchange="buildL3('gr63')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="條件" data-en="Condition"></label><select id="gr63-l3" onchange="showResult('gr63')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="章節" data-en="Section"></label><select id="gr63-l1" onchange="window._buildL2('gr63')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="類別" data-en="Category"></label><select id="gr63-l2" onchange="window._buildL3('gr63')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="條件" data-en="Condition"></label><select id="gr63-l3" onchange="window._showResult('gr63')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
@@ -328,9 +333,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 預測條件選擇" data-en="① Prediction Criteria"></h3>
-        <div class="sel-group"><label data-zh="作業環境" data-en="Environment"></label><select id="sr332-l1" onchange="buildL2('sr332')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="品質等級" data-en="Quality Level"></label><select id="sr332-l2" onchange="buildL3('sr332')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="預測方法" data-en="Prediction Method"></label><select id="sr332-l3" onchange="showResult('sr332')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="作業環境" data-en="Environment"></label><select id="sr332-l1" onchange="window._buildL2('sr332')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="品質等級" data-en="Quality Level"></label><select id="sr332-l2" onchange="window._buildL3('sr332')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="預測方法" data-en="Prediction Method"></label><select id="sr332-l3" onchange="window._showResult('sr332')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 預測模型輸出" data-en="② Prediction Model Output"></h3>
@@ -345,9 +350,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試程序選擇" data-en="① Select Procedure"></h3>
-        <div class="sel-group"><label data-zh="測試程序" data-en="Procedure"></label><select id="ista-l1" onchange="buildL2('ista')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="包裹類型/重量" data-en="Package Type"></label><select id="ista-l2" onchange="buildL3('ista')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="測試序列" data-en="Test Sequence"></label><select id="ista-l3" onchange="showResult('ista')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試程序" data-en="Procedure"></label><select id="ista-l1" onchange="window._buildL2('ista')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="包裹類型/重量" data-en="Package Type"></label><select id="ista-l2" onchange="window._buildL3('ista')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試序列" data-en="Test Sequence"></label><select id="ista-l3" onchange="window._showResult('ista')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
@@ -362,9 +367,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試類別選擇" data-en="① Select Test Category"></h3>
-        <div class="sel-group"><label data-zh="測試大類別" data-en="Test Category"></label><select id="iec60068-l1" onchange="buildL2('iec60068')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="具體測試方法" data-en="Specific Method"></label><select id="iec60068-l2" onchange="buildL3('iec60068')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="嚴苛度與參數" data-en="Severity / Parameters"></label><select id="iec60068-l3" onchange="showResult('iec60068')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="測試大類別" data-en="Test Category"></label><select id="iec60068-l1" onchange="window._buildL2('iec60068')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="具體測試方法" data-en="Specific Method"></label><select id="iec60068-l2" onchange="window._buildL3('iec60068')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="嚴苛度與參數" data-en="Severity / Parameters"></label><select id="iec60068-l3" onchange="window._showResult('iec60068')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
@@ -379,9 +384,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 防護指標選擇" data-en="① Select Protection Code"></h3>
-        <div class="sel-group"><label data-zh="防護類別" data-en="Protection Category"></label><select id="ip-l1" onchange="buildL2('ip')"><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="子類別" data-en="Subcategory"></label><select id="ip-l2" onchange="buildL3('ip')" disabled><option value="">-- Select --</option></select></div>
-        <div class="sel-group"><label data-zh="防護等級" data-en="IP Rating Parameter"></label><select id="ip-l3" onchange="showResult('ip')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="防護類別" data-en="Protection Category"></label><select id="ip-l1" onchange="window._buildL2('ip')"><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="子類別" data-en="Subcategory"></label><select id="ip-l2" onchange="window._buildL3('ip')" disabled><option value="">-- Select --</option></select></div>
+        <div class="sel-group"><label data-zh="防護等級" data-en="IP Rating Parameter"></label><select id="ip-l3" onchange="window._showResult('ip')" disabled><option value="">-- Select --</option></select></div>
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
@@ -395,14 +400,14 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
     <!-- TABS -->
     <div id="vc-tabs" style="display:flex;gap:6px;margin-bottom:20px;border-bottom:2px solid rgba(99,179,237,.2);padding-bottom:0">
-      <button class="vc-tab active" onclick="vcSwitchTab('sine',this)">〰️ Sine &nbsp;正弦振動</button>
-      <button class="vc-tab" onclick="vcSwitchTab('random',this)">📊 Random &nbsp;隨機 PSD</button>
+      <button class="vc-tab active" onclick="window.vcSwitchTab('sine',this)">〰️ Sine &nbsp;正弦振動</button>
+      <button class="vc-tab" onclick="window.vcSwitchTab('random',this)">📊 Random &nbsp;隨機 PSD</button>
     </div>
 
     <!-- ── SINE TAB ───────────────────────────────────── -->
     <div id="vc-sine" class="vc-content active">
       <div class="vc-toolbar">
-        <select id="vcSinePreset" onchange="vcLoadSine()">
+        <select id="vcSinePreset" onchange="window.vcLoadSine()">
           <option value="">📂 選擇 Sine 規範範例…</option>
           <optgroup label="IEC 60068-2-6 (正弦掃頻)">
             <option value="iec_cls1">IEC 60068-2-6 Class 1 — 低嚴苛 (0.5g, 10–150 Hz)</option>
@@ -416,7 +421,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
             <option value="sine_custom">自訂頻率點</option>
           </optgroup>
         </select>
-        <button class="btn btn-dl" onclick="vcCalcSine()">⚡ 自動計算交接點與缺失值</button>
+        <button class="btn btn-dl" onclick="window.vcCalcSine()">⚡ 自動計算交接點與缺失值</button>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:15px;">
         <div style="flex:1;min-width:280px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
@@ -429,16 +434,16 @@ tr:hover td{background:rgba(99,179,237,.05)}
             </tr></thead>
             <tbody id="vcSineTbody"></tbody>
           </table>
-          <button class="btn btn-dl" style="width:100%" onclick="vcAddSineRow()">＋ 新增頻率點</button>
+          <button class="btn btn-dl" style="width:100%" onclick="window.vcAddSineRow()">＋ 新增頻率點</button>
         </div>
         <div style="flex:1;min-width:250px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
           <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px">⏱️ 掃頻時間設定</div>
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
             <label style="color:var(--muted);font-size:12px">掃頻速率：</label>
-            <input type="number" id="vcSweepRate" value="1" step="0.1" style="width:60px;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:5px 8px;font-size:13px;text-align:center" oninput="vcUpdateSineTime()">
+            <input type="number" id="vcSweepRate" value="1" step="0.1" style="width:60px;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:5px 8px;font-size:13px;text-align:center" oninput="window.vcUpdateSineTime()">
             <span style="color:var(--muted);font-size:12px">Oct/min</span>
             <label style="color:var(--muted);font-size:12px;margin-left:8px">次數：</label>
-            <input type="number" id="vcSweepCount" value="1" style="width:50px;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:5px 8px;font-size:13px;text-align:center" oninput="vcUpdateSineTime()">
+            <input type="number" id="vcSweepCount" value="1" style="width:50px;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:5px 8px;font-size:13px;text-align:center" oninput="window.vcUpdateSineTime()">
           </div>
           <div class="vib-metric" style="margin-bottom:0">
             <div class="vib-metric-label">預估總測試時間</div>
@@ -455,7 +460,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
     <!-- ── RANDOM TAB ─────────────────────────────────── -->
     <div id="vc-random" class="vc-content">
       <div class="vc-toolbar" style="align-items:flex-start;gap:12px;flex-wrap:wrap">
-        <select id="vcRandPreset" style="flex:1;min-width:260px;max-width:500px" onchange="vcLoadRandom()">
+        <select id="vcRandPreset" style="flex:1;min-width:260px;max-width:500px" onchange="window.vcLoadRandom()">
           <option value="">📂 選擇 Random 規範範例…</option>
           <optgroup label="MIL-STD-810H Method 514.8">
             <option value="mil_cat4">Cat 4 — US Highway Truck (1.04 Grms)</option>
@@ -479,8 +484,8 @@ tr:hover td{background:rgba(99,179,237,.05)}
           </optgroup>
         </select>
         <div style="display:flex;gap:6px">
-          <button id="vcUnitG"   class="toggle-btn active" onclick="vcSetUnit('G')"  >g²/Hz</button>
-          <button id="vcUnitMs2" class="toggle-btn"        onclick="vcSetUnit('ms2')">(m/s²)²/Hz</button>
+          <button id="vcUnitG"   class="toggle-btn active" onclick="window.vcSetUnit('G')"  >g²/Hz</button>
+          <button id="vcUnitMs2" class="toggle-btn"        onclick="window.vcSetUnit('ms2')">(m/s²)²/Hz</button>
         </div>
         <div id="vcPtsInfo" style="color:var(--muted);font-size:12px;font-weight:600;padding:5px 12px;background:rgba(13,27,62,.6);border:1px solid rgba(99,179,237,.2);border-radius:12px">4 pts</div>
       </div>
@@ -495,7 +500,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
             </tr></thead>
             <tbody id="vcRandTbody"></tbody>
           </table>
-          <button class="btn btn-dl" style="width:100%" onclick="vcAddRandRow()">＋ 新增轉折點</button>
+          <button class="btn btn-dl" style="width:100%" onclick="window.vcAddRandRow()">＋ 新增轉折點</button>
         </div>
         <div style="flex:1;min-width:220px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px">
           <div style="color:#00d284;font-size:12px;font-weight:700;margin-bottom:10px">📊 預估測試量值 (3σ)</div>
@@ -513,983 +518,89 @@ tr:hover td{background:rgba(99,179,237,.05)}
     </div>
   </div>
 
+
+  <!-- ─── Photo Processor Panel ───────────────────────────────────── -->
+  <div class="panel" id="panel-photo">
+    <div class="panel-caption" data-zh="【照片處理器】支援拖放上傳、Canvas 無損壓縮至 WebP 格式、自動浮水印（可輸入規範名稱與測試參數）。壓縮後的照片可一鍵儲存至報告庫。" data-en="[Photo Processor] Drag & drop upload, Canvas lossless compression to WebP, automatic watermark with test parameters. Compressed photos can be saved to report library."></div>
+    <div style="display:flex;flex-wrap:wrap;gap:15px;">
+      <div style="flex:1;min-width:300px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <div id="photoDropZone" style="border:2px dashed rgba(99,179,237,.3);border-radius:10px;padding:40px;text-align:center;cursor:pointer;transition:border-color .2s;">
+          <div style="font-size:40px;margin-bottom:10px;">📷</div>
+          <div style="color:var(--blue2);font-weight:600;" data-zh="拖放圖片或點擊選取" data-en="Drop image or click to select">拖放圖片或點擊選取</div>
+          <div style="color:var(--muted);font-size:11px;margin-top:6px;">JPG / PNG → WebP</div>
+          <input type="file" id="photoFileInput" accept="image/*" style="display:none;">
+        </div>
+        <div style="margin-top:12px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <label style="color:var(--muted);font-size:11px;white-space:nowrap;">壓縮品質:</label>
+            <input type="range" id="photoQuality" min="50" max="100" value="85" style="flex:1;" oninput="window._processAndPreview()">
+            <span id="photoQualityLabel" style="color:var(--blue2);font-size:12px;font-weight:600;min-width:32px;">85%</span>
+          </div>
+          <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">浮水印文字 (Watermark):</label>
+          <textarea id="photoWatermark" rows="2" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px;font-family:inherit;font-size:12px;resize:vertical;" oninput="window._processAndPreview()" placeholder="Spec Engine | Test #001 | 2026-05-26"></textarea>
+        </div>
+        <div style="margin-top:8px;color:var(--muted);font-size:11px;" id="photoOrigInfo"></div>
+        <div style="color:var(--green);font-size:12px;font-weight:600;margin-top:4px;" id="photoCompInfo"></div>
+        <div class="btn-row" style="margin-top:12px;">
+          <button class="btn btn-dl" onclick="window._downloadPhoto()">📥 下載 WebP</button>
+          <button class="btn btn-dl" onclick="window._savePhotoToReport()">📄 儲存至報告</button>
+        </div>
+      </div>
+      <div style="flex:1;min-width:300px;">
+        <div style="background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;margin-bottom:15px;">
+          <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:8px;">🖼️ 預覽 Preview</div>
+          <img id="photoPreviewImg" style="display:none;max-width:100%;border-radius:6px;border:1px solid rgba(99,179,237,.15);">
+        </div>
+        <div style="background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+          <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:8px;">📁 已儲存照片 Saved Photos</div>
+          <div id="photoGallery"><div class="empty">尚無儲存的照片</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Report Generator Panel ──────────────────────────────────── -->
+  <div class="panel" id="panel-report">
+    <div class="panel-caption" data-zh="【報告生成器】將規範查詢、振動分析結果、壓縮照片整合，輸出專業的 HTML/PDF 測試報告。" data-en="[Report Generator] Combine spec queries, vibration analysis, and compressed photos into a professional HTML/PDF test report."></div>
+    <div style="display:flex;flex-wrap:wrap;gap:15px;">
+      <div style="flex:1;min-width:300px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px;">📝 報告設定 Report Settings</div>
+        <div style="margin-bottom:10px;">
+          <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">報告標題 Title</label>
+          <input type="text" id="reportTitle" value="Reliability Test Report" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-family:inherit;font-size:13px;">
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">測試編號 Test No.</label>
+          <input type="text" id="reportTestNo" placeholder="TEST-2026-001" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-family:inherit;font-size:13px;">
+        </div>
+        <div style="margin-bottom:10px;">
+          <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">工程師 Engineer</label>
+          <input type="text" id="reportEngineer" value="Lam" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-family:inherit;font-size:13px;">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;cursor:pointer;">
+            <input type="checkbox" id="reportIncludePhotos" checked> 包含照片 Include Photos
+          </label>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-dl" onclick="window._downloadHTML()" style="flex:1;">📥 下載 HTML 報告</button>
+          <button class="btn btn-dl" onclick="window._generatePDF()" style="flex:1;">🖨️ PDF / 列印</button>
+        </div>
+      </div>
+      <div style="flex:2;min-width:300px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px;">📋 報告內容 Report Items <span id="reportBadge" style="background:var(--blue);color:var(--bg);border-radius:10px;padding:1px 8px;font-size:11px;margin-left:6px;"></span></div>
+        <div style="color:var(--muted);font-size:11px;margin-bottom:10px;">在各規範查詢結果中點擊「📄 加入報告」按鈕以新增內容。</div>
+        <div id="reportItemList"><div class="empty">尚未加入任何規範</div></div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 
 </div>
 </div>
 
-<script>
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-}
-
-// Close sidebar when clicking outside on mobile
-document.addEventListener('click', function(e) {
-  const sidebar = document.getElementById('sidebar');
-  if (window.innerWidth <= 850 && sidebar.classList.contains('open')) {
-    if (!sidebar.contains(e.target) && !e.target.closest('.mobile-menu-btn')) {
-      sidebar.classList.remove('open');
-    }
-  }
-});
-
-// ─── State ────────────────────────────────────────────────────────────────
-let LANG = 'ZH';
-let CURRENT_UNIT = 'SI';
-const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null, iec60068: null, ip: null };
-const DB_FILES = {
-  iec:  'iec_database.json',
-  mil:  'mil810_database.json',
-  astm: 'astm4169_database.json',
-  gr63: 'gr63_database.json',
-  sr332: 'sr332_database.json',
-  ista: 'ista_database.json',
-  iec60068: 'iec60068_database.json',
-  ip: 'ip_code_database.json'
-};
-const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','Description']);
-
-// ─── Lang ─────────────────────────────────────────────────────────────────
-function setLang(l) {
-  LANG = l;
-  document.getElementById('btnZH').classList.toggle('active', l==='ZH');
-  document.getElementById('btnEN').classList.toggle('active', l==='EN');
-  document.querySelectorAll('[data-zh]').forEach(el => {
-    el.textContent = l==='ZH' ? el.dataset.zh : el.dataset.en;
-  });
-  // Refresh search placeholder
-  document.getElementById('searchInput').placeholder = l==='ZH' ? '搜尋規範關鍵字...' : 'Search specs...';
-  // Re-render active result
-  ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(s => {
-    const l3 = document.getElementById(s+'-l3');
-    if (l3 && l3.value) showResult(s);
-    else {
-      const el = document.querySelector(`#${s}-result .empty`);
-      if (el) el.textContent = el.dataset[l.toLowerCase()];
-    }
-  });
-  if (typeof renderDashboard === 'function') renderDashboard();
-}
-
-function setUnit(u) {
-  CURRENT_UNIT = u;
-  document.getElementById('btnSI').classList.toggle('active', u==='SI');
-  document.getElementById('btnIMP').classList.toggle('active', u==='IMP');
-  // Re-render active result
-  ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(s => {
-    const l3 = document.getElementById(s+'-l3');
-    if (l3 && l3.value) showResult(s);
-  });
-}
-
-function convertUnit(v) {
-  if (typeof v !== 'string' || CURRENT_UNIT === 'SI') return v;
-  // Celsius to Fahrenheit
-  let out = v.replace(/(-?\d+(?:\.\d+)?)\s*°C/g, (m, p1) => Math.round((parseFloat(p1) * 9/5) + 32) + ' °F');
-  // mm to inch
-  out = out.replace(/(\d+(?:\.\d+)?)\s*mm/g, (m, p1) => (parseFloat(p1) / 25.4).toFixed(2) + ' inch');
-  // kg to lbs
-  out = out.replace(/(\d+(?:\.\d+)?)\s*kg(?!\/)/g, (m, p1) => (parseFloat(p1) * 2.20462).toFixed(2) + ' lbs');
-  return out;
-}
-
-// ─── Tab ──────────────────────────────────────────────────────────────────
-function showTab(id, btn) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('panel-'+id).classList.add('active');
-  btn.classList.add('active');
-  if (!DBS[id]) loadDB(id);
-}
-
-// ─── Load DB ───────────────────────────────────────────────────────────────
-async function loadDB(std) {
-  try {
-    const r = await fetch(DB_FILES[std]);
-    DBS[std] = await r.json();
-    buildL1(std);
-  } catch(e) {
-    console.error('Failed to load', DB_FILES[std], e);
-  }
-}
-
-// IEC 60721-3 location class descriptions
-const IEC_CLASS_ZH = {
-  '1':'1 — 儲存環境 Storage',
-  '2':'2 — 運輸環境 Transportation',
-  '3':'3 — 室內定點使用 Stationary Indoor',
-  '4':'4 — 戶外定點使用 Stationary Outdoor',
-  '5':'5 — 地面車輛環境 Ground Vehicle',
-  '6':'6 — 船舶環境 Ship / Marine',
-  '7':'7 — 攜帶式與行動設備 Portable / Non-stationary',
-  '9':'9 — 產品內部微氣候 Microclimates Inside Products'
-};
-const IEC_CLASS_EN = {
-  '1':'1 — Storage',
-  '2':'2 — Transportation',
-  '3':'3 — Stationary Indoor Use',
-  '4':'4 — Stationary Outdoor Use',
-  '5':'5 — Ground Vehicle',
-  '6':'6 — Ship / Marine',
-  '7':'7 — Portable / Non-stationary',
-  '9':'9 — Microclimates Inside Products'
-};
-
-function buildL1(std) {
-  const sel = document.getElementById(std+'-l1');
-  sel.innerHTML = '<option value="">-- Select --</option>';
-  Object.keys(DBS[std]).forEach(k => {
-    const o = document.createElement('option');
-    o.value = k;
-    // For IEC, show descriptive class name; others use the key directly
-    if (std === 'iec') {
-      o.textContent = (LANG==='ZH' ? IEC_CLASS_ZH[k] : IEC_CLASS_EN[k]) || k;
-    } else {
-      o.textContent = k;
-    }
-    sel.appendChild(o);
-  });
-}
-function buildL2(std) {
-  const v1 = document.getElementById(std+'-l1').value;
-  const sel = document.getElementById(std+'-l2');
-  const sel3 = document.getElementById(std+'-l3');
-  sel.innerHTML = '<option value="">-- Select --</option>';
-  sel3.innerHTML = '<option value="">-- Select --</option>';
-  sel.disabled = !v1; sel3.disabled = true;
-  document.getElementById(std+'-result').innerHTML = `<div class="empty">${LANG==='ZH'?'← 請繼續選擇':'← Continue selection'}</div>`;
-  if (!v1 || !DBS[std][v1]) return;
-  Object.keys(DBS[std][v1]).forEach(k => {
-    const o = document.createElement('option');
-    o.value = k; o.textContent = k;
-    sel.appendChild(o);
-  });
-}
-function buildL3(std) {
-  const v1 = document.getElementById(std+'-l1').value;
-  const v2 = document.getElementById(std+'-l2').value;
-  const sel = document.getElementById(std+'-l3');
-  sel.innerHTML = '<option value="">-- Select --</option>';
-  sel.disabled = !v2;
-  document.getElementById(std+'-result').innerHTML = `<div class="empty">${LANG==='ZH'?'← 請繼續選擇':'← Continue selection'}</div>`;
-  if (!v2 || !DBS[std][v1][v2]) return;
-  Object.keys(DBS[std][v1][v2]).forEach(k => {
-    const o = document.createElement('option');
-    o.value = k; o.textContent = k;
-    sel.appendChild(o);
-  });
-}
-
-// ─── Show Result ───────────────────────────────────────────────────────────
-function showResult(std) {
-  const v1 = document.getElementById(std+'-l1').value;
-  const v2 = document.getElementById(std+'-l2').value;
-  const v3 = document.getElementById(std+'-l3').value;
-  const box = document.getElementById(std+'-result');
-  if (!v1||!v2||!v3) { box.innerHTML=`<div class="empty">${LANG==='ZH'?'← 請完成選擇':'← Complete selection'}</div>`; return; }
-  const entry = DBS[std]?.[v1]?.[v2]?.[v3];
-  if (!entry) { box.innerHTML='<div class="empty">No data</div>'; return; }
-  const params = entry.parameters || {};
-  const desc = LANG==='ZH' ? (params.Description_ZH||params.Description||'') : (params.Description_EN||params.Description_ZH||'');
-  const tests = entry.tests || [];
-
-  // Metrics
-  const metricHTML = Object.entries(params)
-    .filter(([k])=>!SKIP_KEYS.has(k))
-    .map(([k,v])=>`<div class="metric"><div class="metric-label">${k}</div><div class="metric-value">${convertUnit(v)}</div></div>`)
-    .join('');
-
-  // Table
-  let tableHTML = '';
-  if (tests.length) {
-    const cols = Object.keys(tests[0]);
-    tableHTML = `<div class="table-wrap"><table>
-      <tr>${cols.map(c=>`<th>${convertUnit(c)}</th>`).join('')}</tr>
-      ${tests.map(row=>`<tr>${cols.map(c=>`<td>${convertUnit(row[c]??'')}</td>`).join('')}</tr>`).join('')}
-    </table></div>`;
-  }
-
-  // Store for download
-  box._entry = entry;
-  box._prefix = `${std.toUpperCase()}_${v3.replace(/[^a-zA-Z0-9]/g,'_').slice(0,20)}`;
-
-  let chartWrap = `<div id="chartWrap" style="display:none; margin-bottom:14px; background:rgba(13,20,71,.5); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:20px; position:relative;"><canvas id="profileChart" style="max-height:220px;"></canvas></div>`;
-
-  
-  // == INTERACTIVE CALCULATOR INJECTION ==
-  let calcHTML = '';
-  if (v3.includes('抗壓') || v3.includes('Compression') || v2.includes('Compression')) {
-    const isZH = LANG === 'ZH';
-    calcHTML = `
-      <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg,rgba(0,210,132,.1),rgba(13,20,71,.5)); border:1px solid #00d284; border-radius:10px;">
-        <h4 style="color:#00d284; margin-bottom:12px; font-size:14px;">🧮 ${isZH ? '互動式抗壓機測試計算 (L = W * ((H-h)/h) * F)' : 'Interactive Compression Calculator (L = W * ((H-h)/h) * F)'}</h4>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
-          <div>
-            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '單箱重 W (kg)' : 'Weight W (kg)'}</label>
-            <input type="number" id="calcW" value="10" oninput="runCompressionCalc()" style="width:100px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
-          </div>
-          <div>
-            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '總疊高 H (mm)' : 'Total Height H'}</label>
-            <input type="number" id="calcH" value="2000" oninput="runCompressionCalc()" style="width:100px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
-          </div>
-          <div>
-            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '單箱高 h (mm)' : 'Box Height h'}</label>
-            <input type="number" id="calch" value="400" oninput="runCompressionCalc()" style="width:100px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
-          </div>
-          <div>
-            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '安全係數 F' : 'Safety Factor F'}</label>
-            <input type="number" id="calcF" value="4.5" oninput="runCompressionCalc()" style="width:80px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
-          </div>
-          <div style="margin-left:auto; text-align:right;">
-            <div style="color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '機台設定下壓力 Load (kgf)' : 'Target Load (kgf)'}</div>
-            <div id="calcResult" style="color:#00d284; font-size:24px; font-weight:700;">180</div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-  // ======================================
-box.innerHTML = `
-    <div class="result-banner">
-      <h4>🎯 ${v3}</h4>
-      <div class="result-desc">${desc}</div>
-    </div>
-    <div class="metrics">${metricHTML}</div>
-    ${chartWrap}
-    ${tableHTML}
-    ${calcHTML}
-    <div class="btn-row">
-      <button class="btn btn-dl" onclick="togglePin('${std}', '${v1.replace(/'/g,"\\'").replace(/"/g,'&quot;')}', '${v2.replace(/'/g,"\\'").replace(/"/g,'&quot;')}', '${v3.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">📌 Pin to Dashboard</button>
-      <button class="btn btn-dl" onclick="dlJSON('${std}')">📥 JSON</button>
-      ${tests.length?`<button class="btn btn-dl" onclick="dlCSV('${std}')">📥 CSV</button>`:''}
-    </div>`;
-
-  // Route to vibration or thermal chart
-  setTimeout(()=>{
-    const cols = tests.length ? Object.keys(tests[0]) : [];
-    // Normalize: remove spaces for column matching (handles "G RMS" -> "GRMS")
-    const colsNorm = cols.map(c => c.replace(/\s/g,'').toLowerCase());
-    // Also check the method/category name directly (most reliable)
-    const specName = (v1 + ' ' + v2 + ' ' + v3).toLowerCase();
-    const isVib = specName.includes('vibration') || specName.includes('shock')
-                  || colsNorm.some(c => /freq|hz|psd|grms|vibr|acceler/.test(c))
-                  || Object.keys(params).some(k => k.replace(/\s/g,'').toLowerCase().includes('grms'))
-                  || !!params['g rms'] || !!params['Grms'] || !!params['Profile'];
-    if (isVib) {
-      renderVibAnalysis(params, tests, v1 + ' ' + v3);
-    } else {
-      // Per user request: DO NOT show Test profile visualization for non-vibration tests.
-      // renderChart(tests); 
-    }
-  }, 50);
-}
-
-// ─── VIBRATION ANALYSIS ENGINE ─────────────────────────────────────────────
-// Embedded PSD breakpoint library (Hz, g²/Hz) for known standard profiles
-const VIB_PSD_PROFILES = {
-  // MIL-STD-810H Method 514.8
-  'cat 4':               [{f:10,p:0.015},{f:40,p:0.015},{f:500,p:0.00015}],           // Cat 4 US Highway Truck  (1.04 Grms)
-  'cat 20':              [{f:5,p:0.006},{f:5,p:0.006},{f:100,p:0.006},{f:500,p:0.002}], // Cat 20 Ground Vehicle   (1.20 Grms)
-  'ground vehicle':      [{f:5,p:0.006},{f:100,p:0.006},{f:500,p:0.002}],
-  'cat24':               [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],             // Cat 24 Minimal Integrity(7.70 Grms)
-  'cat 24':              [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
-  'minimal integrity':   [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
-  'general minimal':     [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
-  // GR-63 NEBS
-  'transportation':      [{f:5,p:0.001},{f:20,p:0.01},{f:500,p:0.01}],                // GR-63 Transportation    (2.21 Grms)
-  'gr-63 trans':         [{f:5,p:0.001},{f:20,p:0.01},{f:500,p:0.01}],
-  // ISTA / ASTM D4169
-  'ista 3a':             [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
-  '3a':                  [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
-  'amazon':              [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
-  '6-amazon':            [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
-  'schedule a':          [{f:3,p:0.0007},{f:12,p:0.00785},{f:20,p:0.00785},{f:50,p:0.0008},{f:100,p:0.0008},{f:200,p:0.0002}],
-  'schedule b':          [{f:3,p:0.0003},{f:6,p:0.003},{f:15,p:0.003},{f:40,p:0.0004},{f:80,p:0.0004},{f:200,p:0.0001}],
-};
-
-function calcGrmsFromPSD(pts) {
-  // Numerical integration: trapezoid on Log-Log scale (power-law segments)
-  let area = 0;
-  for (let i = 0; i < pts.length - 1; i++) {
-    const f1=pts[i].f, w1=pts[i].p, f2=pts[i+1].f, w2=pts[i+1].p;
-    if (f1<=0||w1<=0||f2<=f1||w2<=0) continue;
-    const m = Math.log(w2/w1) / Math.log(f2/f1);
-    if (Math.abs(m+1) < 0.0001) { area += w1*f1*Math.log(f2/f1); }
-    else { area += (w2*f2 - w1*f1) / (m+1); }
-  }
-  return Math.sqrt(Math.max(0, area));
-}
-
-function findPSDProfile(specLabel) {
-  const lbl = specLabel.toLowerCase().replace(/category\s*/g, 'cat ');
-  for (const [key, pts] of Object.entries(VIB_PSD_PROFILES)) {
-    if (lbl.includes(key)) return pts;
-  }
-  return null;
-}
-
-function renderVibAnalysis(params, tests, specLabel) {
-  const wrap = document.getElementById('chartWrap');
-  if (!wrap) return;
-
-  // Try to find a known PSD profile based on the selected spec label
-  const psdPts = findPSDProfile(specLabel);
-
-  // Dynamic extraction from table if present
-  let dynamicPsd = null;
-  if (!psdPts && tests && tests.length > 1) {
-    const keys = Object.keys(tests[0]||{});
-    const fKey = keys.find(k => k.toLowerCase().includes('freq') || k.toLowerCase().includes('hz'));
-    const pKey = keys.find(k => k.toLowerCase().includes('g²/hz') || k.toLowerCase().includes('psd') || k.toLowerCase().includes('level'));
-    if (fKey && pKey) {
-      const parsed = tests.map(row => ({ f: parseFloat(row[fKey]), p: parseFloat(row[pKey]) })).filter(d => !isNaN(d.f) && !isNaN(d.p));
-      if (parsed.length > 1) {
-        dynamicPsd = parsed.sort((a,b) => a.f - b.f);
-      }
-    }
-  }
-  const finalPsdPts = psdPts || dynamicPsd;
-
-  // Extract Grms from the parameters dict (might be already stored as e.g. "1.04" or "2.2 - 7.3 (varies)")
-  const rawGrms = params['g rms'] || params['Grms'] || params['grms'] || '';
-  let storedGrms = parseFloat(String(rawGrms).replace(/[^\d.]/g, '')) || null;
-  
-  // If rawGrms contains a range or text, we should display it directly rather than mangling it to e.g. 2.27
-  const isVaries = String(rawGrms).includes('-') || String(rawGrms).toLowerCase().includes('varies');
-  if (isVaries) storedGrms = rawGrms;
-
-  // Compute Grms from PSD profile if available
-  const computedGrms = finalPsdPts ? calcGrmsFromPSD(finalPsdPts) : null;
-  const grms = computedGrms || (typeof storedGrms === 'number' ? storedGrms : null);
-
-  const isVibLabel = specLabel.toLowerCase().includes('vib') || specLabel.toLowerCase().includes('shock');
-
-  // If no vibration data at all, abort rendering visualizer entirely
-  if (!grms && !finalPsdPts && !storedGrms && !isVibLabel) { return; }
-
-  // Use the first number found for math estimations if we have a text range
-  const mathGrms = grms || parseFloat(String(storedGrms).match(/[\d.]+/)) || 0;
-
-  const G_CONST = 9.80665;
-  const peakG   = mathGrms ? (3 * mathGrms).toFixed(2) : '--';
-  const peakV   = mathGrms ? (3 * mathGrms * G_CONST / (2 * Math.PI * 50)).toFixed(3) : '--'; // at 50Hz estimate
-  const grmsDisp = mathGrms ? (mathGrms * 9.80665 / (2 * Math.PI * 50)**2 * 1000 * 6).toFixed(2) : '--';
-  
-  // What to display
-  const displayGrms = grms ? grms.toFixed(3) : (storedGrms || '--');
-  const unitSuffix = isVaries && !grms ? '' : '<span class="vib-metric-unit">g</span>';
-
-  wrap.style.display = 'block';
-  wrap.innerHTML = `
-    <div class="vib-panel">
-      <div class="vib-panel-title">〰️ Vibration Profile Analysis (Auto-Feed)</div>
-      <div class="vib-metrics">
-        <div class="vib-metric">
-          <div class="vib-metric-label">Grms (RMS Accel)</div>
-          <div class="vib-metric-value" style="${isVaries?'font-size:16px':''}">${displayGrms}${unitSuffix}</div>
-        </div>
-        <div class="vib-metric">
-          <div class="vib-metric-label">3σ Peak (Max)</div>
-          <div class="vib-metric-value">${peakG}<span class="vib-metric-unit">g</span></div>
-        </div>
-        <div class="vib-metric">
-          <div class="vib-metric-label">Peak Velocity ≈</div>
-          <div class="vib-metric-value">${peakV}<span class="vib-metric-unit">m/s</span></div>
-        </div>
-        <div class="vib-metric">
-          <div class="vib-metric-label">P-P Disp ≈</div>
-          <div class="vib-metric-value">${grmsDisp}<span class="vib-metric-unit">mm</span></div>
-        </div>
-      </div>
-      ${finalPsdPts ? '<div id="psdPlotDiv" class="psd-plot"></div>' : '<div style="color:#64748b;font-size:11px;padding:4px 0">No PSD Profile available. See table below for test specifications.</div>'}
-    </div>`;
-
-  // Render Plotly Log-Log chart when PSD breakpoints available
-  if (finalPsdPts && window.Plotly) {
-    const trace = {
-      x: finalPsdPts.map(d=>d.f),
-      y: finalPsdPts.map(d=>d.p),
-      mode: 'lines+markers',
-      type: 'scatter',
-      name: 'PSD Profile',
-      line: {color:'#00d284', width:3, shape:'linear'},
-      marker: {size:7, color:'#ffffff', line:{color:'#00d284',width:2}},
-      fill: 'tozeroy',
-      fillcolor: 'rgba(0,210,132,0.05)'
-    };
-    const layout = {
-      margin: {l:55,r:15,t:15,b:45},
-      paper_bgcolor:'rgba(13,20,71,0)',
-      plot_bgcolor:'rgba(13,20,71,0)',
-      xaxis:{title:'Frequency (Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
-      yaxis:{title:'PSD (g²/Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
-      showlegend:false
-    };
-    Plotly.newPlot('psdPlotDiv', [trace], layout, {displayModeBar:false, responsive:true});
-  }
-}
-
-let activeChart = null;
-function renderChart(tests) {
-  const wrap = document.getElementById('chartWrap');
-  if (!wrap || !tests || !tests.length || !window.Chart) return;
-  
-  const cols = Object.keys(tests[0]||{});
-  if (cols.length < 2) return; // Need at least X and Y
-  
-  // X-axis is the first column
-  const xCol = cols[0];
-  // Y-axis are the remaining columns
-  const yCols = cols.slice(1);
-  
-  // Exclude columns that clearly aren't numbers (like Remarks)
-  const validYCols = yCols.filter(c => !c.toLowerCase().includes('remark') && !c.toLowerCase().includes('note'));
-  
-  if (validYCols.length > 0) {
-    wrap.style.display = 'block';
-    
-    // Extract labels
-    let labels = tests.map((row, i) => String(row[xCol] || (i+1)));
-    
-    // Nice gradient colors for multiple lines
-    const colors = [
-      { border: '#68d391', bg: 'rgba(104,211,145,0.1)', pt: '#63b3ed' },
-      { border: '#f6ad55', bg: 'rgba(246,173,85,0.1)', pt: '#ed8936' },
-      { border: '#fc8181', bg: 'rgba(252,129,129,0.1)', pt: '#f56565' },
-      { border: '#63b3ed', bg: 'rgba(99,179,237,0.1)', pt: '#4299e1' }
-    ];
-    
-    let datasets = validYCols.map((yCol, i) => {
-      let dataPts = tests.map(row => {
-        let raw = String(row[yCol] || '');
-        // Extract the numbers after unit conversion
-        let convStr = convertUnit(raw);
-        let val = parseFloat(convStr);
-        return isNaN(val) ? null : val;
-      });
-      
-      let color = colors[i % colors.length];
-      
-      return {
-        label: convertUnit(yCol), // Convert unit in the legend label too
-        data: dataPts,
-        borderColor: color.border,
-        backgroundColor: color.bg,
-        borderWidth: 2,
-        pointBackgroundColor: color.pt,
-        pointBorderColor: '#0a0f2c',
-        pointRadius: 4,
-        fill: i === 0, // only fill the first line to avoid mess
-        tension: 0.2, // slight curve
-        spanGaps: true
-      };
-    });
-
-    if (activeChart) activeChart.destroy();
-    
-    const ctx = document.getElementById('profileChart').getContext('2d');
-    activeChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: datasets
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: datasets.length > 1, labels: { color: '#e2e8f0', font: {family: 'Inter'} } },
-          title: { display: true, text: 'Test Profile Visualization', color: '#90cdf4', font:{size: 13, family: 'Inter'} }
-        },
-        scales: {
-          x: { grid: { color: 'rgba(99,179,237,0.1)' }, title: { display: true, text: xCol, color:'#94a3b8', font:{size: 11} }, ticks:{color:'#e2e8f0'} },
-          y: { grid: { color: 'rgba(99,179,237,0.1)' }, title: { display: false }, ticks:{color:'#e2e8f0'} }
-        }
-      }
-    });
-  }
-}
-
-// ─── Pinned Specs (Dashboard) ──────────────────────────────────────────────
-let pinnedSpecs = JSON.parse(localStorage.getItem('specEnginePins') || '[]');
-
-function togglePin(std, v1, v2, v3) {
-  const id = `${std}|${v1}|${v2}|${v3}`;
-  const idx = pinnedSpecs.findIndex(p => p.id === id);
-  if (idx > -1) {
-    pinnedSpecs.splice(idx, 1);
-  } else {
-    pinnedSpecs.push({ id, std, v1, v2, v3 });
-  }
-  localStorage.setItem('specEnginePins', JSON.stringify(pinnedSpecs));
-  renderDashboard();
-  
-  // Show a quick transient toast or alert
-  const msg = LANG === 'ZH' ? '釘選狀態已更新！' : 'Pin status updated!';
-  const badge = document.createElement('div');
-  badge.textContent = msg;
-  badge.style.cssText = 'position:fixed;top:80px;right:20px;background:var(--green);color:var(--bg);padding:8px 16px;border-radius:8px;font-weight:bold;z-index:999;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
-  document.body.appendChild(badge);
-  setTimeout(()=>badge.remove(), 2000);
-}
-
-function renderDashboard() {
-  const grid = document.getElementById('pinGrid');
-  if (!grid) return;
-  if (pinnedSpecs.length === 0) {
-    grid.innerHTML = `<div class="empty" id="emptyPin">${LANG==='ZH'?'目前沒有釘選的規範。':'No pinned specs yet.'}</div>`;
-    return;
-  }
-  
-  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068', ip:'💧 IP Code (IEC)' };
-  
-  grid.innerHTML = pinnedSpecs.map(p => {
-    let desc = '';
-    if (DBS[p.std] && DBS[p.std][p.v1] && DBS[p.std][p.v1][p.v2] && DBS[p.std][p.v1][p.v2][p.v3]) {
-      const params = DBS[p.std][p.v1][p.v2][p.v3].parameters || {};
-      desc = LANG==='ZH' ? (params.Description_ZH||params.Description||'') : (params.Description_EN||params.Description_ZH||'');
-    }
-    
-    // Safely escape quotes for onclick
-    const sv1 = p.v1.replace(/'/g,"\\'").replace(/"/g,'&quot;');
-    const sv2 = p.v2.replace(/'/g,"\\'").replace(/"/g,'&quot;');
-    const sv3 = p.v3.replace(/'/g,"\\'").replace(/"/g,'&quot;');
-    
-    return `
-      <div class="sr-card" style="cursor:pointer; position:relative; min-height:120px;" onclick="loadAndShowPinned('${p.std}','${sv1}','${sv2}','${sv3}')">
-        <button style="position:absolute; right:12px; top:12px; background:transparent; border:none; color:rgba(255,255,255,0.4); cursor:pointer; font-size:14px; transition:color 0.2s;" onmouseover="this.style.color='#f56565'" onmouseout="this.style.color='rgba(255,255,255,0.4)'" onclick="event.stopPropagation(); togglePin('${p.std}','${sv1}','${sv2}','${sv3}')">✖</button>
-        <div class="sr-std">${STD_LABELS[p.std] || p.std}</div>
-        <div class="sr-path" style="font-size:14px; margin:8px 0; color:var(--blue2);">🎯 ${p.v3}</div>
-        <div class="sr-path" style="font-size:10px; color:var(--muted); margin-bottom:8px;">📌 ${p.v1} › ${p.v2}</div>
-        <div class="sr-desc" style="display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-size:11px; color:#a0aec0;">${desc}</div>
-      </div>
-    `;
-  }).join('');
-}
-
-async function loadAndShowPinned(std, v1, v2, v3) {
-  if (!DBS[std]) {
-    await loadDB(std);
-  }
-  // Automatically switch tab
-  showTab(std, document.getElementById('tab' + std.toUpperCase()));
-  // If on mobile, close sidebar automatically when clicking a pin
-  const sidebar = document.getElementById('sidebar');
-  if (sidebar && sidebar.classList.contains('open')) sidebar.classList.remove('open');
-  
-  // Set and trigger selects
-  const sl1 = document.getElementById(std+'-l1');
-  if(sl1) { sl1.value = v1; buildL2(std); }
-  const sl2 = document.getElementById(std+'-l2');
-  if(sl2) { sl2.value = v2; buildL3(std); }
-  const sl3 = document.getElementById(std+'-l3');
-  if(sl3) { sl3.value = v3; showResult(std); }
-}
-
-// ─── Download ──────────────────────────────────────────────────────────────
-function dlJSON(std) {
-  const box = document.getElementById(std+'-result');
-  if (!box._entry) return;
-  const blob = new Blob([JSON.stringify(box._entry,null,2)],{type:'application/json'});
-  triggerDl(blob, box._prefix+'.json');
-}
-function dlCSV(std) {
-  const box = document.getElementById(std+'-result');
-  if (!box._entry?.tests?.length) return;
-  const tests = box._entry.tests;
-  const cols = Object.keys(tests[0]);
-  const csv = [cols.join(','), ...tests.map(r=>cols.map(c=>'"'+(r[c]??'')+'"').join(','))].join('\n');
-  triggerDl(new Blob(['\uFEFF'+csv],{type:'text/csv'}), box._prefix+'.csv');
-}
-function triggerDl(blob, name) {
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = name;
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-
-
-// ─── Search ────────────────────────────────────────────────────────────────
-let fuseInstance = null;
-
-function doSearch(q) {
-  const box = document.getElementById('searchResults');
-  if (!q || q.length < 2) { box.innerHTML=''; return; }
-  
-  if (!fuseInstance) {
-    const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-23', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068', ip:'💧 IP Code (IEC)' };
-    let list = [];
-    Object.entries(DBS).forEach(([std, db]) => {
-      if (!db) return;
-      Object.entries(db).forEach(([l1,l1v]) => {
-        if (typeof l1v!=='object') return;
-        Object.entries(l1v).forEach(([l2,l2v]) => {
-          if (typeof l2v!=='object') return;
-          Object.entries(l2v).forEach(([l3,entry]) => {
-            if (typeof entry!=='object') return;
-            const p = entry.parameters||{};
-            const descZH = p.Description_ZH||p.Description||'';
-            const descEN = p.Description_EN||p.Description_ZH||'';
-            list.push({
-              stdKey: std,
-              stdLabel: STD_LABELS[std] || std,
-              l1, l2, l3,
-              descZH, descEN,
-              path: `${l1} ▸ ${l2} ▸ ${l3}`,
-              rawContent: JSON.stringify(entry)
-            });
-          });
-        });
-      });
-    });
-    
-    fuseInstance = new Fuse(list, {
-      keys: ['l1', 'l2', 'l3', 'descZH', 'descEN', 'rawContent', 'stdLabel'],
-      threshold: 0.3,
-      ignoreLocation: true,
-      minMatchCharLength: 2
-    });
-  }
-
-  const results = fuseInstance.search(q);
-
-  if (!results.length) {
-    box.innerHTML=`<div class="sr-card"><div class="sr-desc">${LANG==='ZH'?'🔍 找不到符合的結果':'No results found'}</div></div>`;
-    return;
-  }
-  
-  box.innerHTML = `<div class="sr-count">${LANG==='ZH'?`🔍 找到 <b>${results.length}</b> 條相關測試`:`🔍 Found <b>${results.length}</b> related tests`}</div>`
-    + results.slice(0,30).map(r => {
-        const item = r.item;
-        const desc = LANG==='ZH' ? item.descZH : item.descEN;
-        return `
-      <div class="sr-card" style="cursor:pointer;" onclick="showTab('${item.stdKey}', document.getElementById('tab'+'${item.stdKey}'.toUpperCase())); setTimeout(()=> { document.getElementById('${item.stdKey}-l1').value='${item.l1.replace(/'/g,"\'")}'; buildL2('${item.stdKey}'); document.getElementById('${item.stdKey}-l2').value='${item.l2.replace(/'/g,"\'")}'; buildL3('${item.stdKey}'); document.getElementById('${item.stdKey}-l3').value='${item.l3.replace(/'/g,"\'")}'; showResult('${item.stdKey}'); }, 100);">
-        <div class="sr-std">${item.stdLabel}</div>
-        <div class="sr-path">📂 ${item.path}</div>
-        <div class="sr-desc">${desc}</div>
-      </div>`}).join('');
-}
-
-
-// ─── PWA / Service Worker ──────────────────────────────────────────────────
-let deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  const banner = document.getElementById('installBanner');
-  banner.style.display = 'block';
-  document.getElementById('installBtn').onclick = async () => {
-    const pwd = prompt(LANG==='ZH' ? '🔐 請輸入授權密碼以安裝桌面版：' : '🔐 Enter authorization password to install:');
-    if (pwd === 'Lam0416') {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome==='accepted') banner.style.display='none';
-      deferredPrompt = null;
-    } else if (pwd !== null) {
-      alert(LANG==='ZH' ? '❌ 密碼錯誤，拒絕存取！' : '❌ Incorrect password, access denied!');
-    }
-  };
-});
-window.addEventListener('appinstalled', () => {
-  document.getElementById('installBanner').style.display='none';
-});
-window.addEventListener('online',  () => document.getElementById('offlineBadge').classList.remove('visible'));
-window.addEventListener('offline', () => document.getElementById('offlineBadge').classList.add('visible'));
-if (!navigator.onLine) document.getElementById('offlineBadge').classList.add('visible');
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
-}
-
-// ─── Init ─────────────────────────────────────────────────────────────────
-window.addEventListener('DOMContentLoaded', () => {
-  setLang('ZH');
-  ['iec','mil','astm','gr63','sr332','ista','iec60068','ip'].forEach(loadDB);
-  renderDashboard();
-});
-// ─── VIBRATION CALCULATOR ENGINE ───────────────────────────────────────────
-const VC_G = 9.80665;
-const VC_LOG2_10 = 10 * Math.log10(2);
-
-// Tab switcher
-function vcSwitchTab(tab, btn) {
-  document.querySelectorAll('.vc-tab').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.vc-content').forEach(c => c.classList.remove('active'));
-  document.getElementById('vc-'+tab).classList.add('active');
-  btn.classList.add('active');
-  if (tab === 'sine') vcUpdateSineChart();
-  if (tab === 'random') vcCalcAndPlotRandom();
-}
-
-// ── SINE LOGIC ──────────────────────────────────────────────────────────────
-const VC_SINE_PRESETS = {
-  // IEC 60068-2-6 — Sine Sweep
-  iec_cls1: [{f:10,a:'',d:0.75},{f:57.5,a:0.5,d:''},{f:150,a:0.5,d:''}],   // 0.75mm p-p below 57.5Hz crossover
-  iec_cls2: [{f:10,a:'',d:1.5}, {f:58.1,a:1.0,d:''},{f:150,a:1.0,d:''}],
-  iec_cls3: [{f:10,a:'',d:3.5}, {f:60.0,a:5.0,d:''},{f:150,a:5.0,d:''}],
-  // MIL-STD-810H Method 514.8 — Sine (Basic Transport Integrity)
-  mil_sine_basic: [{f:5,a:'',d:5.08},{f:15.92,a:1.0,d:''},{f:500,a:1.0,d:''}],
-  // Custom placeholder
-  sine_custom: [{f:10,a:'',d:1.0},{f:100,a:1.0,d:''}]
-};
-
-function vcAddSineRow(f='', a='', d='') {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" oninput="vcUpdateSineChart()"></td>
-    <td style="padding:4px"><input type="number" class="vc-input" value="${a}" step="any" placeholder="Auto" oninput="vcUpdateSineChart()"></td>
-    <td style="padding:4px"><input type="number" class="vc-input" value="${d}" step="any" placeholder="Auto" oninput="vcUpdateSineChart()"></td>
-    <td style="padding:4px;text-align:center"><button class="vc-del" onclick="this.closest('tr').remove();vcUpdateSineChart()">✕</button></td>`;
-  document.getElementById('vcSineTbody').appendChild(tr);
-}
-
-function vcLoadSine() {
-  const k = document.getElementById('vcSinePreset').value;
-  if (!k || !VC_SINE_PRESETS[k]) return;
-  document.getElementById('vcSineTbody').innerHTML = '';
-  VC_SINE_PRESETS[k].forEach(p => vcAddSineRow(p.f, p.a===''?'':p.a, p.d===''?'':p.d));
-  vcCalcSine();
-}
-
-function vcFillSinePoint(pt) {
-  const res = {...pt};
-  if (!isNaN(res.f)) {
-    if (!isNaN(res.d) && isNaN(res.a)) {
-      res.a = Math.pow(2*Math.PI*res.f, 2) * (res.d/2000) / VC_G;
-      res.a = parseFloat(res.a.toFixed(6));
-      res.disp_ctrl = true;
-    } else if (!isNaN(res.a) && isNaN(res.d)) {
-      res.d = (res.a * VC_G * 2000) / Math.pow(2*Math.PI*res.f, 2);
-      res.d = parseFloat(res.d.toFixed(6));
-      res.accel_ctrl = true;
-    }
-  }
-  return res;
-}
-
-function vcCalcSine() {
-  const rows = document.querySelectorAll('#vcSineTbody tr');
-  let data = [];
-  rows.forEach(r => {
-    const inps = r.querySelectorAll('input');
-    data.push({f:parseFloat(inps[0].value), a:parseFloat(inps[1].value), d:parseFloat(inps[2].value)});
-  });
-  data = data.filter(p => !isNaN(p.f)).sort((a,b) => a.f-b.f);
-  let result = [];
-  for (let i = 0; i < data.length - 1; i++) {
-    let p1 = vcFillSinePoint(data[i]);
-    let p2 = vcFillSinePoint(data[i+1]);
-    result.push(p1);
-    if (p1.disp_ctrl && p2.accel_ctrl) {
-      let fc = 22.288 * Math.sqrt(p2.a / p1.d);
-      if (fc > p1.f && fc < p2.f) result.push({f:parseFloat(fc.toFixed(3)), a:parseFloat(p2.a.toFixed(4)), d:parseFloat(p1.d.toFixed(4))});
-    }
-  }
-  if (data.length) result.push(vcFillSinePoint(data[data.length-1]));
-  document.getElementById('vcSineTbody').innerHTML = '';
-  result.forEach(p => vcAddSineRow(p.f, p.a, p.d));
-  vcUpdateSineChart();
-}
-
-function vcUpdateSineTime() {
-  const rows = document.querySelectorAll('#vcSineTbody tr');
-  let freqs = [];
-  rows.forEach(r => { const f=parseFloat(r.querySelectorAll('input')[0].value); if(!isNaN(f)) freqs.push(f); });
-  const el = document.getElementById('vcSineTime');
-  if (freqs.length < 2) { el.textContent='--'; return; }
-  const rate  = parseFloat(document.getElementById('vcSweepRate').value);
-  const count = parseFloat(document.getElementById('vcSweepCount').value);
-  const fMin  = Math.min(...freqs), fMax = Math.max(...freqs);
-  if (fMin<=0 || fMax<=fMin || isNaN(rate)||rate<=0 || isNaN(count)||count<=0) { el.textContent='参數錯誤'; return; }
-  const totalMins = (Math.log2(fMax/fMin)/rate)*count;
-  const h=Math.floor(totalMins/60), m=Math.floor(totalMins%60), s=Math.round((totalMins*60)%60);
-  el.textContent = (h?`${h}h `:'') + `${m}m ${s}s`;
-}
-
-function vcUpdateSineChart() {
-  const rows = document.querySelectorAll('#vcSineTbody tr');
-  let pts = [];
-  rows.forEach(r => {
-    const inps = r.querySelectorAll('input');
-    const f=parseFloat(inps[0].value), a=parseFloat(inps[1].value);
-    if(!isNaN(f)&&!isNaN(a)) pts.push({f,a});
-  });
-  pts.sort((a,b)=>a.f-b.f);
-  vcUpdateSineTime();
-  if (!pts.length || !window.Plotly) return;
-  const trace = {x:pts.map(d=>d.f), y:pts.map(d=>d.a), mode:'lines+markers', type:'scatter',
-    line:{color:'#63b3ed',width:3}, marker:{size:7,color:'#fff',line:{color:'#63b3ed',width:2}}};
-  const layout = {
-    margin:{l:55,r:15,t:15,b:45}, paper_bgcolor:'rgba(13,20,71,0)', plot_bgcolor:'rgba(13,20,71,0)',
-    xaxis:{title:'Frequency (Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
-    yaxis:{title:'Acceleration (g Peak)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
-    showlegend:false
-  };
-  Plotly.newPlot('vcSinePlot', [trace], layout, {displayModeBar:false, responsive:true});
-}
-
-// ── RANDOM LOGIC ─────────────────────────────────────────────────────────────
-let vcRandUnit = 'G';
-const VC_RAND_PROFILES = {
-  mil_cat4:     [{f:10,p:0.015},{f:40,p:0.015},{f:500,p:0.00015}],
-  mil_cat20:    [{f:5,p:0.006},{f:100,p:0.006},{f:500,p:0.002}],
-  mil_cat24:    [{f:20,p:0.04},{f:1000,p:0.04},{f:2000,p:0.01}],
-  gr63_trans:   [{f:5,p:0.001},{f:20,p:0.01},{f:500,p:0.01}],
-  ista_3a:      [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
-  ista_6amazon: [{f:1,p:0.0001},{f:4,p:0.01},{f:16,p:0.01},{f:40,p:0.001},{f:80,p:0.001},{f:200,p:0.00001}],
-  astm_schA:    [{f:3,p:0.0007},{f:12,p:0.00785},{f:20,p:0.00785},{f:50,p:0.0008},{f:100,p:0.0008},{f:200,p:0.0002}],
-  astm_schB:    [{f:5,p:0.0003},{f:20,p:0.002},{f:50,p:0.002},{f:100,p:0.0003},{f:200,p:0.0001}],
-  iec_M:        [{f:5,p:0.0001},{f:20,p:0.01},{f:150,p:0.01},{f:500,p:0.001}],
-  iec_H:        [{f:2,p:0.001},{f:20,p:0.02},{f:300,p:0.02},{f:1000,p:0.002}]
-};
-
-function vcAddRandRow(f='', p='', isFirst=false) {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" oninput="vcHandleRandInput(this,'f')"></td>
-    <td style="padding:4px"><input type="number" class="vc-input" value="${p}" step="any" oninput="vcHandleRandInput(this,'p')"></td>
-    <td style="padding:4px"><input type="number" class="vc-input" step="any" oninput="vcHandleRandInput(this,'s')" ${isFirst?'disabled placeholder="N/A"':''}></td>
-    <td style="padding:4px;text-align:center">${isFirst?'':`<button class="vc-del" onclick="this.closest('tr').remove();vcRecalcSlopes()">✕</button>`}</td>`;
-  document.getElementById('vcRandTbody').appendChild(tr);
-}
-
-function vcLoadRandom() {
-  const k = document.getElementById('vcRandPreset').value;
-  if (!k || !VC_RAND_PROFILES[k]) return;
-  if (vcRandUnit !== 'G') vcSetUnit('G');
-  const data = VC_RAND_PROFILES[k];
-  document.getElementById('vcRandTbody').innerHTML = '';
-  data.forEach((pt, i) => vcAddRandRow(pt.f, pt.p, i === 0));
-  vcRecalcSlopes();
-}
-
-function vcSetUnit(u) {
-  if (vcRandUnit === u) return;
-  const factor = (u === 'ms2') ? Math.pow(VC_G,2) : (1/Math.pow(VC_G,2));
-  vcRandUnit = u;
-  document.getElementById('vcUnitG').classList.toggle('active', u==='G');
-  document.getElementById('vcUnitMs2').classList.toggle('active', u==='ms2');
-  document.getElementById('vcThPsd').textContent = u==='ms2'? 'Value ((m/s²)²/Hz)' : 'Value (g²/Hz)';
-  document.getElementById('vcUnitGrmsLbl').textContent = u==='ms2'? 'm/s²' : 'g';
-  document.getElementById('vcUnitPeakLbl').textContent = u==='ms2'? 'm/s²' : 'G';
-  document.querySelectorAll('#vcRandTbody .vc-input').forEach((inp,i) => {
-    if (i % 3 === 1) { // PSD column
-      const v = parseFloat(inp.value);
-      if (!isNaN(v)) inp.value = parseFloat((v*factor).toFixed(8));
-    }
-  });
-  vcCalcAndPlotRandom();
-}
-
-function vcHandleRandInput(el, type) {
-  const rows = Array.from(document.querySelectorAll('#vcRandTbody tr'));
-  const row  = el.closest('tr');
-  const idx  = rows.indexOf(row);
-  if (type === 's' && idx > 0) {
-    const prevInps = rows[idx-1].querySelectorAll('input');
-    const inps     = row.querySelectorAll('input');
-    const pf=parseFloat(prevInps[0].value), pp=parseFloat(prevInps[1].value);
-    const cf=parseFloat(inps[0].value), sl=parseFloat(el.value);
-    if (pf>0&&pp>0&&cf>pf&&!isNaN(sl)) {
-      inps[1].value = (pp * Math.pow(cf/pf, sl/VC_LOG2_10)).toFixed(8);
-    }
-  }
-  vcRecalcSlopes(type, el);
-}
-
-function vcRecalcSlopes(type, activeEl) {
-  const rows = document.querySelectorAll('#vcRandTbody tr');
-  document.getElementById('vcPtsInfo').textContent = rows.length + ' pts';
-  rows.forEach((row, i) => {
-    const inps = row.querySelectorAll('input');
-    const slp  = inps[2];
-    if (i === 0) { slp.disabled=true; slp.value=''; slp.placeholder='N/A'; return; }
-    slp.disabled = false; slp.placeholder = '';
-    const prevInps = rows[i-1].querySelectorAll('input');
-    const f1=parseFloat(prevInps[0].value), w1=parseFloat(prevInps[1].value);
-    const f2=parseFloat(inps[0].value),     w2=parseFloat(inps[1].value);
-    if (f1>0&&w1>0&&f2>f1&&w2>0 && document.activeElement !== slp) {
-      slp.value = ((Math.log10(w2/w1)/Math.log10(f2/f1))*VC_LOG2_10).toFixed(2);
-    }
-  });
-  vcCalcAndPlotRandom();
-}
-
-function vcCalcAndPlotRandom() {
-  const rows = document.querySelectorAll('#vcRandTbody tr');
-  let data = [];
-  rows.forEach(r => {
-    const inps = r.querySelectorAll('input');
-    const f=parseFloat(inps[0].value), p=parseFloat(inps[1].value);
-    if(!isNaN(f)&&!isNaN(p)) data.push({f,p});
-  });
-  data.sort((a,b)=>a.f-b.f);
-  if (data.length < 2) { Plotly.purge('vcRandPlot'); return; }
-
-  let aA=0, aV=0, aD=0;
-  for (let i=0;i<data.length-1;i++) {
-    const f1=data[i].f, w1=data[i].p, f2=data[i+1].f, w2=data[i+1].p;
-    if (f1<=0||w1<=0||f2<=f1||w2<=0) continue;
-    const m = Math.log(w2/w1)/Math.log(f2/f1);
-    if (Math.abs(m+1)<0.0001) aA+=w1*f1*Math.log(f2/f1); else aA+=(w2*f2-w1*f1)/(m+1);
-    const w1m = vcRandUnit==='G' ? w1*Math.pow(VC_G,2) : w1;
-    if (Math.abs(m-1)<0.0001) aV+=(w1m/f1)*Math.log(f2/f1); else aV+=(w1m*Math.pow(f1,-m)/(m-1))*(Math.pow(f2,m-1)-Math.pow(f1,m-1));
-    if (Math.abs(m-3)<0.0001) aD+=(w1m/Math.pow(f1,3))*Math.log(f2/f1); else aD+=(w1m*Math.pow(f1,-m)/(m-3))*(Math.pow(f2,m-3)-Math.pow(f1,m-3));
-  }
-  const grms = Math.sqrt(Math.max(0,aA));
-  const vrms = Math.sqrt(Math.max(0,aV/(4*Math.PI**2)));
-  const drms = Math.sqrt(Math.max(0,aD/(16*Math.PI**4)));
-  document.getElementById('vcGrms').innerHTML  = grms.toFixed(3) + `<span class="vib-metric-unit">${vcRandUnit==='ms2'?'m/s²':'g'}</span>`;
-  document.getElementById('vcPeak').innerHTML  = (3*grms).toFixed(3) + `<span class="vib-metric-unit">${vcRandUnit==='ms2'?'m/s²':'G'}</span>`;
-  document.getElementById('vcVpeak').innerHTML = (3*vrms).toFixed(3) + '<span class="vib-metric-unit">m/s</span>';
-  document.getElementById('vcDisp').innerHTML  = (6*drms*1000).toFixed(3) + '<span class="vib-metric-unit">mm</span>';
-
-  if (!window.Plotly) return;
-  const trace = {x:data.map(d=>d.f), y:data.map(d=>d.p), mode:'lines+markers', type:'scatter',
-    line:{color:'#00d284',width:3}, marker:{size:7,color:'#fff',line:{color:'#00d284',width:2}},
-    fill:'tozeroy', fillcolor:'rgba(0,210,132,0.05)'};
-  const yTitle = vcRandUnit==='ms2'?'(m/s²)²/Hz':'g²/Hz';
-  const layout = {
-    margin:{l:60,r:15,t:15,b:45}, paper_bgcolor:'rgba(13,20,71,0)', plot_bgcolor:'rgba(13,20,71,0)',
-    xaxis:{title:'Frequency (Hz)',type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
-    yaxis:{title:`PSD (${yTitle})`,type:'log',gridcolor:'rgba(99,179,237,.1)',tickfont:{color:'#94a3b8'},titlefont:{color:'#94a3b8',size:11}},
-    showlegend:false
-  };
-  Plotly.newPlot('vcRandPlot', [trace], layout, {displayModeBar:false, responsive:true});
-}
-
-// Initialise calculator with default rows when panel is first opened
-function vcInit() {
-  if (document.getElementById('vcRandTbody').children.length === 0) {
-    vcAddRandRow(20,0.0025,true); vcAddRandRow(80,0.01); vcAddRandRow(500,0.0017);
-    vcRecalcSlopes();
-  }
-  if (document.getElementById('vcSineTbody').children.length === 0) {
-    vcAddSineRow(10,'',1.0); vcAddSineRow(100,1.0,'');
-    vcUpdateSineChart();
-  }
-}
-
-
-
-
-function runCompressionCalc() {
-  const W = parseFloat(document.getElementById('calcW').value) || 0;
-  const H = parseFloat(document.getElementById('calcH').value) || 0;
-  const h = parseFloat(document.getElementById('calch').value) || 0;
-  const F = parseFloat(document.getElementById('calcF').value) || 0;
-  
-  if (h === 0) { document.getElementById('calcResult').textContent = 'Error'; return; }
-  
-  // Formula: L = W * ((H-h)/h) * F
-  let res = W * ((H - h) / h) * F;
-  if (res < 0) res = 0;
-  
-  document.getElementById('calcResult').textContent = res.toFixed(1);
-}
-
-</script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
