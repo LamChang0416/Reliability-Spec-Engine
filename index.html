@@ -212,6 +212,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
       <div class="nav-title" data-zh="工具" data-en="TOOLS">工具</div>
       <button class="tab-btn" id="tabPHOTO" onclick="window._showTab('photo', this)" data-zh="📷 照片處理" data-en="📷 Photos">📷 照片處理</button>
       <button class="tab-btn" id="tabREPORT" onclick="window._showTab('report', this)" data-zh="📄 報告生成器" data-en="📄 Reports">📄 報告生成器</button>
+      <button class="tab-btn" id="tabSCHEDULER" onclick="window._showTab('scheduler', this)" data-zh="⏱️ 時程預測儀" data-en="⏱️ Scheduler">⏱️ 時程預測儀</button>
     </div>
     <div id="installBanner">
       <button id="installBtn">📱 <span data-zh="安裝桌面版 (支援離線)" data-en="Install App (Offline)"></span></button>
@@ -591,6 +592,53 @@ tr:hover td{background:rgba(99,179,237,.05)}
         <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px;">📋 報告內容 Report Items <span id="reportBadge" style="background:var(--blue);color:var(--bg);border-radius:10px;padding:1px 8px;font-size:11px;margin-left:6px;"></span></div>
         <div style="color:var(--muted);font-size:11px;margin-bottom:10px;">在各規範查詢結果中點擊「📄 加入報告」按鈕以新增內容。</div>
         <div id="reportItemList"><div class="empty">尚未加入任何規範</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ─── Scheduler Panel ─────────────────────────────────────────── -->
+  <div class="panel" id="panel-scheduler">
+    <div class="panel-caption" data-zh="【測試時程預測儀】計算跨日測試的結束時間，並透過進度條即時追蹤執行進度，可加入自動化報表。" data-en="[Test Schedule Predictor] Calculate end time for multi-day tests and track progress in real-time, can be added to automated reports."></div>
+    <div style="display:flex;flex-wrap:wrap;gap:15px;">
+      <div style="flex:1;min-width:300px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px;">⚙️ 排程設定 Schedule Settings</div>
+        <div style="margin-bottom:10px;">
+          <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">測試項目名稱 Test Name</label>
+          <input type="text" id="schedTestName" placeholder="例如: 高溫高濕測試 85C/85%" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-size:13px;">
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:10px;">
+          <div style="flex:1;">
+            <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">總時長 (分鐘) Duration (mins)</label>
+            <input type="number" id="schedDuration" value="1440" min="1" oninput="window._calculateSchedule()" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-size:13px;">
+          </div>
+          <div style="flex:1;">
+            <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">換算時間 Format</label>
+            <div id="schedDurationDisplay" style="background:rgba(0,0,0,.2);border:1px dashed rgba(99,179,237,.2);border-radius:6px;padding:8px 12px;font-size:13px;color:var(--green);height:35px;display:flex;align-items:center;">24 小時</div>
+          </div>
+        </div>
+        <div style="margin-bottom:15px;">
+          <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">預計開始時間 Start Time</label>
+          <input type="datetime-local" id="schedStartTime" onchange="window._calculateSchedule()" style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-family:inherit;font-size:13px;">
+        </div>
+        <div style="background:rgba(0,210,132,.1);border-left:3px solid var(--green);padding:10px;border-radius:0 6px 6px 0;margin-bottom:15px;">
+          <div style="color:var(--muted);font-size:11px;margin-bottom:2px;">預計結束時間 End Time</div>
+          <div id="schedEndTime" style="color:var(--green);font-size:16px;font-weight:700;">--</div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-dl" onclick="window._startScheduleProgress()" style="flex:1;">▶️ 開始追蹤進度</button>
+          <button class="btn btn-dl" onclick="window._addScheduleToReportAction()" style="flex:1;">📄 加入報告</button>
+        </div>
+      </div>
+      
+      <div style="flex:1;min-width:300px;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px;">📊 執行進度 Execution Progress</div>
+        <div style="height:200px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+          <div id="schedProgressPct" style="font-size:48px;font-weight:700;color:var(--green);margin-bottom:15px;font-variant-numeric:tabular-nums;">0.0%</div>
+          <div style="width:80%;height:12px;background:rgba(0,0,0,.3);border-radius:6px;overflow:hidden;border:1px solid rgba(99,179,237,.2);">
+            <div id="schedProgressBar" style="height:100%;width:0%;background:linear-gradient(90deg, #4299e1, #00d284);transition:width 0.5s ease;"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

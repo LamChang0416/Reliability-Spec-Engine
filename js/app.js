@@ -15,6 +15,8 @@ import { getCalcHTML, runCompressionCalc } from './modules/calculators.js';
 import { togglePin, renderDashboard, navigateToSpec } from './modules/dashboard.js';
 import { initPhotoPanel } from './modules/photo-processor.js';
 import { initReportPanel, addToReport } from './modules/report-generator.js';
+import { calculateSchedule, startScheduleProgress, initScheduler, addScheduleToReportAction } from './modules/scheduler.js';
+
 
 // ─── Wire showResult with dependencies ────────────────────────────────────
 function showResultWired(std) {
@@ -37,6 +39,12 @@ window._togglePin = togglePin;
 window._navigateToSpec = navigateToSpec;
 window._runCompressionCalc = runCompressionCalc;
 window._addToReport = addToReport;
+
+
+// Scheduler
+window._calculateSchedule = calculateSchedule;
+window._startScheduleProgress = startScheduleProgress;
+window._addScheduleToReportAction = addScheduleToReportAction;
 
 // Search
 window._doSearch = doSearch;
@@ -76,6 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderDashboard(showResultWired);
   initPhotoPanel();
   initReportPanel();
+  initScheduler();
 });
 
 initPWA();

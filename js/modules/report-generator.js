@@ -3,6 +3,7 @@ import { getAllPhotos } from './photo-processor.js';
 
 // ─── Report Generator ────────────────────────────────────────────────────
 let reportItems = [];
+export let reportSchedules = [];
 
 export function addToReport(std, v1, v2, v3) {
   const id = `${std}|${v1}|${v2}|${v3}`;
@@ -79,6 +80,30 @@ export async function generateHTMLReport() {
     } catch(e) { console.error(e); }
   }
 
+  
+  let schedulesHTML = '';
+  if (reportSchedules && reportSchedules.length > 0) {
+    const sRows = reportSchedules.map(s => `<tr>
+      <td style="font-weight:600;color:#2d3748;">${s.name}</td>
+      <td>${s.duration}</td>
+      <td>${s.start}</td>
+      <td style="color:#2b6cb0;font-weight:600;">${s.end}</td>
+    </tr>`).join('');
+    
+    schedulesHTML = `<div class="report-section">
+      <h2>⏱️ 測試排程計畫 / Test Schedule Plan</h2>
+      <table class="test-table" style="width:100%;margin-top:10px;">
+        <tr>
+          <th>Test Item</th>
+          <th>Duration</th>
+          <th>Start Time</th>
+          <th>Est. End Time</th>
+        </tr>
+        ${sRows}
+      </table>
+    </div>`;
+  }
+
   const specsHTML = reportItems.map(r => {
     const params = r.entry.parameters || {};
     const tests = r.entry.tests || [];
@@ -145,6 +170,7 @@ export async function generateHTMLReport() {
       Items: <b>${reportItems.length}</b>
     </div>
   </div>
+  ${schedulesHTML}
   ${specsHTML}
   ${photosHTML}
   <div class="report-footer">
@@ -195,3 +221,9 @@ function blobToBase64(blob) {
 window._addToReport = function(std, v1, v2, v3) { addToReport(std, v1, v2, v3); };
 window._generatePDF = function() { generatePDFReport(); };
 window._downloadHTML = function() { downloadHTMLReport(); };
+
+
+export function addScheduleToReport(scheduleData) {
+  reportSchedules.push(scheduleData);
+  alert(LANG==='ZH' ? `✅ 已加入報告 (目前有 ${reportSchedules.length} 項時程計畫)` : `✅ Added to report (${reportSchedules.length} schedules)`);
+}
