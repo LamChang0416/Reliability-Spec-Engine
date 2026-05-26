@@ -1,4 +1,28 @@
 {
+  "Section 2/3 - Spatial & Facility Planning": {
+    "Equipment Framework & Floor Loading": {
+      "Facility Planning (機房與設備空間規劃)": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "機房空間規劃、樓板荷重與佈線要求",
+          "Description_EN": "Facility and space planning, floor loading and cabling",
+          "Max Floor Load": "561 kg/m² (115 lb/ft²) for frames",
+          "Aisle Spacing": "Minimum 762 mm (30 in) for maintenance, 600 mm (24 in) for wiring",
+          "Equipment Depth": "Recommended 300 mm (12 in) or 460 mm (18 in) deep frames"
+        },
+        "tests": [
+          {
+            "Phase": "Documentation Review",
+            "Condition": "Verify frame dimensions and footprint"
+          },
+          {
+            "Phase": "Floor Loading Calculation",
+            "Condition": "Compute total weight / area to verify < 561 kg/m²"
+          }
+        ]
+      }
+    }
+  },
   "Section 4 - Earthquake": {
     "NEBS Seismic Zone 4 (High Risk)": {
       "Zone 4 - Office Vibratory Motion (OVM)": {
@@ -14,10 +38,22 @@
           "Response Spectrum": "Per GR-63 Figure 4-1 (Issue 5)"
         },
         "tests": [
-          {"Phase": "Pre-test Inspection", "Condition": "Visual and functional baseline"},
-          {"Phase": "X-axis Excitation", "Condition": "Apply OVM spectrum horizontal X, 30 sec"},
-          {"Phase": "Y-axis Excitation", "Condition": "Apply OVM spectrum horizontal Y, 30 sec"},
-          {"Phase": "Post-test Verification", "Condition": "Full functional test; no data loss; no physical damage"}
+          {
+            "Phase": "Pre-test Inspection",
+            "Condition": "Visual and functional baseline"
+          },
+          {
+            "Phase": "X-axis Excitation",
+            "Condition": "Apply OVM spectrum horizontal X, 30 sec"
+          },
+          {
+            "Phase": "Y-axis Excitation",
+            "Condition": "Apply OVM spectrum horizontal Y, 30 sec"
+          },
+          {
+            "Phase": "Post-test Verification",
+            "Condition": "Full functional test; no data loss; no physical damage"
+          }
         ]
       },
       "Zone 4 - Earthquake Motion (EQM)": {
@@ -33,8 +69,14 @@
           "Waveform": "Time-history waveform per GR-63 Appendix A (Issue 5)"
         },
         "tests": [
-          {"Phase": "Triaxial Excitation", "Condition": "Simultaneous X, Y, Z per prescribed time-history"},
-          {"Phase": "Equipment Check", "Condition": "Verify no tip-over, no structural failure, no data loss"}
+          {
+            "Phase": "Triaxial Excitation",
+            "Condition": "Simultaneous X, Y, Z per prescribed time-history"
+          },
+          {
+            "Phase": "Equipment Check",
+            "Condition": "Verify no tip-over, no structural failure, no data loss"
+          }
         ]
       }
     },
@@ -49,8 +91,36 @@
           "Duration": "30 seconds"
         },
         "tests": [
-          {"Phase": "OVM Test", "Condition": "Apply Zone 1 OVM spectrum per GR-63 Figure 4-1"},
-          {"Phase": "Verification", "Condition": "No physical damage; equipment fully functional"}
+          {
+            "Phase": "OVM Test",
+            "Condition": "Apply Zone 1 OVM spectrum per GR-63 Figure 4-1"
+          },
+          {
+            "Phase": "Verification",
+            "Condition": "No physical damage; equipment fully functional"
+          }
+        ]
+      }
+    },
+    "Office Vibration (辦公環境振動)": {
+      "Random Vibration - Office": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "模擬辦公室或機房內因空調或周邊設備產生的持續微小振動",
+          "Description_EN": "Low-level vibration simulating rotating equipment in CO",
+          "Frequency Range": "5 to 100 Hz",
+          "Test Duration": "30 minutes per axis",
+          "Profile": "0.00042 g²/Hz from 10-50 Hz"
+        },
+        "tests": [
+          {
+            "Phase": "Vibration Test",
+            "Condition": "Random vibration on 3 mutually perpendicular axes"
+          },
+          {
+            "Phase": "Verification",
+            "Condition": "Continuous operation without failure"
+          }
         ]
       }
     }
@@ -70,10 +140,30 @@
           "Max Dew Point": "21°C (70°F)"
         },
         "tests": [
-          {"Class": "ASHRAE A1", "Temp": "15–32°C", "RH": "20–80%", "Note": "Standard CO environment"},
-          {"Class": "ASHRAE A2", "Temp": "10–35°C", "RH": "8–80%", "Note": "Extended operating range"},
-          {"Class": "ASHRAE A3", "Temp": "5–40°C", "RH": "8–85%", "Note": "Expanded – Issue 5 NEW"},
-          {"Class": "ASHRAE A4", "Temp": "5–45°C", "RH": "8–90%", "Note": "High-density data center – Issue 5 NEW"}
+          {
+            "Class": "ASHRAE A1",
+            "Temp": "15–32°C",
+            "RH": "20–80%",
+            "Note": "Standard CO environment"
+          },
+          {
+            "Class": "ASHRAE A2",
+            "Temp": "10–35°C",
+            "RH": "8–80%",
+            "Note": "Extended operating range"
+          },
+          {
+            "Class": "ASHRAE A3",
+            "Temp": "5–40°C",
+            "RH": "8–85%",
+            "Note": "Expanded – Issue 5 NEW"
+          },
+          {
+            "Class": "ASHRAE A4",
+            "Temp": "5–45°C",
+            "RH": "8–90%",
+            "Note": "High-density data center – Issue 5 NEW"
+          }
         ]
       },
       "Short-Term Operating (Emergency)": {
@@ -86,8 +176,14 @@
           "Humidity": "5% to 90% RH (non-condensing)"
         },
         "tests": [
-          {"Phase": "Thermal Stress", "Condition": "Operate at 55°C for up to 96 hours"},
-          {"Phase": "Functional Verification", "Condition": "All services must remain operational during excursion"}
+          {
+            "Phase": "Thermal Stress",
+            "Condition": "Operate at 55°C for up to 96 hours"
+          },
+          {
+            "Phase": "Functional Verification",
+            "Condition": "All services must remain operational during excursion"
+          }
         ]
       }
     },
@@ -102,9 +198,39 @@
           "Duration": "Up to 12 months"
         },
         "tests": [
-          {"Phase": "Cold Storage", "Condition": "Maintain -40°C for 72 hours"},
-          {"Phase": "Hot Storage", "Condition": "Maintain 70°C for 72 hours"},
-          {"Phase": "Post-storage Check", "Condition": "Full functional test after returning to ambient"}
+          {
+            "Phase": "Cold Storage",
+            "Condition": "Maintain -40°C for 72 hours"
+          },
+          {
+            "Phase": "Hot Storage",
+            "Condition": "Maintain 70°C for 72 hours"
+          },
+          {
+            "Phase": "Post-storage Check",
+            "Condition": "Full functional test after returning to ambient"
+          }
+        ]
+      }
+    },
+    "Altitude (高海拔環境)": {
+      "Operating Altitude Simulation": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "高海拔空氣稀薄環境下的散熱驗證",
+          "Description_EN": "Cooling and operational verification in high-altitude low-density air",
+          "Maximum Altitude": "3960 m (13,000 ft) at 30°C or 1829 m (6000 ft) at 40°C",
+          "Test Method": "Hypobaric chamber or temperature compensation (+6°C added)"
+        },
+        "tests": [
+          {
+            "Phase": "Altitude Simulation",
+            "Condition": "Operate at specified simulated altitude/pressure for 8 hours"
+          },
+          {
+            "Phase": "Verification",
+            "Condition": "Equipment must not overheat or degrade"
+          }
         ]
       }
     }
@@ -121,8 +247,14 @@
           "Office Room Limit": "≤ 65 dBA Limit for typical office environments"
         },
         "tests": [
-          {"Measurement State": "Idle at 27°C", "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA"},
-          {"Measurement State": "Full Load at Max Rated Temp", "Condition": "Drive fans to 100%; must be ≤ 85 dBA"}
+          {
+            "Measurement State": "Idle at 27°C",
+            "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA"
+          },
+          {
+            "Measurement State": "Full Load at Max Rated Temp",
+            "Condition": "Drive fans to 100%; must be ≤ 85 dBA"
+          }
         ]
       }
     },
@@ -139,8 +271,35 @@
           "Duration": "14 days minimum"
         },
         "tests": [
-          {"Phase": "Exposure", "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days"},
-          {"Phase": "Evaluation", "Condition": "Inspect for copper creep corrosion and check contact resistance"}
+          {
+            "Phase": "Exposure",
+            "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days"
+          },
+          {
+            "Phase": "Evaluation",
+            "Condition": "Inspect for copper creep corrosion and check contact resistance"
+          }
+        ]
+      }
+    },
+    "Illumination Criteria (照明與反光)": {
+      "Reflectance and Glare": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "設備表面反光率與操作人員防眩光要求",
+          "Description_EN": "Surface reflectance and glare prevention for CO personnel",
+          "Reflectance Target": "Avoid highly glossy surfaces, use matte finishes",
+          "Glare Rating": "None, slight, annoying, or impairing readability"
+        },
+        "tests": [
+          {
+            "Phase": "Readability Test",
+            "Condition": "Read text on equipment from 457 mm (18 in)"
+          },
+          {
+            "Phase": "Reflectance Measurement",
+            "Condition": "Compare meter readings with and without 75% reflectance white blotter"
+          }
         ]
       }
     }
@@ -157,9 +316,18 @@
           "Self-Extinguish Requirement": "Flames must self-extinguish within 30 seconds after burner is turned off"
         },
         "tests": [
-          {"Phase": "Ignition", "Condition": "Ignite methane burner at base of equipment for 30 minutes"},
-          {"Phase": "Observation", "Condition": "Flames must not spread to adjacent equipment; smoke must be contained"},
-          {"Phase": "Post-Burn", "Condition": "Fire must self-extinguish < 30 sec after removing gas source"}
+          {
+            "Phase": "Ignition",
+            "Condition": "Ignite methane burner at base of equipment for 30 minutes"
+          },
+          {
+            "Phase": "Observation",
+            "Condition": "Flames must not spread to adjacent equipment; smoke must be contained"
+          },
+          {
+            "Phase": "Post-Burn",
+            "Condition": "Fire must self-extinguish < 30 sec after removing gas source"
+          }
         ]
       },
       "Needle-Flame / UL Flammability": {
@@ -171,7 +339,10 @@
           "Cabling": "Must pass UL 1666 vertical tray flame test"
         },
         "tests": [
-          {"Phase": "Material Check", "Condition": "Verify all non-metallic parts are UL 94 V-0 or 5VA rated"}
+          {
+            "Phase": "Material Check",
+            "Condition": "Verify all non-metallic parts are UL 94 V-0 or 5VA rated"
+          }
         ]
       }
     }
@@ -189,10 +360,22 @@
           "Surface": "Concrete or equivalent unyielding surface"
         },
         "tests": [
-          {"Phase": "Face Drops", "Condition": "6 faces × 1 drop each"},
-          {"Phase": "Edge Drops", "Condition": "12 edges × 1 drop each"},
-          {"Phase": "Corner Drops", "Condition": "8 corners × 1 drop each"},
-          {"Phase": "Post-test Verification", "Condition": "Equipment functional; no visible damage to critical parts"}
+          {
+            "Phase": "Face Drops",
+            "Condition": "6 faces × 1 drop each"
+          },
+          {
+            "Phase": "Edge Drops",
+            "Condition": "12 edges × 1 drop each"
+          },
+          {
+            "Phase": "Corner Drops",
+            "Condition": "8 corners × 1 drop each"
+          },
+          {
+            "Phase": "Post-test Verification",
+            "Condition": "Equipment functional; no visible damage to critical parts"
+          }
         ]
       },
       "Packaged Vibration": {
@@ -205,9 +388,21 @@
           "Duration": "60 minutes/axis (3 axes)"
         },
         "tests": [
-          {"Axis": "Vertical", "g rms": "0.52", "Duration": "60 min"},
-          {"Axis": "Lateral", "g rms": "0.38", "Duration": "60 min"},
-          {"Axis": "Longitudinal", "g rms": "0.38", "Duration": "60 min"}
+          {
+            "Axis": "Vertical",
+            "g rms": "0.52",
+            "Duration": "60 min"
+          },
+          {
+            "Axis": "Lateral",
+            "g rms": "0.38",
+            "Duration": "60 min"
+          },
+          {
+            "Axis": "Longitudinal",
+            "g rms": "0.38",
+            "Duration": "60 min"
+          }
         ]
       }
     }
@@ -225,9 +420,18 @@
           "ESD Immunity": "IEC 61000-4-2, Level 3 (6 kV contact, 8 kV air)"
         },
         "tests": [
-          {"Phase": "Conducted Emission Scan", "Condition": "Per ANSI C63.4 setup; measure 150 kHz to 30 MHz"},
-          {"Phase": "Radiated Emission Scan", "Condition": "Per ANSI C63.4 at 3 m or 10 m; measure 30 MHz to 1 GHz"},
-          {"Phase": "ESD Test", "Condition": "10 contact + 10 air discharges per polarity at each test point"}
+          {
+            "Phase": "Conducted Emission Scan",
+            "Condition": "Per ANSI C63.4 setup; measure 150 kHz to 30 MHz"
+          },
+          {
+            "Phase": "Radiated Emission Scan",
+            "Condition": "Per ANSI C63.4 at 3 m or 10 m; measure 30 MHz to 1 GHz"
+          },
+          {
+            "Phase": "ESD Test",
+            "Condition": "10 contact + 10 air discharges per polarity at each test point"
+          }
         ]
       }
     }

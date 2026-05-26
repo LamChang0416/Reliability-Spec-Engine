@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0f2c">
-<meta name="description" content="Nine-in-one reliability engineering workstation: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-22, ISTA, IEC 60721-3, IEC 60068-2, IEC 60529 (IP Code), Telcordia SR-332, and Vibration Analysis Calculator. Full offline PWA by Lam.">
+<meta name="description" content="Nine-in-one reliability engineering workstation: MIL-STD-810H, GR-63 Issue 5, ASTM D4169-23, ISTA, IEC 60721-3, IEC 60068-2, IEC 60529 (IP Code), Telcordia SR-332, and Vibration Analysis Calculator. Full offline PWA by Lam.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SpecEngine">
@@ -150,6 +150,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 ::-webkit-scrollbar-track{background:var(--bg2)}
 ::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 </head>
 <body>
 
@@ -179,7 +180,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
       <div class="nav-group">
         <div class="nav-title" data-zh="包裝與運輸" data-en="Packaging & Transit"></div>
         <button class="tab-btn" onclick="showTab('astm',this)" id="tabASTM">
-          📦 ASTM D4169<span class="badge">-22</span>
+          📦 ASTM D4169<span class="badge">23</span>
         </button>
         <button class="tab-btn" onclick="showTab('ista',this)" id="tabISTA">
           📦 ISTA<span class="badge new-badge">2024</span>
@@ -289,7 +290,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
 
   <!-- ASTM Panel -->
   <div class="panel" id="panel-astm">
-    <p class="panel-caption" data-zh="【包裝運輸性能測試】ASTM D4169-22 是全球極具代表性的運輸模擬測試，涵蓋各類卡車、鐵路、航空的震動與跌落配送循環 (18 Cycles)。" data-en="【Packaging & Transport】ASTM D4169-22 is a global standard for performance testing of shipping containers, covering truck, rail, and air transit distributions."></p>
+    <p class="panel-caption" data-zh="【包裝運輸性能測試】ASTM D4169-23 是全球極具代表性的運輸模擬測試，涵蓋各類卡車、鐵路、航空的震動與跌落配送循環 (18 Cycles)。" data-en="【Packaging & Transport】ASTM D4169-23 is a global standard for performance testing of shipping containers, covering truck, rail, and air transit distributions."></p>
     <div class="grid-2">
       <div class="sel-section">
         <h3 data-zh="① 測試排程選擇" data-en="① Schedule Selection"></h3>
@@ -468,7 +469,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
             <option value="ista_3a">3A — Over-the-Road Trailer (0.53 Grms)</option>
             <option value="ista_6amazon">6-Amazon.com OB Type A/B (0.53 Grms)</option>
           </optgroup>
-          <optgroup label="ASTM D4169-22">
+          <optgroup label="ASTM D4169-23">
             <option value="astm_schA">Schedule A — General Road (DC1)</option>
             <option value="astm_schB">Schedule B — Air Freight (DC1)</option>
           </optgroup>
@@ -489,7 +490,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
             <thead><tr>
               <th style="width:25%;text-align:center;padding:8px;color:var(--blue2);font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Freq (Hz)</th>
               <th id="vcThPsd" style="width:35%;text-align:center;padding:8px;color:#68d391;font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Value (g²/Hz)</th>
-              <th style="width:25%;text-align:center;padding:8px;color:var(--muted);font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Slope dB/Oct</th>
+              <th style="width:25%;text-align:center;padding:8px;color:#muted;font-size:11px;border-bottom:2px solid rgba(99,179,237,.2)">Slope dB/Oct</th>
               <th style="width:15%;border-bottom:2px solid rgba(99,179,237,.2)"></th>
             </tr></thead>
             <tbody id="vcRandTbody"></tbody>
@@ -715,7 +716,41 @@ function showResult(std) {
 
   let chartWrap = `<div id="chartWrap" style="display:none; margin-bottom:14px; background:rgba(13,20,71,.5); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:20px; position:relative;"><canvas id="profileChart" style="max-height:220px;"></canvas></div>`;
 
-  box.innerHTML = `
+  
+  // == INTERACTIVE CALCULATOR INJECTION ==
+  let calcHTML = '';
+  if (v3.includes('抗壓') || v3.includes('Compression') || v2.includes('Compression')) {
+    const isZH = LANG === 'ZH';
+    calcHTML = `
+      <div style="margin-top:20px; padding:16px; background:linear-gradient(135deg,rgba(0,210,132,.1),rgba(13,20,71,.5)); border:1px solid #00d284; border-radius:10px;">
+        <h4 style="color:#00d284; margin-bottom:12px; font-size:14px;">🧮 ${isZH ? '互動式抗壓機測試計算 (L = W * ((H-h)/h) * F)' : 'Interactive Compression Calculator (L = W * ((H-h)/h) * F)'}</h4>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
+          <div>
+            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '單箱重 W (kg)' : 'Weight W (kg)'}</label>
+            <input type="number" id="calcW" value="10" oninput="runCompressionCalc()" style="width:100px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
+          </div>
+          <div>
+            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '總疊高 H (mm)' : 'Total Height H'}</label>
+            <input type="number" id="calcH" value="2000" oninput="runCompressionCalc()" style="width:100px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
+          </div>
+          <div>
+            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '單箱高 h (mm)' : 'Box Height h'}</label>
+            <input type="number" id="calch" value="400" oninput="runCompressionCalc()" style="width:100px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
+          </div>
+          <div>
+            <label style="display:block; color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '安全係數 F' : 'Safety Factor F'}</label>
+            <input type="number" id="calcF" value="4.5" oninput="runCompressionCalc()" style="width:80px; padding:6px; border-radius:6px; border:1px solid var(--blue); background:rgba(13,27,62,.9); color:white;">
+          </div>
+          <div style="margin-left:auto; text-align:right;">
+            <div style="color:var(--muted); font-size:11px; margin-bottom:4px;">${isZH ? '機台設定下壓力 Load (kgf)' : 'Target Load (kgf)'}</div>
+            <div id="calcResult" style="color:#00d284; font-size:24px; font-weight:700;">180</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  // ======================================
+box.innerHTML = `
     <div class="result-banner">
       <h4>🎯 ${v3}</h4>
       <div class="result-desc">${desc}</div>
@@ -723,6 +758,7 @@ function showResult(std) {
     <div class="metrics">${metricHTML}</div>
     ${chartWrap}
     ${tableHTML}
+    ${calcHTML}
     <div class="btn-row">
       <button class="btn btn-dl" onclick="togglePin('${std}', '${v1.replace(/'/g,"\\'").replace(/"/g,'&quot;')}', '${v2.replace(/'/g,"\\'").replace(/"/g,'&quot;')}', '${v3.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">📌 Pin to Dashboard</button>
       <button class="btn btn-dl" onclick="dlJSON('${std}')">📥 JSON</button>
@@ -1074,43 +1110,68 @@ function triggerDl(blob, name) {
   URL.revokeObjectURL(a.href);
 }
 
+
 // ─── Search ────────────────────────────────────────────────────────────────
+let fuseInstance = null;
+
 function doSearch(q) {
   const box = document.getElementById('searchResults');
   if (!q || q.length < 2) { box.innerHTML=''; return; }
-  const ql = q.toLowerCase();
-  const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-22', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068', ip:'💧 IP Code (IEC)' };
-  let results = [];
-  Object.entries(DBS).forEach(([std, db]) => {
-    if (!db) return;
-    Object.entries(db).forEach(([l1,l1v]) => {
-      if (typeof l1v!=='object') return;
-      Object.entries(l1v).forEach(([l2,l2v]) => {
-        if (typeof l2v!=='object') return;
-        Object.entries(l2v).forEach(([l3,entry]) => {
-          if (typeof entry!=='object') return;
-          const hay = JSON.stringify(entry).toLowerCase();
-          if (hay.includes(ql)||l1.toLowerCase().includes(ql)||l2.toLowerCase().includes(ql)||l3.toLowerCase().includes(ql)) {
+  
+  if (!fuseInstance) {
+    const STD_LABELS = { iec:'🛡️ IEC 60721-3', mil:'🎖️ MIL-STD-810H', astm:'📦 ASTM D4169-23', gr63:'🏢 GR-63 Issue 5', sr332:'📈 Telcordia SR-332', ista:'📦 ISTA', iec60068:'🔬 IEC 60068', ip:'💧 IP Code (IEC)' };
+    let list = [];
+    Object.entries(DBS).forEach(([std, db]) => {
+      if (!db) return;
+      Object.entries(db).forEach(([l1,l1v]) => {
+        if (typeof l1v!=='object') return;
+        Object.entries(l1v).forEach(([l2,l2v]) => {
+          if (typeof l2v!=='object') return;
+          Object.entries(l2v).forEach(([l3,entry]) => {
+            if (typeof entry!=='object') return;
             const p = entry.parameters||{};
-            const desc = LANG==='ZH'?(p.Description_ZH||p.Description||''):(p.Description_EN||p.Description_ZH||'');
-            results.push({ std: STD_LABELS[std], path:`${l1} › ${l2} › ${l3}`, desc });
-          }
+            const descZH = p.Description_ZH||p.Description||'';
+            const descEN = p.Description_EN||p.Description_ZH||'';
+            list.push({
+              stdKey: std,
+              stdLabel: STD_LABELS[std] || std,
+              l1, l2, l3,
+              descZH, descEN,
+              path: `${l1} ▸ ${l2} ▸ ${l3}`,
+              rawContent: JSON.stringify(entry)
+            });
+          });
         });
       });
     });
-  });
+    
+    fuseInstance = new Fuse(list, {
+      keys: ['l1', 'l2', 'l3', 'descZH', 'descEN', 'rawContent', 'stdLabel'],
+      threshold: 0.3,
+      ignoreLocation: true,
+      minMatchCharLength: 2
+    });
+  }
+
+  const results = fuseInstance.search(q);
+
   if (!results.length) {
-    box.innerHTML=`<div class="sr-card"><div class="sr-desc">${LANG==='ZH'?'找不到符合結果':'No results found'}</div></div>`;
+    box.innerHTML=`<div class="sr-card"><div class="sr-desc">${LANG==='ZH'?'🔍 找不到符合的結果':'No results found'}</div></div>`;
     return;
   }
-  box.innerHTML = `<div class="sr-count">${LANG==='ZH'?`🔍 找到 <b>${results.length}</b> 條結果`:`🔍 Found <b>${results.length}</b> results`}</div>`
-    + results.slice(0,30).map(r=>`
-      <div class="sr-card">
-        <div class="sr-std">${r.std}</div>
-        <div class="sr-path">📌 ${r.path}</div>
-        <div class="sr-desc">${r.desc}</div>
-      </div>`).join('');
+  
+  box.innerHTML = `<div class="sr-count">${LANG==='ZH'?`🔍 找到 <b>${results.length}</b> 條相關測試`:`🔍 Found <b>${results.length}</b> related tests`}</div>`
+    + results.slice(0,30).map(r => {
+        const item = r.item;
+        const desc = LANG==='ZH' ? item.descZH : item.descEN;
+        return `
+      <div class="sr-card" style="cursor:pointer;" onclick="showTab('${item.stdKey}', document.getElementById('tab'+'${item.stdKey}'.toUpperCase())); setTimeout(()=> { document.getElementById('${item.stdKey}-l1').value='${item.l1.replace(/'/g,"\'")}'; buildL2('${item.stdKey}'); document.getElementById('${item.stdKey}-l2').value='${item.l2.replace(/'/g,"\'")}'; buildL3('${item.stdKey}'); document.getElementById('${item.stdKey}-l3').value='${item.l3.replace(/'/g,"\'")}'; showResult('${item.stdKey}'); }, 100);">
+        <div class="sr-std">${item.stdLabel}</div>
+        <div class="sr-path">📂 ${item.path}</div>
+        <div class="sr-desc">${desc}</div>
+      </div>`}).join('');
 }
+
 
 // ─── PWA / Service Worker ──────────────────────────────────────────────────
 let deferredPrompt = null;
@@ -1412,6 +1473,22 @@ function vcInit() {
 }
 
 
+
+
+function runCompressionCalc() {
+  const W = parseFloat(document.getElementById('calcW').value) || 0;
+  const H = parseFloat(document.getElementById('calcH').value) || 0;
+  const h = parseFloat(document.getElementById('calch').value) || 0;
+  const F = parseFloat(document.getElementById('calcF').value) || 0;
+  
+  if (h === 0) { document.getElementById('calcResult').textContent = 'Error'; return; }
+  
+  // Formula: L = W * ((H-h)/h) * F
+  let res = W * ((H - h) / h) * F;
+  if (res < 0) res = 0;
+  
+  document.getElementById('calcResult').textContent = res.toFixed(1);
+}
 
 </script>
 </body>

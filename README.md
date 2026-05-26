@@ -25,7 +25,7 @@
 |------|------|------|----------|
 | 🎖️ **MIL-STD-810H** | 2019 | 軍規環境工程測試 / Military environmental testing | [DLA QuickSearch](https://quicksearch.dla.mil/) |
 | 🏢 **GR-63-CORE Issue 5** | 2022 | 電信機房 NEBS 規範 / Telecom CO physical protection | [Ericsson NEBS](https://telecom-info.njdepot.ericsson.se/) |
-| 📦 **ASTM D4169-22** | 2022 | 包裝運輸性能測試 / Packaging & transport performance | [ASTM International](https://www.astm.org/d4169-22.html) |
+| 📦 **ASTM D4169-23** | 2023 | 包裝運輸性能測試 / Packaging & transport performance | [ASTM International](https://www.astm.org/d4169-23.html) |
 | 📦 **ISTA** | 1A, 2A, 3A, 6-Amazon | 包裝與運輸模擬測試 / Safe Transit Association | [ISTA](https://ista.org) |
 | 🛡️ **IEC 60721-3** | 2019 | 環境條件分類 / Environmental condition classification | [IEC](https://webstore.iec.ch/) |
 | 🔬 **IEC 60068-2** | 2023–2025 | 環境測試方法 / Environmental testing methods | [IEC](https://webstore.iec.ch/) |
@@ -37,7 +37,8 @@
 ## ✨ Features · 主要功能
 
 ### 🔍 Core Reference Engine · 規範查詢核心
-- **Cross-Standard Search / 跨規範搜尋** — 單一關鍵字，同時搜尋全部八個資料庫
+- **Global Fuzzy Search / 全域模糊搜尋** — 內建 Fuse.js 模糊搜尋，單一關鍵字跨八大規範搜尋並自動跳轉
+- **Interactive Calculators / 互動式計算機** — 將靜態公式 (如堆碼抗壓) 轉為動態計算機，即時算出機台下壓力
 - **Metric Card Display / 參數卡片** — 溫度、g 值、時程等重要數值清晰卡片化展示
 - **Export JSON & CSV / 資料匯出** — 一鍵匯出供測試計畫文件使用
 - **Bilingual ZH/EN / 中英文切換** — 完整繁體中文與英文介面
@@ -106,7 +107,7 @@ Reliability-Spec-Engine/
 ├── icon-512.png            # App 圖示 512×512
 ├── mil810_database.json    # MIL-STD-810H 810H 全 Method 資料庫
 ├── gr63_database.json      # GR-63-CORE Issue 5 資料庫
-├── astm4169_database.json  # ASTM D4169-22 資料庫
+├── astm4169_database.json  # ASTM D4169-23 資料庫
 ├── ista_database.json      # ISTA 1A/2A/3A/6-Amazon 資料庫
 ├── iec_database.json       # IEC 60721-3 資料庫
 ├── iec60068_database.json  # IEC 60068-2 資料庫
@@ -122,6 +123,7 @@ Reliability-Spec-Engine/
 
 | 版本 | 日期 | 更新內容 |
 |------|------|---------|
+| **v2.2** | 2026-05 | 🚀 全域模糊搜尋 (Fuse.js)、互動式抗壓計算機、ASTM升級-23、GR-63章節擴充 |
 | **v2.1** | 2026-03 | 🐛 修正 `showTab()` 無限遞迴 Bug（所有側邊欄按鈕失效修復） |
 | **v2.0** | 2026-03 | ⭐ 獨立振動計算器面板（Sine/Random 雙標籤，10 個標準預設剖面） |
 | **v1.9** | 2026-03 | 修正 Cat 20 Ground Vehicle PSD 剖面及振動偵測邏輯 |
@@ -133,7 +135,7 @@ Reliability-Spec-Engine/
 | **v1.3** | 2026-03 | IP Code (IEC 60529) 模組；IP 等級查詢與 IP69K 特殊支援 |
 | **v1.2** | 2026-03 | IEC 60068-2 模組（7 合一）；Lam 作者標示 |
 | **v1.1** | 2026-03 | ISTA 模組（1A/2A/3A/6-Amazon）；SR-332 Issue 4 |
-| **v1.0** | 2026-03 | PWA 首版發布；MIL-810H、GR-63 Issue 5、ASTM D4169-22 |
+| **v1.0** | 2026-03 | PWA 首版發布；MIL-810H、GR-63 Issue 5、ASTM D4169-23 |
 | v0.9 | 2025 | 初始 Streamlit 原型（IEC 60721-3 AutoSpec） |
 
 ---
@@ -144,6 +146,7 @@ Reliability-Spec-Engine/
 |------|------|
 | HTML5 / Vanilla JS / CSS3 | 核心架構（零框架，最高相容性） |
 | [Plotly.js 2.27](https://plotly.com/javascript/) | 振動 PSD Log-Log 互動頻譜圖 |
+| [Fuse.js](https://fusejs.io/) | 全域模糊搜尋引擎 |
 | [Chart.js](https://www.chartjs.org/) | 熱分布 / 溫度剖面折線圖 |
 | Service Worker (Cache-First) | PWA 離線快取 |
 | localStorage | 儀表板釘選記憶 |
@@ -158,4 +161,4 @@ Reliability-Spec-Engine/
 
 ---
 
-> ⚠️ **Disclaimer / 免責聲明**: ASTM D4169-22、GR-63 Issue 5 等為商業規範，本工具資料庫內容依公開技術摘要整理。完整規範請向各發行單位購買正版文件。
+> ⚠️ **Disclaimer / 免責聲明**: ASTM D4169-23、GR-63 Issue 5 等為商業規範，本工具資料庫內容依公開技術摘要整理。完整規範請向各發行單位購買正版文件。
