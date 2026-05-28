@@ -51,53 +51,53 @@
         ]
       }
     },
-    "Schedule C - Vehicle Vibration (車輛振動)": {
+    "Schedule E - Vehicle Vibration (車輛隨機振動)": {
       "Random Vibration - Truck (卡車隨機振動 PSD)": {
         "parameters": {
           "Standard": "ASTM D4169-23",
-          "Description_ZH": "模擬公路卡車運輸的隨機振動光譜 (PSD)。工程師可直接輸入此斷點矩陣至振動機台連線軟體。",
+          "Description_ZH": "模擬公路卡車運輸的隨機振動光譜。ASTM D4169 自近版起已捨棄 AL I/II/III，改用 High / Medium / Low Test Level。",
           "Description_EN": "Highway truck transport random vibration PSD profiles. Levels define test severity.",
           "Test Duration": "180 minutes typical (or specific to DC routing)",
-          "Assurance Level I": "0.73 Grms (Highest Severity, High Value/Custom)",
-          "Assurance Level II": "0.52 Grms (Average Severity, Default)",
-          "Assurance Level III": "0.37 Grms (Lowest Severity)"
+          "High Level": "0.54 Grms (Highest severity)",
+          "Medium Level": "0.40 Grms (Default)",
+          "Low Level": "0.29 Grms (Lowest severity)"
         },
         "tests": [
           {
             "Frequency (Hz)": "1.0",
-            "Level I (g²/Hz)": "0.0001",
-            "Level II (g²/Hz)": "0.00005",
-            "Level III (g²/Hz)": "0.000025"
+            "High Level (g²/Hz)": "0.000072",
+            "Medium Level": "0.000036",
+            "Low Level": "0.000018"
           },
           {
             "Frequency (Hz)": "4.0",
-            "Level I (g²/Hz)": "0.02",
-            "Level II (g²/Hz)": "0.01",
-            "Level III (g²/Hz)": "0.005"
+            "High Level (g²/Hz)": "0.018",
+            "Medium Level": "0.009",
+            "Low Level": "0.0045"
           },
           {
             "Frequency (Hz)": "16.0",
-            "Level I (g²/Hz)": "0.02",
-            "Level II (g²/Hz)": "0.01",
-            "Level III (g²/Hz)": "0.005"
+            "High Level (g²/Hz)": "0.018",
+            "Medium Level": "0.009",
+            "Low Level": "0.0045"
           },
           {
             "Frequency (Hz)": "40.0",
-            "Level I (g²/Hz)": "0.002",
-            "Level II (g²/Hz)": "0.001",
-            "Level III (g²/Hz)": "0.0005"
+            "High Level (g²/Hz)": "0.0018",
+            "Medium Level": "0.0009",
+            "Low Level": "0.00045"
           },
           {
             "Frequency (Hz)": "80.0",
-            "Level I (g²/Hz)": "0.002",
-            "Level II (g²/Hz)": "0.001",
-            "Level III (g²/Hz)": "0.0005"
+            "High Level (g²/Hz)": "0.0018",
+            "Medium Level": "0.0009",
+            "Low Level": "0.00045"
           },
           {
             "Frequency (Hz)": "200.0",
-            "Level I (g²/Hz)": "0.00002",
-            "Level II (g²/Hz)": "0.00001",
-            "Level III (g²/Hz)": "0.000005"
+            "High Level (g²/Hz)": "0.000018",
+            "Medium Level": "0.000009",
+            "Low Level": "0.0000045"
           }
         ]
       },
@@ -167,7 +167,7 @@
         ]
       }
     },
-    "Schedule C/D - Compression (堆碼抗壓公式計算)": {
+    "Schedule B/C - Stacking (靜態推碼抗壓)": {
       "Machine Apply and Release/Hold (抗壓機壓放試驗)": {
         "parameters": {
           "Standard": "ASTM D4169-23",
@@ -193,6 +193,23 @@
             "Assurance Level & Material": "Level III - Corrugated Box",
             "Safety Factor (F)": "3.0",
             "Application": "Short term or low risk stacking"
+          }
+        ]
+      }
+    },
+    "Schedule F - Loose Load Vibration (鬆散荷載振動)": {
+      "Loose Load Bounce (跳動測試)": {
+        "parameters": {
+          "Standard": "ASTM D4169-23",
+          "Description_ZH": "模擬未固定的包裹在卡車車廂內跳動與互相碰撞。",
+          "Description_EN": "Simulates unrestrained package bouncing and colliding in a vehicle.",
+          "Frequency": "Typically ~4-5 Hz (rotary or vertical synchronous motion)",
+          "Duration": "Depends on DC, typically 40 to 120 minutes"
+        },
+        "tests": [
+          {
+            "Test": "Bounce",
+            "Condition": "Machine speed adjusted so package leaves table by ~1.6mm (1/16 in)"
           }
         ]
       }
@@ -232,8 +249,8 @@
       }
     }
   },
-  "DC 13: Air and motor freight (空運與公路混合)": {
-    "Schedule A, C, F, I (綜合排程)": {
+  "DC 13: Air and mixed freight (空運與公路混合)": {
+    "Schedule A, E, F, I (綜合排程)": {
       "Air Delivery Profile (空運物流連貫測試)": {
         "parameters": {
           "Standard": "ASTM D4169-23",
@@ -260,6 +277,35 @@
           {
             "Sequence": "5. Schedule A",
             "Action": "Handling Drops (Second half on different faces)"
+          }
+        ]
+      }
+    }
+  },
+  "DC 14: LTL motor freight (零擔物流運輸)": {
+    "Schedule A, E, J (LTL 綜合排程)": {
+      "LTL Profile (零擔卡車物流連貫測試)": {
+        "parameters": {
+          "Standard": "ASTM D4169-23",
+          "Description_ZH": "模擬電商大件或打棧板商品透過 LTL (Less-Than-Truckload) 零擔物流寄送。包含額外的 Schedule J 集中衝擊。",
+          "Description_EN": "LTL motor freight sequence, includes Concentrated Impact (Schedule J) for puncturing hazards."
+        },
+        "tests": [
+          {
+            "Sequence": "1. Schedule A",
+            "Action": "Handling Drops"
+          },
+          {
+            "Sequence": "2. Schedule J",
+            "Action": "Concentrated Impact (to simulate forks or other freight hitting it)"
+          },
+          {
+            "Sequence": "3. Schedule E",
+            "Action": "Truck Random Vibration"
+          },
+          {
+            "Sequence": "4. Schedule A",
+            "Action": "Handling Drops"
           }
         ]
       }

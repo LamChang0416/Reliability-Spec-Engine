@@ -66,6 +66,25 @@
           }
         ]
       }
+    },
+    "Procedure IV - Explosive Decompression": {
+      "Explosive Decompression": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬機艙遭受毀滅性破壞造成的爆炸性減壓 (≤0.1秒)",
+          "Description_EN": "Simulates explosive decompression (≤0.1 seconds)",
+          "Initial Altitude": "2,438 m (8,000 ft)",
+          "Final Altitude": "12,192 m (40,000 ft)",
+          "Decompression Time": "≤ 0.1 seconds"
+        },
+        "tests": [
+          {
+            "Test": "Explosive Decompression",
+            "Condition": "Drop pressure in ≤0.1s",
+            "Pass Criteria": "No hazardous debris"
+          }
+        ]
+      }
     }
   },
   "Method 501.7 - High Temperature": {
@@ -188,6 +207,23 @@
           }
         ]
       }
+    },
+    "Procedure III - Tactical Standby to Operational": {
+      "Tactical Standby to Operational": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬戰術待命轉為運作狀態",
+          "Description_EN": "Tactical Standby to Operational",
+          "Peak Ambient": "Per system specification",
+          "Condition": "Soak in solar loaded environment then operate"
+        },
+        "tests": [
+          {
+            "Test": "Standby to Operation",
+            "Condition": "Power on after standby soak"
+          }
+        ]
+      }
     }
   },
   "Method 502.7 - Low Temperature": {
@@ -272,6 +308,22 @@
           }
         ]
       }
+    },
+    "Procedure III - Manipulation": {
+      "Manipulation": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "測試人員在低溫穿戴防寒手套時的操作與組裝性",
+          "Description_EN": "Personnel manipulation while wearing cold weather gear",
+          "Temperature": "-32°C to -46°C"
+        },
+        "tests": [
+          {
+            "Test": "Manipulation",
+            "Condition": "Assemble/operate with winter clothing"
+          }
+        ]
+      }
     }
   },
   "Method 503.7 - Temperature Shock": {
@@ -320,6 +372,38 @@
           }
         ]
       }
+    },
+    "Procedure I-B - Single Cycle Shock": {
+      "Single Cycle Shock": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "單次溫度衝擊",
+          "Description_EN": "Single cycle temperature shock",
+          "Transfer Time": "≤ 1 minute"
+        },
+        "tests": [
+          {
+            "Phase": "Single Shock",
+            "Condition": "One hot-to-cold or cold-to-hot transition"
+          }
+        ]
+      }
+    },
+    "Procedure I-D - Shocks to or from Controlled Ambient": {
+      "Shocks to or from Controlled Ambient": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "與控制室溫之間的溫度衝擊",
+          "Description_EN": "Shocks to or from controlled ambient environment",
+          "Transfer Time": "≤ 1 minute"
+        },
+        "tests": [
+          {
+            "Phase": "Ambient to Extreme",
+            "Condition": "Transfer from standard ambient to extreme temp"
+          }
+        ]
+      }
     }
   },
   "Method 504.3 - Contamination by Fluids": {
@@ -345,6 +429,22 @@
           {
             "Phase": "Examination",
             "Condition": "Inspect for material degradation, swelling, or structural failure"
+          }
+        ]
+      }
+    },
+    "Procedure I - Large Items": {
+      "Large Items": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "大型設備流體污染測試",
+          "Description_EN": "Large equipment fluid contamination",
+          "Fluid Temperature": "Standard Ambient"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Apply fluid to specific exposed areas"
           }
         ]
       }
@@ -445,6 +545,22 @@
           {
             "Phase": "Inspection",
             "Condition": "Verify no water pooling or ingress"
+          }
+        ]
+      }
+    },
+    "Procedure II - Exaggerated": {
+      "Exaggerated": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "誇大/強化降雨量測試 (模擬極端豪雨且伴隨高壓風)",
+          "Description_EN": "Exaggerated rain for hardware that fails to meet Proc I due to size",
+          "Nozzle Pressure": "276 kPa (40 psig)"
+        },
+        "tests": [
+          {
+            "Phase": "Spray",
+            "Condition": "Direct high pressure spray at vulnerable areas"
           }
         ]
       }
@@ -647,31 +763,19 @@
           }
         ]
       }
-    }
-  },
-  "Method 513.7 - Acceleration": {
-    "Procedure II - Operational Test": {
-      "Fighter Aircraft / Helicopter": {
+    },
+    "Procedure II - Fording": {
+      "Fording": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬航空器高G力轉向時的結構與功能承受力 (Method 513.6→513.7)",
-          "Description_EN": "Structural/functional integrity under high-G maneuvers (updated from 513.6)",
-          "Acceleration Level": "Dependent on aircraft type (e.g., 9G for fighters)",
-          "Test Apparatus": "Centrifuge",
-          "Duration": "1 minute per axis per direction"
+          "Description_ZH": "車輛涉水測試",
+          "Description_EN": "Fording (vehicles crossing bodies of water)",
+          "Water Depth": "System specific"
         },
         "tests": [
           {
-            "Axis": "Forward/Aft (+/- X)",
-            "Condition": "Maintain G-level for 1 minute while operating"
-          },
-          {
-            "Axis": "Up/Down (+/- Z)",
-            "Condition": "Maintain G-level for 1 minute while operating"
-          },
-          {
-            "Axis": "Left/Right (+/- Y)",
-            "Condition": "Maintain G-level for 1 minute while operating"
+            "Test": "Fording",
+            "Condition": "Drive or tow item through water at specified depth"
           }
         ]
       }
@@ -793,30 +897,6 @@
       }
     }
   },
-  "Method 515.7 - Acoustic Noise": {
-    "Procedure I - Diffuse Field Acoustic Noise": {
-      "Standard Acoustic Testing": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備暴露於高強度聲波場 (飛機引擎、火箭發射) 引起的疲勞",
-          "Description_EN": "High-intensity acoustic field exposure – aircraft engines, rocket launch",
-          "Overall Sound Pressure Level": "130 to 165 dB (re 20 μPa) typical",
-          "Frequency Range": "20 Hz to 10,000 Hz",
-          "Duration": "30 minutes per condition"
-        },
-        "tests": [
-          {
-            "Phase": "Operation",
-            "Condition": "Subject to broad-band random acoustic noise field"
-          },
-          {
-            "Phase": "Inspection",
-            "Condition": "Check for acoustic-induced fatigue and component chafing"
-          }
-        ]
-      }
-    }
-  },
   "Method 516.8 - Shock": {
     "Procedure I - Functional Shock": {
       "Standard Operational Shock": {
@@ -917,27 +997,67 @@
           }
         ]
       }
-    }
-  },
-  "Method 517.2 - Pyroshock": {
-    "Procedure I - Near-Field with Real Configuration": {
-      "Pyrotechnic Device Firing": {
+    },
+    "Procedure II - Transportation Shock": {
+      "Transportation Shock": {
         "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬爆炸螺栓或火工品引爆產生的高頻高G值衝擊",
-          "Description_EN": "High-frequency, high-G shock from pyrotechnic/explosive bolt firing",
-          "Frequency Range": "Up to 1,000,000 Hz (analyzed to 100,000 Hz)",
-          "Peak Acceleration": "Can exceed 100,000 g",
-          "Duration": "< 20 milliseconds"
+          "Description_ZH": "運輸衝擊",
+          "Description_EN": "Transportation Shock",
+          "Input": "Half-sine or terminal peak sawtooth"
         },
         "tests": [
           {
-            "Phase": "Firing",
-            "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration"
-          },
+            "Test": "Transport",
+            "Condition": "Simulate shocks during handling and transport"
+          }
+        ]
+      }
+    },
+    "Procedure III - Fragility": {
+      "Fragility": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "脆弱度測試 (找出產品的極限破壞點)",
+          "Description_EN": "Fragility (determine exact failure limits)",
+          "Input": "Stepped severity shocks"
+        },
+        "tests": [
           {
-            "Phase": "Data Capture",
-            "Condition": "High-speed transient acquisition (min 1M samples/sec)"
+            "Test": "Fragility",
+            "Condition": "Increase shock amplitude until failure"
+          }
+        ]
+      }
+    },
+    "Procedure VII - Pendulum Impact": {
+      "Pendulum Impact": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "鐘擺衝擊",
+          "Description_EN": "Pendulum Impact for large cargo",
+          "Velocity": "Specific impact velocity"
+        },
+        "tests": [
+          {
+            "Test": "Impact",
+            "Condition": "Swing item into wall or barrier"
+          }
+        ]
+      }
+    },
+    "Procedure VIII - Catapult Launch/Arrested Landing": {
+      "Catapult Launch/Arrested Landing": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "彈射起飛與攔截降落衝擊",
+          "Description_EN": "Catapult launch and arrested landing shock",
+          "Platform": "Aircraft Carrier"
+        },
+        "tests": [
+          {
+            "Test": "Catapult",
+            "Condition": "Simulate carrier launch and arrestment shock profiles"
           }
         ]
       }
@@ -982,29 +1102,6 @@
           {
             "Phase": "Vibration Sweep",
             "Condition": "Apply specified gunfire shock response spectrum (SRS)"
-          }
-        ]
-      }
-    }
-  },
-  "Method 520.4 - Combined Environments": {
-    "Procedure I - Engineering Development": {
-      "Temp/Humidity/Vibration/Altitude": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬飛行器任務中同時遭遇溫度、濕度、震動與氣壓的複合環境",
-          "Description_EN": "Simultaneous temperature, humidity, vibration, and altitude per mission profile",
-          "Profile": "Mission-specific diurnal and flight cycles",
-          "Transition Rates": "Per specific aircraft climb/dive capabilities"
-        },
-        "tests": [
-          {
-            "Phase": "Combined Cycle",
-            "Condition": "Simultaneous application of vibration, thermal, and altitude stress"
-          },
-          {
-            "Phase": "Functional Check",
-            "Condition": "Continuously operate and monitor during cycle"
           }
         ]
       }
@@ -1127,26 +1224,6 @@
       }
     }
   },
-  "Method 526.1 - Rail Impact": {
-    "Procedure I - Rail Impact": {
-      "Railcar Humping/Coupling": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬火車車廂在調車場連結作業時的劇烈縱向撞擊",
-          "Description_EN": "Longitudinal impact during railcar humping/coupling operations",
-          "Impact Speed": "12.9 to 13.4 km/h (8.0 to 8.3 mph)",
-          "Buffer Type": "Standard railcar draft gears",
-          "Vehicle": "Flatcar carrying the test item"
-        },
-        "tests": [
-          {
-            "Phase": "Impact",
-            "Condition": "Subject to specified impact velocity in both longitudinal directions"
-          }
-        ]
-      }
-    }
-  },
   "Method 527.2 - Multi-Exciter": {
     "Procedure I - Multi-Axis Testing": {
       "MIMO Vibration": {
@@ -1166,7 +1243,158 @@
       }
     }
   },
-  "Method 528.2 - Mechanical Vibrations of Shipboard Equipment": {
+  "Method 513.8 - Acceleration": {
+    "Procedure II - Operational Test": {
+      "Fighter Aircraft / Helicopter": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬航空器高G力轉向時的結構與功能承受力 (Method 513.6→513.7)",
+          "Description_EN": "Structural/functional integrity under high-G maneuvers (updated from 513.6)",
+          "Acceleration Level": "Dependent on aircraft type (e.g., 9G for fighters)",
+          "Test Apparatus": "Centrifuge",
+          "Duration": "1 minute per axis per direction"
+        },
+        "tests": [
+          {
+            "Axis": "Forward/Aft (+/- X)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          },
+          {
+            "Axis": "Up/Down (+/- Z)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          },
+          {
+            "Axis": "Left/Right (+/- Y)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          }
+        ]
+      }
+    },
+    "Procedure I - Structural Test": {
+      "Structural Test": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "結構承受高G力測試",
+          "Description_EN": "Structural integrity under high-G",
+          "Acceleration Level": "Design Limit Load"
+        },
+        "tests": [
+          {
+            "Test": "Structural",
+            "Condition": "Apply acceleration, verify no structural damage"
+          }
+        ]
+      }
+    },
+    "Procedure III - Crash Hazard": {
+      "Crash Hazard": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "墜毀危險防止測試",
+          "Description_EN": "Crash hazard prevention",
+          "Acceleration Level": "Crash load (e.g., 40G)"
+        },
+        "tests": [
+          {
+            "Test": "Crash Hazard",
+            "Condition": "Apply crash level G forces, verify equipment does not become a projectile"
+          }
+        ]
+      }
+    }
+  },
+  "Method 515.8 - Acoustic Noise": {
+    "Procedure I - Diffuse Field Acoustic Noise": {
+      "Standard Acoustic Testing": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬設備暴露於高強度聲波場 (飛機引擎、火箭發射) 引起的疲勞",
+          "Description_EN": "High-intensity acoustic field exposure – aircraft engines, rocket launch",
+          "Overall Sound Pressure Level": "130 to 165 dB (re 20 μPa) typical",
+          "Frequency Range": "20 Hz to 10,000 Hz",
+          "Duration": "30 minutes per condition"
+        },
+        "tests": [
+          {
+            "Phase": "Operation",
+            "Condition": "Subject to broad-band random acoustic noise field"
+          },
+          {
+            "Phase": "Inspection",
+            "Condition": "Check for acoustic-induced fatigue and component chafing"
+          }
+        ]
+      }
+    }
+  },
+  "Method 517.3 - Pyroshock": {
+    "Procedure I - Near-Field with Real Configuration": {
+      "Pyrotechnic Device Firing": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬爆炸螺栓或火工品引爆產生的高頻高G值衝擊",
+          "Description_EN": "High-frequency, high-G shock from pyrotechnic/explosive bolt firing",
+          "Frequency Range": "Up to 1,000,000 Hz (analyzed to 100,000 Hz)",
+          "Peak Acceleration": "Can exceed 100,000 g",
+          "Duration": "< 20 milliseconds"
+        },
+        "tests": [
+          {
+            "Phase": "Firing",
+            "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration"
+          },
+          {
+            "Phase": "Data Capture",
+            "Condition": "High-speed transient acquisition (min 1M samples/sec)"
+          }
+        ]
+      }
+    }
+  },
+  "Method 520.5 - Temperature, Humidity, Vibration, and Altitude": {
+    "Procedure I - Engineering Development": {
+      "Temp/Humidity/Vibration/Altitude": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬飛行器任務中同時遭遇溫度、濕度、震動與氣壓的複合環境",
+          "Description_EN": "Simultaneous temperature, humidity, vibration, and altitude per mission profile",
+          "Profile": "Mission-specific diurnal and flight cycles",
+          "Transition Rates": "Per specific aircraft climb/dive capabilities"
+        },
+        "tests": [
+          {
+            "Phase": "Combined Cycle",
+            "Condition": "Simultaneous application of vibration, thermal, and altitude stress"
+          },
+          {
+            "Phase": "Functional Check",
+            "Condition": "Continuously operate and monitor during cycle"
+          }
+        ]
+      }
+    }
+  },
+  "Method 526.2 - Rail Impact": {
+    "Procedure I - Rail Impact": {
+      "Railcar Humping/Coupling": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "模擬火車車廂在調車場連結作業時的劇烈縱向撞擊",
+          "Description_EN": "Longitudinal impact during railcar humping/coupling operations",
+          "Impact Speed": "12.9 to 13.4 km/h (8.0 to 8.3 mph)",
+          "Buffer Type": "Standard railcar draft gears",
+          "Vehicle": "Flatcar carrying the test item"
+        },
+        "tests": [
+          {
+            "Phase": "Impact",
+            "Condition": "Subject to specified impact velocity in both longitudinal directions"
+          }
+        ]
+      }
+    }
+  },
+  "Method 528.1 - Mechanical Vibrations of Shipboard Equipment": {
     "Procedure I - Environmental Vibration": {
       "Type I / Type II Naval Shipboard": {
         "parameters": {
@@ -1189,35 +1417,6 @@
           {
             "Phase": "Endurance",
             "Condition": "2 hours per axis at resonant point"
-          }
-        ]
-      }
-    }
-  },
-  "Method 529.1 - Temperate Precipitation": {
-    "Procedure I - Rain": {
-      "Temperate (Non-Tropical) Rain": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "【810H 新增】模擬溫帶地區（非熱帶）中低強度降雨的密封與功能測試",
-          "Description_EN": "【NEW in 810H】Seal and function test for moderate rainfall in temperate (non-tropical) climates",
-          "Rainfall Rate": "0.5 to 4 mm/min (Method 506.6 covers tropical; this covers temperate)",
-          "Temperature": "Standard ambient (15°C to 25°C)",
-          "Wind Velocity": "Up to 10 m/s",
-          "Test Duration": "30 minutes minimum"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject to temperate rain profile for minimum 30 minutes"
-          },
-          {
-            "Phase": "Functional Check",
-            "Condition": "Operate equipment during and after exposure"
-          },
-          {
-            "Phase": "Inspection",
-            "Condition": "Inspect for water ingress at all seals and connectors"
           }
         ]
       }

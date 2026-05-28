@@ -1,14 +1,14 @@
 {
   "_meta": {
     "standard": "GR-63-CORE Issue 5",
-    "version": "2022 (Flex 12-20)",
+    "version": "Issue 5",
     "description": "Telecom NEBS physical protection",
     "lastUpdated": "2026-05-26",
     "maintainer": "Lam",
     "schemaVersion": "2.0",
     "checksum": "sha256:cd1729e51e379b14"
   },
-  "Section 2/3 - Spatial & Facility Planning": {
+  "Section 2/3 - Facility & Spatial Planning": {
     "Equipment Framework & Floor Loading": {
       "Facility Planning (機房與設備空間規劃)": {
         "parameters": {
@@ -32,109 +32,7 @@
       }
     }
   },
-  "Section 4 - Earthquake": {
-    "NEBS Seismic Zone 4 (High Risk)": {
-      "Zone 4 - Office Vibratory Motion (OVM)": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "最高地震風險區（加州、太平洋西北）辦公型振動測試 – Issue 5 更新峰值",
-          "Description_EN": "Highest seismic risk zone (California, Pacific NW) – Issue 5 updated peak values",
-          "Zone": "4 (Highest Risk)",
-          "Test Type": "Office Vibratory Motion (OVM)",
-          "Horizontal Direction Peak Acceleration": "1.0 g (Issue 5 – revised from 0.5 g in Issue 4)",
-          "Vertical Acceleration": "0.5 g",
-          "Duration": "30 seconds per axis",
-          "Response Spectrum": "Per GR-63 Figure 4-1 (Issue 5)"
-        },
-        "tests": [
-          {
-            "Phase": "Pre-test Inspection",
-            "Condition": "Visual and functional baseline"
-          },
-          {
-            "Phase": "X-axis Excitation",
-            "Condition": "Apply OVM spectrum horizontal X, 30 sec"
-          },
-          {
-            "Phase": "Y-axis Excitation",
-            "Condition": "Apply OVM spectrum horizontal Y, 30 sec"
-          },
-          {
-            "Phase": "Post-test Verification",
-            "Condition": "Full functional test; no data loss; no physical damage"
-          }
-        ]
-      },
-      "Zone 4 - Earthquake Motion (EQM)": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "Zone 4 地震動測試 – 模擬強烈地震的時域加速度波形",
-          "Description_EN": "Zone 4 earthquake time-history simulation – major seismic event",
-          "Zone": "4 (Highest Risk)",
-          "Test Type": "Earthquake Motion (EQM)",
-          "Horizontal Peak Acceleration": "1.0 g",
-          "Vertical Peak Acceleration": "0.5 g",
-          "Duration": "30 seconds",
-          "Waveform": "Time-history waveform per GR-63 Appendix A (Issue 5)"
-        },
-        "tests": [
-          {
-            "Phase": "Triaxial Excitation",
-            "Condition": "Simultaneous X, Y, Z per prescribed time-history"
-          },
-          {
-            "Phase": "Equipment Check",
-            "Condition": "Verify no tip-over, no structural failure, no data loss"
-          }
-        ]
-      }
-    },
-    "NEBS Seismic Zone 1 (Low Risk)": {
-      "Zone 1 - Office Vibratory Motion (OVM)": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "低地震風險區辦公型振動 (東部/中部美國)",
-          "Description_EN": "Low seismic risk zone OVM – Eastern/Central US",
-          "Zone": "1 (Low Risk)",
-          "Horizontal Peak Acceleration": "0.1 g",
-          "Duration": "30 seconds"
-        },
-        "tests": [
-          {
-            "Phase": "OVM Test",
-            "Condition": "Apply Zone 1 OVM spectrum per GR-63 Figure 4-1"
-          },
-          {
-            "Phase": "Verification",
-            "Condition": "No physical damage; equipment fully functional"
-          }
-        ]
-      }
-    },
-    "Office Vibration (辦公環境振動)": {
-      "Random Vibration - Office": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "模擬辦公室或機房內因空調或周邊設備產生的持續微小振動",
-          "Description_EN": "Low-level vibration simulating rotating equipment in CO",
-          "Frequency Range": "5 to 100 Hz",
-          "Test Duration": "30 minutes per axis",
-          "Profile": "0.00042 g²/Hz from 10-50 Hz"
-        },
-        "tests": [
-          {
-            "Phase": "Vibration Test",
-            "Condition": "Random vibration on 3 mutually perpendicular axes"
-          },
-          {
-            "Phase": "Verification",
-            "Condition": "Continuous operation without failure"
-          }
-        ]
-      }
-    }
-  },
-  "Section 5 - Temperature and Humidity": {
+  "Section 4.1 - Temperature, Humidity, and Altitude": {
     "Long-Term Operating Environment": {
       "ASHRAE A1/A2 Equipment Class": {
         "parameters": {
@@ -242,78 +140,31 @@
           }
         ]
       }
-    }
-  },
-  "Section 6 - Airborne Contaminants": {
-    "Acoustic Noise (聲學噪音)": {
-      "Equipment Subassembly Acoustic Emission": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "機房設備運作時發出的噪音限制，保護長期值班人員聽力。依據室溫條件嚴格分級。",
-          "Description_EN": "Equipment self-emitted noise limits to protect Central Office personnel.",
-          "Limit at Standard Ambient (≤27°C)": "≤ 75 dBA Sound Power (Lw) or SPL at 1.0 m",
-          "Limit at High Temp Excursion": "≤ 85 dBA (Fans at max speed)",
-          "Office Room Limit": "≤ 65 dBA Limit for typical office environments"
-        },
-        "tests": [
-          {
-            "Measurement State": "Idle at 27°C",
-            "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA"
-          },
-          {
-            "Measurement State": "Full Load at Max Rated Temp",
-            "Condition": "Drive fans to 100%; must be ≤ 85 dBA"
-          }
-        ]
-      }
     },
-    "Mixed Flowing Gas (MFG 混和氣體腐蝕)": {
-      "Indoor Equipment Gas Exposure": {
+    "Short-Term Operating Environment": {
+      "Short-Term Operation": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "模擬工廠或都會區受污染的空氣，驗證金屬端子與 PCB 銅箔的抗腐蝕能力。要求極精確的 ppb 等級毒氣混合。",
-          "Description_EN": "Simulates polluted urban/industrial air to verify contact and PCB corrosion resistance.",
-          "H2S (Hydrogen Sulfide)": "10 ppb",
-          "SO2 (Sulfur Dioxide)": "100 ppb",
-          "Cl2 (Chlorine)": "10 ppb",
-          "NO2 (Nitrogen Dioxide)": "200 ppb",
-          "Duration": "14 days minimum"
+          "Standard": "GR-63-CORE Issue 5",
+          "Description_ZH": "機房空調失效或緊急狀況時的短期運作環境極限",
+          "Description_EN": "Short-term operating environment (e.g., HVAC failure)",
+          "Temperature Range": "-5°C to 50°C",
+          "Humidity Range": "5% to 90% RH",
+          "Duration": "Max 96 consecutive hours, max 15 days/year"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days"
+            "Test": "High Temp Short-Term",
+            "Condition": "Operate at 50°C"
           },
           {
-            "Phase": "Evaluation",
-            "Condition": "Inspect for copper creep corrosion and check contact resistance"
-          }
-        ]
-      }
-    },
-    "Illumination Criteria (照明與反光)": {
-      "Reflectance and Glare": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "設備表面反光率與操作人員防眩光要求",
-          "Description_EN": "Surface reflectance and glare prevention for CO personnel",
-          "Reflectance Target": "Avoid highly glossy surfaces, use matte finishes",
-          "Glare Rating": "None, slight, annoying, or impairing readability"
-        },
-        "tests": [
-          {
-            "Phase": "Readability Test",
-            "Condition": "Read text on equipment from 457 mm (18 in)"
-          },
-          {
-            "Phase": "Reflectance Measurement",
-            "Condition": "Compare meter readings with and without 75% reflectance white blotter"
+            "Test": "Low Temp Short-Term",
+            "Condition": "Operate at -5°C"
           }
         ]
       }
     }
   },
-  "Section 7 - Fire Resistance": {
+  "Section 4.2 - Fire Resistance": {
     "Equipment Fire Spread (設備火災蔓延)": {
       "Burner Flame Test (開放式火源測試)": {
         "parameters": {
@@ -356,7 +207,7 @@
       }
     }
   },
-  "Section 8 - Transportation and Handling": {
+  "Section 4.3 - Equipment Handling (Shock)": {
     "Physical Shock and Vibration": {
       "Packaged Equipment Drop": {
         "parameters": {
@@ -414,32 +265,221 @@
           }
         ]
       }
-    }
-  },
-  "Section 9 - Electromagnetic Compatibility": {
-    "EMC Requirements": {
-      "Central Office EMC Limits": {
+    },
+    "Unpackaged Equipment Shock": {
+      "Unpackaged Drop": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "電信機房內設備的電磁干擾發射限制",
-          "Description_EN": "EMI emission limits for equipment installed in telecom central offices",
-          "Emission Limit Reference": "FCC Part 15 Class A (USA) / CISPR 22 Class A (International)",
-          "Conducted Emissions": "Per FCC/CISPR limits 150 kHz – 30 MHz",
-          "Radiated Emissions": "Per FCC/CISPR limits 30 MHz – 1 GHz",
-          "ESD Immunity": "IEC 61000-4-2, Level 3 (6 kV contact, 8 kV air)"
+          "Standard": "GR-63-CORE Issue 5",
+          "Description_ZH": "未包裝設備的意外掉落或搬運衝擊",
+          "Description_EN": "Unpackaged equipment shock criteria",
+          "Drop Height": "Depends on weight (e.g. 100mm for >50kg, 75mm for very heavy)"
         },
         "tests": [
           {
-            "Phase": "Conducted Emission Scan",
-            "Condition": "Per ANSI C63.4 setup; measure 150 kHz to 30 MHz"
+            "Test": "Drop",
+            "Condition": "Drop on specific corners/faces"
+          }
+        ]
+      }
+    }
+  },
+  "Section 4.4 - Earthquake & Vibration": {
+    "NEBS Seismic Zone 4 (High Risk)": {
+      "Zone 4 - Office Vibratory Motion (OVM)": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "最高地震風險區（加州、太平洋西北）辦公型振動測試 – Issue 5 更新峰值",
+          "Description_EN": "Highest seismic risk zone (California, Pacific NW) – Issue 5 updated peak values",
+          "Zone": "4 (Highest Risk)",
+          "Test Type": "Office Vibratory Motion (OVM)",
+          "Horizontal Direction Peak Acceleration": "1.0 g (Issue 5 – revised from 0.5 g in Issue 4)",
+          "Vertical Acceleration": "0.5 g",
+          "Duration": "30 seconds per axis",
+          "Response Spectrum": "Per GR-63 Figure 4-1 (Issue 5)"
+        },
+        "tests": [
+          {
+            "Phase": "Pre-test Inspection",
+            "Condition": "Visual and functional baseline"
           },
           {
-            "Phase": "Radiated Emission Scan",
-            "Condition": "Per ANSI C63.4 at 3 m or 10 m; measure 30 MHz to 1 GHz"
+            "Phase": "X-axis Excitation",
+            "Condition": "Apply OVM spectrum horizontal X, 30 sec"
           },
           {
-            "Phase": "ESD Test",
-            "Condition": "10 contact + 10 air discharges per polarity at each test point"
+            "Phase": "Y-axis Excitation",
+            "Condition": "Apply OVM spectrum horizontal Y, 30 sec"
+          },
+          {
+            "Phase": "Post-test Verification",
+            "Condition": "Full functional test; no data loss; no physical damage"
+          }
+        ]
+      },
+      "Zone 4 - Earthquake Motion (EQM)": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "Zone 4 地震動測試 – 模擬強烈地震的時域加速度波形",
+          "Description_EN": "Zone 4 earthquake time-history simulation – major seismic event",
+          "Zone": "4 (Highest Risk)",
+          "Test Type": "Earthquake Motion (EQM)",
+          "Horizontal Peak Acceleration": "1.0 g",
+          "Vertical Peak Acceleration": "0.5 g",
+          "Duration": "30 seconds",
+          "Waveform": "Time-history waveform per GR-63 Appendix A (Issue 5)"
+        },
+        "tests": [
+          {
+            "Phase": "Triaxial Excitation",
+            "Condition": "Simultaneous X, Y, Z per prescribed time-history"
+          },
+          {
+            "Phase": "Equipment Check",
+            "Condition": "Verify no tip-over, no structural failure, no data loss"
+          }
+        ]
+      }
+    },
+    "NEBS Seismic Zone 1 (Low Risk)": {
+      "Zone 1 - Office Vibratory Motion (OVM)": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "低地震風險區辦公型振動 (東部/中部美國)",
+          "Description_EN": "Low seismic risk zone OVM – Eastern/Central US",
+          "Zone": "1 (Low Risk)",
+          "Horizontal Peak Acceleration": "0.1 g",
+          "Duration": "30 seconds"
+        },
+        "tests": [
+          {
+            "Phase": "OVM Test",
+            "Condition": "Apply Zone 1 OVM spectrum per GR-63 Figure 4-1"
+          },
+          {
+            "Phase": "Verification",
+            "Condition": "No physical damage; equipment fully functional"
+          }
+        ]
+      }
+    },
+    "Office Vibration (辦公環境振動)": {
+      "Random Vibration - Office": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "模擬辦公室或機房內因空調或周邊設備產生的持續微小振動",
+          "Description_EN": "Low-level vibration simulating rotating equipment in CO",
+          "Frequency Range": "5 to 100 Hz",
+          "Test Duration": "30 minutes per axis",
+          "Profile": "0.00042 g²/Hz from 10-50 Hz"
+        },
+        "tests": [
+          {
+            "Phase": "Vibration Test",
+            "Condition": "Random vibration on 3 mutually perpendicular axes"
+          },
+          {
+            "Phase": "Verification",
+            "Condition": "Continuous operation without failure"
+          }
+        ]
+      }
+    },
+    "NEBS Seismic Zone 2/3 (Moderate Risk)": {
+      "Zone 2/3 Earthquake": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5",
+          "Description_ZH": "中度地震風險區防護測試",
+          "Description_EN": "Moderate earthquake risk zone",
+          "Test Profile": "VERTEQII waveform, modified for Zone 2/3",
+          "Frequency Range": "1 to 50 Hz"
+        },
+        "tests": [
+          {
+            "Test": "Seismic Run",
+            "Condition": "X, Y, Z axes sequentially"
+          }
+        ]
+      }
+    },
+    "Transportation Vibration": {
+      "Transport Vibration": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5",
+          "Description_ZH": "包裝運輸過程的震動",
+          "Description_EN": "Transportation vibration for packaged equipment",
+          "Frequency Range": "5 to 200 Hz",
+          "Test Duration": "30 minutes per axis"
+        },
+        "tests": [
+          {
+            "Test": "Vibration",
+            "Condition": "Random vibration along 3 orthogonal axes"
+          }
+        ]
+      }
+    }
+  },
+  "Section 4.5 - Airborne Contaminants": {
+    "Mixed Flowing Gas (MFG 混和氣體腐蝕)": {
+      "Indoor Equipment Gas Exposure": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "模擬工廠或都會區受污染的空氣，驗證金屬端子與 PCB 銅箔的抗腐蝕能力。要求極精確的 ppb 等級毒氣混合。",
+          "Description_EN": "Simulates polluted urban/industrial air to verify contact and PCB corrosion resistance.",
+          "H2S (Hydrogen Sulfide)": "10 ppb",
+          "SO2 (Sulfur Dioxide)": "100 ppb",
+          "Cl2 (Chlorine)": "10 ppb",
+          "NO2 (Nitrogen Dioxide)": "200 ppb",
+          "Duration": "14 days minimum"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days"
+          },
+          {
+            "Phase": "Evaluation",
+            "Condition": "Inspect for copper creep corrosion and check contact resistance"
+          }
+        ]
+      }
+    },
+    "Hygroscopic Dust Testing": {
+      "Hygroscopic Dust": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5",
+          "Description_ZH": "吸濕性粉塵造成短路或效能退化之測試",
+          "Description_EN": "Hygroscopic dust leading to short circuits",
+          "Condition": "Deposit dust and subject to high humidity"
+        },
+        "tests": [
+          {
+            "Test": "Dust Deposition",
+            "Condition": "Apply dust and cycle humidity"
+          }
+        ]
+      }
+    }
+  },
+  "Section 4.6 - Acoustic Noise": {
+    "Acoustic Noise (聲學噪音)": {
+      "Equipment Subassembly Acoustic Emission": {
+        "parameters": {
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Description_ZH": "機房設備運作時發出的噪音限制，保護長期值班人員聽力。依據室溫條件嚴格分級。",
+          "Description_EN": "Equipment self-emitted noise limits to protect Central Office personnel.",
+          "Limit at Standard Ambient (≤27°C)": "≤ 75 dBA Sound Power (Lw) or SPL at 1.0 m",
+          "Limit at High Temp Excursion": "≤ 85 dBA (Fans at max speed)",
+          "Office Room Limit": "≤ 65 dBA Limit for typical office environments"
+        },
+        "tests": [
+          {
+            "Measurement State": "Idle at 27°C",
+            "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA"
+          },
+          {
+            "Measurement State": "Full Load at Max Rated Temp",
+            "Condition": "Drive fans to 100%; must be ≤ 85 dBA"
           }
         ]
       }

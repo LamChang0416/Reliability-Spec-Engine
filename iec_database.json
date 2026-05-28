@@ -93,6 +93,74 @@
           }
         ]
       }
+    },
+    "B (Biological)": {
+      "1B1": {
+        "parameters": {
+          "Description_ZH": "無植物或動物危害的區域",
+          "Condition": "No special biological hazard"
+        },
+        "tests": [
+          {
+            "Test": "Fungus",
+            "Condition": "Not required"
+          }
+        ]
+      },
+      "1B2": {
+        "parameters": {
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
+          "Condition": "Flora/Fauna present"
+        },
+        "tests": [
+          {
+            "Test": "Fungus Resistance",
+            "Condition": "28 days fungus test"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "1C1": {
+        "parameters": {
+          "Description_ZH": "鄉村及低工業污染區",
+          "Condition": "Low pollution"
+        },
+        "tests": []
+      },
+      "1C2": {
+        "parameters": {
+          "Description_ZH": "一般都會區，中度污染",
+          "Condition": "Normal urban pollution (H2S, SO2)"
+        },
+        "tests": [
+          {
+            "Test": "Mixed Flowing Gas",
+            "Condition": "Low severity MFG"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "1S1": {
+        "parameters": {
+          "Description_ZH": "無沙塵或極低粉塵區",
+          "Condition": "Clean area"
+        },
+        "tests": []
+      },
+      "1S2": {
+        "parameters": {
+          "Description_ZH": "一般工業粉塵或室外揚塵",
+          "Condition": "Dusty area (e.g. IP5X)"
+        },
+        "tests": [
+          {
+            "Test": "Dust",
+            "Condition": "Dust circulation test"
+          }
+        ]
+      }
     }
   },
   "2": {
@@ -273,6 +341,74 @@
           }
         ]
       }
+    },
+    "B (Biological)": {
+      "2B1": {
+        "parameters": {
+          "Description_ZH": "無植物或動物危害的區域",
+          "Condition": "No special biological hazard"
+        },
+        "tests": [
+          {
+            "Test": "Fungus",
+            "Condition": "Not required"
+          }
+        ]
+      },
+      "2B2": {
+        "parameters": {
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
+          "Condition": "Flora/Fauna present"
+        },
+        "tests": [
+          {
+            "Test": "Fungus Resistance",
+            "Condition": "28 days fungus test"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "2C1": {
+        "parameters": {
+          "Description_ZH": "鄉村及低工業污染區",
+          "Condition": "Low pollution"
+        },
+        "tests": []
+      },
+      "2C2": {
+        "parameters": {
+          "Description_ZH": "一般都會區，中度污染",
+          "Condition": "Normal urban pollution (H2S, SO2)"
+        },
+        "tests": [
+          {
+            "Test": "Mixed Flowing Gas",
+            "Condition": "Low severity MFG"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "2S1": {
+        "parameters": {
+          "Description_ZH": "無沙塵或極低粉塵區",
+          "Condition": "Clean area"
+        },
+        "tests": []
+      },
+      "2S2": {
+        "parameters": {
+          "Description_ZH": "一般工業粉塵或室外揚塵",
+          "Condition": "Dusty area (e.g. IP5X)"
+        },
+        "tests": [
+          {
+            "Test": "Dust",
+            "Condition": "Dust circulation test"
+          }
+        ]
+      }
     }
   },
   "3": {
@@ -386,6 +522,38 @@
             "Test": "Damp Heat (Cyclic)",
             "Standard": "IEC 60068-2-30",
             "Condition": "+55°C, 6 cycles"
+          }
+        ]
+      },
+      "3K7": {
+        "parameters": {
+          "Description_ZH": "無溫度控制的室內 (極端氣候地區)，溫度可能極低或極高",
+          "Temperature": "-40°C to +70°C"
+        },
+        "tests": [
+          {
+            "Test": "Cold",
+            "Condition": "-40°C"
+          },
+          {
+            "Test": "Dry Heat",
+            "Condition": "+70°C"
+          }
+        ]
+      },
+      "3K8": {
+        "parameters": {
+          "Description_ZH": "比 3K7 更嚴苛，且包含極端輻射與急劇溫差",
+          "Temperature": "-65°C to +70°C"
+        },
+        "tests": [
+          {
+            "Test": "Cold",
+            "Condition": "-65°C"
+          },
+          {
+            "Test": "Thermal Shock",
+            "Condition": "Rapid change"
           }
         ]
       }
@@ -602,6 +770,22 @@
             "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir"
           }
         ]
+      },
+      "3M7": {
+        "parameters": {
+          "Description_ZH": "高強度地震帶或重工業機具旁",
+          "Condition": "High vibration / seismic"
+        },
+        "tests": [
+          {
+            "Test": "Vibration",
+            "Condition": "High severity sine"
+          },
+          {
+            "Test": "Shock",
+            "Condition": "High severity"
+          }
+        ]
       }
     }
   },
@@ -728,6 +912,74 @@
           }
         ]
       }
+    },
+    "B (Biological)": {
+      "4B1": {
+        "parameters": {
+          "Description_ZH": "無植物或動物危害的區域",
+          "Condition": "No special biological hazard"
+        },
+        "tests": [
+          {
+            "Test": "Fungus",
+            "Condition": "Not required"
+          }
+        ]
+      },
+      "4B2": {
+        "parameters": {
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
+          "Condition": "Flora/Fauna present"
+        },
+        "tests": [
+          {
+            "Test": "Fungus Resistance",
+            "Condition": "28 days fungus test"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "4C1": {
+        "parameters": {
+          "Description_ZH": "鄉村及低工業污染區",
+          "Condition": "Low pollution"
+        },
+        "tests": []
+      },
+      "4C2": {
+        "parameters": {
+          "Description_ZH": "一般都會區，中度污染",
+          "Condition": "Normal urban pollution (H2S, SO2)"
+        },
+        "tests": [
+          {
+            "Test": "Mixed Flowing Gas",
+            "Condition": "Low severity MFG"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "4S1": {
+        "parameters": {
+          "Description_ZH": "無沙塵或極低粉塵區",
+          "Condition": "Clean area"
+        },
+        "tests": []
+      },
+      "4S2": {
+        "parameters": {
+          "Description_ZH": "一般工業粉塵或室外揚塵",
+          "Condition": "Dusty area (e.g. IP5X)"
+        },
+        "tests": [
+          {
+            "Test": "Dust",
+            "Condition": "Dust circulation test"
+          }
+        ]
+      }
     }
   },
   "5": {
@@ -812,6 +1064,74 @@
             "Test": "Shock",
             "Standard": "IEC 60068-2-27",
             "Condition": "50G, 11ms, Half-sine, 3 shocks/dir"
+          }
+        ]
+      }
+    },
+    "B (Biological)": {
+      "5B1": {
+        "parameters": {
+          "Description_ZH": "無植物或動物危害的區域",
+          "Condition": "No special biological hazard"
+        },
+        "tests": [
+          {
+            "Test": "Fungus",
+            "Condition": "Not required"
+          }
+        ]
+      },
+      "5B2": {
+        "parameters": {
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
+          "Condition": "Flora/Fauna present"
+        },
+        "tests": [
+          {
+            "Test": "Fungus Resistance",
+            "Condition": "28 days fungus test"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "5C1": {
+        "parameters": {
+          "Description_ZH": "鄉村及低工業污染區",
+          "Condition": "Low pollution"
+        },
+        "tests": []
+      },
+      "5C2": {
+        "parameters": {
+          "Description_ZH": "一般都會區，中度污染",
+          "Condition": "Normal urban pollution (H2S, SO2)"
+        },
+        "tests": [
+          {
+            "Test": "Mixed Flowing Gas",
+            "Condition": "Low severity MFG"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "5S1": {
+        "parameters": {
+          "Description_ZH": "無沙塵或極低粉塵區",
+          "Condition": "Clean area"
+        },
+        "tests": []
+      },
+      "5S2": {
+        "parameters": {
+          "Description_ZH": "一般工業粉塵或室外揚塵",
+          "Condition": "Dusty area (e.g. IP5X)"
+        },
+        "tests": [
+          {
+            "Test": "Dust",
+            "Condition": "Dust circulation test"
           }
         ]
       }
