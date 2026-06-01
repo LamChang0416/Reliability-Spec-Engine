@@ -1,30 +1,30 @@
 {
   "_meta": {
-    "standard": "MIL-STD-810H",
-    "version": "2019",
+    "checksum": "sha256:548270f8468361b7",
     "description": "Military environmental testing",
     "lastUpdated": "2026-05-26",
     "maintainer": "Lam",
     "schemaVersion": "2.0",
-    "checksum": "sha256:548270f8468361b7"
+    "standard": "MIL-STD-810H",
+    "version": "2019"
   },
   "Method 500.6 - Low Pressure (Altitude)": {
     "Procedure I - Storage / Air Transport": {
       "Transport Aircraft Cargo Bay": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬非加壓機艙或高海拔運輸環境",
-          "Description_EN": "Simulates non-pressurized cargo bay or high-altitude transport",
           "Altitude": "4,572 m (15,000 ft)",
+          "Description_EN": "Simulates non-pressurized cargo bay or high-altitude transport",
+          "Description_ZH": "模擬非加壓機艙或高海拔運輸環境",
           "Pressure": "57.2 kPa (8.3 psia)",
-          "Temperature": "Per selected climate category",
-          "Rate of Change": "≤ 10 m/s (2,000 ft/min)"
+          "Rate of Change": "≤ 10 m/s (2,000 ft/min)",
+          "Standard": "MIL-STD-810H",
+          "Temperature": "Per selected climate category"
         },
         "tests": [
           {
-            "Test": "Altitude Storage",
             "Condition": "Maintain 57.2 kPa for minimum 1 hour",
-            "Pass Criteria": "No structural/functional degradation"
+            "Pass Criteria": "No structural/functional degradation",
+            "Test": "Altitude Storage"
           }
         ]
       }
@@ -32,18 +32,18 @@
     "Procedure II - Operation / Air Carriage": {
       "Operational Altitude": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備於高海拔地區正常運作",
-          "Description_EN": "Simulates equipment operation at high altitude",
           "Altitude": "4,572 m (15,000 ft) or per system spec",
+          "Description_EN": "Simulates equipment operation at high altitude",
+          "Description_ZH": "模擬設備於高海拔地區正常運作",
           "Pressure": "57.2 kPa (8.3 psia)",
-          "Rate of Change": "≤ 10 m/s (2,000 ft/min)"
+          "Rate of Change": "≤ 10 m/s (2,000 ft/min)",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Operational Check",
             "Condition": "Functional test while at minimum pressure",
-            "Pass Criteria": "All functions operational"
+            "Pass Criteria": "All functions operational",
+            "Test": "Operational Check"
           }
         ]
       }
@@ -51,18 +51,18 @@
     "Procedure III - Rapid Decompression": {
       "Pressurized Aircraft Cabin": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬飛機加壓艙突然破裂 (爆發性減壓)",
+          "Decompression Time": "≤ 15 seconds (Rapid) or ≤ 0.1 seconds (Explosive)",
           "Description_EN": "Simulates explosive decompression of pressurized cabin",
-          "Initial Altitude": "2,438 m (8,000 ft) [Cabin Pressure]",
+          "Description_ZH": "模擬飛機加壓艙突然破裂 (爆發性減壓)",
           "Final Altitude": "12,192 m (40,000 ft) [Flight Altitude]",
-          "Decompression Time": "≤ 15 seconds (Rapid) or ≤ 0.1 seconds (Explosive)"
+          "Initial Altitude": "2,438 m (8,000 ft) [Cabin Pressure]",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Decompression",
             "Condition": "Rapid drop from 8,000ft to 40,000ft within 15 seconds",
-            "Pass Criteria": "No hazardous debris; function restored after repressurization"
+            "Pass Criteria": "No hazardous debris; function restored after repressurization",
+            "Test": "Decompression"
           }
         ]
       }
@@ -70,18 +70,18 @@
     "Procedure IV - Explosive Decompression": {
       "Explosive Decompression": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬機艙遭受毀滅性破壞造成的爆炸性減壓 (≤0.1秒)",
+          "Decompression Time": "≤ 0.1 seconds",
           "Description_EN": "Simulates explosive decompression (≤0.1 seconds)",
-          "Initial Altitude": "2,438 m (8,000 ft)",
+          "Description_ZH": "模擬機艙遭受毀滅性破壞造成的爆炸性減壓 (≤0.1秒)",
           "Final Altitude": "12,192 m (40,000 ft)",
-          "Decompression Time": "≤ 0.1 seconds"
+          "Initial Altitude": "2,438 m (8,000 ft)",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Explosive Decompression",
             "Condition": "Drop pressure in ≤0.1s",
-            "Pass Criteria": "No hazardous debris"
+            "Pass Criteria": "No hazardous debris",
+            "Test": "Explosive Decompression"
           }
         ]
       }
@@ -91,112 +91,112 @@
     "Procedure I - Storage": {
       "Basic Hot (A2)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "多數地區標準高溫倉儲 (氣候區 A2, Table 501.7-II)。此為精密 24 小時晝夜循環曲線 (Diurnal Cycle)，重複 7 次。",
           "Description_EN": "Standard hot storage for most worldwide locations (Table 501.7-II). 24-hour diurnal cycle repeated 7 times.",
+          "Description_ZH": "多數地區標準高溫倉儲 (氣候區 A2, Table 501.7-II)。此為精密 24 小時晝夜循環曲線 (Diurnal Cycle)，重複 7 次。",
+          "Humidity": "14% to 44% RH",
           "Peak Ambient": "43°C (110°F)",
           "Peak Induced": "63°C (145°F)",
-          "Humidity": "14% to 44% RH",
+          "Standard": "MIL-STD-810H",
           "Total Cycles": "7 cycles (168 hours total)"
         },
         "tests": [
           {
-            "Hour": "03:00",
             "Ambient": "30°C",
+            "Hour": "03:00",
             "Induced (Storage)": "30°C (Min)"
           },
           {
-            "Hour": "06:00",
             "Ambient": "30°C",
+            "Hour": "06:00",
             "Induced (Storage)": "34°C"
           },
           {
-            "Hour": "09:00",
             "Ambient": "34°C",
+            "Hour": "09:00",
             "Induced (Storage)": "46°C"
           },
           {
-            "Hour": "12:00",
             "Ambient": "39°C",
+            "Hour": "12:00",
             "Induced (Storage)": "58°C"
           },
           {
-            "Hour": "15:00",
             "Ambient": "43°C (Max)",
+            "Hour": "15:00",
             "Induced (Storage)": "63°C (Max)"
           },
           {
-            "Hour": "18:00",
             "Ambient": "42°C",
+            "Hour": "18:00",
             "Induced (Storage)": "54°C"
           },
           {
-            "Hour": "21:00",
             "Ambient": "35°C",
-            "Induced (Storage)": "38°C"
-          }
-        ]
-      },
-      "Hot Dry (A1)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "極端沙漠氣候高溫倉儲 (中東、北非氣候區 A1)。精密 24 小時晝夜曲線，高溫輻射烤箱效應極強。",
-          "Description_EN": "Extreme desert climate storage – Middle East, North Africa. 24-hour diurnal cycle.",
-          "Peak Ambient": "49°C (120°F)",
-          "Peak Induced": "71°C (160°F)",
-          "Humidity": "3% to 8% RH",
-          "Total Cycles": "7 cycles (168 hours total)"
-        },
-        "tests": [
-          {
-            "Hour": "03:00",
-            "Ambient": "33°C",
-            "Induced (Storage)": "33°C (Min)"
-          },
-          {
-            "Hour": "06:00",
-            "Ambient": "33°C",
-            "Induced (Storage)": "35°C"
-          },
-          {
-            "Hour": "09:00",
-            "Ambient": "38°C",
-            "Induced (Storage)": "46°C"
-          },
-          {
-            "Hour": "12:00",
-            "Ambient": "45°C",
-            "Induced (Storage)": "63°C"
-          },
-          {
-            "Hour": "15:00",
-            "Ambient": "49°C (Max)",
-            "Induced (Storage)": "71°C (Max)"
-          },
-          {
-            "Hour": "18:00",
-            "Ambient": "47°C",
-            "Induced (Storage)": "62°C"
-          },
-          {
             "Hour": "21:00",
-            "Ambient": "38°C",
-            "Induced (Storage)": "44°C"
+            "Induced (Storage)": "38°C"
           }
         ]
       },
       "Constant High Temperature": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬靠近熱源或恆定高溫環境中的倉儲",
           "Description_EN": "Storage near artificial heat sources or constant high temperature",
-          "Temperature": "Determined by spec (e.g. 60°C to 71°C)",
-          "Duration": "At least 7 days"
+          "Description_ZH": "模擬靠近熱源或恆定高溫環境中的倉儲",
+          "Duration": "At least 7 days",
+          "Standard": "MIL-STD-810H",
+          "Temperature": "Determined by spec (e.g. 60°C to 71°C)"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "Maintain constant high temperature for specified duration"
+            "Condition": "Maintain constant high temperature for specified duration",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Hot Dry (A1)": {
+        "parameters": {
+          "Description_EN": "Extreme desert climate storage – Middle East, North Africa. 24-hour diurnal cycle.",
+          "Description_ZH": "極端沙漠氣候高溫倉儲 (中東、北非氣候區 A1)。精密 24 小時晝夜曲線，高溫輻射烤箱效應極強。",
+          "Humidity": "3% to 8% RH",
+          "Peak Ambient": "49°C (120°F)",
+          "Peak Induced": "71°C (160°F)",
+          "Standard": "MIL-STD-810H",
+          "Total Cycles": "7 cycles (168 hours total)"
+        },
+        "tests": [
+          {
+            "Ambient": "33°C",
+            "Hour": "03:00",
+            "Induced (Storage)": "33°C (Min)"
+          },
+          {
+            "Ambient": "33°C",
+            "Hour": "06:00",
+            "Induced (Storage)": "35°C"
+          },
+          {
+            "Ambient": "38°C",
+            "Hour": "09:00",
+            "Induced (Storage)": "46°C"
+          },
+          {
+            "Ambient": "45°C",
+            "Hour": "12:00",
+            "Induced (Storage)": "63°C"
+          },
+          {
+            "Ambient": "49°C (Max)",
+            "Hour": "15:00",
+            "Induced (Storage)": "71°C (Max)"
+          },
+          {
+            "Ambient": "47°C",
+            "Hour": "18:00",
+            "Induced (Storage)": "62°C"
+          },
+          {
+            "Ambient": "38°C",
+            "Hour": "21:00",
+            "Induced (Storage)": "44°C"
           }
         ]
       }
@@ -204,50 +204,50 @@
     "Procedure II - Operation": {
       "Basic Hot (A2) Operational": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "標準高溫運作環境",
           "Description_EN": "Standard hot operational environment",
+          "Description_ZH": "標準高溫運作環境",
           "Peak Ambient": "43°C (110°F)",
           "Rate of Change": "≤ 3°C/min",
-          "Stabilization": "Temperature change < 2.0°C/hour"
+          "Stabilization": "Temperature change < 2.0°C/hour",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Stabilization",
-            "Condition": "Temperature rate of change < 2.0°C/hour"
+            "Condition": "Temperature rate of change < 2.0°C/hour",
+            "Test": "Stabilization"
           },
           {
-            "Test": "Functional Test",
-            "Condition": "Operate at peak temperature for minimum 2 hours"
-          }
-        ]
-      },
-      "Hot Dry (A1) Operational": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "極端沙漠氣候 (A1) 高溫運作",
-          "Description_EN": "Extreme desert climate (A1) operational",
-          "Peak Ambient": "49°C (120°F)",
-          "Rate of Change": "≤ 3°C/min"
-        },
-        "tests": [
-          {
-            "Test": "Functional Test",
-            "Condition": "Operate continuously at peak temperature"
+            "Condition": "Operate at peak temperature for minimum 2 hours",
+            "Test": "Functional Test"
           }
         ]
       },
       "Constant High Temperature Operational": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "恆定高溫環境中持續運作 (如機房、引擎室)",
           "Description_EN": "Continuous operation in constant high temperature (e.g. engine room)",
+          "Description_ZH": "恆定高溫環境中持續運作 (如機房、引擎室)",
+          "Standard": "MIL-STD-810H",
           "Temperature": "Determined by spec"
         },
         "tests": [
           {
-            "Test": "Operational Check",
-            "Condition": "Operate continuously under constant high temperature"
+            "Condition": "Operate continuously under constant high temperature",
+            "Test": "Operational Check"
+          }
+        ]
+      },
+      "Hot Dry (A1) Operational": {
+        "parameters": {
+          "Description_EN": "Extreme desert climate (A1) operational",
+          "Description_ZH": "極端沙漠氣候 (A1) 高溫運作",
+          "Peak Ambient": "49°C (120°F)",
+          "Rate of Change": "≤ 3°C/min",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Operate continuously at peak temperature",
+            "Test": "Functional Test"
           }
         ]
       }
@@ -255,16 +255,16 @@
     "Procedure III - Tactical Standby to Operational": {
       "Tactical Standby to Operational": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬戰術待命轉為運作狀態",
+          "Condition": "Soak in solar loaded environment then operate",
           "Description_EN": "Tactical Standby to Operational",
+          "Description_ZH": "模擬戰術待命轉為運作狀態",
           "Peak Ambient": "Per system specification",
-          "Condition": "Soak in solar loaded environment then operate"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Standby to Operation",
-            "Condition": "Power on after standby soak"
+            "Condition": "Power on after standby soak",
+            "Test": "Standby to Operation"
           }
         ]
       }
@@ -274,12 +274,12 @@
     "Procedure I - Storage": {
       "Basic Cold (C1)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "標準低溫倉儲 (歐洲、北美北部、日韓等地)。日夜溫差循環 24 小時曲線。",
           "Description_EN": "Standard cold storage diurnal cycle – Europe/North America (Table 502.7-I).",
-          "Peak Ambient": "-21°C",
+          "Description_ZH": "標準低溫倉儲 (歐洲、北美北部、日韓等地)。日夜溫差循環 24 小時曲線。",
+          "Duration": "24-hour cycle repeated 3 times",
           "Min Ambient": "-33°C",
-          "Duration": "24-hour cycle repeated 3 times"
+          "Peak Ambient": "-21°C",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
@@ -306,12 +306,12 @@
       },
       "Cold (C2)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "嚴寒低溫倉儲 (阿拉斯加、西伯利亞、北極圈邊緣)。日夜溫差循環 24 小時曲線。",
           "Description_EN": "Severe cold diurnal cycle – Alaska, Siberia, Northern Canada.",
-          "Peak Ambient": "-37°C",
+          "Description_ZH": "嚴寒低溫倉儲 (阿拉斯加、西伯利亞、北極圈邊緣)。日夜溫差循環 24 小時曲線。",
+          "Duration": "24-hour cycle repeated 3 times",
           "Min Ambient": "-46°C",
-          "Duration": "24-hour cycle repeated 3 times"
+          "Peak Ambient": "-37°C",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
@@ -334,16 +334,16 @@
       },
       "Severe Cold (C3)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "極度嚴寒低溫倉儲 (如北極中心地帶)。",
           "Description_EN": "Severe cold storage - extreme Arctic conditions.",
+          "Description_ZH": "極度嚴寒低溫倉儲 (如北極中心地帶)。",
+          "Duration": "24-hour cycle repeated 3 times or constant -51°C",
           "Peak Ambient": "-51°C",
-          "Duration": "24-hour cycle repeated 3 times or constant -51°C"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Storage",
-            "Condition": "Maintain -51°C for specified duration"
+            "Condition": "Maintain -51°C for specified duration",
+            "Test": "Storage"
           }
         ]
       }
@@ -351,47 +351,47 @@
     "Procedure II - Operation": {
       "Basic Cold (C1) Operational": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "標準低溫開機與持續運作 (Constant Temperature 恆溫開機法)",
           "Description_EN": "Standard cold start and continuous operation (Methodology: Constant Temp).",
+          "Description_ZH": "標準低溫開機與持續運作 (Constant Temperature 恆溫開機法)",
+          "Standard": "MIL-STD-810H",
           "Temperature": "-32°C (-25°F)"
         },
         "tests": [
           {
-            "Test": "Cold Boot",
-            "Condition": "Soak at -32°C until stabilized, then power ON"
+            "Condition": "Soak at -32°C until stabilized, then power ON",
+            "Test": "Cold Boot"
           },
           {
-            "Test": "Operate",
-            "Condition": "Maintain operation and monitor functions"
+            "Condition": "Maintain operation and monitor functions",
+            "Test": "Operate"
           }
         ]
       },
       "Cold (C2) Operational": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "嚴寒低溫環境運作 (C2)。",
           "Description_EN": "Severe cold operational (C2).",
+          "Description_ZH": "嚴寒低溫環境運作 (C2)。",
+          "Standard": "MIL-STD-810H",
           "Temperature": "-37°C to -46°C"
         },
         "tests": [
           {
-            "Test": "Operate",
-            "Condition": "Power ON and monitor functions after stabilizing at cold temp"
+            "Condition": "Power ON and monitor functions after stabilizing at cold temp",
+            "Test": "Operate"
           }
         ]
       },
       "Severe Cold (C3) Operational": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "極度嚴寒低溫環境運作 (C3)。",
           "Description_EN": "Extreme cold operational (C3).",
+          "Description_ZH": "極度嚴寒低溫環境運作 (C3)。",
+          "Standard": "MIL-STD-810H",
           "Temperature": "-51°C"
         },
         "tests": [
           {
-            "Test": "Operate",
-            "Condition": "Power ON and operate at -51°C"
+            "Condition": "Power ON and operate at -51°C",
+            "Test": "Operate"
           }
         ]
       }
@@ -399,15 +399,15 @@
     "Procedure III - Manipulation": {
       "Manipulation": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "測試人員在低溫穿戴防寒手套時的操作與組裝性",
           "Description_EN": "Personnel manipulation while wearing cold weather gear",
+          "Description_ZH": "測試人員在低溫穿戴防寒手套時的操作與組裝性",
+          "Standard": "MIL-STD-810H",
           "Temperature": "-32°C to -46°C"
         },
         "tests": [
           {
-            "Test": "Manipulation",
-            "Condition": "Assemble/operate with winter clothing"
+            "Condition": "Assemble/operate with winter clothing",
+            "Test": "Manipulation"
           }
         ]
       }
@@ -417,45 +417,21 @@
     "Procedure I-A - One-Way Shock": {
       "Extreme Transfer (Space/Air drop)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備僅經歷一次極端溫度轉換",
           "Description_EN": "One-way extreme temperature transfer simulation",
+          "Description_ZH": "模擬設備僅經歷一次極端溫度轉換",
           "High Temperature": "71°C (160°F)",
           "Low Temperature": "-51°C (-60°F)",
+          "Standard": "MIL-STD-810H",
           "Transfer Time": "≤ 1 minute"
         },
         "tests": [
           {
-            "Phase": "Transfer",
-            "Condition": "Transfer from T-initial to T-final within 1 min"
+            "Condition": "Transfer from T-initial to T-final within 1 min",
+            "Phase": "Transfer"
           },
           {
-            "Phase": "Dwell",
-            "Condition": "Hold at T-final until thermally stabilized"
-          }
-        ]
-      }
-    },
-    "Procedure I-C - Multi-Cycle Shocks": {
-      "Thermal Shock (A1 to C2)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬航空運輸或極端環境中的快速溫變 (3次循環)",
-          "Description_EN": "Rapid temperature change in aviation/extreme environments (3 cycles)",
-          "High Temperature": "71°C (160°F) [Hot Dry Induced]",
-          "Low Temperature": "-51°C (-60°F) [Severe Cold]",
-          "Transfer Time": "≤ 1 minute",
-          "Dwell Time": "Determined by item thermal mass",
-          "Number of Cycles": "3 full cycles minimum"
-        },
-        "tests": [
-          {
-            "Phase": "Cycle 1-3",
-            "Action": "Transfer from -51°C to 71°C within 1 min, hold until stabilized"
-          },
-          {
-            "Phase": "Evaluation",
-            "Action": "Conduct visual and functional test after 3 full cycles"
+            "Condition": "Hold at T-final until thermally stabilized",
+            "Phase": "Dwell"
           }
         ]
       }
@@ -463,15 +439,39 @@
     "Procedure I-B - Single Cycle Shock": {
       "Single Cycle Shock": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "單次溫度衝擊",
           "Description_EN": "Single cycle temperature shock",
+          "Description_ZH": "單次溫度衝擊",
+          "Standard": "MIL-STD-810H",
           "Transfer Time": "≤ 1 minute"
         },
         "tests": [
           {
-            "Phase": "Single Shock",
-            "Condition": "One hot-to-cold or cold-to-hot transition"
+            "Condition": "One hot-to-cold or cold-to-hot transition",
+            "Phase": "Single Shock"
+          }
+        ]
+      }
+    },
+    "Procedure I-C - Multi-Cycle Shocks": {
+      "Thermal Shock (A1 to C2)": {
+        "parameters": {
+          "Description_EN": "Rapid temperature change in aviation/extreme environments (3 cycles)",
+          "Description_ZH": "模擬航空運輸或極端環境中的快速溫變 (3次循環)",
+          "Dwell Time": "Determined by item thermal mass",
+          "High Temperature": "71°C (160°F) [Hot Dry Induced]",
+          "Low Temperature": "-51°C (-60°F) [Severe Cold]",
+          "Number of Cycles": "3 full cycles minimum",
+          "Standard": "MIL-STD-810H",
+          "Transfer Time": "≤ 1 minute"
+        },
+        "tests": [
+          {
+            "Action": "Transfer from -51°C to 71°C within 1 min, hold until stabilized",
+            "Phase": "Cycle 1-3"
+          },
+          {
+            "Action": "Conduct visual and functional test after 3 full cycles",
+            "Phase": "Evaluation"
           }
         ]
       }
@@ -479,77 +479,77 @@
     "Procedure I-D - Shocks to or from Controlled Ambient": {
       "Shocks to or from Controlled Ambient": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "與控制室溫之間的溫度衝擊",
           "Description_EN": "Shocks to or from controlled ambient environment",
+          "Description_ZH": "與控制室溫之間的溫度衝擊",
+          "Standard": "MIL-STD-810H",
           "Transfer Time": "≤ 1 minute"
         },
         "tests": [
           {
-            "Phase": "Ambient to Extreme",
-            "Condition": "Transfer from standard ambient to extreme temp"
+            "Condition": "Transfer from standard ambient to extreme temp",
+            "Phase": "Ambient to Extreme"
           }
         ]
       }
     }
   },
   "Method 504.3 - Contamination by Fluids": {
-    "Procedure II - Small Items": {
-      "Occasional Exposure": {
+    "Procedure I - Large Items": {
+      "Large Items": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備偶爾暴露於化學流體 (潤滑油、燃料、清潔劑)",
-          "Description_EN": "Occasional fluid exposure – lubricants, fuels, cleaners",
-          "Fluid Temperature": "Standard Ambient or Specific Operating Temp",
-          "Exposure Method": "Immersion, Spray, or Brush",
-          "Exposure Time": "8 to 24 hours depending on fluid type"
+          "Description_EN": "Large equipment fluid contamination",
+          "Description_ZH": "大型設備流體污染測試",
+          "Fluid Temperature": "Standard Ambient",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Application",
-            "Condition": "Apply specified fluid to completely cover vulnerable surfaces"
-          },
-          {
-            "Phase": "Incubation",
-            "Condition": "Maintain at test temperature for 8 hours"
-          },
-          {
-            "Phase": "Examination",
-            "Condition": "Inspect for material degradation, swelling, or structural failure"
-          }
-        ]
-      },
-      "Extended Exposure": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備長時間暴露或浸泡於化學流體中",
-          "Description_EN": "Extended exposure - continuous or long-term contact with fluids",
-          "Exposure Time": "At least 24 hours, up to several days depending on fluid"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Submerge or continuously coat with fluid"
-          },
-          {
-            "Phase": "Examination",
-            "Condition": "Inspect for chemical degradation and seal integrity"
+            "Condition": "Apply fluid to specific exposed areas",
+            "Phase": "Exposure"
           }
         ]
       }
     },
-    "Procedure I - Large Items": {
-      "Large Items": {
+    "Procedure II - Small Items": {
+      "Extended Exposure": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "大型設備流體污染測試",
-          "Description_EN": "Large equipment fluid contamination",
-          "Fluid Temperature": "Standard Ambient"
+          "Description_EN": "Extended exposure - continuous or long-term contact with fluids",
+          "Description_ZH": "模擬設備長時間暴露或浸泡於化學流體中",
+          "Exposure Time": "At least 24 hours, up to several days depending on fluid",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "Apply fluid to specific exposed areas"
+            "Condition": "Submerge or continuously coat with fluid",
+            "Phase": "Exposure"
+          },
+          {
+            "Condition": "Inspect for chemical degradation and seal integrity",
+            "Phase": "Examination"
+          }
+        ]
+      },
+      "Occasional Exposure": {
+        "parameters": {
+          "Description_EN": "Occasional fluid exposure – lubricants, fuels, cleaners",
+          "Description_ZH": "模擬設備偶爾暴露於化學流體 (潤滑油、燃料、清潔劑)",
+          "Exposure Method": "Immersion, Spray, or Brush",
+          "Exposure Time": "8 to 24 hours depending on fluid type",
+          "Fluid Temperature": "Standard Ambient or Specific Operating Temp",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply specified fluid to completely cover vulnerable surfaces",
+            "Phase": "Application"
+          },
+          {
+            "Condition": "Maintain at test temperature for 8 hours",
+            "Phase": "Incubation"
+          },
+          {
+            "Condition": "Inspect for material degradation, swelling, or structural failure",
+            "Phase": "Examination"
           }
         ]
       }
@@ -557,46 +557,14 @@
   },
   "Method 505.7 - Solar Radiation (Sunshine)": {
     "Procedure I - Cycling (Thermal Effects)": {
-      "Hot Dry (A1) Worldwide Deployment": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "評估太陽輻射產生的熱效應。除了全光譜 1,120 W/m² 以外，嚴格規定了紅外/紫外/可見光的能量佔比。",
-          "Description_EN": "Evaluate solar thermal effects. Strict spectral energy distribution enforcement.",
-          "Irradiance": "Maximum 1,120 W/m² (355 Btu/ft²/hr)",
-          "Chamber Temperature": "Peak 49°C (120°F)",
-          "Cycle Duration": "24-hour diurnal cycle (Minimum 3 cycles)"
-        },
-        "tests": [
-          {
-            "Spectral Region": "Ultraviolet B (280-320 nm)",
-            "Energy Limits": "5.0 W/m² (0.45%)"
-          },
-          {
-            "Spectral Region": "Ultraviolet A (320-400 nm)",
-            "Energy Limits": "63 W/m² (5.63%)"
-          },
-          {
-            "Spectral Region": "Visible (400-780 nm)",
-            "Energy Limits": "577 W/m² (51.52%)"
-          },
-          {
-            "Spectral Region": "Infrared (780-3000 nm)",
-            "Energy Limits": "475 W/m² (42.40%)"
-          },
-          {
-            "Cycle Profile": "Diurnal",
-            "Energy Limits": "Varies by hour (Peak irradiance at noon)"
-          }
-        ]
-      },
       "Basic Hot (A2) Deployment": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "標準高溫日照環境，模擬A2氣候區的日夜太陽輻射效應",
-          "Description_EN": "Basic Hot (A2) diurnal solar radiation effects",
-          "Irradiance": "Maximum 1,120 W/m²",
           "Chamber Temperature": "Peak 43°C (110°F)",
-          "Cycle Duration": "24-hour diurnal cycle (Minimum 3 cycles)"
+          "Cycle Duration": "24-hour diurnal cycle (Minimum 3 cycles)",
+          "Description_EN": "Basic Hot (A2) diurnal solar radiation effects",
+          "Description_ZH": "標準高溫日照環境，模擬A2氣候區的日夜太陽輻射效應",
+          "Irradiance": "Maximum 1,120 W/m²",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
@@ -604,26 +572,58 @@
             "Energy Limits": "Varies by hour with max ambient 43°C"
           }
         ]
+      },
+      "Hot Dry (A1) Worldwide Deployment": {
+        "parameters": {
+          "Chamber Temperature": "Peak 49°C (120°F)",
+          "Cycle Duration": "24-hour diurnal cycle (Minimum 3 cycles)",
+          "Description_EN": "Evaluate solar thermal effects. Strict spectral energy distribution enforcement.",
+          "Description_ZH": "評估太陽輻射產生的熱效應。除了全光譜 1,120 W/m² 以外，嚴格規定了紅外/紫外/可見光的能量佔比。",
+          "Irradiance": "Maximum 1,120 W/m² (355 Btu/ft²/hr)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Energy Limits": "5.0 W/m² (0.45%)",
+            "Spectral Region": "Ultraviolet B (280-320 nm)"
+          },
+          {
+            "Energy Limits": "63 W/m² (5.63%)",
+            "Spectral Region": "Ultraviolet A (320-400 nm)"
+          },
+          {
+            "Energy Limits": "577 W/m² (51.52%)",
+            "Spectral Region": "Visible (400-780 nm)"
+          },
+          {
+            "Energy Limits": "475 W/m² (42.40%)",
+            "Spectral Region": "Infrared (780-3000 nm)"
+          },
+          {
+            "Cycle Profile": "Diurnal",
+            "Energy Limits": "Varies by hour (Peak irradiance at noon)"
+          }
+        ]
       }
     },
     "Procedure II - Steady State (Actinic Effects)": {
       "Accelerated Photodegradation": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "評估太陽輻射造成的化學/光化學破壞 (褪色、塑膠脆化)",
-          "Description_EN": "Chemical/photochemical degradation – fading, plastic embrittlement",
-          "Irradiance": "1,120 W/m² continuous",
           "Chamber Temperature": "49°C (120°F)",
-          "Duration": "Ten 24-hour cycles (240 hours total)"
+          "Description_EN": "Chemical/photochemical degradation – fading, plastic embrittlement",
+          "Description_ZH": "評估太陽輻射造成的化學/光化學破壞 (褪色、塑膠脆化)",
+          "Duration": "Ten 24-hour cycles (240 hours total)",
+          "Irradiance": "1,120 W/m² continuous",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "20 hours of continuous irradiance per cycle"
+            "Condition": "20 hours of continuous irradiance per cycle",
+            "Phase": "Exposure"
           },
           {
-            "Phase": "Dark Cycle",
-            "Condition": "4 hours of darkness per cycle"
+            "Condition": "4 hours of darkness per cycle",
+            "Phase": "Dark Cycle"
           }
         ]
       }
@@ -633,39 +633,17 @@
     "Procedure I - Rain and Blowing Rain": {
       "Blowing Rain": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬戶外設備遭遇狂風暴雨的環境",
           "Description_EN": "Outdoor equipment exposure to wind-driven rain",
+          "Description_ZH": "模擬戶外設備遭遇狂風暴雨的環境",
           "Rainfall Rate": "1.7 mm/min (4 in/hr)",
-          "Wind Velocity": "18 m/s (40 mph)",
-          "Test Duration": "30 minutes per face"
-        },
-        "tests": [
-          {
-            "Face": "All exposed faces",
-            "Condition": "Continuous spray with specified wind velocity"
-          }
-        ]
-      }
-    },
-    "Procedure III - Drip": {
-      "Condensation / Leakage Drip": {
-        "parameters": {
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬有遮蔽環境中上方冷凝水或輕微漏水的滴落",
-          "Description_EN": "Condensation or minor leak drip in sheltered environments",
-          "Drip Rate": "280 +30/-0 L/m²/hr",
-          "Water Pressure": "Falling from 1 m above test item",
-          "Test Duration": "15 minutes"
+          "Test Duration": "30 minutes per face",
+          "Wind Velocity": "18 m/s (40 mph)"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "Subject item to steady drip for 15 minutes"
-          },
-          {
-            "Phase": "Inspection",
-            "Condition": "Verify no water pooling or ingress"
+            "Condition": "Continuous spray with specified wind velocity",
+            "Face": "All exposed faces"
           }
         ]
       }
@@ -673,15 +651,37 @@
     "Procedure II - Exaggerated": {
       "Exaggerated": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "誇大/強化降雨量測試 (模擬極端豪雨且伴隨高壓風)",
           "Description_EN": "Exaggerated rain for hardware that fails to meet Proc I due to size",
-          "Nozzle Pressure": "276 kPa (40 psig)"
+          "Description_ZH": "誇大/強化降雨量測試 (模擬極端豪雨且伴隨高壓風)",
+          "Nozzle Pressure": "276 kPa (40 psig)",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Spray",
-            "Condition": "Direct high pressure spray at vulnerable areas"
+            "Condition": "Direct high pressure spray at vulnerable areas",
+            "Phase": "Spray"
+          }
+        ]
+      }
+    },
+    "Procedure III - Drip": {
+      "Condensation / Leakage Drip": {
+        "parameters": {
+          "Description_EN": "Condensation or minor leak drip in sheltered environments",
+          "Description_ZH": "模擬有遮蔽環境中上方冷凝水或輕微漏水的滴落",
+          "Drip Rate": "280 +30/-0 L/m²/hr",
+          "Standard": "MIL-STD-810H",
+          "Test Duration": "15 minutes",
+          "Water Pressure": "Falling from 1 m above test item"
+        },
+        "tests": [
+          {
+            "Condition": "Subject item to steady drip for 15 minutes",
+            "Phase": "Exposure"
+          },
+          {
+            "Condition": "Verify no water pooling or ingress",
+            "Phase": "Inspection"
           }
         ]
       }
@@ -689,134 +689,134 @@
   },
   "Method 507.6 - Humidity": {
     "Procedure I - Induced and Natural Cycles": {
-      "Natural Diurnal Cycle": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬自然氣候中日夜溫濕度緩慢變化 (Table 507.6-I)",
-          "Description_EN": "Natural 24-hour temperature/humidity variation (Table 507.6-I)",
-          "Cycle Profile": "Continuous 24-hour variation tracking real-world climatic data",
-          "Test Duration": "Up to 45 cycles (1,080 hours) for severe environments"
-        },
-        "tests": [
-          {
-            "Phase": "Cycling",
-            "Condition": "Follow 24-hr temperature/humidity profile (e.g., B3 Damp Tropical)"
-          }
-        ]
-      },
       "Induced (Storage and Transit) Cycles": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬誘發環境下的溫濕度循環 (如儲存或運輸過程中的 B1, B2, B3 氣候)",
-          "Description_EN": "Induced (Storage and Transit) Cycles simulating B1, B2, B3 climates",
           "Cycle Profile": "Induced 24-hour variation with higher peak temperatures than natural",
+          "Description_EN": "Induced (Storage and Transit) Cycles simulating B1, B2, B3 climates",
+          "Description_ZH": "模擬誘發環境下的溫濕度循環 (如儲存或運輸過程中的 B1, B2, B3 氣候)",
+          "Standard": "MIL-STD-810H",
           "Test Duration": "Determined by use case, typically minimum 15 to 45 cycles"
         },
         "tests": [
           {
-            "Phase": "Cycling",
-            "Condition": "Subject item to induced temperature/humidity profiles (e.g. B3 induced)"
+            "Condition": "Subject item to induced temperature/humidity profiles (e.g. B3 induced)",
+            "Phase": "Cycling"
           }
         ]
-      }
-    },
-    "Procedure II - Aggravated": {
-      "Aggravated Cycle": {
+      },
+      "Natural Diurnal Cycle": {
         "parameters": {
+          "Cycle Profile": "Continuous 24-hour variation tracking real-world climatic data",
+          "Description_EN": "Natural 24-hour temperature/humidity variation (Table 507.6-I)",
+          "Description_ZH": "模擬自然氣候中日夜溫濕度緩慢變化 (Table 507.6-I)",
           "Standard": "MIL-STD-810H",
-          "Description_ZH": "加速驗證產品對濕氣穿透與腐蝕的抵抗力",
-          "Description_EN": "Accelerated moisture penetration and corrosion resistance validation",
-          "Temperature Range": "30°C to 60°C",
-          "Humidity Range": "95% ± 4% RH at peak; 85% RH minimum",
-          "Total Cycles": "10 cycles (240 hours)"
+          "Test Duration": "Up to 45 cycles (1,080 hours) for severe environments"
         },
         "tests": [
           {
-            "Step": "Ramp Up",
-            "Condition": "30°C to 60°C over 2 hours, RH > 95%"
-          },
-          {
-            "Step": "Hold High",
-            "Condition": "Maintain 60°C at 95% RH for 6 hours"
-          },
-          {
-            "Step": "Ramp Down",
-            "Condition": "60°C to 30°C over 8 hours, RH > 85%"
-          },
-          {
-            "Step": "Hold Low",
-            "Condition": "Maintain 30°C at 95% RH for 8 hours"
+            "Condition": "Follow 24-hr temperature/humidity profile (e.g., B3 Damp Tropical)",
+            "Phase": "Cycling"
           }
         ]
       }
     },
     "Procedure IA - Induced (Storage and Transit) Cycles": {
       "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 IA - 誘導(儲存與運輸)循環",
         "Description_EN": "Procedure IA - Induced (Storage and Transit) Cycles",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+        "Description_ZH": "程序 IA - 誘導(儲存與運輸)循環",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
       },
       "tests": [
         {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure IA - Induced (Storage and Transit) Cycles per MIL-STD-810H."
+          "Condition": "Execute Procedure IA - Induced (Storage and Transit) Cycles per MIL-STD-810H.",
+          "Phase": "Exposure"
         }
       ]
     },
     "Procedure IB - Natural Cycles": {
       "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 IB - 自然循環",
         "Description_EN": "Procedure IB - Natural Cycles",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+        "Description_ZH": "程序 IB - 自然循環",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
       },
       "tests": [
         {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure IB - Natural Cycles per MIL-STD-810H."
+          "Condition": "Execute Procedure IB - Natural Cycles per MIL-STD-810H.",
+          "Phase": "Exposure"
         }
       ]
     },
     "Procedure IS - Screening": {
       "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 IS - 篩選測試",
         "Description_EN": "Procedure IS - Screening",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+        "Description_ZH": "程序 IS - 篩選測試",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
       },
       "tests": [
         {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure IS - Screening per MIL-STD-810H."
+          "Condition": "Execute Procedure IS - Screening per MIL-STD-810H.",
+          "Phase": "Exposure"
         }
       ]
+    },
+    "Procedure II - Aggravated": {
+      "Aggravated Cycle": {
+        "parameters": {
+          "Description_EN": "Accelerated moisture penetration and corrosion resistance validation",
+          "Description_ZH": "加速驗證產品對濕氣穿透與腐蝕的抵抗力",
+          "Humidity Range": "95% ± 4% RH at peak; 85% RH minimum",
+          "Standard": "MIL-STD-810H",
+          "Temperature Range": "30°C to 60°C",
+          "Total Cycles": "10 cycles (240 hours)"
+        },
+        "tests": [
+          {
+            "Condition": "30°C to 60°C over 2 hours, RH > 95%",
+            "Step": "Ramp Up"
+          },
+          {
+            "Condition": "Maintain 60°C at 95% RH for 6 hours",
+            "Step": "Hold High"
+          },
+          {
+            "Condition": "60°C to 30°C over 8 hours, RH > 85%",
+            "Step": "Ramp Down"
+          },
+          {
+            "Condition": "Maintain 30°C at 95% RH for 8 hours",
+            "Step": "Hold Low"
+          }
+        ]
+      }
     }
   },
   "Method 508.8 - Fungus": {
     "Procedure I - Fungal Growth": {
       "Standard US/European Spores": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "評估設備材質是否支持黴菌生長並導致功能損壞",
           "Description_EN": "Assess whether materials support mold growth causing functional damage",
-          "Test Microorganisms": "Aspergillus niger, Penicillium funiculosum, etc. (Table 508.8-I)",
-          "Temperature": "30°C ± 1°C (86°F ± 2°F)",
+          "Description_ZH": "評估設備材質是否支持黴菌生長並導致功能損壞",
           "Humidity": "Minimum 95% RH",
-          "Incubation Period": "28 days minimum"
+          "Incubation Period": "28 days minimum",
+          "Standard": "MIL-STD-810H",
+          "Temperature": "30°C ± 1°C (86°F ± 2°F)",
+          "Test Microorganisms": "Aspergillus niger, Penicillium funiculosum, etc. (Table 508.8-I)"
         },
         "tests": [
           {
-            "Phase": "Inoculation",
-            "Condition": "Spray mixed spore suspension evenly over test item"
+            "Condition": "Spray mixed spore suspension evenly over test item",
+            "Phase": "Inoculation"
           },
           {
-            "Phase": "Incubation",
-            "Condition": "Maintain 30°C and >95% RH for 28 days"
+            "Condition": "Maintain 30°C and >95% RH for 28 days",
+            "Phase": "Incubation"
           },
           {
-            "Phase": "Evaluation",
-            "Condition": "Visual inspection by trained mycologist (do not clean before inspection)"
+            "Condition": "Visual inspection by trained mycologist (do not clean before inspection)",
+            "Phase": "Evaluation"
           }
         ]
       }
@@ -826,25 +826,25 @@
     "Procedure I - Aggravated Screening": {
       "Standard Salt Fog": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "加速評估保護塗層與表面處理的抗腐蝕能力",
+          "Chamber Temperature": "35°C ± 2°C (95°F ± 3.6°F)",
           "Description_EN": "Accelerated evaluation of protective coatings corrosion resistance",
-          "Salt Solution": "5% ± 1% NaCl by weight",
+          "Description_ZH": "加速評估保護塗層與表面處理的抗腐蝕能力",
           "Fallout Rate": "1 to 3 ml/80 cm²/hr",
-          "Chamber Temperature": "35°C ± 2°C (95°F ± 3.6°F)"
+          "Salt Solution": "5% ± 1% NaCl by weight",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "24 hours continuous salt fog spray"
+            "Condition": "24 hours continuous salt fog spray",
+            "Phase": "Exposure"
           },
           {
-            "Phase": "Drying",
-            "Condition": "24 hours at standard ambient conditions"
+            "Condition": "24 hours at standard ambient conditions",
+            "Phase": "Drying"
           },
           {
-            "Phase": "Cycle",
-            "Condition": "Repeat for total of 2 cycles (96 hours)"
+            "Condition": "Repeat for total of 2 cycles (96 hours)",
+            "Phase": "Cycle"
           }
         ]
       }
@@ -854,21 +854,21 @@
     "Procedure I - Blowing Dust": {
       "Desert Dust Environment": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備在乾燥微塵環境中的運作與防塵能力 (< 149 μm)",
           "Description_EN": "Operation in dry fine dust environment (< 149 μm particles)",
+          "Description_ZH": "模擬設備在乾燥微塵環境中的運作與防塵能力 (< 149 μm)",
           "Dust Concentration": "10.6 ± 7 g/m³ (0.3 ± 0.2 g/ft³)",
-          "Wind Velocity": "1.5 to 8.9 m/s (300 to 1,750 ft/min)",
-          "Temperature": "Standard Ambient & High Operating Temperature"
+          "Standard": "MIL-STD-810H",
+          "Temperature": "Standard Ambient & High Operating Temperature",
+          "Wind Velocity": "1.5 to 8.9 m/s (300 to 1,750 ft/min)"
         },
         "tests": [
           {
-            "Phase": "Ambient Blow",
-            "Condition": "6 hours at standard ambient temperature"
+            "Condition": "6 hours at standard ambient temperature",
+            "Phase": "Ambient Blow"
           },
           {
-            "Phase": "High Temp Blow",
-            "Condition": "6 hours at high operating temperature"
+            "Condition": "6 hours at high operating temperature",
+            "Phase": "High Temp Blow"
           }
         ]
       }
@@ -876,16 +876,16 @@
     "Procedure II - Blowing Sand": {
       "Desert Sand Environment": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬強風捲起較大沙粒的侵蝕與穿透效應 (150–850 μm)",
           "Description_EN": "Wind-driven coarse sand erosion and penetration (150–850 μm)",
+          "Description_ZH": "模擬強風捲起較大沙粒的侵蝕與穿透效應 (150–850 μm)",
           "Sand Concentration": "1.1 ± 0.3 g/m³ or 2.2 ± 0.5 g/m³",
+          "Standard": "MIL-STD-810H",
           "Wind Velocity": "18 to 29 m/s (40 to 65 mph)"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "90 minutes per vulnerable face"
+            "Condition": "90 minutes per vulnerable face",
+            "Phase": "Exposure"
           }
         ]
       }
@@ -895,25 +895,25 @@
     "Procedure I - Operation in Explosive Atmosphere": {
       "Fuel-Air Mixture": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "驗證設備在充滿易燃油氣的環境中不會引燃爆炸",
-          "Description_EN": "Verify equipment will not ignite explosive atmosphere during operation",
-          "Explosive Mixture": "n-hexane (己烷) and air",
           "Altitude Limits": "Site ambient up to 12,192 m (40,000 ft)",
+          "Description_EN": "Verify equipment will not ignite explosive atmosphere during operation",
+          "Description_ZH": "驗證設備在充滿易燃油氣的環境中不會引燃爆炸",
+          "Explosive Mixture": "n-hexane (己烷) and air",
+          "Standard": "MIL-STD-810H",
           "Temperature": "Maximum operating temperature of test item"
         },
         "tests": [
           {
-            "Phase": "Chamber Prep",
-            "Condition": "Introduce explosive mixture at simulated altitudes"
+            "Condition": "Introduce explosive mixture at simulated altitudes",
+            "Phase": "Chamber Prep"
           },
           {
-            "Phase": "Operation",
-            "Condition": "Operate test item, actuating all switches and contacts"
+            "Condition": "Operate test item, actuating all switches and contacts",
+            "Phase": "Operation"
           },
           {
-            "Phase": "Verification",
-            "Condition": "Detonate mixture at end of test to verify it was explosive"
+            "Condition": "Detonate mixture at end of test to verify it was explosive",
+            "Phase": "Verification"
           }
         ]
       }
@@ -921,20 +921,20 @@
     "Procedure II - Explosion Containment": {
       "Explosion Containment": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "驗證設備外殼是否能承受內部爆炸而不傳導到外部爆炸性環境",
+          "Condition": "Test item case is filled with explosive mixture and ignited",
           "Description_EN": "Verify enclosure contains internal explosion without propagating to surrounding atmosphere",
+          "Description_ZH": "驗證設備外殼是否能承受內部爆炸而不傳導到外部爆炸性環境",
           "Explosive Mixture": "n-hexane (己烷) and air",
-          "Condition": "Test item case is filled with explosive mixture and ignited"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Internal Ignition",
-            "Condition": "Ignite explosive mixture inside the equipment enclosure"
+            "Condition": "Ignite explosive mixture inside the equipment enclosure",
+            "Phase": "Internal Ignition"
           },
           {
-            "Phase": "Verification",
-            "Condition": "Ensure internal explosion does not ignite the surrounding explosive atmosphere"
+            "Condition": "Ensure internal explosion does not ignite the surrounding explosive atmosphere",
+            "Phase": "Verification"
           }
         ]
       }
@@ -944,21 +944,21 @@
     "Procedure I - Immersion": {
       "Shallow Water Immersion": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備部分或完全浸入水中的密封性 (Method 編號升版 512.5→512.6)",
           "Description_EN": "Seal integrity when partially or fully submerged (updated from 512.5)",
-          "Water Depth": "1 meter (3.3 feet) above uppermost point",
+          "Description_ZH": "模擬設備部分或完全浸入水中的密封性 (Method 編號升版 512.5→512.6)",
           "Duration": "30 minutes",
-          "Temperature Differential": "Test item 27°C above water temperature"
+          "Standard": "MIL-STD-810H",
+          "Temperature Differential": "Test item 27°C above water temperature",
+          "Water Depth": "1 meter (3.3 feet) above uppermost point"
         },
         "tests": [
           {
-            "Test": "Pre-conditioning",
-            "Condition": "Heat test item to establish temperature differential"
+            "Condition": "Heat test item to establish temperature differential",
+            "Test": "Pre-conditioning"
           },
           {
-            "Test": "Immersion",
-            "Condition": "Submerge for 30 minutes, observe for bubbles/leaks"
+            "Condition": "Submerge for 30 minutes, observe for bubbles/leaks",
+            "Test": "Immersion"
           }
         ]
       }
@@ -966,15 +966,92 @@
     "Procedure II - Fording": {
       "Fording": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "車輛涉水測試",
           "Description_EN": "Fording (vehicles crossing bodies of water)",
+          "Description_ZH": "車輛涉水測試",
+          "Standard": "MIL-STD-810H",
           "Water Depth": "System specific"
         },
         "tests": [
           {
-            "Test": "Fording",
-            "Condition": "Drive or tow item through water at specified depth"
+            "Condition": "Drive or tow item through water at specified depth",
+            "Test": "Fording"
+          }
+        ]
+      }
+    }
+  },
+  "Method 513.8 - Acceleration": {
+    "Procedure I - Structural Test": {
+      "Structural Test": {
+        "parameters": {
+          "Acceleration Level": "Design Limit Load",
+          "Description_EN": "Structural integrity under high-G",
+          "Description_ZH": "結構承受高G力測試",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply acceleration, verify no structural damage",
+            "Test": "Structural"
+          }
+        ]
+      }
+    },
+    "Procedure II - Operational Test": {
+      "Fighter Aircraft / Helicopter": {
+        "parameters": {
+          "Acceleration Level": "Dependent on aircraft type (e.g., 9G for fighters)",
+          "Description_EN": "Structural/functional integrity under high-G maneuvers (updated from 513.6)",
+          "Description_ZH": "模擬航空器高G力轉向時的結構與功能承受力 (Method 513.6→513.7)",
+          "Duration": "1 minute per axis per direction",
+          "Standard": "MIL-STD-810H",
+          "Test Apparatus": "Centrifuge"
+        },
+        "tests": [
+          {
+            "Axis": "Forward/Aft (+/- X)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          },
+          {
+            "Axis": "Up/Down (+/- Z)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          },
+          {
+            "Axis": "Left/Right (+/- Y)",
+            "Condition": "Maintain G-level for 1 minute while operating"
+          }
+        ]
+      }
+    },
+    "Procedure III - Crash Hazard": {
+      "Crash Hazard": {
+        "parameters": {
+          "Acceleration Level": "Crash load (e.g., 40G)",
+          "Description_EN": "Crash hazard prevention",
+          "Description_ZH": "墜毀危險防止測試",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply crash level G forces, verify equipment does not become a projectile",
+            "Test": "Crash Hazard"
+          }
+        ]
+      }
+    },
+    "Procedure IV - Strength Test": {
+      "Strength Test": {
+        "parameters": {
+          "Description_EN": "Strength test intended to generate specific loads in primary structures",
+          "Description_ZH": "強度測試 (使用正弦波產生特定負載以測試主結構強度)",
+          "Input": "Specific load/acceleration requirements",
+          "Standard": "MIL-STD-810H",
+          "Test Type": "Sine burst testing"
+        },
+        "tests": [
+          {
+            "Condition": "Apply specified static or sine burst loads to the structure",
+            "Phase": "Strength Evaluation"
           }
         ]
       }
@@ -982,14 +1059,59 @@
   },
   "Method 514.8 - Vibration": {
     "Procedure I - General Vibration": {
+      "Category 1 - Manufacturing/Maintenance Processes": {
+        "parameters": {
+          "Description_EN": "Category 1 - Manufacturing/Maintenance Processes",
+          "Description_ZH": "製造與維護流程的環境震動",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 1 - Manufacturing/Maintenance Processes profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 2 - Shipping and Handling": {
+        "parameters": {
+          "Description_EN": "Category 2 - Shipping and Handling",
+          "Description_ZH": "運輸與搬運震動",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 2 - Shipping and Handling profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 3 - Environmental Stress Screening (ESS)": {
+        "parameters": {
+          "Description_EN": "Category 3 - Environmental Stress Screening (ESS)",
+          "Description_ZH": "環境應力篩選",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 3 - Environmental Stress Screening (ESS) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
       "Category 4 - Truck/Trailer (Secured Cargo)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "一般輪型車輛路面運輸 (固定貨) – Method 514.7→514.8 (Figure 514.8C-1)",
           "Description_EN": "Ground vehicle road transport, secured cargo (updated Fig. 514.8C-1)",
-          "Test Type": "Broadband Random",
+          "Description_ZH": "一般輪型車輛路面運輸 (固定貨) – Method 514.7→514.8 (Figure 514.8C-1)",
           "Frequency Range": "5 to 500 Hz",
-          "Test Duration": "1 hr/axis (≈ 1,000 miles equivalent)"
+          "Standard": "MIL-STD-810H",
+          "Test Duration": "1 hr/axis (≈ 1,000 miles equivalent)",
+          "Test Type": "Broadband Random"
         },
         "tests": [
           {
@@ -1009,14 +1131,44 @@
           }
         ]
       },
+      "Category 5 - Truck/Trailer (Loose Cargo)": {
+        "parameters": {
+          "Description_EN": "Category 5 - Truck/Trailer (Loose Cargo)",
+          "Description_ZH": "卡車/拖車散裝貨物",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 5 - Truck/Trailer (Loose Cargo) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 6 - Truck/Trailer (Large Assembly)": {
+        "parameters": {
+          "Description_EN": "Category 6 - Truck/Trailer (Large Assembly)",
+          "Description_ZH": "卡車/拖車大型組件運輸",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 6 - Truck/Trailer (Large Assembly) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
       "Category 7 - Aircraft (Jet Cargo)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "噴射貨機運輸環境 (Figure 514.8D-1)",
           "Description_EN": "Jet cargo transport environment (Figure 514.8D-1)",
-          "Test Type": "Broadband Random",
+          "Description_ZH": "噴射貨機運輸環境 (Figure 514.8D-1)",
           "Frequency Range": "15 to 2,000 Hz",
-          "Test Duration": "1 hr/axis"
+          "Standard": "MIL-STD-810H",
+          "Test Duration": "1 hr/axis",
+          "Test Type": "Broadband Random"
         },
         "tests": [
           {
@@ -1031,14 +1183,194 @@
           }
         ]
       },
+      "Category 8 - Aircraft (Propeller)": {
+        "parameters": {
+          "Description_EN": "Category 8 - Aircraft (Propeller)",
+          "Description_ZH": "螺旋槳飛機運輸",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 8 - Aircraft (Propeller) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 9 - Aircraft (Helicopter)": {
+        "parameters": {
+          "Description_EN": "Category 9 - Aircraft (Helicopter)",
+          "Description_ZH": "直升機運輸",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 9 - Aircraft (Helicopter) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 10 - Watercraft (Marine Vehicles)": {
+        "parameters": {
+          "Description_EN": "Category 10 - Watercraft (Marine Vehicles)",
+          "Description_ZH": "水面艦艇/船舶運輸",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 10 - Watercraft (Marine Vehicles) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 11 - Railroad (Train)": {
+        "parameters": {
+          "Description_EN": "Category 11 - Railroad (Train)",
+          "Description_ZH": "鐵路/火車運輸",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 11 - Railroad (Train) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 12 - Fixed Wing Aircraft (Jet) Operational": {
+        "parameters": {
+          "Description_EN": "Category 12 - Fixed Wing Aircraft (Jet) Operational",
+          "Description_ZH": "定翼噴射機 (操作狀態)",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 12 - Fixed Wing Aircraft (Jet) Operational profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 13 - Propeller Aircraft Operational": {
+        "parameters": {
+          "Description_EN": "Category 13 - Propeller Aircraft Operational",
+          "Description_ZH": "螺旋槳飛機 (操作狀態)",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 13 - Propeller Aircraft Operational profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 14 - Rotary Wing Aircraft (Helicopter) Operational": {
+        "parameters": {
+          "Description_EN": "Category 14 - Rotary Wing Aircraft (Helicopter) Operational",
+          "Description_ZH": "旋翼直升機 (操作狀態)",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 14 - Rotary Wing Aircraft (Helicopter) Operational profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 15 - Aircraft Stores (Assembled, Jet)": {
+        "parameters": {
+          "Description_EN": "Category 15 - Aircraft Stores (Assembled, Jet)",
+          "Description_ZH": "噴射機掛載裝備 (掛載與自由飛行)",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 15 - Aircraft Stores (Assembled, Jet) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 16 - Aircraft Stores (Materiel, Jet)": {
+        "parameters": {
+          "Description_EN": "Category 16 - Aircraft Stores (Materiel, Jet)",
+          "Description_ZH": "噴射機掛載裝備內部物資",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 16 - Aircraft Stores (Materiel, Jet) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 17 - Aircraft Stores (Propeller Aircraft)": {
+        "parameters": {
+          "Description_EN": "Category 17 - Aircraft Stores (Propeller Aircraft)",
+          "Description_ZH": "螺旋槳飛機掛載裝備",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 17 - Aircraft Stores (Propeller Aircraft) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 18 - Aircraft Stores (Helicopter)": {
+        "parameters": {
+          "Description_EN": "Category 18 - Aircraft Stores (Helicopter)",
+          "Description_ZH": "直升機掛載裝備",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 18 - Aircraft Stores (Helicopter) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 19 - Missiles (Tactical Free Flight)": {
+        "parameters": {
+          "Description_EN": "Category 19 - Missiles (Tactical Free Flight)",
+          "Description_ZH": "戰術飛彈 (自由飛行階段)",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 19 - Missiles (Tactical Free Flight) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
       "Category 20 - Ground Vehicles (Mobile)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "車載設備越野或顛簸路面震動 (Figure 514.8E-1)",
           "Description_EN": "Ground mobile equipment off-road vibration (Figure 514.8E-1)",
-          "Test Type": "Broadband Random",
+          "Description_ZH": "車載設備越野或顛簸路面震動 (Figure 514.8E-1)",
           "Frequency Range": "5 to 500 Hz",
-          "Test Duration": "40 min/axis (≈ 500 miles equivalent)"
+          "Standard": "MIL-STD-810H",
+          "Test Duration": "40 min/axis (≈ 500 miles equivalent)",
+          "Test Type": "Broadband Random"
         },
         "tests": [
           {
@@ -1058,14 +1390,59 @@
           }
         ]
       },
+      "Category 21 - Watercraft (Marine Vehicles) Operational": {
+        "parameters": {
+          "Description_EN": "Category 21 - Watercraft (Marine Vehicles) Operational",
+          "Description_ZH": "水面艦艇/船舶 (操作狀態)",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 21 - Watercraft (Marine Vehicles) Operational profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 22 - Engines (Turbine)": {
+        "parameters": {
+          "Description_EN": "Category 22 - Engines (Turbine)",
+          "Description_ZH": "渦輪引擎震動",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 22 - Engines (Turbine) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
+      "Category 23 - Personnel (Materiel Carried By/On Personnel)": {
+        "parameters": {
+          "Description_EN": "Category 23 - Personnel (Materiel Carried By/On Personnel)",
+          "Description_ZH": "人員攜帶裝備震動",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject materiel to Category 23 - Personnel (Materiel Carried By/On Personnel) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
+          }
+        ]
+      },
       "Category 24 - General Minimal Integrity": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "最低基本完整性測試，確保基本組裝品質 (Figure 514.8E-1)",
           "Description_EN": "Minimum baseline integrity test for general assemblies (Figure 514.8E-1)",
-          "Test Type": "Broadband Random",
+          "Description_ZH": "最低基本完整性測試，確保基本組裝品質 (Figure 514.8E-1)",
           "Frequency Range": "20 to 2,000 Hz",
-          "Test Duration": "1 hr/axis (3 hours total)"
+          "Standard": "MIL-STD-810H",
+          "Test Duration": "1 hr/axis (3 hours total)",
+          "Test Type": "Broadband Random"
         },
         "tests": [
           {
@@ -1075,318 +1452,18 @@
           }
         ]
       },
-      "Category 1 - Manufacturing/Maintenance Processes": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "製造與維護流程的環境震動",
-          "Description_EN": "Category 1 - Manufacturing/Maintenance Processes",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 1 - Manufacturing/Maintenance Processes profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 2 - Shipping and Handling": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "運輸與搬運震動",
-          "Description_EN": "Category 2 - Shipping and Handling",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 2 - Shipping and Handling profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 3 - Environmental Stress Screening (ESS)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "環境應力篩選",
-          "Description_EN": "Category 3 - Environmental Stress Screening (ESS)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 3 - Environmental Stress Screening (ESS) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 5 - Truck/Trailer (Loose Cargo)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "卡車/拖車散裝貨物",
-          "Description_EN": "Category 5 - Truck/Trailer (Loose Cargo)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 5 - Truck/Trailer (Loose Cargo) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 6 - Truck/Trailer (Large Assembly)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "卡車/拖車大型組件運輸",
-          "Description_EN": "Category 6 - Truck/Trailer (Large Assembly)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 6 - Truck/Trailer (Large Assembly) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 8 - Aircraft (Propeller)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "螺旋槳飛機運輸",
-          "Description_EN": "Category 8 - Aircraft (Propeller)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 8 - Aircraft (Propeller) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 9 - Aircraft (Helicopter)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "直升機運輸",
-          "Description_EN": "Category 9 - Aircraft (Helicopter)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 9 - Aircraft (Helicopter) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 10 - Watercraft (Marine Vehicles)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "水面艦艇/船舶運輸",
-          "Description_EN": "Category 10 - Watercraft (Marine Vehicles)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 10 - Watercraft (Marine Vehicles) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 11 - Railroad (Train)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "鐵路/火車運輸",
-          "Description_EN": "Category 11 - Railroad (Train)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 11 - Railroad (Train) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 12 - Fixed Wing Aircraft (Jet) Operational": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "定翼噴射機 (操作狀態)",
-          "Description_EN": "Category 12 - Fixed Wing Aircraft (Jet) Operational",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 12 - Fixed Wing Aircraft (Jet) Operational profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 13 - Propeller Aircraft Operational": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "螺旋槳飛機 (操作狀態)",
-          "Description_EN": "Category 13 - Propeller Aircraft Operational",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 13 - Propeller Aircraft Operational profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 14 - Rotary Wing Aircraft (Helicopter) Operational": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "旋翼直升機 (操作狀態)",
-          "Description_EN": "Category 14 - Rotary Wing Aircraft (Helicopter) Operational",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 14 - Rotary Wing Aircraft (Helicopter) Operational profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 15 - Aircraft Stores (Assembled, Jet)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "噴射機掛載裝備 (掛載與自由飛行)",
-          "Description_EN": "Category 15 - Aircraft Stores (Assembled, Jet)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 15 - Aircraft Stores (Assembled, Jet) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 16 - Aircraft Stores (Materiel, Jet)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "噴射機掛載裝備內部物資",
-          "Description_EN": "Category 16 - Aircraft Stores (Materiel, Jet)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 16 - Aircraft Stores (Materiel, Jet) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 17 - Aircraft Stores (Propeller Aircraft)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "螺旋槳飛機掛載裝備",
-          "Description_EN": "Category 17 - Aircraft Stores (Propeller Aircraft)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 17 - Aircraft Stores (Propeller Aircraft) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 18 - Aircraft Stores (Helicopter)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "直升機掛載裝備",
-          "Description_EN": "Category 18 - Aircraft Stores (Helicopter)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 18 - Aircraft Stores (Helicopter) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 19 - Missiles (Tactical Free Flight)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "戰術飛彈 (自由飛行階段)",
-          "Description_EN": "Category 19 - Missiles (Tactical Free Flight)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 19 - Missiles (Tactical Free Flight) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 21 - Watercraft (Marine Vehicles) Operational": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "水面艦艇/船舶 (操作狀態)",
-          "Description_EN": "Category 21 - Watercraft (Marine Vehicles) Operational",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 21 - Watercraft (Marine Vehicles) Operational profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 22 - Engines (Turbine)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "渦輪引擎震動",
-          "Description_EN": "Category 22 - Engines (Turbine)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 22 - Engines (Turbine) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
-      "Category 23 - Personnel (Materiel Carried By/On Personnel)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "人員攜帶裝備震動",
-          "Description_EN": "Category 23 - Personnel (Materiel Carried By/On Personnel)",
-          "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 23 - Personnel (Materiel Carried By/On Personnel) profile per MIL-STD-810H specifications."
-          }
-        ]
-      },
       "Category 25 - All Vehicles (Cantilevered External Materiel)": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "所有載具懸臂式外部裝備",
           "Description_EN": "Category 25 - All Vehicles (Cantilevered External Materiel)",
+          "Description_ZH": "所有載具懸臂式外部裝備",
+          "Duration": "Refer to Annex C/D tables for specific exposure times",
           "Profile": "Dependent on specific platform characteristics and measurements",
-          "Duration": "Refer to Annex C/D tables for specific exposure times"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "Subject materiel to Category 25 - All Vehicles (Cantilevered External Materiel) profile per MIL-STD-810H specifications."
+            "Condition": "Subject materiel to Category 25 - All Vehicles (Cantilevered External Materiel) profile per MIL-STD-810H specifications.",
+            "Phase": "Exposure"
           }
         ]
       }
@@ -1394,18 +1471,18 @@
     "Procedure II - Loose Cargo Transportation": {
       "Category 5 - Loose Cargo": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "未固定鬆散貨物在車輛運輸中的彈跳與碰撞測試 (Figure 514.8C-4)",
           "Description_EN": "Unrestrained loose cargo bounce and collision in transport (Figure 514.8C-4)",
-          "Test Apparatus": "Package Tester (Bounce Machine)",
-          "Motion": "25.4 mm (1.0 inch) peak-to-peak circular synchronous motion",
+          "Description_ZH": "未固定鬆散貨物在車輛運輸中的彈跳與碰撞測試 (Figure 514.8C-4)",
           "Frequency": "Typically 4 to 5 Hz (240–300 RPM)",
+          "Motion": "25.4 mm (1.0 inch) peak-to-peak circular synchronous motion",
+          "Standard": "MIL-STD-810H",
+          "Test Apparatus": "Package Tester (Bounce Machine)",
           "Test Duration": "20 minutes (≈ 150 miles equivalent)"
         },
         "tests": [
           {
-            "Phase": "Bounce Test",
-            "Condition": "Item must be free to bounce, strike bed, and collide with fences"
+            "Condition": "Item must be free to bounce, strike bed, and collide with fences",
+            "Phase": "Bounce Test"
           }
         ]
       }
@@ -1413,16 +1490,16 @@
     "Procedure III - Large Assembly Transport": {
       "Large Assembly Transport": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "大型組裝件運輸測試 (複製大型裝備在運輸過程中的振動與衝擊)",
           "Description_EN": "Replicate vibration and shock environment for large cargo",
-          "Test Apparatus": "Multi-exciter or specialized large shaking table",
-          "Profile": "Measured field data or specified large cargo profiles"
+          "Description_ZH": "大型組裝件運輸測試 (複製大型裝備在運輸過程中的振動與衝擊)",
+          "Profile": "Measured field data or specified large cargo profiles",
+          "Standard": "MIL-STD-810H",
+          "Test Apparatus": "Multi-exciter or specialized large shaking table"
         },
         "tests": [
           {
-            "Phase": "Transport Vibration",
-            "Condition": "Subject large assembly to expected transport vibration profiles"
+            "Condition": "Subject large assembly to expected transport vibration profiles",
+            "Phase": "Transport Vibration"
           }
         ]
       }
@@ -1430,630 +1507,19 @@
     "Procedure IV - Assembled Aircraft Store Captive Carriage and Free Flight": {
       "Aircraft Store Vibration": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "機載外掛物掛載與自由飛行時的振動測試",
           "Description_EN": "Vibration of assembled aircraft stores during captive carriage and free flight",
-          "Profile": "Random vibration with superimposed sine tones (if applicable)"
+          "Description_ZH": "機載外掛物掛載與自由飛行時的振動測試",
+          "Profile": "Random vibration with superimposed sine tones (if applicable)",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Captive Carriage",
-            "Condition": "Simulate vibration environment while attached to aircraft"
+            "Condition": "Simulate vibration environment while attached to aircraft",
+            "Phase": "Captive Carriage"
           },
           {
-            "Phase": "Free Flight",
-            "Condition": "Simulate vibration environment during free flight"
-          }
-        ]
-      }
-    }
-  },
-  "Method 516.8 - Shock": {
-    "Procedure I - Functional Shock": {
-      "Standard Operational Shock": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備運作時可能遭遇的碰撞衝擊 (Method 516.7→516.8)",
-          "Description_EN": "Operational shock during use – structural and functional integrity (updated 516.7→516.8)",
-          "Pulse Shape": "Terminal Peak Sawtooth (後峰鋸齒波)",
-          "Peak Acceleration": "40 g (default for ground equipment)",
-          "Pulse Duration": "11 ms",
-          "Number of Shocks": "3 per direction × 6 directions = 18 total"
-        },
-        "tests": [
-          {
-            "Test": "Axis X",
-            "Condition": "+X (3 shocks), -X (3 shocks) while operating"
-          },
-          {
-            "Test": "Axis Y",
-            "Condition": "+Y (3 shocks), -Y (3 shocks) while operating"
-          },
-          {
-            "Test": "Axis Z",
-            "Condition": "+Z (3 shocks), -Z (3 shocks) while operating"
-          }
-        ]
-      }
-    },
-    "Procedure IV - Transit Drop": {
-      "Packaged Equipment Drop": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備在物流搬運過程中的意外跌落 (Table 516.8-VI)",
-          "Description_EN": "Accidental drop during logistics handling (Table 516.8-VI)",
-          "Drop Surface": "2-inch plywood backed by solid concrete",
-          "Number of Drops": "26 drops (all faces, edges, and corners)"
-        },
-        "tests": [
-          {
-            "Weight": "< 45.4 kg (100 lbs)",
-            "Drop Height": "122 cm (48 inches) – 26 drops"
-          },
-          {
-            "Weight": "45.4–90.7 kg (100–200 lbs)",
-            "Drop Height": "76 cm (30 inches) – 26 drops"
-          },
-          {
-            "Weight": "90.7–454 kg (200–1,000 lbs)",
-            "Drop Height": "61 cm (24 inches) – limited drops"
-          }
-        ]
-      }
-    },
-    "Procedure V - Crash Hazard Shock": {
-      "Ground/Flight Vehicle Crash": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "確保載具墜毀時設備不脫落成為高速拋射物",
-          "Description_EN": "Prevent equipment becoming projectile during vehicle crash",
-          "Pulse Shape": "Terminal Peak Sawtooth",
-          "Peak Acceleration (Ground)": "75 g",
-          "Pulse Duration (Ground)": "6 ms",
-          "Number of Shocks": "2 per direction (12 total)"
-        },
-        "tests": [
-          {
-            "Test": "Non-Operating Shock",
-            "Condition": "Apply crash profile to mounting points"
-          },
-          {
-            "Test": "Safety Verification",
-            "Condition": "Verify equipment remains captive on mounts; no hazardous parts shed"
-          }
-        ]
-      }
-    },
-    "Procedure VI - Bench Handling": {
-      "Maintenance/Repair Drop": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備在工作台上維修時的意外傾倒或滑落",
-          "Description_EN": "Accidental tipping or sliding during bench maintenance",
-          "Drop Surface": "Solid wood bench top ≥ 4.25 cm thick",
-          "Test Item State": "Unpackaged, operating or non-operating"
-        },
-        "tests": [
-          {
-            "Phase": "45-Degree Drop",
-            "Condition": "Raise opposite edge to 45° or balance point, drop freely"
-          },
-          {
-            "Phase": "4-Inch Drop",
-            "Condition": "Raise opposite edge to 10 cm (4 inches), drop freely"
-          },
-          {
-            "Phase": "Repetition",
-            "Condition": "Repeat for all practical edges on base face"
-          }
-        ]
-      }
-    },
-    "Procedure II - Transportation Shock": {
-      "Transportation Shock": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "運輸衝擊",
-          "Description_EN": "Transportation Shock",
-          "Input": "Half-sine or terminal peak sawtooth"
-        },
-        "tests": [
-          {
-            "Test": "Transport",
-            "Condition": "Simulate shocks during handling and transport"
-          }
-        ]
-      }
-    },
-    "Procedure III - Fragility": {
-      "Fragility": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "脆弱度測試 (找出產品的極限破壞點)",
-          "Description_EN": "Fragility (determine exact failure limits)",
-          "Input": "Stepped severity shocks"
-        },
-        "tests": [
-          {
-            "Test": "Fragility",
-            "Condition": "Increase shock amplitude until failure"
-          }
-        ]
-      }
-    },
-    "Procedure VII - Pendulum Impact": {
-      "Pendulum Impact": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "鐘擺衝擊",
-          "Description_EN": "Pendulum Impact for large cargo",
-          "Velocity": "Specific impact velocity"
-        },
-        "tests": [
-          {
-            "Test": "Impact",
-            "Condition": "Swing item into wall or barrier"
-          }
-        ]
-      }
-    },
-    "Procedure VIII - Catapult Launch/Arrested Landing": {
-      "Catapult Launch/Arrested Landing": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "彈射起飛與攔截降落衝擊",
-          "Description_EN": "Catapult launch and arrested landing shock",
-          "Platform": "Aircraft Carrier"
-        },
-        "tests": [
-          {
-            "Test": "Catapult",
-            "Condition": "Simulate carrier launch and arrestment shock profiles"
-          }
-        ]
-      }
-    }
-  },
-  "Method 518.2 - Acidic Atmosphere": {
-    "Procedure I - Acidic Atmosphere": {
-      "Corrosive Industrial/Exhaust Environment": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "評估設備在酸性氣體下的抗腐蝕與抗化學破壞能力",
-          "Description_EN": "Corrosion resistance in acidic industrial/exhaust atmosphere",
-          "Acid Solution": "Sulfuric Acid (H₂SO₄) and Nitric Acid (HNO₃)",
-          "pH Level": "4.17 (severe acid rain/atmosphere simulation)",
-          "Chamber Temperature": "35°C (95°F)"
-        },
-        "tests": [
-          {
-            "Phase": "Exposure",
-            "Condition": "3 periods × 2 hours spraying + 22 hours storage"
-          },
-          {
-            "Phase": "Total Duration",
-            "Condition": "72 hours minimum"
-          }
-        ]
-      }
-    }
-  },
-  "Method 519.8 - Gunfire Shock": {
-    "Procedure I - Direct Operation": {
-      "Aircraft/Vehicle Mounted Gunfire": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬機載或車載機砲連射產生的週期性強烈震動 (Method 519.7→519.8)",
-          "Description_EN": "Periodic high-intensity vibration/shock from onboard cannon fire (updated 519.7→519.8)",
-          "Firing Rate": "Repetitive pulse (20 to 100 Hz per gun firing rate)",
-          "Vibration Type": "Sine-on-random or repetitive transient",
-          "Duration": "Equivalent to actual mission firing time"
-        },
-        "tests": [
-          {
-            "Phase": "Vibration Sweep",
-            "Condition": "Apply specified gunfire shock response spectrum (SRS)"
-          }
-        ]
-      }
-    },
-    "Procedure II - SRS Generated Shock Time History Pulse Sequence": {
-      "SRS Generated Pulse": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "根據SRS合成的脈衝波形來模擬機砲射擊衝擊",
-          "Description_EN": "Synthesized shock time history pulse sequence under TWR based on SRS",
-          "Method": "Time Waveform Replication (TWR)"
-        },
-        "tests": [
-          {
-            "Test": "Gunfire Shock",
-            "Condition": "Apply synthesized SRS time history to simulate gunfire"
-          }
-        ]
-      }
-    },
-    "Procedure III - Stochastically Generated Materiel Input": {
-      "Stochastic Gunfire": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "使用初步設計頻譜隨機產生的輸入訊號來模擬機砲衝擊",
-          "Description_EN": "Stochastically generated materiel input from preliminary design spectrum",
-          "Method": "Random Vibration approximation"
-        },
-        "tests": [
-          {
-            "Test": "Gunfire Shock",
-            "Condition": "Apply stochastic vibration profile"
-          }
-        ]
-      }
-    }
-  },
-  "Method 521.4 - Icing/Freezing Rain": {
-    "Procedure I - Icing": {
-      "Marine/Aircraft Ice Accumulation": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "驗證設備在結冰環境下的操作與解凍效能",
-          "Description_EN": "Verify operation and de-icing in icing environments",
-          "Ice Thickness": "13 mm (0.5 in) general; up to 75 mm (3 in) marine",
-          "Pre-chill Temperature": "-10°C to 0°C (14°F to 32°F)"
-        },
-        "tests": [
-          {
-            "Phase": "Pre-cooling",
-            "Condition": "Stabilize test item below freezing"
-          },
-          {
-            "Phase": "Ice Accretion",
-            "Condition": "Spray super-cooled water until desired thickness"
-          },
-          {
-            "Phase": "Operation",
-            "Condition": "Operate equipment or deploy de-icing mechanisms"
-          }
-        ]
-      }
-    }
-  },
-  "Method 522.2 - Ballistic Shock": {
-    "Procedure I - Hull and Turret": {
-      "Armor Impact Shock": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬裝甲車輛遭受非貫穿性彈砲擊中時的高頻破壞性衝擊",
-          "Description_EN": "High-frequency shock from non-penetrating ballistic impact on armor",
-          "Shock Level": "Very high momentum exchange; SRS often > 10,000 g at high frequencies",
-          "Simulator": "Ballistic shock machine (BSM) or light gas gun"
-        },
-        "tests": [
-          {
-            "Phase": "Impact",
-            "Condition": "Apply specified SRS profile to item mounting points"
-          },
-          {
-            "Phase": "Assessment",
-            "Condition": "Verify structural integrity; no hazardous fragment shedding"
-          }
-        ]
-      }
-    },
-    "Procedure II - Large Scale Tactical Simulator (LSTS)": {
-      "LSTS Testing": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "大型戰術模擬器彈道衝擊測試",
-          "Description_EN": "Large Scale Tactical Simulator for heavy components",
-          "Component Weight": "Very Heavy Components",
-          "Shock Input": "Full spectrum ballistic shock simulation"
-        },
-        "tests": [
-          {
-            "Test": "Shock",
-            "Condition": "Expose item to LSTS generated ballistic shock"
-          }
-        ]
-      }
-    },
-    "Procedure III - Limited Spectrum, Light Weight Shock Machine (LWSM)": {
-      "LWSM Testing": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "輕量級衝擊機測試 (針對小型設備的有限頻譜測試)",
-          "Description_EN": "Light Weight Shock Machine (LWSM)",
-          "Component Weight": "< 18 kg (40 lbs)"
-        },
-        "tests": [
-          {
-            "Test": "Shock",
-            "Condition": "Apply shock pulse using LWSM"
-          }
-        ]
-      }
-    },
-    "Procedure IV - Limited Spectrum, Medium Weight Shock Machine (MWSM)": {
-      "MWSM Testing": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "中量級衝擊機測試 (針對中型設備的有限頻譜測試)",
-          "Description_EN": "Medium Weight Shock Machine (MWSM)",
-          "Component Weight": "Typically < 113 kg (250 lbs)"
-        },
-        "tests": [
-          {
-            "Test": "Shock",
-            "Condition": "Apply shock pulse using MWSM"
-          }
-        ]
-      }
-    },
-    "Procedure V - Drop Table": {
-      "Drop Table Testing": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "跌落台測試，用於輕型設備的彈道衝擊模擬",
-          "Description_EN": "Drop table test for lightweight components",
-          "Component Weight": "Typically < 18 kg (40 lbs)"
-        },
-        "tests": [
-          {
-            "Test": "Shock",
-            "Condition": "Simulate ballistic shock via high-frequency drop table"
-          }
-        ]
-      }
-    },
-    "Procedure VI - Drop Table (Light weight components)": {
-      "Drop Table Light Weight": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "另一種輕量型跌落台測試配置",
-          "Description_EN": "Specific drop table configuration for light weight components"
-        },
-        "tests": [
-          {
-            "Test": "Shock",
-            "Condition": "Simulate ballistic shock via drop table"
-          }
-        ]
-      }
-    },
-    "Procedure IS - Default Shock Level": {
-      "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 IS - 預設衝擊位準",
-        "Description_EN": "Procedure IS - Default Shock Level",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
-      },
-      "tests": [
-        {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure IS - Default Shock Level per MIL-STD-810H."
-        }
-      ]
-    }
-  },
-  "Method 523.4 - Vibro-Acoustic/Temperature": {
-    "Procedure I - External Stores": {
-      "Aircraft Store Environment": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "掛載於軍機外部的裝備，綜合氣動噪音、震動與氣動加熱的破壞",
-          "Description_EN": "External aircraft stores – combined aero-noise, vibration, and aerodynamic heating",
-          "Vibration": "Aerodynamic flow-induced random vibration",
-          "Acoustic": "Engine exhaust and boundary layer noise",
-          "Temperature": "Aerodynamic heating profile"
-        },
-        "tests": [
-          {
-            "Phase": "Captive Carry",
-            "Condition": "Simultaneous application of three stresses per mission profile"
-          }
-        ]
-      }
-    }
-  },
-  "Method 524.1 - Freeze / Thaw": {
-    "Procedure I - Diurnal Cycling Effects": {
-      "Freezing and Thawing Cycle": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬水分滲入縫隙後結冰膨脹再融化產生的物理結構破壞",
-          "Description_EN": "Physical damage from moisture freezing and thawing in crevices",
-          "Cold Phase": "Below -10°C (14°F)",
-          "Warm Phase": "Standard Ambient (melt phase)",
-          "Moisture Element": "Sufficient water to penetrate crevices"
-        },
-        "tests": [
-          {
-            "Phase": "Cycling",
-            "Condition": "Repeated transition between freezing and thawing"
-          },
-          {
-            "Phase": "Inspection",
-            "Condition": "Inspect for cracked seals, housing separation, component distortion"
-          }
-        ]
-      }
-    },
-    "Procedure II - Fogging": {
-      "Fogging Simulation": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "起霧測試，模擬由濕度與溫度變化造成的裝備內部或光學表面起霧",
-          "Description_EN": "Simulation of moisture condensation (fogging) on/in materiel",
-          "Condition": "Rapid temperature drop below dew point"
-        },
-        "tests": [
-          {
-            "Phase": "Condensation",
-            "Condition": "Subject item to conditions inducing internal/external fogging"
-          }
-        ]
-      }
-    },
-    "Procedure III - Rapid Temperature Change": {
-      "Rapid Temp Change (Freeze/Thaw)": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "快速溫度變化測試，模擬冰層在劇烈溫度變化下的累積與融化效應",
-          "Description_EN": "Ice accretion and thaw resulting from a rapid temperature shift",
-          "Condition": "Rapid shift between freezing and ambient environments"
-        },
-        "tests": [
-          {
-            "Phase": "Thermal Shock / Phase Change",
-            "Condition": "Expose item to rapid freezing and thawing cycles"
-          }
-        ]
-      }
-    }
-  },
-  "Method 525.2 - Time Waveform Replication": {
-    "Procedure I - Single Exciter TWR": {
-      "Field Data Replication": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "將實地錄製的複雜時域波形直接在振動台上重播 (Method 525.1→525.2)",
-          "Description_EN": "Replicate real field-measured time waveforms on vibration table (updated 525.1→525.2)",
-          "Control Methodology": "Closed-loop inverse transfer function control",
-          "Data Source": "Actual measured field acceleration data"
-        },
-        "tests": [
-          {
-            "Phase": "System ID",
-            "Condition": "Determine system transfer function using low-level random"
-          },
-          {
-            "Phase": "Replication",
-            "Condition": "Iteratively correct drive signal to match target field waveform"
-          }
-        ]
-      }
-    },
-    "Procedure II - SESA Replication": {
-      "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 II - SESA 波形複製",
-        "Description_EN": "Procedure II - SESA Replication",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
-      },
-      "tests": [
-        {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure II - SESA Replication per MIL-STD-810H."
-        }
-      ]
-    }
-  },
-  "Method 527.2 - Multi-Exciter": {
-    "Procedure I - Time Domain Reference Criteria": {
-      "MIMO Vibration": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "多軸多激振器測試 (時域參考標準)",
-          "Description_EN": "Time Domain Reference Criteria for MIMO Testing",
-          "Control Type": "Multiple Input Multiple Output (MIMO)",
-          "Degrees of Freedom": "Up to 6 DOF (translation and rotation)"
-        },
-        "tests": [
-          {
-            "Phase": "Multi-axis Excitation",
-            "Condition": "Simultaneous control of phase and amplitude across multiple shakers"
-          }
-        ]
-      }
-    },
-    "Procedure II - Frequency Domain Reference Criteria": {
-      "Frequency Domain MIMO": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "多軸多激振器測試 (頻域參考標準)",
-          "Description_EN": "Frequency Domain Reference Criteria for MIMO Testing",
-          "Control Type": "MIMO in Frequency Domain"
-        },
-        "tests": [
-          {
-            "Phase": "Multi-axis Excitation",
-            "Condition": "Simultaneous frequency-domain control across multiple shakers"
-          }
-        ]
-      }
-    }
-  },
-  "Method 513.8 - Acceleration": {
-    "Procedure II - Operational Test": {
-      "Fighter Aircraft / Helicopter": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬航空器高G力轉向時的結構與功能承受力 (Method 513.6→513.7)",
-          "Description_EN": "Structural/functional integrity under high-G maneuvers (updated from 513.6)",
-          "Acceleration Level": "Dependent on aircraft type (e.g., 9G for fighters)",
-          "Test Apparatus": "Centrifuge",
-          "Duration": "1 minute per axis per direction"
-        },
-        "tests": [
-          {
-            "Axis": "Forward/Aft (+/- X)",
-            "Condition": "Maintain G-level for 1 minute while operating"
-          },
-          {
-            "Axis": "Up/Down (+/- Z)",
-            "Condition": "Maintain G-level for 1 minute while operating"
-          },
-          {
-            "Axis": "Left/Right (+/- Y)",
-            "Condition": "Maintain G-level for 1 minute while operating"
-          }
-        ]
-      }
-    },
-    "Procedure I - Structural Test": {
-      "Structural Test": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "結構承受高G力測試",
-          "Description_EN": "Structural integrity under high-G",
-          "Acceleration Level": "Design Limit Load"
-        },
-        "tests": [
-          {
-            "Test": "Structural",
-            "Condition": "Apply acceleration, verify no structural damage"
-          }
-        ]
-      }
-    },
-    "Procedure III - Crash Hazard": {
-      "Crash Hazard": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "墜毀危險防止測試",
-          "Description_EN": "Crash hazard prevention",
-          "Acceleration Level": "Crash load (e.g., 40G)"
-        },
-        "tests": [
-          {
-            "Test": "Crash Hazard",
-            "Condition": "Apply crash level G forces, verify equipment does not become a projectile"
-          }
-        ]
-      }
-    },
-    "Procedure IV - Strength Test": {
-      "Strength Test": {
-        "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "強度測試 (使用正弦波產生特定負載以測試主結構強度)",
-          "Description_EN": "Strength test intended to generate specific loads in primary structures",
-          "Test Type": "Sine burst testing",
-          "Input": "Specific load/acceleration requirements"
-        },
-        "tests": [
-          {
-            "Phase": "Strength Evaluation",
-            "Condition": "Apply specified static or sine burst loads to the structure"
+            "Condition": "Simulate vibration environment during free flight",
+            "Phase": "Free Flight"
           }
         ]
       }
@@ -2063,38 +1529,66 @@
     "Procedure I - Diffuse Field Acoustic Noise": {
       "Standard Acoustic Testing": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬設備暴露於高強度聲波場 (飛機引擎、火箭發射) 引起的疲勞",
           "Description_EN": "High-intensity acoustic field exposure – aircraft engines, rocket launch",
-          "Overall Sound Pressure Level": "130 to 165 dB (re 20 μPa) typical",
+          "Description_ZH": "模擬設備暴露於高強度聲波場 (飛機引擎、火箭發射) 引起的疲勞",
+          "Duration": "30 minutes per condition",
           "Frequency Range": "20 Hz to 10,000 Hz",
-          "Duration": "30 minutes per condition"
+          "Overall Sound Pressure Level": "130 to 165 dB (re 20 μPa) typical",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Operation",
-            "Condition": "Subject to broad-band random acoustic noise field"
+            "Condition": "Subject to broad-band random acoustic noise field",
+            "Phase": "Operation"
           },
           {
-            "Phase": "Inspection",
-            "Condition": "Check for acoustic-induced fatigue and component chafing"
+            "Condition": "Check for acoustic-induced fatigue and component chafing",
+            "Phase": "Inspection"
           }
         ]
       }
     },
+    "Procedure IA - Uniform Intensity Shaped Spectrum": {
+      "parameters": {
+        "Description_EN": "Procedure IA - Uniform Intensity Shaped Spectrum",
+        "Description_ZH": "程序 IA - 均勻強度成形頻譜",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
+      },
+      "tests": [
+        {
+          "Condition": "Execute Procedure IA - Uniform Intensity Shaped Spectrum per MIL-STD-810H.",
+          "Phase": "Exposure"
+        }
+      ]
+    },
+    "Procedure IB - Normal Incident Plane Waves": {
+      "parameters": {
+        "Description_EN": "Procedure IB - Normal Incident Plane Waves",
+        "Description_ZH": "程序 IB - 垂直入射平面波",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
+      },
+      "tests": [
+        {
+          "Condition": "Execute Procedure IB - Normal Incident Plane Waves per MIL-STD-810H.",
+          "Phase": "Exposure"
+        }
+      ]
+    },
     "Procedure II - Grazing Incidence Acoustic Noise Testing": {
       "Grazing Incidence": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "掠射聲學噪音測試 (平行表面傳播的高頻噪音，如飛機蒙皮)",
           "Description_EN": "Acoustic noise propagating parallel to the surface (grazing incidence)",
+          "Description_ZH": "掠射聲學噪音測試 (平行表面傳播的高頻噪音，如飛機蒙皮)",
+          "Frequency Range": "Specific to aerodynamic profile",
           "Sound Pressure Level (SPL)": "Typically > 130 dB",
-          "Frequency Range": "Specific to aerodynamic profile"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Acoustic Exposure",
-            "Condition": "Direct sound waves parallel to the item surface"
+            "Condition": "Direct sound waves parallel to the item surface",
+            "Phase": "Acoustic Exposure"
           }
         ]
       }
@@ -2102,67 +1596,205 @@
     "Procedure III - Cavity Resonance Acoustic Noise Testing": {
       "Cavity Resonance": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "空腔共振噪音測試 (如打開武器艙門時產生的低頻共振)",
           "Description_EN": "Acoustic resonance within open cavities",
-          "Sound Pressure Level (SPL)": "Determined by cavity dimensions and airflow speed"
+          "Description_ZH": "空腔共振噪音測試 (如打開武器艙門時產生的低頻共振)",
+          "Sound Pressure Level (SPL)": "Determined by cavity dimensions and airflow speed",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Resonance Excitation",
-            "Condition": "Expose internal components to resonant acoustic frequencies"
+            "Condition": "Expose internal components to resonant acoustic frequencies",
+            "Phase": "Resonance Excitation"
+          }
+        ]
+      }
+    }
+  },
+  "Method 516.8 - Shock": {
+    "Procedure I - Functional Shock": {
+      "Standard Operational Shock": {
+        "parameters": {
+          "Description_EN": "Operational shock during use – structural and functional integrity (updated 516.7→516.8)",
+          "Description_ZH": "模擬設備運作時可能遭遇的碰撞衝擊 (Method 516.7→516.8)",
+          "Number of Shocks": "3 per direction × 6 directions = 18 total",
+          "Peak Acceleration": "40 g (default for ground equipment)",
+          "Pulse Duration": "11 ms",
+          "Pulse Shape": "Terminal Peak Sawtooth (後峰鋸齒波)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "+X (3 shocks), -X (3 shocks) while operating",
+            "Test": "Axis X"
+          },
+          {
+            "Condition": "+Y (3 shocks), -Y (3 shocks) while operating",
+            "Test": "Axis Y"
+          },
+          {
+            "Condition": "+Z (3 shocks), -Z (3 shocks) while operating",
+            "Test": "Axis Z"
           }
         ]
       }
     },
-    "Procedure IA - Uniform Intensity Shaped Spectrum": {
-      "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 IA - 均勻強度成形頻譜",
-        "Description_EN": "Procedure IA - Uniform Intensity Shaped Spectrum",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
-      },
-      "tests": [
-        {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure IA - Uniform Intensity Shaped Spectrum per MIL-STD-810H."
-        }
-      ]
+    "Procedure II - Transportation Shock": {
+      "Transportation Shock": {
+        "parameters": {
+          "Description_EN": "Transportation Shock",
+          "Description_ZH": "運輸衝擊",
+          "Input": "Half-sine or terminal peak sawtooth",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Simulate shocks during handling and transport",
+            "Test": "Transport"
+          }
+        ]
+      }
     },
-    "Procedure IB - Normal Incident Plane Waves": {
-      "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 IB - 垂直入射平面波",
-        "Description_EN": "Procedure IB - Normal Incident Plane Waves",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
-      },
-      "tests": [
-        {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure IB - Normal Incident Plane Waves per MIL-STD-810H."
-        }
-      ]
+    "Procedure III - Fragility": {
+      "Fragility": {
+        "parameters": {
+          "Description_EN": "Fragility (determine exact failure limits)",
+          "Description_ZH": "脆弱度測試 (找出產品的極限破壞點)",
+          "Input": "Stepped severity shocks",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Increase shock amplitude until failure",
+            "Test": "Fragility"
+          }
+        ]
+      }
+    },
+    "Procedure IV - Transit Drop": {
+      "Packaged Equipment Drop": {
+        "parameters": {
+          "Description_EN": "Accidental drop during logistics handling (Table 516.8-VI)",
+          "Description_ZH": "模擬設備在物流搬運過程中的意外跌落 (Table 516.8-VI)",
+          "Drop Surface": "2-inch plywood backed by solid concrete",
+          "Number of Drops": "26 drops (all faces, edges, and corners)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Drop Height": "122 cm (48 inches) – 26 drops",
+            "Weight": "< 45.4 kg (100 lbs)"
+          },
+          {
+            "Drop Height": "76 cm (30 inches) – 26 drops",
+            "Weight": "45.4–90.7 kg (100–200 lbs)"
+          },
+          {
+            "Drop Height": "61 cm (24 inches) – limited drops",
+            "Weight": "90.7–454 kg (200–1,000 lbs)"
+          }
+        ]
+      }
+    },
+    "Procedure V - Crash Hazard Shock": {
+      "Ground/Flight Vehicle Crash": {
+        "parameters": {
+          "Description_EN": "Prevent equipment becoming projectile during vehicle crash",
+          "Description_ZH": "確保載具墜毀時設備不脫落成為高速拋射物",
+          "Number of Shocks": "2 per direction (12 total)",
+          "Peak Acceleration (Ground)": "75 g",
+          "Pulse Duration (Ground)": "6 ms",
+          "Pulse Shape": "Terminal Peak Sawtooth",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply crash profile to mounting points",
+            "Test": "Non-Operating Shock"
+          },
+          {
+            "Condition": "Verify equipment remains captive on mounts; no hazardous parts shed",
+            "Test": "Safety Verification"
+          }
+        ]
+      }
+    },
+    "Procedure VI - Bench Handling": {
+      "Maintenance/Repair Drop": {
+        "parameters": {
+          "Description_EN": "Accidental tipping or sliding during bench maintenance",
+          "Description_ZH": "模擬設備在工作台上維修時的意外傾倒或滑落",
+          "Drop Surface": "Solid wood bench top ≥ 4.25 cm thick",
+          "Standard": "MIL-STD-810H",
+          "Test Item State": "Unpackaged, operating or non-operating"
+        },
+        "tests": [
+          {
+            "Condition": "Raise opposite edge to 45° or balance point, drop freely",
+            "Phase": "45-Degree Drop"
+          },
+          {
+            "Condition": "Raise opposite edge to 10 cm (4 inches), drop freely",
+            "Phase": "4-Inch Drop"
+          },
+          {
+            "Condition": "Repeat for all practical edges on base face",
+            "Phase": "Repetition"
+          }
+        ]
+      }
+    },
+    "Procedure VII - Pendulum Impact": {
+      "Pendulum Impact": {
+        "parameters": {
+          "Description_EN": "Pendulum Impact for large cargo",
+          "Description_ZH": "鐘擺衝擊",
+          "Standard": "MIL-STD-810H",
+          "Velocity": "Specific impact velocity"
+        },
+        "tests": [
+          {
+            "Condition": "Swing item into wall or barrier",
+            "Test": "Impact"
+          }
+        ]
+      }
+    },
+    "Procedure VIII - Catapult Launch/Arrested Landing": {
+      "Catapult Launch/Arrested Landing": {
+        "parameters": {
+          "Description_EN": "Catapult launch and arrested landing shock",
+          "Description_ZH": "彈射起飛與攔截降落衝擊",
+          "Platform": "Aircraft Carrier",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Simulate carrier launch and arrestment shock profiles",
+            "Test": "Catapult"
+          }
+        ]
+      }
     }
   },
   "Method 517.3 - Pyroshock": {
     "Procedure I - Near-Field with Real Configuration": {
       "Pyrotechnic Device Firing": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬爆炸螺栓或火工品引爆產生的高頻高G值衝擊",
           "Description_EN": "High-frequency, high-G shock from pyrotechnic/explosive bolt firing",
+          "Description_ZH": "模擬爆炸螺栓或火工品引爆產生的高頻高G值衝擊",
+          "Duration": "< 20 milliseconds",
           "Frequency Range": "Up to 1,000,000 Hz (analyzed to 100,000 Hz)",
           "Peak Acceleration": "Can exceed 100,000 g",
-          "Duration": "< 20 milliseconds"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Firing",
-            "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration"
+            "Condition": "Initiate pyrotechnic device in actual or mock-up structural configuration",
+            "Phase": "Firing"
           },
           {
-            "Phase": "Data Capture",
-            "Condition": "High-speed transient acquisition (min 1M samples/sec)"
+            "Condition": "High-speed transient acquisition (min 1M samples/sec)",
+            "Phase": "Data Capture"
           }
         ]
       }
@@ -2170,16 +1802,16 @@
     "Procedure II - Near-Field with Simulated Configuration": {
       "Simulated Near-Field Pyroshock": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "使用模擬結構進行近場爆炸衝擊測試",
           "Description_EN": "Near-field pyroshock with simulated structural configuration",
+          "Description_ZH": "使用模擬結構進行近場爆炸衝擊測試",
+          "Distance": "Less than 15 cm from source",
           "Shock Range": "> 10,000 g peak",
-          "Distance": "Less than 15 cm from source"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Shock",
-            "Condition": "Detonate pyrotechnic device on simulated structure"
+            "Condition": "Detonate pyrotechnic device on simulated structure",
+            "Test": "Shock"
           }
         ]
       }
@@ -2187,16 +1819,16 @@
     "Procedure III - Mid-Field with Mechanical Test Device": {
       "Mid-Field Mechanical Shock": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "使用機械裝置模擬中場爆炸衝擊",
           "Description_EN": "Mid-field pyroshock simulated with mechanical test device",
+          "Description_ZH": "使用機械裝置模擬中場爆炸衝擊",
+          "Distance": "15 to 60 cm from source",
           "Shock Range": "1,000 to 10,000 g peak",
-          "Distance": "15 to 60 cm from source"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Shock",
-            "Condition": "Apply mechanical impact to simulate pyroshock"
+            "Condition": "Apply mechanical impact to simulate pyroshock",
+            "Test": "Shock"
           }
         ]
       }
@@ -2204,16 +1836,16 @@
     "Procedure IV - Far-Field with Mechanical Test Device": {
       "Far-Field Mechanical Shock": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "使用機械裝置模擬遠場爆炸衝擊",
           "Description_EN": "Far-field pyroshock simulated with mechanical test device",
+          "Description_ZH": "使用機械裝置模擬遠場爆炸衝擊",
+          "Distance": "More than 60 cm from source",
           "Shock Range": "1,000 to 10,000 g peak (lower frequency content)",
-          "Distance": "More than 60 cm from source"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Shock",
-            "Condition": "Apply mechanical impact for far-field simulation"
+            "Condition": "Apply mechanical impact for far-field simulation",
+            "Test": "Shock"
           }
         ]
       }
@@ -2221,16 +1853,92 @@
     "Procedure V - Far-Field with Electrodynamic Shaker": {
       "Far-Field Shaker Shock": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "使用電動振動台模擬遠場爆炸衝擊",
           "Description_EN": "Far-field pyroshock simulated using electrodynamic shaker",
+          "Description_ZH": "使用電動振動台模擬遠場爆炸衝擊",
+          "Method": "Shock Response Spectrum (SRS) synthesis",
           "Shock Range": "< 1,000 g peak",
-          "Method": "Shock Response Spectrum (SRS) synthesis"
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Test": "Shock",
-            "Condition": "Synthesize shock transient on shaker table"
+            "Condition": "Synthesize shock transient on shaker table",
+            "Test": "Shock"
+          }
+        ]
+      }
+    }
+  },
+  "Method 518.2 - Acidic Atmosphere": {
+    "Procedure I - Acidic Atmosphere": {
+      "Corrosive Industrial/Exhaust Environment": {
+        "parameters": {
+          "Acid Solution": "Sulfuric Acid (H₂SO₄) and Nitric Acid (HNO₃)",
+          "Chamber Temperature": "35°C (95°F)",
+          "Description_EN": "Corrosion resistance in acidic industrial/exhaust atmosphere",
+          "Description_ZH": "評估設備在酸性氣體下的抗腐蝕與抗化學破壞能力",
+          "pH Level": "4.17 (severe acid rain/atmosphere simulation)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "3 periods × 2 hours spraying + 22 hours storage",
+            "Phase": "Exposure"
+          },
+          {
+            "Condition": "72 hours minimum",
+            "Phase": "Total Duration"
+          }
+        ]
+      }
+    }
+  },
+  "Method 519.8 - Gunfire Shock": {
+    "Procedure I - Direct Operation": {
+      "Aircraft/Vehicle Mounted Gunfire": {
+        "parameters": {
+          "Description_EN": "Periodic high-intensity vibration/shock from onboard cannon fire (updated 519.7→519.8)",
+          "Description_ZH": "模擬機載或車載機砲連射產生的週期性強烈震動 (Method 519.7→519.8)",
+          "Duration": "Equivalent to actual mission firing time",
+          "Firing Rate": "Repetitive pulse (20 to 100 Hz per gun firing rate)",
+          "Standard": "MIL-STD-810H",
+          "Vibration Type": "Sine-on-random or repetitive transient"
+        },
+        "tests": [
+          {
+            "Condition": "Apply specified gunfire shock response spectrum (SRS)",
+            "Phase": "Vibration Sweep"
+          }
+        ]
+      }
+    },
+    "Procedure II - SRS Generated Shock Time History Pulse Sequence": {
+      "SRS Generated Pulse": {
+        "parameters": {
+          "Description_EN": "Synthesized shock time history pulse sequence under TWR based on SRS",
+          "Description_ZH": "根據SRS合成的脈衝波形來模擬機砲射擊衝擊",
+          "Method": "Time Waveform Replication (TWR)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply synthesized SRS time history to simulate gunfire",
+            "Test": "Gunfire Shock"
+          }
+        ]
+      }
+    },
+    "Procedure III - Stochastically Generated Materiel Input": {
+      "Stochastic Gunfire": {
+        "parameters": {
+          "Description_EN": "Stochastically generated materiel input from preliminary design spectrum",
+          "Description_ZH": "使用初步設計頻譜隨機產生的輸入訊號來模擬機砲衝擊",
+          "Method": "Random Vibration approximation",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply stochastic vibration profile",
+            "Test": "Gunfire Shock"
           }
         ]
       }
@@ -2240,20 +1948,20 @@
     "Procedure I - Engineering Development": {
       "Temp/Humidity/Vibration/Altitude": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬飛行器任務中同時遭遇溫度、濕度、震動與氣壓的複合環境",
           "Description_EN": "Simultaneous temperature, humidity, vibration, and altitude per mission profile",
+          "Description_ZH": "模擬飛行器任務中同時遭遇溫度、濕度、震動與氣壓的複合環境",
           "Profile": "Mission-specific diurnal and flight cycles",
+          "Standard": "MIL-STD-810H",
           "Transition Rates": "Per specific aircraft climb/dive capabilities"
         },
         "tests": [
           {
-            "Phase": "Combined Cycle",
-            "Condition": "Simultaneous application of vibration, thermal, and altitude stress"
+            "Condition": "Simultaneous application of vibration, thermal, and altitude stress",
+            "Phase": "Combined Cycle"
           },
           {
-            "Phase": "Functional Check",
-            "Condition": "Continuously operate and monitor during cycle"
+            "Condition": "Continuously operate and monitor during cycle",
+            "Phase": "Functional Check"
           }
         ]
       }
@@ -2261,15 +1969,15 @@
     "Procedure II - Flight or Mission Support": {
       "Mission Profile Support": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "飛行或任務支援，測試設備在特定任務剖面下的運作能力",
           "Description_EN": "Flight or mission support testing tailored to specific operational profiles",
+          "Description_ZH": "飛行或任務支援，測試設備在特定任務剖面下的運作能力",
+          "Standard": "MIL-STD-810H",
           "Test Factors": "Combined temp, humidity, altitude, vibration"
         },
         "tests": [
           {
-            "Phase": "Mission Simulation",
-            "Condition": "Subject item to varying combined stresses matching a specific mission"
+            "Condition": "Subject item to varying combined stresses matching a specific mission",
+            "Phase": "Mission Simulation"
           }
         ]
       }
@@ -2277,35 +1985,327 @@
     "Procedure III - Platform Envelope": {
       "Platform Envelope Testing": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "載台包絡線測試，驗證設備在整個載台極限環境下的運作",
           "Description_EN": "Platform envelope testing covering the extremes of the platform's operating conditions",
+          "Description_ZH": "載台包絡線測試，驗證設備在整個載台極限環境下的運作",
+          "Standard": "MIL-STD-810H",
           "Test Factors": "Combined max/min temp, altitude, vibration envelopes"
         },
         "tests": [
           {
-            "Phase": "Envelope Simulation",
-            "Condition": "Subject item to the maximum combined extremes of the platform"
+            "Condition": "Subject item to the maximum combined extremes of the platform",
+            "Phase": "Envelope Simulation"
           }
         ]
       }
+    }
+  },
+  "Method 521.4 - Icing/Freezing Rain": {
+    "Procedure I - Icing": {
+      "Marine/Aircraft Ice Accumulation": {
+        "parameters": {
+          "Description_EN": "Verify operation and de-icing in icing environments",
+          "Description_ZH": "驗證設備在結冰環境下的操作與解凍效能",
+          "Ice Thickness": "13 mm (0.5 in) general; up to 75 mm (3 in) marine",
+          "Pre-chill Temperature": "-10°C to 0°C (14°F to 32°F)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Stabilize test item below freezing",
+            "Phase": "Pre-cooling"
+          },
+          {
+            "Condition": "Spray super-cooled water until desired thickness",
+            "Phase": "Ice Accretion"
+          },
+          {
+            "Condition": "Operate equipment or deploy de-icing mechanisms",
+            "Phase": "Operation"
+          }
+        ]
+      }
+    }
+  },
+  "Method 522.2 - Ballistic Shock": {
+    "Procedure I - Hull and Turret": {
+      "Armor Impact Shock": {
+        "parameters": {
+          "Description_EN": "High-frequency shock from non-penetrating ballistic impact on armor",
+          "Description_ZH": "模擬裝甲車輛遭受非貫穿性彈砲擊中時的高頻破壞性衝擊",
+          "Shock Level": "Very high momentum exchange; SRS often > 10,000 g at high frequencies",
+          "Simulator": "Ballistic shock machine (BSM) or light gas gun",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply specified SRS profile to item mounting points",
+            "Phase": "Impact"
+          },
+          {
+            "Condition": "Verify structural integrity; no hazardous fragment shedding",
+            "Phase": "Assessment"
+          }
+        ]
+      }
+    },
+    "Procedure IS - Default Shock Level": {
+      "parameters": {
+        "Description_EN": "Procedure IS - Default Shock Level",
+        "Description_ZH": "程序 IS - 預設衝擊位準",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
+      },
+      "tests": [
+        {
+          "Condition": "Execute Procedure IS - Default Shock Level per MIL-STD-810H.",
+          "Phase": "Exposure"
+        }
+      ]
+    },
+    "Procedure II - Large Scale Tactical Simulator (LSTS)": {
+      "LSTS Testing": {
+        "parameters": {
+          "Component Weight": "Very Heavy Components",
+          "Description_EN": "Large Scale Tactical Simulator for heavy components",
+          "Description_ZH": "大型戰術模擬器彈道衝擊測試",
+          "Shock Input": "Full spectrum ballistic shock simulation",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Expose item to LSTS generated ballistic shock",
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "Procedure III - Limited Spectrum, Light Weight Shock Machine (LWSM)": {
+      "LWSM Testing": {
+        "parameters": {
+          "Component Weight": "< 18 kg (40 lbs)",
+          "Description_EN": "Light Weight Shock Machine (LWSM)",
+          "Description_ZH": "輕量級衝擊機測試 (針對小型設備的有限頻譜測試)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply shock pulse using LWSM",
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "Procedure IV - Limited Spectrum, Medium Weight Shock Machine (MWSM)": {
+      "MWSM Testing": {
+        "parameters": {
+          "Component Weight": "Typically < 113 kg (250 lbs)",
+          "Description_EN": "Medium Weight Shock Machine (MWSM)",
+          "Description_ZH": "中量級衝擊機測試 (針對中型設備的有限頻譜測試)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Apply shock pulse using MWSM",
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "Procedure V - Drop Table": {
+      "Drop Table Testing": {
+        "parameters": {
+          "Component Weight": "Typically < 18 kg (40 lbs)",
+          "Description_EN": "Drop table test for lightweight components",
+          "Description_ZH": "跌落台測試，用於輕型設備的彈道衝擊模擬",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Simulate ballistic shock via high-frequency drop table",
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "Procedure VI - Drop Table (Light weight components)": {
+      "Drop Table Light Weight": {
+        "parameters": {
+          "Description_EN": "Specific drop table configuration for light weight components",
+          "Description_ZH": "另一種輕量型跌落台測試配置",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Simulate ballistic shock via drop table",
+            "Test": "Shock"
+          }
+        ]
+      }
+    }
+  },
+  "Method 523.4 - Vibro-Acoustic/Temperature": {
+    "Procedure I - External Stores": {
+      "Aircraft Store Environment": {
+        "parameters": {
+          "Acoustic": "Engine exhaust and boundary layer noise",
+          "Description_EN": "External aircraft stores – combined aero-noise, vibration, and aerodynamic heating",
+          "Description_ZH": "掛載於軍機外部的裝備，綜合氣動噪音、震動與氣動加熱的破壞",
+          "Standard": "MIL-STD-810H",
+          "Temperature": "Aerodynamic heating profile",
+          "Vibration": "Aerodynamic flow-induced random vibration"
+        },
+        "tests": [
+          {
+            "Condition": "Simultaneous application of three stresses per mission profile",
+            "Phase": "Captive Carry"
+          }
+        ]
+      }
+    }
+  },
+  "Method 524.1 - Freeze / Thaw": {
+    "Procedure I - Diurnal Cycling Effects": {
+      "Freezing and Thawing Cycle": {
+        "parameters": {
+          "Cold Phase": "Below -10°C (14°F)",
+          "Description_EN": "Physical damage from moisture freezing and thawing in crevices",
+          "Description_ZH": "模擬水分滲入縫隙後結冰膨脹再融化產生的物理結構破壞",
+          "Moisture Element": "Sufficient water to penetrate crevices",
+          "Standard": "MIL-STD-810H",
+          "Warm Phase": "Standard Ambient (melt phase)"
+        },
+        "tests": [
+          {
+            "Condition": "Repeated transition between freezing and thawing",
+            "Phase": "Cycling"
+          },
+          {
+            "Condition": "Inspect for cracked seals, housing separation, component distortion",
+            "Phase": "Inspection"
+          }
+        ]
+      }
+    },
+    "Procedure II - Fogging": {
+      "Fogging Simulation": {
+        "parameters": {
+          "Condition": "Rapid temperature drop below dew point",
+          "Description_EN": "Simulation of moisture condensation (fogging) on/in materiel",
+          "Description_ZH": "起霧測試，模擬由濕度與溫度變化造成的裝備內部或光學表面起霧",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Subject item to conditions inducing internal/external fogging",
+            "Phase": "Condensation"
+          }
+        ]
+      }
+    },
+    "Procedure III - Rapid Temperature Change": {
+      "Rapid Temp Change (Freeze/Thaw)": {
+        "parameters": {
+          "Condition": "Rapid shift between freezing and ambient environments",
+          "Description_EN": "Ice accretion and thaw resulting from a rapid temperature shift",
+          "Description_ZH": "快速溫度變化測試，模擬冰層在劇烈溫度變化下的累積與融化效應",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Expose item to rapid freezing and thawing cycles",
+            "Phase": "Thermal Shock / Phase Change"
+          }
+        ]
+      }
+    }
+  },
+  "Method 525.2 - Time Waveform Replication": {
+    "Procedure I - Single Exciter TWR": {
+      "Field Data Replication": {
+        "parameters": {
+          "Control Methodology": "Closed-loop inverse transfer function control",
+          "Data Source": "Actual measured field acceleration data",
+          "Description_EN": "Replicate real field-measured time waveforms on vibration table (updated 525.1→525.2)",
+          "Description_ZH": "將實地錄製的複雜時域波形直接在振動台上重播 (Method 525.1→525.2)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Determine system transfer function using low-level random",
+            "Phase": "System ID"
+          },
+          {
+            "Condition": "Iteratively correct drive signal to match target field waveform",
+            "Phase": "Replication"
+          }
+        ]
+      }
+    },
+    "Procedure II - SESA Replication": {
+      "parameters": {
+        "Description_EN": "Procedure II - SESA Replication",
+        "Description_ZH": "程序 II - SESA 波形複製",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
+      },
+      "tests": [
+        {
+          "Condition": "Execute Procedure II - SESA Replication per MIL-STD-810H.",
+          "Phase": "Exposure"
+        }
+      ]
     }
   },
   "Method 526.2 - Rail Impact": {
     "Procedure I - Rail Impact": {
       "Railcar Humping/Coupling": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "模擬火車車廂在調車場連結作業時的劇烈縱向撞擊",
-          "Description_EN": "Longitudinal impact during railcar humping/coupling operations",
-          "Impact Speed": "12.9 to 13.4 km/h (8.0 to 8.3 mph)",
           "Buffer Type": "Standard railcar draft gears",
+          "Description_EN": "Longitudinal impact during railcar humping/coupling operations",
+          "Description_ZH": "模擬火車車廂在調車場連結作業時的劇烈縱向撞擊",
+          "Impact Speed": "12.9 to 13.4 km/h (8.0 to 8.3 mph)",
+          "Standard": "MIL-STD-810H",
           "Vehicle": "Flatcar carrying the test item"
         },
         "tests": [
           {
-            "Phase": "Impact",
-            "Condition": "Subject to specified impact velocity in both longitudinal directions"
+            "Condition": "Subject to specified impact velocity in both longitudinal directions",
+            "Phase": "Impact"
+          }
+        ]
+      }
+    }
+  },
+  "Method 527.2 - Multi-Exciter": {
+    "Procedure I - Time Domain Reference Criteria": {
+      "MIMO Vibration": {
+        "parameters": {
+          "Control Type": "Multiple Input Multiple Output (MIMO)",
+          "Degrees of Freedom": "Up to 6 DOF (translation and rotation)",
+          "Description_EN": "Time Domain Reference Criteria for MIMO Testing",
+          "Description_ZH": "多軸多激振器測試 (時域參考標準)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Simultaneous control of phase and amplitude across multiple shakers",
+            "Phase": "Multi-axis Excitation"
+          }
+        ]
+      }
+    },
+    "Procedure II - Frequency Domain Reference Criteria": {
+      "Frequency Domain MIMO": {
+        "parameters": {
+          "Control Type": "MIMO in Frequency Domain",
+          "Description_EN": "Frequency Domain Reference Criteria for MIMO Testing",
+          "Description_ZH": "多軸多激振器測試 (頻域參考標準)",
+          "Standard": "MIL-STD-810H"
+        },
+        "tests": [
+          {
+            "Condition": "Simultaneous frequency-domain control across multiple shakers",
+            "Phase": "Multi-axis Excitation"
           }
         ]
       }
@@ -2315,40 +2315,40 @@
     "Procedure I - Environmental Vibration": {
       "Type I / Type II Naval Shipboard": {
         "parameters": {
-          "Standard": "MIL-STD-810H",
-          "Description_ZH": "美國海軍水面艦與潛艦搭載設備的長期環境與螺旋槳激振力 (Method 528.1→528.2)",
-          "Description_EN": "US Navy surface ship and submarine equipment environmental vibration (updated 528.1→528.2)",
-          "Frequency Range": "4 Hz to 50 Hz",
           "Amplitude": "Displacement controlled (e.g., up to 0.030 inches single amplitude)",
-          "Excitation Source": "Ship propulsion systems and wave action"
+          "Description_EN": "US Navy surface ship and submarine equipment environmental vibration (updated 528.1→528.2)",
+          "Description_ZH": "美國海軍水面艦與潛艦搭載設備的長期環境與螺旋槳激振力 (Method 528.1→528.2)",
+          "Excitation Source": "Ship propulsion systems and wave action",
+          "Frequency Range": "4 Hz to 50 Hz",
+          "Standard": "MIL-STD-810H"
         },
         "tests": [
           {
-            "Phase": "Exploratory",
-            "Condition": "Identify resonances between 4 to 50 Hz"
+            "Condition": "Identify resonances between 4 to 50 Hz",
+            "Phase": "Exploratory"
           },
           {
-            "Phase": "Variable Frequency",
-            "Condition": "Sweep and dwell at identified resonant frequencies"
+            "Condition": "Sweep and dwell at identified resonant frequencies",
+            "Phase": "Variable Frequency"
           },
           {
-            "Phase": "Endurance",
-            "Condition": "2 hours per axis at resonant point"
+            "Condition": "2 hours per axis at resonant point",
+            "Phase": "Endurance"
           }
         ]
       }
     },
     "Procedure II - Internally Excited Vibration": {
       "parameters": {
-        "Standard": "MIL-STD-810H",
-        "Description_ZH": "程序 II - 內部激發震動 (Type II)",
         "Description_EN": "Procedure II - Internally Excited Vibration",
-        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+        "Description_ZH": "程序 II - 內部激發震動 (Type II)",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements",
+        "Standard": "MIL-STD-810H"
       },
       "tests": [
         {
-          "Phase": "Exposure",
-          "Condition": "Execute Procedure II - Internally Excited Vibration per MIL-STD-810H."
+          "Condition": "Execute Procedure II - Internally Excited Vibration per MIL-STD-810H.",
+          "Phase": "Exposure"
         }
       ]
     }
