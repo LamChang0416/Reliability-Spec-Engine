@@ -1032,6 +1032,321 @@
             "Profile": "0.04 g²/Hz (20–1,000 Hz), -6 dB/oct rolloff to 2,000 Hz"
           }
         ]
+      },
+      "Category 1 - Manufacturing/Maintenance Processes": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "製造與維護流程的環境震動",
+          "Description_EN": "Category 1 - Manufacturing/Maintenance Processes",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 1 - Manufacturing/Maintenance Processes profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 2 - Shipping and Handling": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "運輸與搬運震動",
+          "Description_EN": "Category 2 - Shipping and Handling",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 2 - Shipping and Handling profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 3 - Environmental Stress Screening (ESS)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "環境應力篩選",
+          "Description_EN": "Category 3 - Environmental Stress Screening (ESS)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 3 - Environmental Stress Screening (ESS) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 5 - Truck/Trailer (Loose Cargo)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "卡車/拖車散裝貨物",
+          "Description_EN": "Category 5 - Truck/Trailer (Loose Cargo)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 5 - Truck/Trailer (Loose Cargo) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 6 - Truck/Trailer (Large Assembly)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "卡車/拖車大型組件運輸",
+          "Description_EN": "Category 6 - Truck/Trailer (Large Assembly)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 6 - Truck/Trailer (Large Assembly) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 8 - Aircraft (Propeller)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "螺旋槳飛機運輸",
+          "Description_EN": "Category 8 - Aircraft (Propeller)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 8 - Aircraft (Propeller) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 9 - Aircraft (Helicopter)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "直升機運輸",
+          "Description_EN": "Category 9 - Aircraft (Helicopter)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 9 - Aircraft (Helicopter) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 10 - Watercraft (Marine Vehicles)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "水面艦艇/船舶運輸",
+          "Description_EN": "Category 10 - Watercraft (Marine Vehicles)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 10 - Watercraft (Marine Vehicles) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 11 - Railroad (Train)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "鐵路/火車運輸",
+          "Description_EN": "Category 11 - Railroad (Train)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 11 - Railroad (Train) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 12 - Fixed Wing Aircraft (Jet) Operational": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "定翼噴射機 (操作狀態)",
+          "Description_EN": "Category 12 - Fixed Wing Aircraft (Jet) Operational",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 12 - Fixed Wing Aircraft (Jet) Operational profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 13 - Propeller Aircraft Operational": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "螺旋槳飛機 (操作狀態)",
+          "Description_EN": "Category 13 - Propeller Aircraft Operational",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 13 - Propeller Aircraft Operational profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 14 - Rotary Wing Aircraft (Helicopter) Operational": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "旋翼直升機 (操作狀態)",
+          "Description_EN": "Category 14 - Rotary Wing Aircraft (Helicopter) Operational",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 14 - Rotary Wing Aircraft (Helicopter) Operational profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 15 - Aircraft Stores (Assembled, Jet)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "噴射機掛載裝備 (掛載與自由飛行)",
+          "Description_EN": "Category 15 - Aircraft Stores (Assembled, Jet)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 15 - Aircraft Stores (Assembled, Jet) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 16 - Aircraft Stores (Materiel, Jet)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "噴射機掛載裝備內部物資",
+          "Description_EN": "Category 16 - Aircraft Stores (Materiel, Jet)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 16 - Aircraft Stores (Materiel, Jet) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 17 - Aircraft Stores (Propeller Aircraft)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "螺旋槳飛機掛載裝備",
+          "Description_EN": "Category 17 - Aircraft Stores (Propeller Aircraft)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 17 - Aircraft Stores (Propeller Aircraft) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 18 - Aircraft Stores (Helicopter)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "直升機掛載裝備",
+          "Description_EN": "Category 18 - Aircraft Stores (Helicopter)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 18 - Aircraft Stores (Helicopter) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 19 - Missiles (Tactical Free Flight)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "戰術飛彈 (自由飛行階段)",
+          "Description_EN": "Category 19 - Missiles (Tactical Free Flight)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 19 - Missiles (Tactical Free Flight) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 21 - Watercraft (Marine Vehicles) Operational": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "水面艦艇/船舶 (操作狀態)",
+          "Description_EN": "Category 21 - Watercraft (Marine Vehicles) Operational",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 21 - Watercraft (Marine Vehicles) Operational profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 22 - Engines (Turbine)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "渦輪引擎震動",
+          "Description_EN": "Category 22 - Engines (Turbine)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 22 - Engines (Turbine) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 23 - Personnel (Materiel Carried By/On Personnel)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "人員攜帶裝備震動",
+          "Description_EN": "Category 23 - Personnel (Materiel Carried By/On Personnel)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 23 - Personnel (Materiel Carried By/On Personnel) profile per MIL-STD-810H specifications."
+          }
+        ]
+      },
+      "Category 25 - All Vehicles (Cantilevered External Materiel)": {
+        "parameters": {
+          "Standard": "MIL-STD-810H",
+          "Description_ZH": "所有載具懸臂式外部裝備",
+          "Description_EN": "Category 25 - All Vehicles (Cantilevered External Materiel)",
+          "Profile": "Dependent on specific platform characteristics and measurements",
+          "Duration": "Refer to Annex C/D tables for specific exposure times"
+        },
+        "tests": [
+          {
+            "Phase": "Exposure",
+            "Condition": "Subject materiel to Category 25 - All Vehicles (Cantilevered External Materiel) profile per MIL-STD-810H specifications."
+          }
+        ]
       }
     },
     "Procedure II - Loose Cargo Transportation": {
