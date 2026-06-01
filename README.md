@@ -25,7 +25,7 @@
 |------|------|------|----------|
 | 🎖️ **MIL-STD-810H** | 2019 | 軍規環境工程測試 / Military environmental testing | [DLA QuickSearch](https://quicksearch.dla.mil/) |
 | 🏢 **GR-63-CORE Issue 5** | 2022 | 電信機房 NEBS 規範 / Telecom CO physical protection | [Ericsson NEBS](https://telecom-info.njdepot.ericsson.se/) |
-| 📦 **ASTM D4169-23** | 2023 | 包裝運輸性能測試 / Packaging & transport performance | [ASTM International](https://www.astm.org/d4169-23.html) |
+| 📦 **ASTM D4169-22** | 2022 | 包裝運輸性能測試 / Packaging & transport performance | [ASTM International](https://www.astm.org/d4169-22.html) |
 | 📦 **ISTA** | 1A, 2A, 3A, 6-Amazon | 包裝與運輸模擬測試 / Safe Transit Association | [ISTA](https://ista.org) |
 | 🛡️ **IEC 60721-3** | 2019 | 環境條件分類 / Environmental condition classification | [IEC](https://webstore.iec.ch/) |
 | 🔬 **IEC 60068-2** | 2023–2025 | 環境測試方法 / Environmental testing methods | [IEC](https://webstore.iec.ch/) |
@@ -107,7 +107,7 @@ Reliability-Spec-Engine/
 ├── icon-512.png            # App 圖示 512×512
 ├── mil810_database.json    # MIL-STD-810H 810H 全 Method (500~528) 100% 完整收錄資料庫
 ├── gr63_database.json      # GR-63-CORE Issue 5 資料庫
-├── astm4169_database.json  # ASTM D4169-23 資料庫
+├── astm4169_database.json  # ASTM D4169-22 資料庫
 ├── ista_database.json      # ISTA 1A/2A/3A/6-Amazon 資料庫
 ├── iec_database.json       # IEC 60721-3 資料庫
 ├── iec60068_database.json  # IEC 60068-2 資料庫
@@ -142,4 +142,4 @@ Reliability-Spec-Engine/
 
 ---
 
-> ⚠️ **Disclaimer / 免責聲明**: ASTM D4169-23、GR-63 Issue 5 等為商業規範，本工具資料庫內容依公開技術摘要整理。完整規範請向各發行單位購買正版文件。
+> ⚠️ **Disclaimer / 免責聲明**: ASTM D4169-22、GR-63 Issue 5 等為商業規範，本工具資料庫內容依公開技術摘要整理。完整規範請向各發行單位購買正版文件。

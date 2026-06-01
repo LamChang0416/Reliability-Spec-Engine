@@ -255,7 +255,7 @@ with st.sidebar:
 {'📘 資料庫版本' if lang == 'ZH' else '📘 Database Versions'}:<br>
 • MIL-STD-<b style="color:#63b3ed">810H</b> (2019)<br>
 • GR-63-CORE Issue <b style="color:#63b3ed">5</b> (2022)<br>
-• ASTM D4169-<b style="color:#63b3ed">23</b> (2023)<br>
+• ASTM D4169-<b style="color:#63b3ed">22</b> (2022)<br>
 • IEC 60721-3 (2019)<br><br>
 <span style="color:#68d391">●</span> {'最新版資料庫' if lang == 'ZH' else 'Latest standard revisions'}
 </div>
@@ -266,7 +266,7 @@ st.markdown(
     f"# 🛡️ {'Reliability Spec Engine 四合一旗艦版' if lang == 'ZH' else 'Reliability Spec Engine'}"
 )
 st.caption(
-    "MIL-STD-810H | GR-63-CORE Issue 5 | ASTM D4169-23 | IEC 60721-3" 
+    "MIL-STD-810H | GR-63-CORE Issue 5 | ASTM D4169-22 | IEC 60721-3" 
 )
 
 
@@ -281,7 +281,7 @@ def search_all_dbs(query: str) -> list:
     db_map = {
         "🎖️ MIL-STD-810H": load_db("mil810_database.json"),
         "🏢 GR-63-CORE Issue 5": load_db("gr63_database.json"),
-        "📦 ASTM D4169-23": load_db("astm4169_database.json"),
+        "📦 ASTM D4169-22": load_db("astm4169_database.json"),
         "🛡️ IEC 60721-3": load_db("iec_database.json"),
     }
     
@@ -342,14 +342,14 @@ if lang == "EN":
     tab_iec, tab_mil, tab_astm, tab_gr63 = st.tabs([
         "🛡️ IEC 60721-3",
         "🎖️ MIL-STD-810H",
-        "📦 ASTM D4169-23",
+        "📦 ASTM D4169-22",
         "🏢 GR-63 Issue 5"
     ])
 else:
     tab_iec, tab_mil, tab_astm, tab_gr63 = st.tabs([
         "🛡️ IEC 60721-3 環境分類",
         "🎖️ MIL-STD-810H 軍規測試",
-        "📦 ASTM D4169-23 運輸包裝",
+        "📦 ASTM D4169-22 運輸包裝",
         "🏢 GR-63 Issue 5 電信機房"
     ])
 
@@ -551,10 +551,10 @@ with tab_mil:
 # ==========================================
 with tab_astm:
     st.markdown(
-        '<span class="version-badge">ASTM D4169-23 · 2023</span> <span class="new-badge">Updated from D4169-22</span>',
+        '<span class="version-badge">ASTM D4169-22 · 2022</span>',
         unsafe_allow_html=True
     )
-    st.caption("Performance Testing of Shipping Containers and Systems" if lang == "EN" else "包裝與運輸系統性能測試規範 (D4169-09 → D4169-22 升版)")
+    st.caption("Performance Testing of Shipping Containers and Systems" if lang == "EN" else "包裝與運輸系統性能測試規範 (ASTM D4169-22 版本)")
     
     ASTM_DB = load_db("astm4169_database.json")
     
@@ -598,7 +598,7 @@ with tab_astm:
                 
                 render_download_buttons(
                     target_data,
-                    f"ASTM_D4169-23_{astm_sub[:15]}",
+                    f"ASTM_D4169-22_{astm_sub[:15]}",
                     f"astm_{astm_cat[:10]}_{astm_item[:15]}",
                     lang
                 )

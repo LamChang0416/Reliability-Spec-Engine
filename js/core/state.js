@@ -20,7 +20,7 @@ export const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','
 export const STD_LABELS = {
   iec:      '🛡️ IEC 60721-3',
   mil:      '🎖️ MIL-STD-810H',
-  astm:     '📦 ASTM D4169-23',
+  astm:     '📦 ASTM D4169-22',
   gr63:     '🏢 GR-63 Issue 5',
   sr332:    '📈 Telcordia SR-332',
   ista:     '📦 ISTA',
