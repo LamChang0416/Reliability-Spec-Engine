@@ -749,6 +749,48 @@
           }
         ]
       }
+    },
+    "Procedure IA - Induced (Storage and Transit) Cycles": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 IA - 誘導(儲存與運輸)循環",
+        "Description_EN": "Procedure IA - Induced (Storage and Transit) Cycles",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure IA - Induced (Storage and Transit) Cycles per MIL-STD-810H."
+        }
+      ]
+    },
+    "Procedure IB - Natural Cycles": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 IB - 自然循環",
+        "Description_EN": "Procedure IB - Natural Cycles",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure IB - Natural Cycles per MIL-STD-810H."
+        }
+      ]
+    },
+    "Procedure IS - Screening": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 IS - 篩選測試",
+        "Description_EN": "Procedure IS - Screening",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure IS - Screening per MIL-STD-810H."
+        }
+      ]
     }
   },
   "Method 508.8 - Fungus": {
@@ -1776,6 +1818,20 @@
           }
         ]
       }
+    },
+    "Procedure IS - Default Shock Level": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 IS - 預設衝擊位準",
+        "Description_EN": "Procedure IS - Default Shock Level",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure IS - Default Shock Level per MIL-STD-810H."
+        }
+      ]
     }
   },
   "Method 523.4 - Vibro-Acoustic/Temperature": {
@@ -1875,6 +1931,20 @@
           }
         ]
       }
+    },
+    "Procedure II - SESA Replication": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 II - SESA 波形複製",
+        "Description_EN": "Procedure II - SESA Replication",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure II - SESA Replication per MIL-STD-810H."
+        }
+      ]
     }
   },
   "Method 527.2 - Multi-Exciter": {
@@ -2044,6 +2114,34 @@
           }
         ]
       }
+    },
+    "Procedure IA - Uniform Intensity Shaped Spectrum": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 IA - 均勻強度成形頻譜",
+        "Description_EN": "Procedure IA - Uniform Intensity Shaped Spectrum",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure IA - Uniform Intensity Shaped Spectrum per MIL-STD-810H."
+        }
+      ]
+    },
+    "Procedure IB - Normal Incident Plane Waves": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 IB - 垂直入射平面波",
+        "Description_EN": "Procedure IB - Normal Incident Plane Waves",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure IB - Normal Incident Plane Waves per MIL-STD-810H."
+        }
+      ]
     }
   },
   "Method 517.3 - Pyroshock": {
@@ -2239,6 +2337,20 @@
           }
         ]
       }
+    },
+    "Procedure II - Internally Excited Vibration": {
+      "parameters": {
+        "Standard": "MIL-STD-810H",
+        "Description_ZH": "程序 II - 內部激發震動 (Type II)",
+        "Description_EN": "Procedure II - Internally Excited Vibration",
+        "Profile": "Refer to MIL-STD-810H for specific sub-procedure requirements"
+      },
+      "tests": [
+        {
+          "Phase": "Exposure",
+          "Condition": "Execute Procedure II - Internally Excited Vibration per MIL-STD-810H."
+        }
+      ]
     }
   }
 }
