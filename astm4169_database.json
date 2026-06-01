@@ -9,920 +9,1168 @@
     "version": "2023"
   },
   "DC 1: General schedule (一般寄送)": {
-    "Schedule A - Handling (人工搬運跌落)": {
-      "Drop Test (跌落測試)": {
-        "parameters": {
-          "Description_EN": "Manual handling drop tests. Drop height is determined by package weight and assurance level.",
-          "Description_ZH": "模擬人工搬運與包裹上下貨時的摔落。分為三次不同高度層級的跌落，確保邊角與面受到衝擊。",
-          "Drop Sequence": "One corner, one edge, then remaining faces.",
-          "Standard": "ASTM D4169-23"
-        },
-        "tests": [
-          {
-            "Level I Height": "610 mm (24 in)",
-            "Level II Height": "381 mm (15 in)",
-            "Level III Height": "229 mm (9 in)",
-            "Weight": "0 - 9.1 kg (0 - 20 lb)"
-          },
-          {
-            "Level I Height": "533 mm (21 in)",
-            "Level II Height": "330 mm (13 in)",
-            "Level III Height": "229 mm (9 in)",
-            "Weight": "9.1 - 18.1 kg (20 - 40 lb)"
-          },
-          {
-            "Level I Height": "457 mm (18 in)",
-            "Level II Height": "305 mm (12 in)",
-            "Level III Height": "229 mm (9 in)",
-            "Weight": "18.1 - 27.2 kg (40 - 60 lb)"
-          },
-          {
-            "Level I Height": "381 mm (15 in)",
-            "Level II Height": "229 mm (9 in)",
-            "Level III Height": "178 mm (7 in)",
-            "Weight": "27.2 - 45.4 kg (60 - 100 lb)"
-          },
-          {
-            "Level I Height": "305 mm (12 in)",
-            "Level II Height": "229 mm (9 in)",
-            "Level III Height": "178 mm (7 in)",
-            "Weight": "Over 45.4 kg (Over 100 lb)"
-          }
-        ]
-      }
-    },
-    "Schedule B/C - Stacking (靜態推碼抗壓)": {
-      "Machine Apply and Release/Hold (抗壓機壓放試驗)": {
-        "parameters": {
-          "Compression Formula": "Load (L) = W * ((H-h)/h) * F",
-          "Description_EN": "Static compression strength evaluation using a testing machine.",
-          "Description_ZH": "驗證紙箱與包裝材長時間堆疊在外箱上的靜態抗壓強度。使用公式計算目標下壓力 (Load)。",
-          "H": "Maximum stacking height in transit or storage",
-          "h": "Height of one package",
-          "Standard": "ASTM D4169-23",
-          "W": "Weight of one package"
-        },
-        "tests": [
-          {
-            "Application": "Highest severity storage",
-            "Assurance Level & Material": "Level I - Corrugated Box",
-            "Safety Factor (F)": "8.0"
-          },
-          {
-            "Application": "Standard transit warehouse stacking",
-            "Assurance Level & Material": "Level II - Corrugated Box",
-            "Safety Factor (F)": "4.5"
-          },
-          {
-            "Application": "Short term or low risk stacking",
-            "Assurance Level & Material": "Level III - Corrugated Box",
-            "Safety Factor (F)": "3.0"
-          }
-        ]
-      }
-    },
-    "Schedule D - Stacked Vibration (推疊振動)": {
-      "Vibration under Compressive Load (帶載振動)": {
-        "parameters": {
-          "Description_EN": "Simulates dynamic bottom-load compression during vehicle vibration.",
-          "Description_ZH": "模擬底層包裹在運輸途中承受上方貨物重量時的動態振動破壞力。",
-          "Standard": "ASTM D4169-23",
-          "Top Load Formula": "L = W * ((H-h)/h) * F",
-          "Variables": "W: Package weight, H: Stack height, h: Package height"
-        },
-        "tests": [
-          {
-            "Assurance Level": "I",
-            "Safety Factor (F)": "1.0",
-            "Vibration Profile": "Use Level I PSD"
-          },
-          {
-            "Assurance Level": "II",
-            "Safety Factor (F)": "0.7",
-            "Vibration Profile": "Use Level II PSD"
-          },
-          {
-            "Assurance Level": "III",
-            "Safety Factor (F)": "0.5",
-            "Vibration Profile": "Use Level III PSD"
-          }
-        ]
-      }
-    },
-    "Schedule E - Vehicle Vibration (車輛隨機振動)": {
-      "Random Vibration - Air (空運隨機振動 PSD)": {
-        "parameters": {
-          "Assurance Level I": "1.49 Grms",
-          "Assurance Level II": "1.05 Grms",
-          "Assurance Level III": "0.74 Grms",
-          "Description_EN": "Air transport random vibration PSD profiles. High frequency focus.",
-          "Description_ZH": "模擬飛機貨艙的隨機振動光譜。空運的頻率較高、整體 Grms 能量更強。",
-          "Standard": "ASTM D4169-23",
-          "Test Duration": "120 minutes typical"
-        },
-        "tests": [
-          {
-            "Frequency (Hz)": "2.0",
-            "Level I (g²/Hz)": "0.0004",
-            "Level II (g²/Hz)": "0.0002",
-            "Level III (g²/Hz)": "0.0001"
-          },
-          {
-            "Frequency (Hz)": "12.0",
-            "Level I (g²/Hz)": "0.02",
-            "Level II (g²/Hz)": "0.01",
-            "Level III (g²/Hz)": "0.005"
-          },
-          {
-            "Frequency (Hz)": "100.0",
-            "Level I (g²/Hz)": "0.02",
-            "Level II (g²/Hz)": "0.01",
-            "Level III (g²/Hz)": "0.005"
-          },
-          {
-            "Frequency (Hz)": "300.0",
-            "Level I (g²/Hz)": "0.00002",
-            "Level II (g²/Hz)": "0.00001",
-            "Level III (g²/Hz)": "0.000005"
-          }
-        ]
+    "Step 1: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
       },
-      "Random Vibration - Truck (卡車隨機振動 PSD)": {
-        "parameters": {
-          "Description_EN": "Highway truck transport random vibration PSD profiles. Levels define test severity.",
-          "Description_ZH": "模擬公路卡車運輸的隨機振動光譜。ASTM D4169 自近版起已捨棄 AL I/II/III，改用 High / Medium / Low Test Level。",
-          "High Level": "0.54 Grms (Highest severity)",
-          "Low Level": "0.29 Grms (Lowest severity)",
-          "Medium Level": "0.40 Grms (Default)",
-          "Standard": "ASTM D4169-23",
-          "Test Duration": "180 minutes typical (or specific to DC routing)"
-        },
-        "tests": [
-          {
-            "Frequency (Hz)": "1.0",
-            "High Level (g²/Hz)": "0.000072",
-            "Low Level": "0.000018",
-            "Medium Level": "0.000036"
-          },
-          {
-            "Frequency (Hz)": "4.0",
-            "High Level (g²/Hz)": "0.018",
-            "Low Level": "0.0045",
-            "Medium Level": "0.009"
-          },
-          {
-            "Frequency (Hz)": "16.0",
-            "High Level (g²/Hz)": "0.018",
-            "Low Level": "0.0045",
-            "Medium Level": "0.009"
-          },
-          {
-            "Frequency (Hz)": "40.0",
-            "High Level (g²/Hz)": "0.0018",
-            "Low Level": "0.00045",
-            "Medium Level": "0.0009"
-          },
-          {
-            "Frequency (Hz)": "80.0",
-            "High Level (g²/Hz)": "0.0018",
-            "Low Level": "0.00045",
-            "Medium Level": "0.0009"
-          },
-          {
-            "Frequency (Hz)": "200.0",
-            "High Level (g²/Hz)": "0.000018",
-            "Low Level": "0.0000045",
-            "Medium Level": "0.000009"
-          }
-        ]
-      }
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
     },
-    "Schedule F - Loose Load Vibration (鬆散荷載振動)": {
-      "Loose Load Bounce (跳動測試)": {
-        "parameters": {
-          "Description_EN": "Simulates unrestrained package bouncing and colliding in a vehicle.",
-          "Description_ZH": "模擬未固定的包裹在卡車車廂內跳動與互相碰撞。",
-          "Duration": "Depends on DC, typically 40 to 120 minutes",
-          "Frequency": "Typically ~4-5 Hz (rotary or vertical synchronous motion)",
-          "Standard": "ASTM D4169-23"
-        },
-        "tests": [
-          {
-            "Condition": "Machine speed adjusted so package leaves table by ~1.6mm (1/16 in)",
-            "Test": "Bounce"
-          }
-        ]
-      }
+    "Step 2: Schedule D": {
+      "parameters": {
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 3: Schedule F": {
+      "parameters": {
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 4: Schedule G": {
+      "parameters": {
+        "Description_EN": "Simulates longitudinal shock during railcar coupling.",
+        "Description_ZH": "模擬火車車廂連結時產生的巨大縱向衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Perform incline impact or horizontal shock test",
+          "Phase": "Incline Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 6: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
     }
   },
   "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Specially defined distribution system, user specified (see Appendix X2)",
-        "Description_ZH": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Specially defined distribution system, user specified (see Appendix X2)",
-        "Description_ZH": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule F": {
       "parameters": {
-        "Description_EN": "Specially defined distribution system, user specified (see Appendix X2)",
-        "Description_ZH": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 4: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 3: Single package environment (單一小包裹環境)": {
-    "Schedule A - Handling (人工落摔)": {
-      "Drop Test (跌落測試)": {
-        "parameters": {
-          "Description_EN": "Single parcel drop simulation, commonly used for retail shipments.",
-          "Description_ZH": "模擬單獨寄送的包裹摔落機率較高，適用於電商或零售單件出貨。",
-          "Standard": "ASTM D4169-23"
-        },
-        "tests": [
-          {
-            "Action": "Same drops as defined in General Schedule A but typically tested at Level I or II",
-            "Hazard": "Manual Handling"
-          }
-        ]
-      }
+    "Step 1: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
     },
-    "Schedule I - Low Pressure (低氣壓/空運)": {
-      "Altitude Simulation (高海拔模擬)": {
-        "parameters": {
-          "Description_EN": "Un-pressurized cargo hold simulation checking for seal failure.",
-          "Description_ZH": "模擬飛機貨艙未加壓環境，驗證密封袋、液體瓶罐是否會破裂或滲漏。",
-          "Duration": "60 minutes",
-          "Standard": "ASTM D4169-23",
-          "Test Pressure": "Usually equivalent to 10,000 to 15,000 ft altitude"
-        },
-        "tests": [
-          {
-            "Action": "Monitor for ballooning, leakage, or burst",
-            "Requirement": "Maintain test pressure"
-          }
-        ]
-      }
+    "Step 2: Schedule D": {
+      "parameters": {
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 3: Schedule F": {
+      "parameters": {
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 4: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
     }
   },
   "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Single package with pallet or skid, LTL motor freight",
-        "Description_ZH": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Single package with pallet or skid, LTL motor freight",
-        "Description_ZH": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule F": {
       "parameters": {
-        "Description_EN": "Single package with pallet or skid, LTL motor freight",
-        "Description_ZH": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 4: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Motor freight, TL, not unitized",
-        "Description_ZH": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Motor freight, TL, not unitized",
-        "Description_ZH": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule E": {
       "parameters": {
-        "Description_EN": "Motor freight, TL, not unitized",
-        "Description_ZH": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates unconstrained random vehicle vibration (Truck or Air PSD).",
+        "Description_ZH": "模擬卡車或飛機運輸時的無負載隨機振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute random vibration per Truck/Air proﬁles",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 4: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Motor freight, TL, or LTL—unitized",
-        "Description_ZH": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Motor freight, TL, or LTL—unitized",
-        "Description_ZH": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule J": {
       "parameters": {
-        "Description_EN": "Motor freight, TL, or LTL—unitized",
-        "Description_ZH": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 4: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
+    },
+    "Step 5: Schedule B": {
+      "parameters": {
+        "Description_EN": "Simulates static warehouse stacking compression.",
+        "Description_ZH": "模擬倉庫內長期靜態堆疊的抗壓強度。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Apply static load based on stacking height and safety factor",
+          "Phase": "Compression"
         }
       ]
     }
   },
   "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Rail only, bulk loaded",
-        "Description_ZH": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Rail only, bulk loaded",
-        "Description_ZH": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule G": {
       "parameters": {
-        "Description_EN": "Rail only, bulk loaded",
-        "Description_ZH": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates longitudinal shock during railcar coupling.",
+        "Description_ZH": "模擬火車車廂連結時產生的巨大縱向衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Perform incline impact or horizontal shock test",
+          "Phase": "Incline Impact"
+        }
+      ]
+    },
+    "Step 4: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 8: Rail only, unitized (鐵路運輸 - 單元化)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Rail only, unitized",
-        "Description_ZH": "DC 8: Rail only, unitized (鐵路運輸 - 單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Rail only, unitized",
-        "Description_ZH": "DC 8: Rail only, unitized (鐵路運輸 - 單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule G": {
       "parameters": {
-        "Description_EN": "Rail only, unitized",
-        "Description_ZH": "DC 8: Rail only, unitized (鐵路運輸 - 單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates longitudinal shock during railcar coupling.",
+        "Description_ZH": "模擬火車車廂連結時產生的巨大縱向衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Perform incline impact or horizontal shock test",
+          "Phase": "Incline Impact"
+        }
+      ]
+    },
+    "Step 4: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
+    },
+    "Step 5: Schedule B": {
+      "parameters": {
+        "Description_EN": "Simulates static warehouse stacking compression.",
+        "Description_ZH": "模擬倉庫內長期靜態堆疊的抗壓強度。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Apply static load based on stacking height and safety factor",
+          "Phase": "Compression"
         }
       ]
     }
   },
   "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Rail and motor freight, not unitized",
-        "Description_ZH": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule C": {
       "parameters": {
-        "Description_EN": "Rail and motor freight, not unitized",
-        "Description_ZH": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates dynamic stacking compression during vehicle transport.",
+        "Description_ZH": "模擬運輸車廂內動態顛簸時的堆疊抗壓。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Apply load calculated for vehicle transport conditions",
+          "Phase": "Compression"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule E": {
       "parameters": {
-        "Description_EN": "Rail and motor freight, not unitized",
-        "Description_ZH": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates unconstrained random vehicle vibration (Truck or Air PSD).",
+        "Description_ZH": "模擬卡車或飛機運輸時的無負載隨機振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute random vibration per Truck/Air proﬁles",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 4: Schedule G": {
+      "parameters": {
+        "Description_EN": "Simulates longitudinal shock during railcar coupling.",
+        "Description_ZH": "模擬火車車廂連結時產生的巨大縱向衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Perform incline impact or horizontal shock test",
+          "Phase": "Incline Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule F": {
+      "parameters": {
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 6: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 7: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Rail and motor freight, unitized",
-        "Description_ZH": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Rail and motor freight, unitized",
-        "Description_ZH": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule G": {
       "parameters": {
-        "Description_EN": "Rail and motor freight, unitized",
-        "Description_ZH": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates longitudinal shock during railcar coupling.",
+        "Description_ZH": "模擬火車車廂連結時產生的巨大縱向衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Perform incline impact or horizontal shock test",
+          "Phase": "Incline Impact"
+        }
+      ]
+    },
+    "Step 4: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
+    },
+    "Step 6: Schedule B": {
+      "parameters": {
+        "Description_EN": "Simulates static warehouse stacking compression.",
+        "Description_ZH": "模擬倉庫內長期靜態堆疊的抗壓強度。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Apply static load based on stacking height and safety factor",
+          "Phase": "Compression"
         }
       ]
     }
   },
   "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Rail, TOFC and COFC",
-        "Description_ZH": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule G": {
       "parameters": {
-        "Description_EN": "Rail, TOFC and COFC",
-        "Description_ZH": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates longitudinal shock during railcar coupling.",
+        "Description_ZH": "模擬火車車廂連結時產生的巨大縱向衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Perform incline impact or horizontal shock test",
+          "Phase": "Incline Impact"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule D": {
       "parameters": {
-        "Description_EN": "Rail, TOFC and COFC",
-        "Description_ZH": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 4: Schedule F": {
+      "parameters": {
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Air (intercity) and motor freight (local), over 150 lb (68.1 kg), or unitized",
-        "Description_ZH": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule D": {
       "parameters": {
-        "Description_EN": "Air (intercity) and motor freight (local), over 150 lb (68.1 kg), or unitized",
-        "Description_ZH": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates vibration while under compressive load.",
+        "Description_ZH": "模擬底層包裹承受上方重壓同時發生的運輸振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Random vibration with compressive top load applied",
+          "Phase": "Vibration"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule I": {
       "parameters": {
-        "Description_EN": "Air (intercity) and motor freight (local), over 150 lb (68.1 kg), or unitized",
-        "Description_ZH": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates low pressure (vacuum) at high altitude or unpressurized aircraft.",
+        "Description_ZH": "模擬高海拔或非加壓機艙內的低氣壓環境。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Expose to simulated altitude pressure",
+          "Phase": "Vacuum"
+        }
+      ]
+    },
+    "Step 4: Schedule E": {
+      "parameters": {
+        "Description_EN": "Simulates unconstrained random vehicle vibration (Truck or Air PSD).",
+        "Description_ZH": "模擬卡車或飛機運輸時的無負載隨機振動。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute random vibration per Truck/Air proﬁles",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 5: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 6: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 13: Air and mixed freight (空運與公路混合)": {
-    "Schedule A, E, F, I (綜合排程)": {
-      "Air Delivery Profile (空運物流連貫測試)": {
-        "parameters": {
-          "Description_EN": "Standard sequence for international air freight including drops, air vib, truck vib, and altitude.",
-          "Description_ZH": "最常見的外銷空運測試循環，包含跌落、空運隨機振動、卡車隨機振動與低壓測試的組合拳。",
-          "Standard": "ASTM D4169-23"
-        },
-        "tests": [
-          {
-            "Action": "Handling Drops (First half)",
-            "Sequence": "1. Schedule A"
-          },
-          {
-            "Action": "Truck Random Vibration (e.g. Level II, 60 mins)",
-            "Sequence": "2. Schedule C"
-          },
-          {
-            "Action": "Low Pressure (Altitude)",
-            "Sequence": "3. Schedule I"
-          },
-          {
-            "Action": "Air Random Vibration (e.g. Level II, 120 mins)",
-            "Sequence": "4. Schedule C"
-          },
-          {
-            "Action": "Handling Drops (Second half on different faces)",
-            "Sequence": "5. Schedule A"
-          }
-        ]
-      }
+    "Step 1: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
+    },
+    "Step 2: Schedule C": {
+      "parameters": {
+        "Description_EN": "Simulates dynamic stacking compression during vehicle transport.",
+        "Description_ZH": "模擬運輸車廂內動態顛簸時的堆疊抗壓。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Apply load calculated for vehicle transport conditions",
+          "Phase": "Compression"
+        }
+      ]
+    },
+    "Step 3: Schedule F": {
+      "parameters": {
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 4: Schedule I": {
+      "parameters": {
+        "Description_EN": "Simulates low pressure (vacuum) at high altitude or unpressurized aircraft.",
+        "Description_ZH": "模擬高海拔或非加壓機艙內的低氣壓環境。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Expose to simulated altitude pressure",
+          "Phase": "Vacuum"
+        }
+      ]
+    },
+    "Step 5: Schedule E": {
+      "parameters": {
+        "Description_EN": "Simulates unconstrained random vehicle vibration (Truck or Air PSD).",
+        "Description_ZH": "模擬卡車或飛機運輸時的無負載隨機振動。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute random vibration per Truck/Air proﬁles",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 6: Schedule J": {
+      "parameters": {
+        "Description_EN": "Simulates localized impacts from adjacent freight or handling equipment.",
+        "Description_ZH": "模擬尖銳物體或鄰近貨物倒塌造成的局部撞擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Free fall of a standard mass (e.g., hazard box) onto the package",
+          "Phase": "Impact"
+        }
+      ]
+    },
+    "Step 7: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
     }
   },
   "DC 14: LTL motor freight (零擔物流運輸)": {
-    "Schedule A, E, J (LTL 綜合排程)": {
-      "LTL Profile (零擔卡車物流連貫測試)": {
-        "parameters": {
-          "Description_EN": "LTL motor freight sequence, includes Concentrated Impact (Schedule J) for puncturing hazards.",
-          "Description_ZH": "模擬電商大件或打棧板商品透過 LTL (Less-Than-Truckload) 零擔物流寄送。包含額外的 Schedule J 集中衝擊。",
-          "Standard": "ASTM D4169-23"
-        },
-        "tests": [
-          {
-            "Action": "Handling Drops",
-            "Sequence": "1. Schedule A"
-          },
-          {
-            "Action": "Concentrated Impact (to simulate forks or other freight hitting it)",
-            "Sequence": "2. Schedule J"
-          },
-          {
-            "Action": "Truck Random Vibration",
-            "Sequence": "3. Schedule E"
-          },
-          {
-            "Action": "Handling Drops",
-            "Sequence": "4. Schedule A"
-          }
-        ]
-      }
+    "Step 1: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
+        }
+      ]
+    },
+    "Step 2: Schedule B": {
+      "parameters": {
+        "Description_EN": "Simulates static warehouse stacking compression.",
+        "Description_ZH": "模擬倉庫內長期靜態堆疊的抗壓強度。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Apply static load based on stacking height and safety factor",
+          "Phase": "Compression"
+        }
+      ]
     }
   },
   "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for intermodal container or roll on/roll off trailer",
-        "Description_ZH": "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule C": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for intermodal container or roll on/roll off trailer",
-        "Description_ZH": "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates dynamic stacking compression during vehicle transport.",
+        "Description_ZH": "模擬運輸車廂內動態顛簸時的堆疊抗壓。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Apply load calculated for vehicle transport conditions",
+          "Phase": "Compression"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule A": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for intermodal container or roll on/roll off trailer",
-        "Description_ZH": "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for palletized cargo ship",
-        "Description_ZH": "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule C": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for palletized cargo ship",
-        "Description_ZH": "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates dynamic stacking compression during vehicle transport.",
+        "Description_ZH": "模擬運輸車廂內動態顛簸時的堆疊抗壓。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Apply load calculated for vehicle transport conditions",
+          "Phase": "Compression"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule A": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for palletized cargo ship",
-        "Description_ZH": "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for break bulk cargo ship",
-        "Description_ZH": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule C": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for break bulk cargo ship",
-        "Description_ZH": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates dynamic stacking compression during vehicle transport.",
+        "Description_ZH": "模擬運輸車廂內動態顛簸時的堆疊抗壓。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Apply load calculated for vehicle transport conditions",
+          "Phase": "Compression"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule A": {
       "parameters": {
-        "Description_EN": "Export/Import shipment for break bulk cargo ship",
-        "Description_ZH": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
   },
   "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸)": {
-    "Assurance Level I": {
+    "Step 1: Schedule A": {
       "parameters": {
-        "Description_EN": "Non-Commercial Government shipments in accordance with MIL-STD-2073-1",
-        "Description_ZH": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     },
-    "Assurance Level II": {
+    "Step 2: Schedule B": {
       "parameters": {
-        "Description_EN": "Non-Commercial Government shipments in accordance with MIL-STD-2073-1",
-        "Description_ZH": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates static warehouse stacking compression.",
+        "Description_ZH": "模擬倉庫內長期靜態堆疊的抗壓強度。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Apply static load based on stacking height and safety factor",
+          "Phase": "Compression"
         }
       ]
     },
-    "Assurance Level III": {
+    "Step 3: Schedule E": {
       "parameters": {
-        "Description_EN": "Non-Commercial Government shipments in accordance with MIL-STD-2073-1",
-        "Description_ZH": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸)",
-        "Profile": "Refer to Table 1 Test Schedule Sequence",
+        "Description_EN": "Simulates unconstrained random vehicle vibration (Truck or Air PSD).",
+        "Description_ZH": "模擬卡車或飛機運輸時的無負載隨機振動。",
         "Standard": "ASTM D4169-23"
       },
       "tests": [
         {
-          "Condition": "Execute Schedules as per ASTM D4169-23 Table 1.",
-          "Phase": "Simulate Distribution"
+          "Condition": "Execute random vibration per Truck/Air proﬁles",
+          "Phase": "Vibration"
+        }
+      ]
+    },
+    "Step 4: Schedule F": {
+      "parameters": {
+        "Description_EN": "Simulates repetitive shock from unrestrained bouncing in a vehicle.",
+        "Description_ZH": "模擬未固定包裹在車廂內的跳動與碰撞。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Rotary or vertical synchronous motion causing package to leave table",
+          "Phase": "Bounce Test"
+        }
+      ]
+    },
+    "Step 5: Schedule A": {
+      "parameters": {
+        "Description_EN": "Manual or mechanical handling drop and impact tests.",
+        "Description_ZH": "模擬人工或機械搬運時的摔落與衝擊。",
+        "Standard": "ASTM D4169-23"
+      },
+      "tests": [
+        {
+          "Condition": "Execute free fall drop on faces, edges, and corners",
+          "Phase": "Drop Test"
         }
       ]
     }
