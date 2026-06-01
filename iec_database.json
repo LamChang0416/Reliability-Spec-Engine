@@ -1,121 +1,36 @@
 {
   "_meta": {
-    "standard": "IEC 60721-3",
-    "version": "2019",
+    "checksum": "sha256:024d5eb209b6e6a8",
     "description": "Environmental condition classification",
     "lastUpdated": "2026-05-26",
     "maintainer": "Lam",
     "schemaVersion": "2.0",
-    "checksum": "sha256:024d5eb209b6e6a8"
+    "standard": "IEC 60721-3",
+    "version": "2019"
   },
   "1": {
-    "K": {
-      "1K2": {
-        "parameters": {
-          "Temperature": "+5°C to +40°C",
-          "Relative Humidity": "5% to 85%",
-          "Description": "溫濕度受控的室內倉儲"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "+5°C, 16h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+40°C, 16h"
-          }
-        ]
-      },
-      "1K3": {
-        "parameters": {
-          "Temperature": "-5°C to +45°C",
-          "Relative Humidity": "5% to 95%",
-          "Description": "無溫濕度控制的封閉建築物倉儲"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-5°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+45°C, 72h"
-          },
-          {
-            "Test": "Damp Heat",
-            "Standard": "IEC 60068-2-30",
-            "Condition": "+40°C, 95% RH, 2 cycles"
-          }
-        ]
-      },
-      "1K5": {
-        "parameters": {
-          "Temperature": "-40°C to +70°C",
-          "Relative Humidity": "10% to 100%",
-          "Description": "具備極端溫差的防雨棚或遮蔽倉儲"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-40°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+70°C, 72h"
-          }
-        ]
-      }
-    },
-    "M": {
-      "1M2": {
-        "parameters": {
-          "Vibration": "Low significance",
-          "Shock": "Free fall up to 0.25m",
-          "Description": "一般倉儲搬運與堆疊產生的輕微衝擊"
-        },
-        "tests": [
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "40 m/s² (4G), 22ms"
-          },
-          {
-            "Test": "Free Fall",
-            "Standard": "IEC 60068-2-31",
-            "Condition": "Drop height 0.25m"
-          }
-        ]
-      }
-    },
     "B (Biological)": {
       "1B1": {
         "parameters": {
-          "Description_ZH": "無植物或動物危害的區域",
-          "Condition": "No special biological hazard"
+          "Condition": "No special biological hazard",
+          "Description_ZH": "無植物或動物危害的區域"
         },
         "tests": [
           {
-            "Test": "Fungus",
-            "Condition": "Not required"
+            "Condition": "Not required",
+            "Test": "Fungus"
           }
         ]
       },
       "1B2": {
         "parameters": {
-          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
-          "Condition": "Flora/Fauna present"
+          "Condition": "Flora/Fauna present",
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害"
         },
         "tests": [
           {
-            "Test": "Fungus Resistance",
-            "Condition": "28 days fungus test"
+            "Condition": "28 days fungus test",
+            "Test": "Fungus Resistance"
           }
         ]
       }
@@ -123,20 +38,105 @@
     "C (Chemically Active)": {
       "1C1": {
         "parameters": {
-          "Description_ZH": "鄉村及低工業污染區",
-          "Condition": "Low pollution"
+          "Condition": "Low pollution",
+          "Description_ZH": "鄉村及低工業污染區"
         },
         "tests": []
       },
       "1C2": {
         "parameters": {
-          "Description_ZH": "一般都會區，中度污染",
-          "Condition": "Normal urban pollution (H2S, SO2)"
+          "Condition": "Normal urban pollution (H2S, SO2)",
+          "Description_ZH": "一般都會區，中度污染"
         },
         "tests": [
           {
-            "Test": "Mixed Flowing Gas",
-            "Condition": "Low severity MFG"
+            "Condition": "Low severity MFG",
+            "Test": "Mixed Flowing Gas"
+          }
+        ]
+      }
+    },
+    "K": {
+      "1K2": {
+        "parameters": {
+          "Description": "溫濕度受控的室內倉儲",
+          "Relative Humidity": "5% to 85%",
+          "Temperature": "+5°C to +40°C"
+        },
+        "tests": [
+          {
+            "Condition": "+5°C, 16h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+40°C, 16h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          }
+        ]
+      },
+      "1K3": {
+        "parameters": {
+          "Description": "無溫濕度控制的封閉建築物倉儲",
+          "Relative Humidity": "5% to 95%",
+          "Temperature": "-5°C to +45°C"
+        },
+        "tests": [
+          {
+            "Condition": "-5°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+45°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "+40°C, 95% RH, 2 cycles",
+            "Standard": "IEC 60068-2-30",
+            "Test": "Damp Heat"
+          }
+        ]
+      },
+      "1K5": {
+        "parameters": {
+          "Description": "具備極端溫差的防雨棚或遮蔽倉儲",
+          "Relative Humidity": "10% to 100%",
+          "Temperature": "-40°C to +70°C"
+        },
+        "tests": [
+          {
+            "Condition": "-40°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+70°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          }
+        ]
+      }
+    },
+    "M": {
+      "1M2": {
+        "parameters": {
+          "Description": "一般倉儲搬運與堆疊產生的輕微衝擊",
+          "Shock": "Free fall up to 0.25m",
+          "Vibration": "Low significance"
+        },
+        "tests": [
+          {
+            "Condition": "40 m/s² (4G), 22ms",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          },
+          {
+            "Condition": "Drop height 0.25m",
+            "Standard": "IEC 60068-2-31",
+            "Test": "Free Fall"
           }
         ]
       }
@@ -144,226 +144,48 @@
     "S (Mechanically Active / Sand & Dust)": {
       "1S1": {
         "parameters": {
-          "Description_ZH": "無沙塵或極低粉塵區",
-          "Condition": "Clean area"
+          "Condition": "Clean area",
+          "Description_ZH": "無沙塵或極低粉塵區"
         },
         "tests": []
       },
       "1S2": {
         "parameters": {
-          "Description_ZH": "一般工業粉塵或室外揚塵",
-          "Condition": "Dusty area (e.g. IP5X)"
+          "Condition": "Dusty area (e.g. IP5X)",
+          "Description_ZH": "一般工業粉塵或室外揚塵"
         },
         "tests": [
           {
-            "Test": "Dust",
-            "Condition": "Dust circulation test"
+            "Condition": "Dust circulation test",
+            "Test": "Dust"
           }
         ]
       }
     }
   },
   "2": {
-    "K": {
-      "2K1": {
-        "parameters": {
-          "Temperature": "+20°C to +30°C",
-          "Relative Humidity": "20% to 75%",
-          "Description": "高度受控的封閉運輸 (如特製空調氣墊車)"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "+20°C, 16h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+30°C, 16h"
-          }
-        ]
-      },
-      "2K2": {
-        "parameters": {
-          "Temperature": "-20°C to +60°C",
-          "Relative Humidity": "Up to 100%",
-          "Description": "一般封閉運輸 (標準貨櫃/卡車車廂)，無溫濕度控制"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-20°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+60°C, 72h"
-          },
-          {
-            "Test": "Damp Heat (Cyclic)",
-            "Standard": "IEC 60068-2-30",
-            "Condition": "+40°C, 93% RH, 2 cycles"
-          },
-          {
-            "Test": "Change of Temp",
-            "Standard": "IEC 60068-2-14",
-            "Condition": "-20°C to +60°C, 5 cycles"
-          }
-        ]
-      },
-      "2K3": {
-        "parameters": {
-          "Temperature": "-40°C to +70°C",
-          "Relative Humidity": "Up to 100%",
-          "Description": "具備通風的無遮蔽運輸 (如船隻甲板或開篷卡車)"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-40°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+70°C, 72h"
-          },
-          {
-            "Test": "Change of Temp",
-            "Standard": "IEC 60068-2-14",
-            "Condition": "-40°C to +70°C, 5 cycles"
-          }
-        ]
-      },
-      "2K4": {
-        "parameters": {
-          "Temperature": "-40°C to +70°C",
-          "Solar Radiation": "Up to 1120 W/m²",
-          "Precipitation": "Rain, Snow, Hail",
-          "Description": "完全開放的戶外極端運輸"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-40°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+70°C, 72h"
-          },
-          {
-            "Test": "Solar Radiation",
-            "Standard": "IEC 60068-2-5",
-            "Condition": "Procedure B, 3 cycles"
-          },
-          {
-            "Test": "Water (Rain)",
-            "Standard": "IEC 60068-2-18",
-            "Condition": "Method Rb, 10 min/surface"
-          }
-        ]
-      }
-    },
-    "M": {
-      "2M1": {
-        "parameters": {
-          "Vibration": "Low level random vibration",
-          "Shock": "Free fall < 0.25m",
-          "Description": "極度小心的搬運與避震運輸 (如高階伺服器專車)"
-        },
-        "tests": [
-          {
-            "Test": "Random Vibration",
-            "Standard": "IEC 60068-2-64",
-            "Condition": "ASD 0.1 m²/s³, 10-200Hz, 30min/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "50 m/s² (5G), 11ms, 3 shocks/dir"
-          },
-          {
-            "Test": "Free Fall",
-            "Standard": "IEC 60068-2-31",
-            "Condition": "Drop height 0.25m, 2 falls"
-          }
-        ]
-      },
-      "2M2": {
-        "parameters": {
-          "Vibration": "Standard road/rail/air vibration",
-          "Shock": "Free fall < 1.0m",
-          "Description": "一般標準貨運運輸與物流搬運"
-        },
-        "tests": [
-          {
-            "Test": "Random Vibration",
-            "Standard": "IEC 60068-2-64",
-            "Condition": "ASD 1.0 m²/s³, 10-200Hz, 30min/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "150 m/s² (15G), 11ms, 3 shocks/dir"
-          },
-          {
-            "Test": "Free Fall",
-            "Standard": "IEC 60068-2-31",
-            "Condition": "Drop height 1.0m, 2 falls (for packages < 20kg)"
-          }
-        ]
-      },
-      "2M3": {
-        "parameters": {
-          "Vibration": "High level random, rough roads",
-          "Shock": "Free fall < 1.2m, rough handling",
-          "Description": "惡劣路況、粗暴搬運或無包裝的重型運輸"
-        },
-        "tests": [
-          {
-            "Test": "Random Vibration",
-            "Standard": "IEC 60068-2-64",
-            "Condition": "ASD 3.0 m²/s³, 10-200Hz, 30min/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "300 m/s² (30G), 18ms, 3 shocks/dir"
-          },
-          {
-            "Test": "Free Fall",
-            "Standard": "IEC 60068-2-31",
-            "Condition": "Drop height 1.2m, 2 falls"
-          }
-        ]
-      }
-    },
     "B (Biological)": {
       "2B1": {
         "parameters": {
-          "Description_ZH": "無植物或動物危害的區域",
-          "Condition": "No special biological hazard"
+          "Condition": "No special biological hazard",
+          "Description_ZH": "無植物或動物危害的區域"
         },
         "tests": [
           {
-            "Test": "Fungus",
-            "Condition": "Not required"
+            "Condition": "Not required",
+            "Test": "Fungus"
           }
         ]
       },
       "2B2": {
         "parameters": {
-          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
-          "Condition": "Flora/Fauna present"
+          "Condition": "Flora/Fauna present",
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害"
         },
         "tests": [
           {
-            "Test": "Fungus Resistance",
-            "Condition": "28 days fungus test"
+            "Condition": "28 days fungus test",
+            "Test": "Fungus Resistance"
           }
         ]
       }
@@ -371,20 +193,198 @@
     "C (Chemically Active)": {
       "2C1": {
         "parameters": {
-          "Description_ZH": "鄉村及低工業污染區",
-          "Condition": "Low pollution"
+          "Condition": "Low pollution",
+          "Description_ZH": "鄉村及低工業污染區"
         },
         "tests": []
       },
       "2C2": {
         "parameters": {
-          "Description_ZH": "一般都會區，中度污染",
-          "Condition": "Normal urban pollution (H2S, SO2)"
+          "Condition": "Normal urban pollution (H2S, SO2)",
+          "Description_ZH": "一般都會區，中度污染"
         },
         "tests": [
           {
-            "Test": "Mixed Flowing Gas",
-            "Condition": "Low severity MFG"
+            "Condition": "Low severity MFG",
+            "Test": "Mixed Flowing Gas"
+          }
+        ]
+      }
+    },
+    "K": {
+      "2K1": {
+        "parameters": {
+          "Description": "高度受控的封閉運輸 (如特製空調氣墊車)",
+          "Relative Humidity": "20% to 75%",
+          "Temperature": "+20°C to +30°C"
+        },
+        "tests": [
+          {
+            "Condition": "+20°C, 16h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+30°C, 16h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          }
+        ]
+      },
+      "2K2": {
+        "parameters": {
+          "Description": "一般封閉運輸 (標準貨櫃/卡車車廂)，無溫濕度控制",
+          "Relative Humidity": "Up to 100%",
+          "Temperature": "-20°C to +60°C"
+        },
+        "tests": [
+          {
+            "Condition": "-20°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+60°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "+40°C, 93% RH, 2 cycles",
+            "Standard": "IEC 60068-2-30",
+            "Test": "Damp Heat (Cyclic)"
+          },
+          {
+            "Condition": "-20°C to +60°C, 5 cycles",
+            "Standard": "IEC 60068-2-14",
+            "Test": "Change of Temp"
+          }
+        ]
+      },
+      "2K3": {
+        "parameters": {
+          "Description": "具備通風的無遮蔽運輸 (如船隻甲板或開篷卡車)",
+          "Relative Humidity": "Up to 100%",
+          "Temperature": "-40°C to +70°C"
+        },
+        "tests": [
+          {
+            "Condition": "-40°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+70°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "-40°C to +70°C, 5 cycles",
+            "Standard": "IEC 60068-2-14",
+            "Test": "Change of Temp"
+          }
+        ]
+      },
+      "2K4": {
+        "parameters": {
+          "Description": "完全開放的戶外極端運輸",
+          "Precipitation": "Rain, Snow, Hail",
+          "Solar Radiation": "Up to 1120 W/m²",
+          "Temperature": "-40°C to +70°C"
+        },
+        "tests": [
+          {
+            "Condition": "-40°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+70°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "Procedure B, 3 cycles",
+            "Standard": "IEC 60068-2-5",
+            "Test": "Solar Radiation"
+          },
+          {
+            "Condition": "Method Rb, 10 min/surface",
+            "Standard": "IEC 60068-2-18",
+            "Test": "Water (Rain)"
+          }
+        ]
+      }
+    },
+    "M": {
+      "2M1": {
+        "parameters": {
+          "Description": "極度小心的搬運與避震運輸 (如高階伺服器專車)",
+          "Shock": "Free fall < 0.25m",
+          "Vibration": "Low level random vibration"
+        },
+        "tests": [
+          {
+            "Condition": "ASD 0.1 m²/s³, 10-200Hz, 30min/axis",
+            "Standard": "IEC 60068-2-64",
+            "Test": "Random Vibration"
+          },
+          {
+            "Condition": "50 m/s² (5G), 11ms, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          },
+          {
+            "Condition": "Drop height 0.25m, 2 falls",
+            "Standard": "IEC 60068-2-31",
+            "Test": "Free Fall"
+          }
+        ]
+      },
+      "2M2": {
+        "parameters": {
+          "Description": "一般標準貨運運輸與物流搬運",
+          "Shock": "Free fall < 1.0m",
+          "Vibration": "Standard road/rail/air vibration"
+        },
+        "tests": [
+          {
+            "Condition": "ASD 1.0 m²/s³, 10-200Hz, 30min/axis",
+            "Standard": "IEC 60068-2-64",
+            "Test": "Random Vibration"
+          },
+          {
+            "Condition": "150 m/s² (15G), 11ms, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          },
+          {
+            "Condition": "Drop height 1.0m, 2 falls (for packages < 20kg)",
+            "Standard": "IEC 60068-2-31",
+            "Test": "Free Fall"
+          }
+        ]
+      },
+      "2M3": {
+        "parameters": {
+          "Description": "惡劣路況、粗暴搬運或無包裝的重型運輸",
+          "Shock": "Free fall < 1.2m, rough handling",
+          "Vibration": "High level random, rough roads"
+        },
+        "tests": [
+          {
+            "Condition": "ASD 3.0 m²/s³, 10-200Hz, 30min/axis",
+            "Standard": "IEC 60068-2-64",
+            "Test": "Random Vibration"
+          },
+          {
+            "Condition": "300 m/s² (30G), 18ms, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          },
+          {
+            "Condition": "Drop height 1.2m, 2 falls",
+            "Standard": "IEC 60068-2-31",
+            "Test": "Free Fall"
           }
         ]
       }
@@ -392,136 +392,223 @@
     "S (Mechanically Active / Sand & Dust)": {
       "2S1": {
         "parameters": {
-          "Description_ZH": "無沙塵或極低粉塵區",
-          "Condition": "Clean area"
+          "Condition": "Clean area",
+          "Description_ZH": "無沙塵或極低粉塵區"
         },
         "tests": []
       },
       "2S2": {
         "parameters": {
-          "Description_ZH": "一般工業粉塵或室外揚塵",
-          "Condition": "Dusty area (e.g. IP5X)"
+          "Condition": "Dusty area (e.g. IP5X)",
+          "Description_ZH": "一般工業粉塵或室外揚塵"
         },
         "tests": [
           {
-            "Test": "Dust",
-            "Condition": "Dust circulation test"
+            "Condition": "Dust circulation test",
+            "Test": "Dust"
           }
         ]
       }
     }
   },
   "3": {
-    "K": {
-      "3K1": {
+    "B (Biological)": {
+      "3B1 / 3B2 / 3B3": {
         "parameters": {
-          "Temperature": "+20°C to +25°C",
-          "Relative Humidity": "20% to 75%",
-          "Description": "等級 1：溫室等級的極度受控 (如: 恆溫恆濕的半導體無塵室)"
+          "3B1 Description": "無發霉風險、無白蟻與齧齒動物破壞",
+          "3B2 Description": "輕微發霉風險，可能偶爾出現齧齒類 (老鼠)",
+          "3B3 Description": "高熱帶雨林地帶，面臨嚴重的黴菌覆蓋、白蟻群聚與老鼠破壞風險 (需採用防啃咬線材)",
+          "Standard": "IEC 60721-3-3"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "Method J, Spray with mixed fungal spores, incubate 28 days",
+            "Standard": "IEC 60068-2-10",
+            "Test": "Fungus Growth"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "3C1": {
+        "parameters": {
+          "Cl (氯氣)": "0.01 mg/m³",
+          "Description": "空氣極度乾淨受控的室內 (如半導體無塵室、高等級 Data Center)",
+          "H2S (硫化氫)": "0.01 mg/m³",
+          "NH3 (氨氣)": "0.3 mg/m³",
+          "NOX (氮氧化物)": "0.1 mg/m³",
+          "SO2 (二氧化硫)": "0.1 mg/m³"
+        },
+        "tests": [
+          {
+            "Condition": "Normally not required; pure environments only",
+            "Standard": "IEC 60068-2-60",
+            "Test": "Mixed Gas"
+          }
+        ]
+      },
+      "3C2": {
+        "parameters": {
+          "Cl (氯氣)": "0.1 mg/m³",
+          "Description": "一般都會區與輕工業區室內 (金手指與 PCB 腐蝕風險基準線)",
+          "H2S (硫化氫)": "0.5 mg/m³",
+          "NH3 (氨氣)": "3.0 mg/m³",
+          "NOX (氮氧化物)": "1.0 mg/m³",
+          "SO2 (二氧化硫)": "1.0 mg/m³"
+        },
+        "tests": [
+          {
+            "Condition": "Method 4 (H2S, NO2, Cl2, SO2 mixed), 14 days",
+            "Standard": "IEC 60068-2-60",
+            "Test": "Mixed Flowing Gas"
+          }
+        ]
+      },
+      "3C3": {
+        "parameters": {
+          "Cl (氯氣)": "0.3 mg/m³",
+          "Description": "重度工業區與化工廠近郊，設備防護塗層需特殊加固 (Conformal Coating)",
+          "H2S (硫化氫)": "3.0 mg/m³",
+          "NH3 (氨氣)": "35.0 mg/m³",
+          "NOX (氮氧化物)": "3.0 mg/m³",
+          "SO2 (二氧化硫)": "10.0 mg/m³"
+        },
+        "tests": [
+          {
+            "Condition": "Method 1 or Method 4 extended to 21 days",
+            "Standard": "IEC 60068-2-60",
+            "Test": "Mixed Flowing Gas"
+          }
+        ]
+      },
+      "3C4": {
+        "parameters": {
+          "Cl (氯氣)": "1.0 mg/m³",
+          "Description": "極端化工煉油廠內部操作 (面臨強烈侵蝕性有害氣體，極度嚴苛)",
+          "H2S (硫化氫)": "14.0 mg/m³",
+          "NH3 (氨氣)": "100.0 mg/m³",
+          "NOX (氮氧化物)": "12.0 mg/m³",
+          "SO2 (二氧化硫)": "40.0 mg/m³"
+        },
+        "tests": [
+          {
+            "Condition": "High concentration single gas tests (e.g., SO2 25ppm for 21 days)",
+            "Standard": "IEC 60068-2-42 / 43",
+            "Test": "Continuous Corrosion Test"
+          }
+        ]
+      }
+    },
+    "K": {
+      "3K1": {
+        "parameters": {
+          "Description": "等級 1：溫室等級的極度受控 (如: 恆溫恆濕的半導體無塵室)",
+          "Relative Humidity": "20% to 75%",
+          "Temperature": "+20°C to +25°C"
+        },
+        "tests": [
+          {
+            "Condition": "+20°C, 16h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "+20°C, 16h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+25°C, 16h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+25°C, 16h"
+            "Test": "Dry Heat"
           }
         ]
       },
       "3K2": {
         "parameters": {
-          "Temperature": "+15°C to +30°C",
+          "Description": "等級 2：持續受控的舒適圈 (如: 醫療設備室、高階伺服器機房)",
           "Relative Humidity": "10% to 75%",
-          "Description": "等級 2：持續受控的舒適圈 (如: 醫療設備室、高階伺服器機房)"
+          "Temperature": "+15°C to +30°C"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "+15°C, 16h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "+15°C, 16h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+30°C, 16h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+30°C, 16h"
+            "Test": "Dry Heat"
           }
         ]
       },
       "3K3": {
         "parameters": {
-          "Temperature": "+5°C to +40°C",
-          "Relative Humidity": "5% to 85%",
           "Absolute Humidity": "1 to 25 g/m³",
-          "Description": "等級 3：伺服器的主戰場 (如: 允許輕微波動的商用 Data Center)"
+          "Description": "等級 3：伺服器的主戰場 (如: 允許輕微波動的商用 Data Center)",
+          "Relative Humidity": "5% to 85%",
+          "Temperature": "+5°C to +40°C"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "+5°C, 16h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "+5°C, 16h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+40°C, 16h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+40°C, 16h"
+            "Test": "Dry Heat"
           },
           {
-            "Test": "Damp Heat",
+            "Condition": "+40°C, 85% RH, 4 days",
             "Standard": "IEC 60068-2-78",
-            "Condition": "+40°C, 85% RH, 4 days"
+            "Test": "Damp Heat"
           }
         ]
       },
       "3K5": {
         "parameters": {
-          "Temperature": "-5°C to +45°C",
+          "Description": "等級 5：無溫控的嚴苛邊緣 (如: 夏熱冬冷、會滴冷凝水的鐵皮廠房)",
           "Relative Humidity": "5% to 95%",
           "Special": "Condensation may occur",
-          "Description": "等級 5：無溫控的嚴苛邊緣 (如: 夏熱冬冷、會滴冷凝水的鐵皮廠房)"
+          "Temperature": "-5°C to +45°C"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "-5°C, 16h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "-5°C, 16h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+45°C, 16h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+45°C, 16h"
+            "Test": "Dry Heat"
           },
           {
-            "Test": "Temp Change",
+            "Condition": "-5°C to +45°C, 2 cycles",
             "Standard": "IEC 60068-2-14",
-            "Condition": "-5°C to +45°C, 2 cycles"
+            "Test": "Temp Change"
           }
         ]
       },
       "3K6": {
         "parameters": {
-          "Temperature": "-25°C to +55°C",
+          "Description": "等級 6：極端惡劣室內 (如: 寒帶/熱帶無空調庫房，面臨生存危機)",
           "Relative Humidity": "10% to 100%",
-          "Description": "等級 6：極端惡劣室內 (如: 寒帶/熱帶無空調庫房，面臨生存危機)"
+          "Temperature": "-25°C to +55°C"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "-25°C, 16h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "-25°C, 16h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+55°C, 16h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+55°C, 16h"
+            "Test": "Dry Heat"
           },
           {
-            "Test": "Damp Heat (Cyclic)",
+            "Condition": "+55°C, 6 cycles",
             "Standard": "IEC 60068-2-30",
-            "Condition": "+55°C, 6 cycles"
+            "Test": "Damp Heat (Cyclic)"
           }
         ]
       },
@@ -532,12 +619,12 @@
         },
         "tests": [
           {
-            "Test": "Cold",
-            "Condition": "-40°C"
+            "Condition": "-40°C",
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
-            "Condition": "+70°C"
+            "Condition": "+70°C",
+            "Test": "Dry Heat"
           }
         ]
       },
@@ -548,115 +635,12 @@
         },
         "tests": [
           {
-            "Test": "Cold",
-            "Condition": "-65°C"
+            "Condition": "-65°C",
+            "Test": "Cold"
           },
           {
-            "Test": "Thermal Shock",
-            "Condition": "Rapid change"
-          }
-        ]
-      }
-    },
-    "C (Chemically Active)": {
-      "3C1": {
-        "parameters": {
-          "Description": "空氣極度乾淨受控的室內 (如半導體無塵室、高等級 Data Center)",
-          "SO2 (二氧化硫)": "0.1 mg/m³",
-          "H2S (硫化氫)": "0.01 mg/m³",
-          "Cl (氯氣)": "0.01 mg/m³",
-          "NOX (氮氧化物)": "0.1 mg/m³",
-          "NH3 (氨氣)": "0.3 mg/m³"
-        },
-        "tests": [
-          {
-            "Test": "Mixed Gas",
-            "Standard": "IEC 60068-2-60",
-            "Condition": "Normally not required; pure environments only"
-          }
-        ]
-      },
-      "3C2": {
-        "parameters": {
-          "Description": "一般都會區與輕工業區室內 (金手指與 PCB 腐蝕風險基準線)",
-          "SO2 (二氧化硫)": "1.0 mg/m³",
-          "H2S (硫化氫)": "0.5 mg/m³",
-          "Cl (氯氣)": "0.1 mg/m³",
-          "NOX (氮氧化物)": "1.0 mg/m³",
-          "NH3 (氨氣)": "3.0 mg/m³"
-        },
-        "tests": [
-          {
-            "Test": "Mixed Flowing Gas",
-            "Standard": "IEC 60068-2-60",
-            "Condition": "Method 4 (H2S, NO2, Cl2, SO2 mixed), 14 days"
-          }
-        ]
-      },
-      "3C3": {
-        "parameters": {
-          "Description": "重度工業區與化工廠近郊，設備防護塗層需特殊加固 (Conformal Coating)",
-          "SO2 (二氧化硫)": "10.0 mg/m³",
-          "H2S (硫化氫)": "3.0 mg/m³",
-          "Cl (氯氣)": "0.3 mg/m³",
-          "NOX (氮氧化物)": "3.0 mg/m³",
-          "NH3 (氨氣)": "35.0 mg/m³"
-        },
-        "tests": [
-          {
-            "Test": "Mixed Flowing Gas",
-            "Standard": "IEC 60068-2-60",
-            "Condition": "Method 1 or Method 4 extended to 21 days"
-          }
-        ]
-      },
-      "3C4": {
-        "parameters": {
-          "Description": "極端化工煉油廠內部操作 (面臨強烈侵蝕性有害氣體，極度嚴苛)",
-          "SO2 (二氧化硫)": "40.0 mg/m³",
-          "H2S (硫化氫)": "14.0 mg/m³",
-          "Cl (氯氣)": "1.0 mg/m³",
-          "NOX (氮氧化物)": "12.0 mg/m³",
-          "NH3 (氨氣)": "100.0 mg/m³"
-        },
-        "tests": [
-          {
-            "Test": "Continuous Corrosion Test",
-            "Standard": "IEC 60068-2-42 / 43",
-            "Condition": "High concentration single gas tests (e.g., SO2 25ppm for 21 days)"
-          }
-        ]
-      }
-    },
-    "B (Biological)": {
-      "3B1 / 3B2 / 3B3": {
-        "parameters": {
-          "Standard": "IEC 60721-3-3",
-          "3B1 Description": "無發霉風險、無白蟻與齧齒動物破壞",
-          "3B2 Description": "輕微發霉風險，可能偶爾出現齧齒類 (老鼠)",
-          "3B3 Description": "高熱帶雨林地帶，面臨嚴重的黴菌覆蓋、白蟻群聚與老鼠破壞風險 (需採用防啃咬線材)"
-        },
-        "tests": [
-          {
-            "Test": "Fungus Growth",
-            "Standard": "IEC 60068-2-10",
-            "Condition": "Method J, Spray with mixed fungal spores, incubate 28 days"
-          }
-        ]
-      }
-    },
-    "S": {
-      "3S2": {
-        "parameters": {
-          "Sand": "10 mg/m³",
-          "Dust (Suspension)": "0.2 mg/m³",
-          "Description": "一般辦公室與工廠 (未採取特殊防塵措施)"
-        },
-        "tests": [
-          {
-            "Test": "Dust",
-            "Standard": "IEC 60068-2-68",
-            "Condition": "Method Lb, moderate concentration"
+            "Condition": "Rapid change",
+            "Test": "Thermal Shock"
           }
         ]
       }
@@ -664,277 +648,170 @@
     "M": {
       "3M1": {
         "parameters": {
-          "Vibration": "Negligible",
+          "Description": "等級 1：最安靜的舒適圈 (完全無明顯震動，如頂級避震機房)",
           "Shock": "No significant shock",
-          "Description": "等級 1：最安靜的舒適圈 (完全無明顯震動，如頂級避震機房)"
+          "Vibration": "Negligible"
         },
         "tests": [
           {
-            "Test": "Vibration",
+            "Condition": "Not required",
             "Standard": "IEC 60068-2-6",
-            "Condition": "Not required"
+            "Test": "Vibration"
           }
         ]
       },
       "3M2": {
         "parameters": {
-          "Sine Vibration": "1.5 mm (2-9 Hz), 5 m/s² (9-200 Hz)",
+          "Description": "等級 2：一般標準防護 (偶有輕微共振，如標準辦公室與機房)",
           "Shock": "40 m/s², 22 ms",
-          "Description": "等級 2：一般標準防護 (偶有輕微共振，如標準辦公室與機房)"
+          "Sine Vibration": "1.5 mm (2-9 Hz), 5 m/s² (9-200 Hz)"
         },
         "tests": [
           {
-            "Test": "Vibration",
+            "Condition": "5 m/s², 2-200Hz, 10 sweeps/axis",
             "Standard": "IEC 60068-2-6",
-            "Condition": "5 m/s², 2-200Hz, 10 sweeps/axis"
+            "Test": "Vibration"
           },
           {
-            "Test": "Shock",
+            "Condition": "40 m/s² (4G), 22ms, 3 shocks/dir",
             "Standard": "IEC 60068-2-27",
-            "Condition": "40 m/s² (4G), 22ms, 3 shocks/dir"
+            "Test": "Shock"
           }
         ]
       },
       "3M3": {
         "parameters": {
-          "Sine Vibration": "3.0 mm (2-9 Hz), 10 m/s² (9-200 Hz)",
+          "Description": "等級 3：典型工業標準 (明顯震動，如鄰近冰水主機或一般機房地台)",
           "Shock": "100 m/s², 11 ms",
-          "Description": "等級 3：典型工業標準 (明顯震動，如鄰近冰水主機或一般機房地台)"
+          "Sine Vibration": "3.0 mm (2-9 Hz), 10 m/s² (9-200 Hz)"
         },
         "tests": [
           {
-            "Test": "Vibration",
+            "Condition": "10 m/s² (1G), 2-200Hz, 10 sweeps/axis",
             "Standard": "IEC 60068-2-6",
-            "Condition": "10 m/s² (1G), 2-200Hz, 10 sweeps/axis"
+            "Test": "Vibration"
           },
           {
-            "Test": "Shock",
+            "Condition": "100 m/s² (10G), 11ms, 3 shocks/dir",
             "Standard": "IEC 60068-2-27",
-            "Condition": "100 m/s² (10G), 11ms, 3 shocks/dir"
+            "Test": "Shock"
           }
         ]
       },
       "3M4": {
         "parameters": {
-          "Sine Vibration": "3.0 mm (2-9 Hz), 20 m/s² (9-200 Hz)",
+          "Description": "等級 4：嚴苛邊緣環境 (高G值衝擊，如緊鄰重型交通要道)",
           "Shock": "250 m/s², 6 ms",
-          "Description": "等級 4：嚴苛邊緣環境 (高G值衝擊，如緊鄰重型交通要道)"
+          "Sine Vibration": "3.0 mm (2-9 Hz), 20 m/s² (9-200 Hz)"
         },
         "tests": [
           {
-            "Test": "Vibration",
+            "Condition": "20 m/s² (2G), 2-200Hz, 10 sweeps/axis",
             "Standard": "IEC 60068-2-6",
-            "Condition": "20 m/s² (2G), 2-200Hz, 10 sweeps/axis"
+            "Test": "Vibration"
           },
           {
-            "Test": "Shock",
+            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir",
             "Standard": "IEC 60068-2-27",
-            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir"
+            "Test": "Shock"
           }
         ]
       },
       "3M5": {
         "parameters": {
-          "Sine Vibration": "10.0 mm (2-9 Hz), 50 m/s² (9-200 Hz)",
+          "Description": "等級 5：重工業級的摧殘 (高達 5G 震動，強固型設備專屬領域)",
           "Shock": "250 m/s², 6 ms",
-          "Description": "等級 5：重工業級的摧殘 (高達 5G 震動，強固型設備專屬領域)"
+          "Sine Vibration": "10.0 mm (2-9 Hz), 50 m/s² (9-200 Hz)"
         },
         "tests": [
           {
-            "Test": "Vibration",
+            "Condition": "50 m/s² (5G), 2-200Hz, 10 sweeps/axis",
             "Standard": "IEC 60068-2-6",
-            "Condition": "50 m/s² (5G), 2-200Hz, 10 sweeps/axis"
+            "Test": "Vibration"
           },
           {
-            "Test": "Shock",
+            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir",
             "Standard": "IEC 60068-2-27",
-            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir"
+            "Test": "Shock"
           }
         ]
       },
       "3M6": {
         "parameters": {
-          "Sine Vibration": "15.0 mm (2-9 Hz), 100 m/s² (9-200 Hz)",
+          "Description": "等級 6：破壞性災難級 (極端重工業，足以撕裂一般商用伺服器零件)",
           "Shock": "250 m/s², 6 ms",
-          "Description": "等級 6：破壞性災難級 (極端重工業，足以撕裂一般商用伺服器零件)"
+          "Sine Vibration": "15.0 mm (2-9 Hz), 100 m/s² (9-200 Hz)"
         },
         "tests": [
           {
-            "Test": "Vibration",
+            "Condition": "100 m/s² (10G), 2-200Hz, 10 sweeps/axis",
             "Standard": "IEC 60068-2-6",
-            "Condition": "100 m/s² (10G), 2-200Hz, 10 sweeps/axis"
+            "Test": "Vibration"
           },
           {
-            "Test": "Shock",
+            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir",
             "Standard": "IEC 60068-2-27",
-            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir"
+            "Test": "Shock"
           }
         ]
       },
       "3M7": {
         "parameters": {
-          "Description_ZH": "高強度地震帶或重工業機具旁",
-          "Condition": "High vibration / seismic"
+          "Condition": "High vibration / seismic",
+          "Description_ZH": "高強度地震帶或重工業機具旁"
         },
         "tests": [
           {
-            "Test": "Vibration",
-            "Condition": "High severity sine"
+            "Condition": "High severity sine",
+            "Test": "Vibration"
           },
           {
-            "Test": "Shock",
-            "Condition": "High severity"
+            "Condition": "High severity",
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "3S2": {
+        "parameters": {
+          "Description": "一般辦公室與工廠 (未採取特殊防塵措施)",
+          "Dust (Suspension)": "0.2 mg/m³",
+          "Sand": "10 mg/m³"
+        },
+        "tests": [
+          {
+            "Condition": "Method Lb, moderate concentration",
+            "Standard": "IEC 60068-2-68",
+            "Test": "Dust"
           }
         ]
       }
     }
   },
   "4": {
-    "K": {
-      "4K1": {
-        "parameters": {
-          "Temperature": "-20°C to +40°C",
-          "Relative Humidity": "20% to 100%",
-          "Solar Radiation": "Up to 700 W/m²",
-          "Description": "溫和戶外氣候，無極端溫差"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-20°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+40°C, 72h"
-          }
-        ]
-      },
-      "4K2": {
-        "parameters": {
-          "Temperature": "-33°C to +40°C (Extended to +55°C with solar)",
-          "Relative Humidity": "15% to 100%",
-          "Solar Radiation": "Up to 1120 W/m²",
-          "Precipitation": "Rain, Snow, Hail",
-          "Description": "一般全球性戶外氣候 (大多數戶外設備之標準)"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-33°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+55°C, 72h"
-          },
-          {
-            "Test": "Change of Temp",
-            "Standard": "IEC 60068-2-14",
-            "Condition": "-33°C to +40°C, 5 cycles"
-          },
-          {
-            "Test": "Solar Radiation",
-            "Standard": "IEC 60068-2-5",
-            "Condition": "Procedure B, 3 cycles"
-          },
-          {
-            "Test": "Water (Rain)",
-            "Standard": "IEC 60068-2-18",
-            "Condition": "Method Rb, 10 min/surface"
-          }
-        ]
-      },
-      "4K4": {
-        "parameters": {
-          "Temperature": "-65°C to +60°C",
-          "Relative Humidity": "10% to 100%",
-          "Solar Radiation": "Up to 1120 W/m²",
-          "Description": "極端嚴苛戶外氣候 (極地或沙漠)"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-65°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+60°C, 72h"
-          },
-          {
-            "Test": "Change of Temp",
-            "Standard": "IEC 60068-2-14",
-            "Condition": "-65°C to +60°C, 5 cycles"
-          }
-        ]
-      }
-    },
-    "M": {
-      "4M2": {
-        "parameters": {
-          "Vibration": "Sine: 5 m/s² (9-200 Hz)",
-          "Shock": "100 m/s², 11ms",
-          "Description": "一般戶外環境，受風力或周邊輕型交通影響"
-        },
-        "tests": [
-          {
-            "Test": "Vibration (Sine)",
-            "Standard": "IEC 60068-2-6",
-            "Condition": "5 m/s² (0.5G), 10 sweeps/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "100 m/s² (10G), 11ms, 3 shocks/dir"
-          }
-        ]
-      },
-      "4M3": {
-        "parameters": {
-          "Vibration": "Sine: 10 m/s² (9-200 Hz)",
-          "Shock": "250 m/s², 6ms",
-          "Description": "重工業區戶外或鄰近重型交通要道"
-        },
-        "tests": [
-          {
-            "Test": "Vibration (Sine)",
-            "Standard": "IEC 60068-2-6",
-            "Condition": "10 m/s² (1G), 10 sweeps/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir"
-          }
-        ]
-      }
-    },
     "B (Biological)": {
       "4B1": {
         "parameters": {
-          "Description_ZH": "無植物或動物危害的區域",
-          "Condition": "No special biological hazard"
+          "Condition": "No special biological hazard",
+          "Description_ZH": "無植物或動物危害的區域"
         },
         "tests": [
           {
-            "Test": "Fungus",
-            "Condition": "Not required"
+            "Condition": "Not required",
+            "Test": "Fungus"
           }
         ]
       },
       "4B2": {
         "parameters": {
-          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
-          "Condition": "Flora/Fauna present"
+          "Condition": "Flora/Fauna present",
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害"
         },
         "tests": [
           {
-            "Test": "Fungus Resistance",
-            "Condition": "28 days fungus test"
+            "Condition": "28 days fungus test",
+            "Test": "Fungus Resistance"
           }
         ]
       }
@@ -942,20 +819,143 @@
     "C (Chemically Active)": {
       "4C1": {
         "parameters": {
-          "Description_ZH": "鄉村及低工業污染區",
-          "Condition": "Low pollution"
+          "Condition": "Low pollution",
+          "Description_ZH": "鄉村及低工業污染區"
         },
         "tests": []
       },
       "4C2": {
         "parameters": {
-          "Description_ZH": "一般都會區，中度污染",
-          "Condition": "Normal urban pollution (H2S, SO2)"
+          "Condition": "Normal urban pollution (H2S, SO2)",
+          "Description_ZH": "一般都會區，中度污染"
         },
         "tests": [
           {
-            "Test": "Mixed Flowing Gas",
-            "Condition": "Low severity MFG"
+            "Condition": "Low severity MFG",
+            "Test": "Mixed Flowing Gas"
+          }
+        ]
+      }
+    },
+    "K": {
+      "4K1": {
+        "parameters": {
+          "Description": "溫和戶外氣候，無極端溫差",
+          "Relative Humidity": "20% to 100%",
+          "Solar Radiation": "Up to 700 W/m²",
+          "Temperature": "-20°C to +40°C"
+        },
+        "tests": [
+          {
+            "Condition": "-20°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+40°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          }
+        ]
+      },
+      "4K2": {
+        "parameters": {
+          "Description": "一般全球性戶外氣候 (大多數戶外設備之標準)",
+          "Precipitation": "Rain, Snow, Hail",
+          "Relative Humidity": "15% to 100%",
+          "Solar Radiation": "Up to 1120 W/m²",
+          "Temperature": "-33°C to +40°C (Extended to +55°C with solar)"
+        },
+        "tests": [
+          {
+            "Condition": "-33°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+55°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "-33°C to +40°C, 5 cycles",
+            "Standard": "IEC 60068-2-14",
+            "Test": "Change of Temp"
+          },
+          {
+            "Condition": "Procedure B, 3 cycles",
+            "Standard": "IEC 60068-2-5",
+            "Test": "Solar Radiation"
+          },
+          {
+            "Condition": "Method Rb, 10 min/surface",
+            "Standard": "IEC 60068-2-18",
+            "Test": "Water (Rain)"
+          }
+        ]
+      },
+      "4K4": {
+        "parameters": {
+          "Description": "極端嚴苛戶外氣候 (極地或沙漠)",
+          "Relative Humidity": "10% to 100%",
+          "Solar Radiation": "Up to 1120 W/m²",
+          "Temperature": "-65°C to +60°C"
+        },
+        "tests": [
+          {
+            "Condition": "-65°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+60°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "-65°C to +60°C, 5 cycles",
+            "Standard": "IEC 60068-2-14",
+            "Test": "Change of Temp"
+          }
+        ]
+      }
+    },
+    "M": {
+      "4M2": {
+        "parameters": {
+          "Description": "一般戶外環境，受風力或周邊輕型交通影響",
+          "Shock": "100 m/s², 11ms",
+          "Vibration": "Sine: 5 m/s² (9-200 Hz)"
+        },
+        "tests": [
+          {
+            "Condition": "5 m/s² (0.5G), 10 sweeps/axis",
+            "Standard": "IEC 60068-2-6",
+            "Test": "Vibration (Sine)"
+          },
+          {
+            "Condition": "100 m/s² (10G), 11ms, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          }
+        ]
+      },
+      "4M3": {
+        "parameters": {
+          "Description": "重工業區戶外或鄰近重型交通要道",
+          "Shock": "250 m/s², 6ms",
+          "Vibration": "Sine: 10 m/s² (9-200 Hz)"
+        },
+        "tests": [
+          {
+            "Condition": "10 m/s² (1G), 10 sweeps/axis",
+            "Standard": "IEC 60068-2-6",
+            "Test": "Vibration (Sine)"
+          },
+          {
+            "Condition": "250 m/s² (25G), 6ms, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
           }
         ]
       }
@@ -963,133 +963,48 @@
     "S (Mechanically Active / Sand & Dust)": {
       "4S1": {
         "parameters": {
-          "Description_ZH": "無沙塵或極低粉塵區",
-          "Condition": "Clean area"
+          "Condition": "Clean area",
+          "Description_ZH": "無沙塵或極低粉塵區"
         },
         "tests": []
       },
       "4S2": {
         "parameters": {
-          "Description_ZH": "一般工業粉塵或室外揚塵",
-          "Condition": "Dusty area (e.g. IP5X)"
+          "Condition": "Dusty area (e.g. IP5X)",
+          "Description_ZH": "一般工業粉塵或室外揚塵"
         },
         "tests": [
           {
-            "Test": "Dust",
-            "Condition": "Dust circulation test"
+            "Condition": "Dust circulation test",
+            "Test": "Dust"
           }
         ]
       }
     }
   },
   "5": {
-    "K": {
-      "5K2": {
-        "parameters": {
-          "Temperature": "-40°C to +70°C",
-          "Relative Humidity": "Up to 100%",
-          "Description": "未配備溫控之車廂或車體外部裝備"
-        },
-        "tests": [
-          {
-            "Test": "Cold",
-            "Standard": "IEC 60068-2-1",
-            "Condition": "-40°C, 72h"
-          },
-          {
-            "Test": "Dry Heat",
-            "Standard": "IEC 60068-2-2",
-            "Condition": "+70°C, 72h"
-          },
-          {
-            "Test": "Change of Temp",
-            "Standard": "IEC 60068-2-14",
-            "Condition": "-40°C to +70°C, 5 cycles"
-          }
-        ]
-      }
-    },
-    "M": {
-      "5M1": {
-        "parameters": {
-          "Vibration": "Sine: 10 m/s² (2-500 Hz)",
-          "Shock": "150 m/s² (15G), 11ms",
-          "Description": "避震良好之輕型車輛內部 (如乘用車)"
-        },
-        "tests": [
-          {
-            "Test": "Vibration (Sine)",
-            "Standard": "IEC 60068-2-6",
-            "Condition": "10 m/s², 2-500Hz, 10 sweeps"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "15G, 11ms, Half-sine, 3 shocks/dir"
-          }
-        ]
-      },
-      "5M2": {
-        "parameters": {
-          "Vibration": "Broadband Random + Sine (2-500 Hz)",
-          "Shock": "300 m/s² (30G), 18ms",
-          "Description": "一般商用車輛、卡車與重型機具裝備"
-        },
-        "tests": [
-          {
-            "Test": "Random Vibration",
-            "Standard": "IEC 60068-2-64",
-            "Condition": "ASD varying by mounting location, 30min/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "30G, 18ms, Half-sine, 3 shocks/dir"
-          }
-        ]
-      },
-      "5M3": {
-        "parameters": {
-          "Vibration": "Severe Broadband Random",
-          "Shock": "500 m/s² (50G), 11ms",
-          "Description": "越野車輛、軍用載具或直接安裝於引擎周邊"
-        },
-        "tests": [
-          {
-            "Test": "Random Vibration",
-            "Standard": "IEC 60068-2-64",
-            "Condition": "High level ASD, 2-500Hz, 30min/axis"
-          },
-          {
-            "Test": "Shock",
-            "Standard": "IEC 60068-2-27",
-            "Condition": "50G, 11ms, Half-sine, 3 shocks/dir"
-          }
-        ]
-      }
-    },
     "B (Biological)": {
       "5B1": {
         "parameters": {
-          "Description_ZH": "無植物或動物危害的區域",
-          "Condition": "No special biological hazard"
+          "Condition": "No special biological hazard",
+          "Description_ZH": "無植物或動物危害的區域"
         },
         "tests": [
           {
-            "Test": "Fungus",
-            "Condition": "Not required"
+            "Condition": "Not required",
+            "Test": "Fungus"
           }
         ]
       },
       "5B2": {
         "parameters": {
-          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害",
-          "Condition": "Flora/Fauna present"
+          "Condition": "Flora/Fauna present",
+          "Description_ZH": "有植物生長(如黴菌)風險，及部分動物(如白蟻)危害"
         },
         "tests": [
           {
-            "Test": "Fungus Resistance",
-            "Condition": "28 days fungus test"
+            "Condition": "28 days fungus test",
+            "Test": "Fungus Resistance"
           }
         ]
       }
@@ -1097,20 +1012,105 @@
     "C (Chemically Active)": {
       "5C1": {
         "parameters": {
-          "Description_ZH": "鄉村及低工業污染區",
-          "Condition": "Low pollution"
+          "Condition": "Low pollution",
+          "Description_ZH": "鄉村及低工業污染區"
         },
         "tests": []
       },
       "5C2": {
         "parameters": {
-          "Description_ZH": "一般都會區，中度污染",
-          "Condition": "Normal urban pollution (H2S, SO2)"
+          "Condition": "Normal urban pollution (H2S, SO2)",
+          "Description_ZH": "一般都會區，中度污染"
         },
         "tests": [
           {
-            "Test": "Mixed Flowing Gas",
-            "Condition": "Low severity MFG"
+            "Condition": "Low severity MFG",
+            "Test": "Mixed Flowing Gas"
+          }
+        ]
+      }
+    },
+    "K": {
+      "5K2": {
+        "parameters": {
+          "Description": "未配備溫控之車廂或車體外部裝備",
+          "Relative Humidity": "Up to 100%",
+          "Temperature": "-40°C to +70°C"
+        },
+        "tests": [
+          {
+            "Condition": "-40°C, 72h",
+            "Standard": "IEC 60068-2-1",
+            "Test": "Cold"
+          },
+          {
+            "Condition": "+70°C, 72h",
+            "Standard": "IEC 60068-2-2",
+            "Test": "Dry Heat"
+          },
+          {
+            "Condition": "-40°C to +70°C, 5 cycles",
+            "Standard": "IEC 60068-2-14",
+            "Test": "Change of Temp"
+          }
+        ]
+      }
+    },
+    "M": {
+      "5M1": {
+        "parameters": {
+          "Description": "避震良好之輕型車輛內部 (如乘用車)",
+          "Shock": "150 m/s² (15G), 11ms",
+          "Vibration": "Sine: 10 m/s² (2-500 Hz)"
+        },
+        "tests": [
+          {
+            "Condition": "10 m/s², 2-500Hz, 10 sweeps",
+            "Standard": "IEC 60068-2-6",
+            "Test": "Vibration (Sine)"
+          },
+          {
+            "Condition": "15G, 11ms, Half-sine, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          }
+        ]
+      },
+      "5M2": {
+        "parameters": {
+          "Description": "一般商用車輛、卡車與重型機具裝備",
+          "Shock": "300 m/s² (30G), 18ms",
+          "Vibration": "Broadband Random + Sine (2-500 Hz)"
+        },
+        "tests": [
+          {
+            "Condition": "ASD varying by mounting location, 30min/axis",
+            "Standard": "IEC 60068-2-64",
+            "Test": "Random Vibration"
+          },
+          {
+            "Condition": "30G, 18ms, Half-sine, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
+          }
+        ]
+      },
+      "5M3": {
+        "parameters": {
+          "Description": "越野車輛、軍用載具或直接安裝於引擎周邊",
+          "Shock": "500 m/s² (50G), 11ms",
+          "Vibration": "Severe Broadband Random"
+        },
+        "tests": [
+          {
+            "Condition": "High level ASD, 2-500Hz, 30min/axis",
+            "Standard": "IEC 60068-2-64",
+            "Test": "Random Vibration"
+          },
+          {
+            "Condition": "50G, 11ms, Half-sine, 3 shocks/dir",
+            "Standard": "IEC 60068-2-27",
+            "Test": "Shock"
           }
         ]
       }
@@ -1118,74 +1118,130 @@
     "S (Mechanically Active / Sand & Dust)": {
       "5S1": {
         "parameters": {
-          "Description_ZH": "無沙塵或極低粉塵區",
-          "Condition": "Clean area"
+          "Condition": "Clean area",
+          "Description_ZH": "無沙塵或極低粉塵區"
         },
         "tests": []
       },
       "5S2": {
         "parameters": {
-          "Description_ZH": "一般工業粉塵或室外揚塵",
-          "Condition": "Dusty area (e.g. IP5X)"
+          "Condition": "Dusty area (e.g. IP5X)",
+          "Description_ZH": "一般工業粉塵或室外揚塵"
         },
         "tests": [
           {
-            "Test": "Dust",
-            "Condition": "Dust circulation test"
+            "Condition": "Dust circulation test",
+            "Test": "Dust"
           }
         ]
       }
     }
   },
   "6": {
-    "K": {
-      "6K2": {
+    "B (Biological)": {
+      "Class 6B1": {
         "parameters": {
-          "Temperature": "+5°C to +55°C",
-          "Relative Humidity": "5% to 95%",
-          "Description": "受氣候保護的船艙內部 (遠離引擎室熱源)"
+          "Description_EN": "No specific biological risks",
+          "Description_ZH": "無特殊生物風險防護",
+          "Standard": "IEC 60721-3-6"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "Flora/Fauna resistance",
+            "Test": "Biological"
+          }
+        ]
+      },
+      "Class 6B2": {
+        "parameters": {
+          "Description_EN": "Risk of mould growth or animal attacks",
+          "Description_ZH": "有霉菌或生物攻擊風險",
+          "Standard": "IEC 60721-3-6"
+        },
+        "tests": [
+          {
+            "Condition": "Flora/Fauna resistance",
+            "Test": "Biological"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "Class 6C1": {
+        "parameters": {
+          "Description_EN": "Low concentration of chemical substances",
+          "Description_ZH": "低濃度化學物質環境",
+          "Standard": "IEC 60721-3-6"
+        },
+        "tests": [
+          {
+            "Condition": "SO2/H2S exposure",
+            "Test": "Chemical"
+          }
+        ]
+      },
+      "Class 6C2": {
+        "parameters": {
+          "Description_EN": "Moderate concentration of chemical substances (typical industrial)",
+          "Description_ZH": "中等濃度化學物質環境 (一般工業區)",
+          "Standard": "IEC 60721-3-6"
+        },
+        "tests": [
+          {
+            "Condition": "SO2/H2S exposure",
+            "Test": "Chemical"
+          }
+        ]
+      }
+    },
+    "K": {
+      "6K2": {
+        "parameters": {
+          "Description": "受氣候保護的船艙內部 (遠離引擎室熱源)",
+          "Relative Humidity": "5% to 95%",
+          "Temperature": "+5°C to +55°C"
+        },
+        "tests": [
+          {
+            "Condition": "+5°C, 2h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "+5°C, 2h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+55°C, 2h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+55°C, 2h"
+            "Test": "Dry Heat"
           }
         ]
       },
       "6K4": {
         "parameters": {
-          "Temperature": "-25°C to +70°C",
+          "Description": "無防護之露天甲板 (直接暴露於海象與日照)",
           "Relative Humidity": "Up to 100%",
           "Solar Radiation": "Up to 1120 W/m²",
           "Special Condition": "Presence of sea salt mist",
-          "Description": "無防護之露天甲板 (直接暴露於海象與日照)"
+          "Temperature": "-25°C to +70°C"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "-25°C, 16h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "-25°C, 16h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+70°C, 16h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+70°C, 16h"
+            "Test": "Dry Heat"
           },
           {
-            "Test": "Damp Heat",
+            "Condition": "+55°C, 2 cycles",
             "Standard": "IEC 60068-2-30",
-            "Condition": "+55°C, 2 cycles"
+            "Test": "Damp Heat"
           },
           {
-            "Test": "Salt Mist",
+            "Condition": "Severity 1",
             "Standard": "IEC 60068-2-52",
-            "Condition": "Severity 1"
+            "Test": "Salt Mist"
           }
         ]
       }
@@ -1193,80 +1249,164 @@
     "M": {
       "6M2": {
         "parameters": {
-          "Vibration": "Sine: 2-100Hz, ±1.6mm or 4G",
-          "Description": "大於 1000 噸之動力船隻內部 (非直接連接引擎)"
+          "Description": "大於 1000 噸之動力船隻內部 (非直接連接引擎)",
+          "Vibration": "Sine: 2-100Hz, ±1.6mm or 4G"
         },
         "tests": [
           {
-            "Test": "Vibration (Sine)",
+            "Condition": "4G (25-100Hz), 10 sweeps/axis",
             "Standard": "IEC 60068-2-6",
-            "Condition": "4G (25-100Hz), 10 sweeps/axis"
+            "Test": "Vibration (Sine)"
           }
         ]
       },
       "6M3": {
         "parameters": {
-          "Vibration": "High severity sine vibration",
+          "Description": "小於 1000 噸之船隻、或容易受到波浪拍打的船尾與裝卸區",
           "Shock": "Significant impact/slamming",
-          "Description": "小於 1000 噸之船隻、或容易受到波浪拍打的船尾與裝卸區"
+          "Vibration": "High severity sine vibration"
         },
         "tests": [
           {
-            "Test": "Vibration (Sine)",
+            "Condition": "Higher severity sine, 2-100Hz",
             "Standard": "IEC 60068-2-6",
-            "Condition": "Higher severity sine, 2-100Hz"
+            "Test": "Vibration (Sine)"
           },
           {
-            "Test": "Shock",
+            "Condition": "30 m/s² (3G), 11ms",
             "Standard": "IEC 60068-2-27",
-            "Condition": "30 m/s² (3G), 11ms"
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "Class 6S1": {
+        "parameters": {
+          "Description_EN": "Very low sand/dust concentration",
+          "Description_ZH": "極少沙塵環境",
+          "Standard": "IEC 60721-3-6"
+        },
+        "tests": [
+          {
+            "Condition": "Dust settling measurement",
+            "Test": "Sand & Dust"
+          }
+        ]
+      },
+      "Class 6S2": {
+        "parameters": {
+          "Description_EN": "Typical sand/dust concentration",
+          "Description_ZH": "一般沙塵環境",
+          "Standard": "IEC 60721-3-6"
+        },
+        "tests": [
+          {
+            "Condition": "Dust settling measurement",
+            "Test": "Sand & Dust"
           }
         ]
       }
     }
   },
   "7": {
-    "K": {
-      "7K2": {
+    "B (Biological)": {
+      "Class 7B1": {
         "parameters": {
-          "Temperature": "-20°C to +40°C",
-          "Relative Humidity": "Up to 100%",
-          "Description": "溫和氣候下之一般戶外攜帶使用"
+          "Description_EN": "No specific biological risks",
+          "Description_ZH": "無特殊生物風險防護",
+          "Standard": "IEC 60721-3-7"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "Flora/Fauna resistance",
+            "Test": "Biological"
+          }
+        ]
+      },
+      "Class 7B2": {
+        "parameters": {
+          "Description_EN": "Risk of mould growth or animal attacks",
+          "Description_ZH": "有霉菌或生物攻擊風險",
+          "Standard": "IEC 60721-3-7"
+        },
+        "tests": [
+          {
+            "Condition": "Flora/Fauna resistance",
+            "Test": "Biological"
+          }
+        ]
+      }
+    },
+    "C (Chemically Active)": {
+      "Class 7C1": {
+        "parameters": {
+          "Description_EN": "Low concentration of chemical substances",
+          "Description_ZH": "低濃度化學物質環境",
+          "Standard": "IEC 60721-3-7"
+        },
+        "tests": [
+          {
+            "Condition": "SO2/H2S exposure",
+            "Test": "Chemical"
+          }
+        ]
+      },
+      "Class 7C2": {
+        "parameters": {
+          "Description_EN": "Moderate concentration of chemical substances (typical industrial)",
+          "Description_ZH": "中等濃度化學物質環境 (一般工業區)",
+          "Standard": "IEC 60721-3-7"
+        },
+        "tests": [
+          {
+            "Condition": "SO2/H2S exposure",
+            "Test": "Chemical"
+          }
+        ]
+      }
+    },
+    "K": {
+      "7K2": {
+        "parameters": {
+          "Description": "溫和氣候下之一般戶外攜帶使用",
+          "Relative Humidity": "Up to 100%",
+          "Temperature": "-20°C to +40°C"
+        },
+        "tests": [
+          {
+            "Condition": "-20°C, 2h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "-20°C, 2h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+40°C, 2h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+40°C, 2h"
+            "Test": "Dry Heat"
           },
           {
-            "Test": "Temp Change",
+            "Condition": "-20°C to +40°C, 2 cycles",
             "Standard": "IEC 60068-2-14",
-            "Condition": "-20°C to +40°C, 2 cycles"
+            "Test": "Temp Change"
           }
         ]
       },
       "7K3": {
         "parameters": {
-          "Temperature": "-40°C to +55°C",
+          "Description": "嚴苛極端氣候下之戶外攜帶使用",
           "Relative Humidity": "Up to 100%",
-          "Description": "嚴苛極端氣候下之戶外攜帶使用"
+          "Temperature": "-40°C to +55°C"
         },
         "tests": [
           {
-            "Test": "Cold",
+            "Condition": "-40°C, 2h",
             "Standard": "IEC 60068-2-1",
-            "Condition": "-40°C, 2h"
+            "Test": "Cold"
           },
           {
-            "Test": "Dry Heat",
+            "Condition": "+55°C, 2h",
             "Standard": "IEC 60068-2-2",
-            "Condition": "+55°C, 2h"
+            "Test": "Dry Heat"
           }
         ]
       }
@@ -1274,33 +1414,61 @@
     "M": {
       "7M2": {
         "parameters": {
-          "Shock": "Free fall 0.5m",
-          "Description": "一般小心攜帶，偶有輕微跌落"
+          "Description": "一般小心攜帶，偶有輕微跌落",
+          "Shock": "Free fall 0.5m"
         },
         "tests": [
           {
-            "Test": "Free Fall",
+            "Condition": "Drop height 0.5m, on all faces",
             "Standard": "IEC 60068-2-31",
-            "Condition": "Drop height 0.5m, on all faces"
+            "Test": "Free Fall"
           }
         ]
       },
       "7M3": {
         "parameters": {
+          "Description": "粗暴搬運、經常摔落之攜帶設備 (如軍用/工規強固平板)",
           "Shock": "Free fall 1.0m",
-          "Vibration": "Handling vibration",
-          "Description": "粗暴搬運、經常摔落之攜帶設備 (如軍用/工規強固平板)"
+          "Vibration": "Handling vibration"
         },
         "tests": [
           {
-            "Test": "Free Fall",
+            "Condition": "Drop height 1.0m, on all faces",
             "Standard": "IEC 60068-2-31",
-            "Condition": "Drop height 1.0m, on all faces"
+            "Test": "Free Fall"
           },
           {
-            "Test": "Shock",
+            "Condition": "1000 m/s² (100G), 6ms",
             "Standard": "IEC 60068-2-27",
-            "Condition": "1000 m/s² (100G), 6ms"
+            "Test": "Shock"
+          }
+        ]
+      }
+    },
+    "S (Mechanically Active / Sand & Dust)": {
+      "Class 7S1": {
+        "parameters": {
+          "Description_EN": "Very low sand/dust concentration",
+          "Description_ZH": "極少沙塵環境",
+          "Standard": "IEC 60721-3-7"
+        },
+        "tests": [
+          {
+            "Condition": "Dust settling measurement",
+            "Test": "Sand & Dust"
+          }
+        ]
+      },
+      "Class 7S2": {
+        "parameters": {
+          "Description_EN": "Typical sand/dust concentration",
+          "Description_ZH": "一般沙塵環境",
+          "Standard": "IEC 60721-3-7"
+        },
+        "tests": [
+          {
+            "Condition": "Dust settling measurement",
+            "Test": "Sand & Dust"
           }
         ]
       }
@@ -1310,14 +1478,14 @@
     "K": {
       "9K2": {
         "parameters": {
-          "Internal Temp Rise": "Ambient + 15°C",
-          "Description": "產品外殼內部微氣候 (含中度發熱元件)"
+          "Description": "產品外殼內部微氣候 (含中度發熱元件)",
+          "Internal Temp Rise": "Ambient + 15°C"
         },
         "tests": [
           {
-            "Test": "Dry Heat (Component level)",
+            "Condition": "Maximum ambient + 15K",
             "Standard": "IEC 60068-2-2",
-            "Condition": "Maximum ambient + 15K"
+            "Test": "Dry Heat (Component level)"
           }
         ]
       }
