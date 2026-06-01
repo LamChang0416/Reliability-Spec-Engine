@@ -105,7 +105,8 @@ Reliability-Spec-Engine/
 ├── sw.js                   # Service Worker（離線快取 v2.1）
 ├── icon-192.png            # App 圖示 192×192
 ├── icon-512.png            # App 圖示 512×512
-├── mil810_database.json    # MIL-STD-810H 810H 全 Method 資料庫
+├── mil810_database.json    # MIL-STD-810H 810H 全 Method (500~528) 100% 完整收錄資料庫
+├── MIL-STD-810H_Optimization_Checklist.md # MIL-STD-810H 完整性優化盤點紀錄
 ├── gr63_database.json      # GR-63-CORE Issue 5 資料庫
 ├── astm4169_database.json  # ASTM D4169-23 資料庫
 ├── ista_database.json      # ISTA 1A/2A/3A/6-Amazon 資料庫
