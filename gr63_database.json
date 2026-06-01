@@ -1,142 +1,133 @@
 {
   "_meta": {
-    "standard": "GR-63-CORE Issue 5",
-    "version": "Issue 5",
+    "checksum": "sha256:cd1729e51e379b14",
     "description": "Telecom NEBS physical protection",
     "lastUpdated": "2026-05-26",
     "maintainer": "Lam",
     "schemaVersion": "2.0",
-    "checksum": "sha256:cd1729e51e379b14"
+    "standard": "GR-63-CORE Issue 5",
+    "version": "Issue 5"
   },
   "Section 2/3 - Facility & Spatial Planning": {
     "Equipment Framework & Floor Loading": {
       "Facility Planning (機房與設備空間規劃)": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "機房空間規劃、樓板荷重與佈線要求",
-          "Description_EN": "Facility and space planning, floor loading and cabling",
-          "Max Floor Load": "561 kg/m² (115 lb/ft²) for frames",
           "Aisle Spacing": "Minimum 762 mm (30 in) for maintenance, 600 mm (24 in) for wiring",
-          "Equipment Depth": "Recommended 300 mm (12 in) or 460 mm (18 in) deep frames"
+          "Description_EN": "Facility and space planning, floor loading and cabling",
+          "Description_ZH": "機房空間規劃、樓板荷重與佈線要求",
+          "Equipment Depth": "Recommended 300 mm (12 in) or 460 mm (18 in) deep frames",
+          "Max Floor Load": "561 kg/m² (115 lb/ft²) for frames",
+          "Standard": "GR-63-CORE Issue 5 (2022)"
         },
         "tests": [
           {
-            "Phase": "Documentation Review",
-            "Condition": "Verify frame dimensions and footprint"
+            "Condition": "Verify frame dimensions and footprint",
+            "Phase": "Documentation Review"
           },
           {
-            "Phase": "Floor Loading Calculation",
-            "Condition": "Compute total weight / area to verify < 561 kg/m²"
+            "Condition": "Compute total weight / area to verify < 561 kg/m²",
+            "Phase": "Floor Loading Calculation"
           }
         ]
       }
     }
   },
   "Section 4.1 - Temperature, Humidity, and Altitude": {
+    "Altitude (高海拔環境)": {
+      "Operating Altitude Simulation": {
+        "parameters": {
+          "Description_EN": "Cooling and operational verification in high-altitude low-density air",
+          "Description_ZH": "高海拔空氣稀薄環境下的散熱驗證",
+          "Maximum Altitude": "3960 m (13,000 ft) at 30°C or 1829 m (6000 ft) at 40°C",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Test Method": "Hypobaric chamber or temperature compensation (+6°C added)"
+        },
+        "tests": [
+          {
+            "Condition": "Operate at specified simulated altitude/pressure for 8 hours",
+            "Phase": "Altitude Simulation"
+          },
+          {
+            "Condition": "Equipment must not overheat or degrade",
+            "Phase": "Verification"
+          }
+        ]
+      }
+    },
+    "Fan-Cooled Equipment & Airflow": {
+      "Fan Performance & Airflow (風扇與氣流要求)": {
+        "parameters": {
+          "Airflow": "Front to back airflow preferred",
+          "Description_EN": "Fan-cooled equipment criteria and equipment airflow design",
+          "Description_ZH": "風扇濾網效能要求與設備氣流設計(通常規定前進後出)",
+          "Fan Criteria": "Fans must meet cooling requirements and filter criteria",
+          "Standard": "GR-63-CORE Issue 5"
+        },
+        "tests": [
+          {
+            "Condition": "Verify airflow direction and fan performance",
+            "Phase": "Design Verification"
+          }
+        ]
+      }
+    },
     "Long-Term Operating Environment": {
       "ASHRAE A1/A2 Equipment Class": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "標準電信機房長期運行環境 – Issue 5 擴展至 ASHRAE A2/A3/A4",
           "Description_EN": "Telecom CO long-term operating env – Issue 5 expanded to ASHRAE A2/A3/A4 equipment",
+          "Description_ZH": "標準電信機房長期運行環境 – Issue 5 擴展至 ASHRAE A2/A3/A4",
+          "Humidity": "8% to 80% RH (non-condensing)",
+          "Max Dew Point": "21°C (70°F)",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
           "Temperature Range (ASHRAE A1)": "15°C to 32°C (59°F to 89.6°F)",
           "Temperature Range (ASHRAE A2)": "10°C to 35°C (50°F to 95°F)",
           "Temperature Range (ASHRAE A3)": "5°C to 40°C (41°F to 104°F) — NEW in Issue 5",
-          "Temperature Range (ASHRAE A4)": "5°C to 45°C (41°F to 113°F) — NEW in Issue 5",
-          "Humidity": "8% to 80% RH (non-condensing)",
-          "Max Dew Point": "21°C (70°F)"
+          "Temperature Range (ASHRAE A4)": "5°C to 45°C (41°F to 113°F) — NEW in Issue 5"
         },
         "tests": [
           {
             "Class": "ASHRAE A1",
-            "Temp": "15–32°C",
+            "Note": "Standard CO environment",
             "RH": "20–80%",
-            "Note": "Standard CO environment"
+            "Temp": "15–32°C"
           },
           {
             "Class": "ASHRAE A2",
-            "Temp": "10–35°C",
+            "Note": "Extended operating range",
             "RH": "8–80%",
-            "Note": "Extended operating range"
+            "Temp": "10–35°C"
           },
           {
             "Class": "ASHRAE A3",
-            "Temp": "5–40°C",
+            "Note": "Expanded – Issue 5 NEW",
             "RH": "8–85%",
-            "Note": "Expanded – Issue 5 NEW"
+            "Temp": "5–40°C"
           },
           {
             "Class": "ASHRAE A4",
-            "Temp": "5–45°C",
+            "Note": "High-density data center – Issue 5 NEW",
             "RH": "8–90%",
-            "Note": "High-density data center – Issue 5 NEW"
+            "Temp": "5–45°C"
           }
         ]
       },
       "Short-Term Operating (Emergency)": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "緊急短暫超溫運作 – 空調故障期間允許的最大條件",
           "Description_EN": "Emergency short-term excursion – max conditions during HVAC failure",
-          "Temperature": "Up to 55°C (131°F)",
+          "Description_ZH": "緊急短暫超溫運作 – 空調故障期間允許的最大條件",
           "Duration": "96 hours maximum per year",
-          "Humidity": "5% to 90% RH (non-condensing)"
-        },
-        "tests": [
-          {
-            "Phase": "Thermal Stress",
-            "Condition": "Operate at 55°C for up to 96 hours"
-          },
-          {
-            "Phase": "Functional Verification",
-            "Condition": "All services must remain operational during excursion"
-          }
-        ]
-      }
-    },
-    "Storage Environment": {
-      "Warehouse Storage": {
-        "parameters": {
+          "Humidity": "5% to 90% RH (non-condensing)",
           "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "出貨前非機房儲存環境",
-          "Description_EN": "Pre-installation warehouse storage environment",
-          "Temperature": "-40°C to 70°C (-40°F to 158°F)",
-          "Humidity": "5% to 95% RH (non-condensing)",
-          "Duration": "Up to 12 months"
+          "Temperature": "Up to 55°C (131°F)"
         },
         "tests": [
           {
-            "Phase": "Cold Storage",
-            "Condition": "Maintain -40°C for 72 hours"
+            "Condition": "Operate at 55°C for up to 96 hours",
+            "Phase": "Thermal Stress"
           },
           {
-            "Phase": "Hot Storage",
-            "Condition": "Maintain 70°C for 72 hours"
-          },
-          {
-            "Phase": "Post-storage Check",
-            "Condition": "Full functional test after returning to ambient"
-          }
-        ]
-      }
-    },
-    "Altitude (高海拔環境)": {
-      "Operating Altitude Simulation": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "高海拔空氣稀薄環境下的散熱驗證",
-          "Description_EN": "Cooling and operational verification in high-altitude low-density air",
-          "Maximum Altitude": "3960 m (13,000 ft) at 30°C or 1829 m (6000 ft) at 40°C",
-          "Test Method": "Hypobaric chamber or temperature compensation (+6°C added)"
-        },
-        "tests": [
-          {
-            "Phase": "Altitude Simulation",
-            "Condition": "Operate at specified simulated altitude/pressure for 8 hours"
-          },
-          {
-            "Phase": "Verification",
-            "Condition": "Equipment must not overheat or degrade"
+            "Condition": "All services must remain operational during excursion",
+            "Phase": "Functional Verification"
           }
         ]
       }
@@ -144,21 +135,63 @@
     "Short-Term Operating Environment": {
       "Short-Term Operation": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5",
-          "Description_ZH": "機房空調失效或緊急狀況時的短期運作環境極限",
           "Description_EN": "Short-term operating environment (e.g., HVAC failure)",
-          "Temperature Range": "-5°C to 50°C",
+          "Description_ZH": "機房空調失效或緊急狀況時的短期運作環境極限",
+          "Duration": "Max 96 consecutive hours, max 15 days/year",
           "Humidity Range": "5% to 90% RH",
-          "Duration": "Max 96 consecutive hours, max 15 days/year"
+          "Standard": "GR-63-CORE Issue 5",
+          "Temperature Range": "-5°C to 50°C"
         },
         "tests": [
           {
-            "Test": "High Temp Short-Term",
-            "Condition": "Operate at 50°C"
+            "Condition": "Operate at 50°C",
+            "Test": "High Temp Short-Term"
           },
           {
-            "Test": "Low Temp Short-Term",
-            "Condition": "Operate at -5°C"
+            "Condition": "Operate at -5°C",
+            "Test": "Low Temp Short-Term"
+          }
+        ]
+      }
+    },
+    "Storage Environment": {
+      "Warehouse Storage": {
+        "parameters": {
+          "Description_EN": "Pre-installation warehouse storage environment",
+          "Description_ZH": "出貨前非機房儲存環境",
+          "Duration": "Up to 12 months",
+          "Humidity": "5% to 95% RH (non-condensing)",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Temperature": "-40°C to 70°C (-40°F to 158°F)"
+        },
+        "tests": [
+          {
+            "Condition": "Maintain -40°C for 72 hours",
+            "Phase": "Cold Storage"
+          },
+          {
+            "Condition": "Maintain 70°C for 72 hours",
+            "Phase": "Hot Storage"
+          },
+          {
+            "Condition": "Full functional test after returning to ambient",
+            "Phase": "Post-storage Check"
+          }
+        ]
+      }
+    },
+    "Surface Temperature": {
+      "Surface Temperature Limit (表面溫度限制)": {
+        "parameters": {
+          "Description_EN": "Maximum surface temperature to prevent personnel burn hazards",
+          "Description_ZH": "設備表面最高溫度限制，防止人員接觸燙傷",
+          "Max Surface Temp (Metallic)": "Depends on specific contact duration",
+          "Standard": "GR-63-CORE Issue 5"
+        },
+        "tests": [
+          {
+            "Condition": "Measure exposed surface temps at maximum operating conditions",
+            "Phase": "Thermal Measurement"
           }
         ]
       }
@@ -168,40 +201,56 @@
     "Equipment Fire Spread (設備火災蔓延)": {
       "Burner Flame Test (開放式火源測試)": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "極度嚴苛的網通機房防火測試，使用甲烷燃燒器直接從設備下方點火，確保設備不會助燃。",
-          "Description_EN": "Severe telecommunications fire spread test. Uses a 30-100kW methane burner to ignite equipment directly.",
-          "Ignition Source": "12-kW to 100-kW Fire test burner placed underneath equipment",
           "Burn Time": "30 minutes continuous ignition",
-          "Self-Extinguish Requirement": "Flames must self-extinguish within 30 seconds after burner is turned off"
+          "Description_EN": "Severe telecommunications fire spread test. Uses a 30-100kW methane burner to ignite equipment directly.",
+          "Description_ZH": "極度嚴苛的網通機房防火測試，使用甲烷燃燒器直接從設備下方點火，確保設備不會助燃。",
+          "Ignition Source": "12-kW to 100-kW Fire test burner placed underneath equipment",
+          "Self-Extinguish Requirement": "Flames must self-extinguish within 30 seconds after burner is turned off",
+          "Standard": "GR-63-CORE Issue 5 (2022)"
         },
         "tests": [
           {
-            "Phase": "Ignition",
-            "Condition": "Ignite methane burner at base of equipment for 30 minutes"
+            "Condition": "Ignite methane burner at base of equipment for 30 minutes",
+            "Phase": "Ignition"
           },
           {
-            "Phase": "Observation",
-            "Condition": "Flames must not spread to adjacent equipment; smoke must be contained"
+            "Condition": "Flames must not spread to adjacent equipment; smoke must be contained",
+            "Phase": "Observation"
           },
           {
-            "Phase": "Post-Burn",
-            "Condition": "Fire must self-extinguish < 30 sec after removing gas source"
+            "Condition": "Fire must self-extinguish < 30 sec after removing gas source",
+            "Phase": "Post-Burn"
           }
         ]
       },
       "Needle-Flame / UL Flammability": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "內部組件的針焰與材質防火等級認證。",
+          "Cabling": "Must pass UL 1666 vertical tray flame test",
           "Description_EN": "Internal component needle-flame and material combustibility ratings.",
+          "Description_ZH": "內部組件的針焰與材質防火等級認證。",
           "PCB / Plastic Material": "Must be UL 94 V-0 or better",
-          "Cabling": "Must pass UL 1666 vertical tray flame test"
+          "Standard": "GR-63-CORE Issue 5 (2022)"
         },
         "tests": [
           {
-            "Phase": "Material Check",
-            "Condition": "Verify all non-metallic parts are UL 94 V-0 or 5VA rated"
+            "Condition": "Verify all non-metallic parts are UL 94 V-0 or 5VA rated",
+            "Phase": "Material Check"
+          }
+        ]
+      }
+    },
+    "Wire, Cable, and Materials Fire-Resistance": {
+      "Component Fire-Resistance (元件與線材防焰)": {
+        "parameters": {
+          "Criteria": "UL 94, UL 1666 or relevant flammability standards",
+          "Description_EN": "Fire resistance criteria for materials, components, wire, cable, and raceways",
+          "Description_ZH": "機架內部線材、材料與光纖線槽的防火與防焰認證要求",
+          "Standard": "GR-63-CORE Issue 5"
+        },
+        "tests": [
+          {
+            "Condition": "Verify flammability ratings of all plastics and cables",
+            "Phase": "Material Certification"
           }
         ]
       }
@@ -211,57 +260,57 @@
     "Physical Shock and Vibration": {
       "Packaged Equipment Drop": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "設備出貨包裝必須承受物流跌落衝擊",
           "Description_EN": "Shipping package must withstand logistics drop impacts",
-          "Test Standard Reference": "ISTA Procedure 2A or ASTM D4169",
-          "Drop Height (< 45 kg)": "76 cm (30 inches) – all faces, edges, corners",
+          "Description_ZH": "設備出貨包裝必須承受物流跌落衝擊",
           "Drop Height (45–68 kg)": "46 cm (18 inches)",
-          "Surface": "Concrete or equivalent unyielding surface"
+          "Drop Height (< 45 kg)": "76 cm (30 inches) – all faces, edges, corners",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Surface": "Concrete or equivalent unyielding surface",
+          "Test Standard Reference": "ISTA Procedure 2A or ASTM D4169"
         },
         "tests": [
           {
-            "Phase": "Face Drops",
-            "Condition": "6 faces × 1 drop each"
+            "Condition": "6 faces × 1 drop each",
+            "Phase": "Face Drops"
           },
           {
-            "Phase": "Edge Drops",
-            "Condition": "12 edges × 1 drop each"
+            "Condition": "12 edges × 1 drop each",
+            "Phase": "Edge Drops"
           },
           {
-            "Phase": "Corner Drops",
-            "Condition": "8 corners × 1 drop each"
+            "Condition": "8 corners × 1 drop each",
+            "Phase": "Corner Drops"
           },
           {
-            "Phase": "Post-test Verification",
-            "Condition": "Equipment functional; no visible damage to critical parts"
+            "Condition": "Equipment functional; no visible damage to critical parts",
+            "Phase": "Post-test Verification"
           }
         ]
       },
       "Packaged Vibration": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "模擬卡車和鐵路聯合運輸過程的振動環境",
           "Description_EN": "Combined truck and rail transport vibration simulation",
-          "Test Type": "Random Vibration",
+          "Description_ZH": "模擬卡車和鐵路聯合運輸過程的振動環境",
+          "Duration": "60 minutes/axis (3 axes)",
           "Frequency Range": "2 to 200 Hz",
-          "Duration": "60 minutes/axis (3 axes)"
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Test Type": "Random Vibration"
         },
         "tests": [
           {
             "Axis": "Vertical",
-            "g rms": "0.52",
-            "Duration": "60 min"
+            "Duration": "60 min",
+            "g rms": "0.52"
           },
           {
             "Axis": "Lateral",
-            "g rms": "0.38",
-            "Duration": "60 min"
+            "Duration": "60 min",
+            "g rms": "0.38"
           },
           {
             "Axis": "Longitudinal",
-            "g rms": "0.38",
-            "Duration": "60 min"
+            "Duration": "60 min",
+            "g rms": "0.38"
           }
         ]
       }
@@ -269,73 +318,33 @@
     "Unpackaged Equipment Shock": {
       "Unpackaged Drop": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5",
-          "Description_ZH": "未包裝設備的意外掉落或搬運衝擊",
           "Description_EN": "Unpackaged equipment shock criteria",
-          "Drop Height": "Depends on weight (e.g. 100mm for >50kg, 75mm for very heavy)"
+          "Description_ZH": "未包裝設備的意外掉落或搬運衝擊",
+          "Drop Height": "Depends on weight (e.g. 100mm for >50kg, 75mm for very heavy)",
+          "Standard": "GR-63-CORE Issue 5"
         },
         "tests": [
           {
-            "Test": "Drop",
-            "Condition": "Drop on specific corners/faces"
+            "Condition": "Drop on specific corners/faces",
+            "Test": "Drop"
           }
         ]
       }
     }
   },
   "Section 4.4 - Earthquake & Vibration": {
-    "NEBS Seismic Zone 4 (High Risk)": {
-      "Zone 4 - Office Vibratory Motion (OVM)": {
+    "Framework and Anchor Criteria": {
+      "Framework and Anchor (機架與地錨)": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "最高地震風險區（加州、太平洋西北）辦公型振動測試 – Issue 5 更新峰值",
-          "Description_EN": "Highest seismic risk zone (California, Pacific NW) – Issue 5 updated peak values",
-          "Zone": "4 (Highest Risk)",
-          "Test Type": "Office Vibratory Motion (OVM)",
-          "Horizontal Direction Peak Acceleration": "1.0 g (Issue 5 – revised from 0.5 g in Issue 4)",
-          "Vertical Acceleration": "0.5 g",
-          "Duration": "30 seconds per axis",
-          "Response Spectrum": "Per GR-63 Figure 4-1 (Issue 5)"
+          "Criteria": "Must withstand calculated seismic forces without structural failure",
+          "Description_EN": "Physical strength requirements for framework and anchoring systems during earthquakes",
+          "Description_ZH": "機架框架強度與地錨設計之抗震物理拉力要求",
+          "Standard": "GR-63-CORE Issue 5"
         },
         "tests": [
           {
-            "Phase": "Pre-test Inspection",
-            "Condition": "Visual and functional baseline"
-          },
-          {
-            "Phase": "X-axis Excitation",
-            "Condition": "Apply OVM spectrum horizontal X, 30 sec"
-          },
-          {
-            "Phase": "Y-axis Excitation",
-            "Condition": "Apply OVM spectrum horizontal Y, 30 sec"
-          },
-          {
-            "Phase": "Post-test Verification",
-            "Condition": "Full functional test; no data loss; no physical damage"
-          }
-        ]
-      },
-      "Zone 4 - Earthquake Motion (EQM)": {
-        "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "Zone 4 地震動測試 – 模擬強烈地震的時域加速度波形",
-          "Description_EN": "Zone 4 earthquake time-history simulation – major seismic event",
-          "Zone": "4 (Highest Risk)",
-          "Test Type": "Earthquake Motion (EQM)",
-          "Horizontal Peak Acceleration": "1.0 g",
-          "Vertical Peak Acceleration": "0.5 g",
-          "Duration": "30 seconds",
-          "Waveform": "Time-history waveform per GR-63 Appendix A (Issue 5)"
-        },
-        "tests": [
-          {
-            "Phase": "Triaxial Excitation",
-            "Condition": "Simultaneous X, Y, Z per prescribed time-history"
-          },
-          {
-            "Phase": "Equipment Check",
-            "Condition": "Verify no tip-over, no structural failure, no data loss"
+            "Condition": "Verify anchor pull-out strength and frame rigidity",
+            "Phase": "Static Load / FEA"
           }
         ]
       }
@@ -343,43 +352,21 @@
     "NEBS Seismic Zone 1 (Low Risk)": {
       "Zone 1 - Office Vibratory Motion (OVM)": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "低地震風險區辦公型振動 (東部/中部美國)",
           "Description_EN": "Low seismic risk zone OVM – Eastern/Central US",
-          "Zone": "1 (Low Risk)",
+          "Description_ZH": "低地震風險區辦公型振動 (東部/中部美國)",
+          "Duration": "30 seconds",
           "Horizontal Peak Acceleration": "0.1 g",
-          "Duration": "30 seconds"
-        },
-        "tests": [
-          {
-            "Phase": "OVM Test",
-            "Condition": "Apply Zone 1 OVM spectrum per GR-63 Figure 4-1"
-          },
-          {
-            "Phase": "Verification",
-            "Condition": "No physical damage; equipment fully functional"
-          }
-        ]
-      }
-    },
-    "Office Vibration (辦公環境振動)": {
-      "Random Vibration - Office": {
-        "parameters": {
           "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "模擬辦公室或機房內因空調或周邊設備產生的持續微小振動",
-          "Description_EN": "Low-level vibration simulating rotating equipment in CO",
-          "Frequency Range": "5 to 100 Hz",
-          "Test Duration": "30 minutes per axis",
-          "Profile": "0.00042 g²/Hz from 10-50 Hz"
+          "Zone": "1 (Low Risk)"
         },
         "tests": [
           {
-            "Phase": "Vibration Test",
-            "Condition": "Random vibration on 3 mutually perpendicular axes"
+            "Condition": "Apply Zone 1 OVM spectrum per GR-63 Figure 4-1",
+            "Phase": "OVM Test"
           },
           {
-            "Phase": "Verification",
-            "Condition": "Continuous operation without failure"
+            "Condition": "No physical damage; equipment fully functional",
+            "Phase": "Verification"
           }
         ]
       }
@@ -387,16 +374,94 @@
     "NEBS Seismic Zone 2/3 (Moderate Risk)": {
       "Zone 2/3 Earthquake": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5",
-          "Description_ZH": "中度地震風險區防護測試",
           "Description_EN": "Moderate earthquake risk zone",
-          "Test Profile": "VERTEQII waveform, modified for Zone 2/3",
-          "Frequency Range": "1 to 50 Hz"
+          "Description_ZH": "中度地震風險區防護測試",
+          "Frequency Range": "1 to 50 Hz",
+          "Standard": "GR-63-CORE Issue 5",
+          "Test Profile": "VERTEQII waveform, modified for Zone 2/3"
         },
         "tests": [
           {
-            "Test": "Seismic Run",
-            "Condition": "X, Y, Z axes sequentially"
+            "Condition": "X, Y, Z axes sequentially",
+            "Test": "Seismic Run"
+          }
+        ]
+      }
+    },
+    "NEBS Seismic Zone 4 (High Risk)": {
+      "Zone 4 - Earthquake Motion (EQM)": {
+        "parameters": {
+          "Description_EN": "Zone 4 earthquake time-history simulation – major seismic event",
+          "Description_ZH": "Zone 4 地震動測試 – 模擬強烈地震的時域加速度波形",
+          "Duration": "30 seconds",
+          "Horizontal Peak Acceleration": "1.0 g",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Test Type": "Earthquake Motion (EQM)",
+          "Vertical Peak Acceleration": "0.5 g",
+          "Waveform": "Time-history waveform per GR-63 Appendix A (Issue 5)",
+          "Zone": "4 (Highest Risk)"
+        },
+        "tests": [
+          {
+            "Condition": "Simultaneous X, Y, Z per prescribed time-history",
+            "Phase": "Triaxial Excitation"
+          },
+          {
+            "Condition": "Verify no tip-over, no structural failure, no data loss",
+            "Phase": "Equipment Check"
+          }
+        ]
+      },
+      "Zone 4 - Office Vibratory Motion (OVM)": {
+        "parameters": {
+          "Description_EN": "Highest seismic risk zone (California, Pacific NW) – Issue 5 updated peak values",
+          "Description_ZH": "最高地震風險區（加州、太平洋西北）辦公型振動測試 – Issue 5 更新峰值",
+          "Duration": "30 seconds per axis",
+          "Horizontal Direction Peak Acceleration": "1.0 g (Issue 5 – revised from 0.5 g in Issue 4)",
+          "Response Spectrum": "Per GR-63 Figure 4-1 (Issue 5)",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Test Type": "Office Vibratory Motion (OVM)",
+          "Vertical Acceleration": "0.5 g",
+          "Zone": "4 (Highest Risk)"
+        },
+        "tests": [
+          {
+            "Condition": "Visual and functional baseline",
+            "Phase": "Pre-test Inspection"
+          },
+          {
+            "Condition": "Apply OVM spectrum horizontal X, 30 sec",
+            "Phase": "X-axis Excitation"
+          },
+          {
+            "Condition": "Apply OVM spectrum horizontal Y, 30 sec",
+            "Phase": "Y-axis Excitation"
+          },
+          {
+            "Condition": "Full functional test; no data loss; no physical damage",
+            "Phase": "Post-test Verification"
+          }
+        ]
+      }
+    },
+    "Office Vibration (辦公環境振動)": {
+      "Random Vibration - Office": {
+        "parameters": {
+          "Description_EN": "Low-level vibration simulating rotating equipment in CO",
+          "Description_ZH": "模擬辦公室或機房內因空調或周邊設備產生的持續微小振動",
+          "Frequency Range": "5 to 100 Hz",
+          "Profile": "0.00042 g²/Hz from 10-50 Hz",
+          "Standard": "GR-63-CORE Issue 5 (2022)",
+          "Test Duration": "30 minutes per axis"
+        },
+        "tests": [
+          {
+            "Condition": "Random vibration on 3 mutually perpendicular axes",
+            "Phase": "Vibration Test"
+          },
+          {
+            "Condition": "Continuous operation without failure",
+            "Phase": "Verification"
           }
         ]
       }
@@ -404,58 +469,58 @@
     "Transportation Vibration": {
       "Transport Vibration": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5",
-          "Description_ZH": "包裝運輸過程的震動",
           "Description_EN": "Transportation vibration for packaged equipment",
+          "Description_ZH": "包裝運輸過程的震動",
           "Frequency Range": "5 to 200 Hz",
+          "Standard": "GR-63-CORE Issue 5",
           "Test Duration": "30 minutes per axis"
         },
         "tests": [
           {
-            "Test": "Vibration",
-            "Condition": "Random vibration along 3 orthogonal axes"
+            "Condition": "Random vibration along 3 orthogonal axes",
+            "Test": "Vibration"
           }
         ]
       }
     }
   },
   "Section 4.5 - Airborne Contaminants": {
-    "Mixed Flowing Gas (MFG 混和氣體腐蝕)": {
-      "Indoor Equipment Gas Exposure": {
+    "Hygroscopic Dust Testing": {
+      "Hygroscopic Dust": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "模擬工廠或都會區受污染的空氣，驗證金屬端子與 PCB 銅箔的抗腐蝕能力。要求極精確的 ppb 等級毒氣混合。",
-          "Description_EN": "Simulates polluted urban/industrial air to verify contact and PCB corrosion resistance.",
-          "H2S (Hydrogen Sulfide)": "10 ppb",
-          "SO2 (Sulfur Dioxide)": "100 ppb",
-          "Cl2 (Chlorine)": "10 ppb",
-          "NO2 (Nitrogen Dioxide)": "200 ppb",
-          "Duration": "14 days minimum"
+          "Condition": "Deposit dust and subject to high humidity",
+          "Description_EN": "Hygroscopic dust leading to short circuits",
+          "Description_ZH": "吸濕性粉塵造成短路或效能退化之測試",
+          "Standard": "GR-63-CORE Issue 5"
         },
         "tests": [
           {
-            "Phase": "Exposure",
-            "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days"
-          },
-          {
-            "Phase": "Evaluation",
-            "Condition": "Inspect for copper creep corrosion and check contact resistance"
+            "Condition": "Apply dust and cycle humidity",
+            "Test": "Dust Deposition"
           }
         ]
       }
     },
-    "Hygroscopic Dust Testing": {
-      "Hygroscopic Dust": {
+    "Mixed Flowing Gas (MFG 混和氣體腐蝕)": {
+      "Indoor Equipment Gas Exposure": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5",
-          "Description_ZH": "吸濕性粉塵造成短路或效能退化之測試",
-          "Description_EN": "Hygroscopic dust leading to short circuits",
-          "Condition": "Deposit dust and subject to high humidity"
+          "Cl2 (Chlorine)": "10 ppb",
+          "Description_EN": "Simulates polluted urban/industrial air to verify contact and PCB corrosion resistance.",
+          "Description_ZH": "模擬工廠或都會區受污染的空氣，驗證金屬端子與 PCB 銅箔的抗腐蝕能力。要求極精確的 ppb 等級毒氣混合。",
+          "Duration": "14 days minimum",
+          "H2S (Hydrogen Sulfide)": "10 ppb",
+          "NO2 (Nitrogen Dioxide)": "200 ppb",
+          "SO2 (Sulfur Dioxide)": "100 ppb",
+          "Standard": "GR-63-CORE Issue 5 (2022)"
         },
         "tests": [
           {
-            "Test": "Dust Deposition",
-            "Condition": "Apply dust and cycle humidity"
+            "Condition": "Maintain exact gas mixture at 30°C and 70% RH for 14 days",
+            "Phase": "Exposure"
+          },
+          {
+            "Condition": "Inspect for copper creep corrosion and check contact resistance",
+            "Phase": "Evaluation"
           }
         ]
       }
@@ -465,21 +530,40 @@
     "Acoustic Noise (聲學噪音)": {
       "Equipment Subassembly Acoustic Emission": {
         "parameters": {
-          "Standard": "GR-63-CORE Issue 5 (2022)",
-          "Description_ZH": "機房設備運作時發出的噪音限制，保護長期值班人員聽力。依據室溫條件嚴格分級。",
           "Description_EN": "Equipment self-emitted noise limits to protect Central Office personnel.",
-          "Limit at Standard Ambient (≤27°C)": "≤ 75 dBA Sound Power (Lw) or SPL at 1.0 m",
+          "Description_ZH": "機房設備運作時發出的噪音限制，保護長期值班人員聽力。依據室溫條件嚴格分級。",
           "Limit at High Temp Excursion": "≤ 85 dBA (Fans at max speed)",
-          "Office Room Limit": "≤ 65 dBA Limit for typical office environments"
+          "Limit at Standard Ambient (≤27°C)": "≤ 75 dBA Sound Power (Lw) or SPL at 1.0 m",
+          "Office Room Limit": "≤ 65 dBA Limit for typical office environments",
+          "Standard": "GR-63-CORE Issue 5 (2022)"
         },
         "tests": [
           {
-            "Measurement State": "Idle at 27°C",
-            "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA"
+            "Condition": "Measure SPL on all 4 sides; must be ≤ 75 dBA",
+            "Measurement State": "Idle at 27°C"
           },
           {
-            "Measurement State": "Full Load at Max Rated Temp",
-            "Condition": "Drive fans to 100%; must be ≤ 85 dBA"
+            "Condition": "Drive fans to 100%; must be ≤ 85 dBA",
+            "Measurement State": "Full Load at Max Rated Temp"
+          }
+        ]
+      }
+    }
+  },
+  "Section 4.7 - Illumination": {
+    "Illumination Criteria for Network Equipment": {
+      "Surface Reflectance and Glare (表面反光與防眩光)": {
+        "parameters": {
+          "Description_EN": "Surface reflectance and color constraints to prevent glare and visual interference",
+          "Description_ZH": "設備表面顏色反射率限制與防眩光要求，避免機房光源造成視覺干擾",
+          "Glare": "Must not produce disabling glare",
+          "Reflectance": "Limits on gloss and reflection",
+          "Standard": "GR-63-CORE Issue 5"
+        },
+        "tests": [
+          {
+            "Condition": "Verify surface finish meets reflectance criteria",
+            "Phase": "Visual Inspection"
           }
         ]
       }
