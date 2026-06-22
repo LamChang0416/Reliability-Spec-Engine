@@ -206,7 +206,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
         <button class="tab-btn" onclick="window._showTab('vibcalc',this);setTimeout(vcInit,80)" id="tabVIBCALC">
           〰️ <span data-zh="振動計算器" data-en="Vib Calculator"></span><span class="badge new-badge">NEW</span>
         </button>
-
+        <button class="tab-btn" onclick="window._openVisualGuide()" id="tabVISUALGUIDE">
+          📐 <span data-zh="測試軸向圖解" data-en="Visual Guides"></span>
+        </button>
       </div>
     </div>
     <div class="nav-group">
@@ -646,10 +648,89 @@ tr:hover td{background:rgba(99,179,237,.05)}
     </div>
   </div>
 
+  </div>
+
 </main>
 
 
 </div>
+</div>
+
+<!-- Visual Guide Modal -->
+<div id="visualGuideModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(10,15,44,0.85);backdrop-filter:blur(8px);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:linear-gradient(135deg,#0d1b3e,#0d1447);border:1px solid rgba(99,179,237,.3);border-radius:12px;width:90%;max-width:800px;max-height:90vh;overflow-y:auto;box-shadow:0 10px 25px rgba(0,0,0,0.5);display:flex;flex-direction:column;">
+    <div style="padding:16px 24px;border-bottom:1px solid rgba(99,179,237,.15);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:rgba(13,27,62,0.9);backdrop-filter:blur(10px);z-index:10;">
+      <h3 style="color:var(--blue2);font-size:18px;margin:0;display:flex;align-items:center;gap:8px;">
+        📐 <span data-zh="測試軸向與包裝圖解 (Visual Guides)" data-en="Visual Guides (Orientation & Axes)">測試軸向與包裝圖解 (Visual Guides)</span>
+      </h3>
+      <button onclick="window._closeVisualGuide()" style="background:transparent;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1;">&times;</button>
+    </div>
+    
+    <div style="padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+      
+      <!-- ISTA/ASTM Box Card -->
+      <div style="background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <h4 style="color:var(--green);font-size:14px;margin-bottom:12px;text-align:center;letter-spacing:0.05em;">📦 包裝面定義 (ISTA / ASTM)</h4>
+        <div style="text-align:center;margin-bottom:10px;">
+          <svg viewBox="0 0 200 200" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Top Face (1) -->
+            <polygon points="100,20 160,50 100,80 40,50" fill="rgba(99,179,237,0.2)" stroke="#63b3ed" stroke-width="2" stroke-linejoin="round"/>
+            <text x="100" y="55" fill="#bee3f8" font-size="14" font-weight="bold" text-anchor="middle">1 (Top)</text>
+            <!-- Front Left Face (5/4) -->
+            <polygon points="40,50 100,80 100,150 40,120" fill="rgba(99,179,237,0.1)" stroke="#63b3ed" stroke-width="2" stroke-linejoin="round"/>
+            <text x="70" y="110" fill="#bee3f8" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(25 70,110)">5 (Front)</text>
+            <!-- Front Right Face (2) -->
+            <polygon points="100,80 160,50 160,120 100,150" fill="rgba(99,179,237,0.15)" stroke="#63b3ed" stroke-width="2" stroke-linejoin="round"/>
+            <text x="130" y="110" fill="#bee3f8" font-size="14" font-weight="bold" text-anchor="middle" transform="rotate(-25 130,110)">2 (Right)</text>
+            <!-- Edges -->
+            <text x="45" y="85" fill="#68d391" font-size="10" font-weight="bold">Edge 1-5</text>
+            <text x="155" y="85" fill="#68d391" font-size="10" font-weight="bold" text-anchor="end">Edge 1-2</text>
+            <text x="100" y="165" fill="#68d391" font-size="10" font-weight="bold" text-anchor="middle">Bottom is 3</text>
+          </svg>
+        </div>
+        <p style="color:var(--muted);font-size:12px;line-height:1.5;">
+          <strong style="color:var(--text)">ISTA 通用定義:</strong><br>
+          1 = 上 (Top)<br>2 = 右 (Right)<br>3 = 下 (Bottom)<br>
+          4 = 左 (Left)<br>5 = 前 (Front)<br>6 = 後 (Back)
+        </p>
+      </div>
+
+      <!-- Vibration Axes Card -->
+      <div style="background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;">
+        <h4 style="color:var(--green);font-size:14px;margin-bottom:12px;text-align:center;letter-spacing:0.05em;">〰️ 振動三軸向 (Vibration Axes)</h4>
+        <div style="text-align:center;margin-bottom:10px;">
+          <svg viewBox="0 0 200 200" width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill="#68d391" />
+              </marker>
+            </defs>
+            <!-- Object Center -->
+            <rect x="70" y="90" width="60" height="40" fill="rgba(99,179,237,0.2)" stroke="#63b3ed" stroke-width="2"/>
+            <!-- Z axis -->
+            <line x1="100" y1="90" x2="100" y2="30" stroke="#68d391" stroke-width="3" marker-end="url(#arrow)"/>
+            <text x="105" y="40" fill="#bee3f8" font-size="12" font-weight="bold">Z (Vertical)</text>
+            <text x="105" y="55" fill="#94a3b8" font-size="10">上下 / 垂直</text>
+            <!-- X axis -->
+            <line x1="100" y1="110" x2="30" y2="160" stroke="#68d391" stroke-width="3" marker-end="url(#arrow)"/>
+            <text x="35" y="175" fill="#bee3f8" font-size="12" font-weight="bold">X (Longitudinal)</text>
+            <text x="35" y="190" fill="#94a3b8" font-size="10">前後 / 縱向</text>
+            <!-- Y axis -->
+            <line x1="130" y1="110" x2="180" y2="110" stroke="#68d391" stroke-width="3" marker-end="url(#arrow)"/>
+            <text x="135" y="100" fill="#bee3f8" font-size="12" font-weight="bold">Y (Transverse)</text>
+            <text x="135" y="125" fill="#94a3b8" font-size="10">左右 / 橫向</text>
+          </svg>
+        </div>
+        <p style="color:var(--muted);font-size:12px;line-height:1.5;">
+          <strong style="color:var(--text)">MIL-STD / IEC 常見定義:</strong><br>
+          X = Longitudinal (縱向/前進方向)<br>
+          Y = Transverse (橫向/左右方向)<br>
+          Z = Vertical (垂直/上下方向)
+        </p>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <script type="module" src="js/app.js"></script>

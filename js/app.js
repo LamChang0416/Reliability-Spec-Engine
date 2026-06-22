@@ -16,6 +16,7 @@ import { togglePin, renderDashboard, navigateToSpec } from './modules/dashboard.
 import { initPhotoPanel } from './modules/photo-processor.js';
 import { initReportPanel, addToReport } from './modules/report-generator.js';
 import { calculateSchedule, startScheduleProgress, initScheduler, addScheduleToReportAction } from './modules/scheduler.js';
+import { openVisualGuide, closeVisualGuide } from './modules/visual-guide.js';
 // ─── 🛡️ Global Error Boundary (Cycle 7) ──────────────────────────────────
 window.onerror = function(msg, url, lineNo, columnNo, error) {
   console.error("Global Error Caught:", msg, url, lineNo, columnNo, error);
@@ -53,6 +54,10 @@ window._addToReport = addToReport;
 window._calculateSchedule = calculateSchedule;
 window._startScheduleProgress = startScheduleProgress;
 window._addScheduleToReportAction = addScheduleToReportAction;
+
+// Visual Guide
+window._openVisualGuide = openVisualGuide;
+window._closeVisualGuide = closeVisualGuide;
 
 // Search
 window._doSearch = doSearch;
