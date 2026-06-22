@@ -1,0 +1,3090 @@
+[
+  {
+    "iter": 1,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > B (Biological) > 1B1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 2,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > B (Biological) > 1B2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 3,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > C (Chemically Active) > 1C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 4,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > C (Chemically Active) > 1C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 5,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > K > 1K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 6,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > K > 1K3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 7,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > K > 1K5",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 8,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > M > 1M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 9,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > S (Mechanically Active / Sand & Dust) > 1S1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 10,
+    "std": "iec",
+    "combo": "1 — 儲存環境 Storage > S (Mechanically Active / Sand & Dust) > 1S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 11,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > B (Biological) > 2B1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 12,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > B (Biological) > 2B2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 13,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > C (Chemically Active) > 2C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 14,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > C (Chemically Active) > 2C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 15,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > K > 2K1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 16,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > K > 2K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 17,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > K > 2K3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 18,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > K > 2K4",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 19,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > M > 2M1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 20,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > M > 2M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 21,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > M > 2M3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 22,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > S (Mechanically Active / Sand & Dust) > 2S1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 23,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > S (Mechanically Active / Sand & Dust) > 2S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 24,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > B (Biological) > 3B1 / 3B2 / 3B3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 25,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > C (Chemically Active) > 3C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 26,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > C (Chemically Active) > 3C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 27,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > C (Chemically Active) > 3C3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 28,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > C (Chemically Active) > 3C4",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 29,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 30,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 31,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 32,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K5",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 33,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K6",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 34,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K7",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 35,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > K > 3K8",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 36,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 37,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 38,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 39,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M4",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 40,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M5",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 41,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M6",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 42,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > M > 3M7",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 43,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > S (Mechanically Active / Sand & Dust) > 3S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 44,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > B (Biological) > 4B1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 45,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > B (Biological) > 4B2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 46,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > C (Chemically Active) > 4C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 47,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > C (Chemically Active) > 4C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 48,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > K > 4K1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 49,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > K > 4K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 50,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > K > 4K4",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 51,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > M > 4M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 52,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > M > 4M3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 53,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > S (Mechanically Active / Sand & Dust) > 4S1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 54,
+    "std": "iec",
+    "combo": "4 — 戶外定點使用 Stationary Outdoor > S (Mechanically Active / Sand & Dust) > 4S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 55,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > B (Biological) > 5B1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 56,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > B (Biological) > 5B2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 57,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > C (Chemically Active) > 5C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 58,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > C (Chemically Active) > 5C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 59,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > K > 5K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 60,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > M > 5M1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 61,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > M > 5M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 62,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > M > 5M3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 63,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > S (Mechanically Active / Sand & Dust) > 5S1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 64,
+    "std": "iec",
+    "combo": "5 — 地面車輛環境 Ground Vehicle > S (Mechanically Active / Sand & Dust) > 5S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 65,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > B (Biological) > Class 6B1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 66,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > B (Biological) > Class 6B2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 67,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > C (Chemically Active) > Class 6C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 68,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > C (Chemically Active) > Class 6C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 69,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > K > 6K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 70,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > K > 6K4",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 71,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > M > 6M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 72,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > M > 6M3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 73,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > S (Mechanically Active / Sand & Dust) > Class 6S1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 74,
+    "std": "iec",
+    "combo": "6 — 船舶環境 Ship / Marine > S (Mechanically Active / Sand & Dust) > Class 6S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 75,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > B (Biological) > Class 7B1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 76,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > B (Biological) > Class 7B2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 77,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > C (Chemically Active) > Class 7C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 78,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > C (Chemically Active) > Class 7C2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 79,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > K > 7K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 80,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > K > 7K3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 81,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > M > 7M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 82,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > M > 7M3",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 83,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > S (Mechanically Active / Sand & Dust) > Class 7S1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 84,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > S (Mechanically Active / Sand & Dust) > Class 7S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 85,
+    "std": "iec",
+    "combo": "9 — 產品內部微氣候 Microclimates Inside Products > K > 9K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 86,
+    "std": "mil",
+    "combo": "Method 500.6 - Low Pressure (Altitude) > Procedure I - Storage / Air Transport > Transport Aircraft Cargo Bay",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 87,
+    "std": "mil",
+    "combo": "Method 500.6 - Low Pressure (Altitude) > Procedure II - Operation / Air Carriage > Operational Altitude",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 88,
+    "std": "mil",
+    "combo": "Method 500.6 - Low Pressure (Altitude) > Procedure III - Rapid Decompression > Pressurized Aircraft Cabin",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 89,
+    "std": "mil",
+    "combo": "Method 500.6 - Low Pressure (Altitude) > Procedure IV - Explosive Decompression > Explosive Decompression",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 90,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure I - Storage > Basic Hot (A2)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 91,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure I - Storage > Constant High Temperature",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 92,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure I - Storage > Hot Dry (A1)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 93,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure II - Operation > Basic Hot (A2) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 94,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure II - Operation > Constant High Temperature Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 95,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure II - Operation > Hot Dry (A1) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 96,
+    "std": "mil",
+    "combo": "Method 501.7 - High Temperature > Procedure III - Tactical Standby to Operational > Tactical Standby to Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 97,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure I - Storage > Basic Cold (C1)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 98,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure I - Storage > Cold (C2)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 99,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure I - Storage > Severe Cold (C3)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 100,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure II - Operation > Basic Cold (C1) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 101,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure II - Operation > Cold (C2) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 102,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure II - Operation > Severe Cold (C3) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 103,
+    "std": "mil",
+    "combo": "Method 502.7 - Low Temperature > Procedure III - Manipulation > Manipulation",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 104,
+    "std": "mil",
+    "combo": "Method 503.7 - Temperature Shock > Procedure I-A - One-Way Shock > Extreme Transfer (Space/Air drop)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 105,
+    "std": "mil",
+    "combo": "Method 503.7 - Temperature Shock > Procedure I-B - Single Cycle Shock > Single Cycle Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 106,
+    "std": "mil",
+    "combo": "Method 503.7 - Temperature Shock > Procedure I-C - Multi-Cycle Shocks > Thermal Shock (A1 to C2)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 107,
+    "std": "mil",
+    "combo": "Method 503.7 - Temperature Shock > Procedure I-D - Shocks to or from Controlled Ambient > Shocks to or from Controlled Ambient",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 108,
+    "std": "mil",
+    "combo": "Method 504.3 - Contamination by Fluids > Procedure I - Large Items > Large Items",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 109,
+    "std": "mil",
+    "combo": "Method 504.3 - Contamination by Fluids > Procedure II - Small Items > Extended Exposure",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 110,
+    "std": "mil",
+    "combo": "Method 504.3 - Contamination by Fluids > Procedure II - Small Items > Occasional Exposure",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 111,
+    "std": "mil",
+    "combo": "Method 505.7 - Solar Radiation (Sunshine) > Procedure I - Cycling (Thermal Effects) > Basic Hot (A2) Deployment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 112,
+    "std": "mil",
+    "combo": "Method 505.7 - Solar Radiation (Sunshine) > Procedure I - Cycling (Thermal Effects) > Hot Dry (A1) Worldwide Deployment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 113,
+    "std": "mil",
+    "combo": "Method 505.7 - Solar Radiation (Sunshine) > Procedure II - Steady State (Actinic Effects) > Accelerated Photodegradation",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 114,
+    "std": "mil",
+    "combo": "Method 506.6 - Rain > Procedure I - Rain and Blowing Rain > Blowing Rain",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 115,
+    "std": "mil",
+    "combo": "Method 506.6 - Rain > Procedure II - Exaggerated > Exaggerated",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 116,
+    "std": "mil",
+    "combo": "Method 506.6 - Rain > Procedure III - Drip > Condensation / Leakage Drip",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 117,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure I - Induced and Natural Cycles > Induced (Storage and Transit) Cycles",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 118,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure I - Induced and Natural Cycles > Natural Diurnal Cycle",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 119,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IA - Induced (Storage and Transit) Cycles > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 120,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IA - Induced (Storage and Transit) Cycles > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 121,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IB - Natural Cycles > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 122,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IB - Natural Cycles > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 123,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IS - Screening > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 124,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IS - Screening > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 125,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure II - Aggravated > Aggravated Cycle",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 126,
+    "std": "mil",
+    "combo": "Method 508.8 - Fungus > Procedure I - Fungal Growth > Standard US/European Spores",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 127,
+    "std": "mil",
+    "combo": "Method 509.7 - Salt Fog > Procedure I - Aggravated Screening > Standard Salt Fog",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 128,
+    "std": "mil",
+    "combo": "Method 510.7 - Sand and Dust > Procedure I - Blowing Dust > Desert Dust Environment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 129,
+    "std": "mil",
+    "combo": "Method 510.7 - Sand and Dust > Procedure II - Blowing Sand > Desert Sand Environment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 130,
+    "std": "mil",
+    "combo": "Method 511.7 - Explosive Atmosphere > Procedure I - Operation in Explosive Atmosphere > Fuel-Air Mixture",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 131,
+    "std": "mil",
+    "combo": "Method 511.7 - Explosive Atmosphere > Procedure II - Explosion Containment > Explosion Containment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 132,
+    "std": "mil",
+    "combo": "Method 512.6 - Immersion > Procedure I - Immersion > Shallow Water Immersion",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 133,
+    "std": "mil",
+    "combo": "Method 512.6 - Immersion > Procedure II - Fording > Fording",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 134,
+    "std": "mil",
+    "combo": "Method 513.8 - Acceleration > Procedure I - Structural Test > Structural Test",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 135,
+    "std": "mil",
+    "combo": "Method 513.8 - Acceleration > Procedure II - Operational Test > Fighter Aircraft / Helicopter",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 136,
+    "std": "mil",
+    "combo": "Method 513.8 - Acceleration > Procedure III - Crash Hazard > Crash Hazard",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 137,
+    "std": "mil",
+    "combo": "Method 513.8 - Acceleration > Procedure IV - Strength Test > Strength Test",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 138,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 1 - Manufacturing/Maintenance Processes",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 139,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 2 - Shipping and Handling",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 140,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 3 - Environmental Stress Screening (ESS)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 141,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 4 - Truck/Trailer (Secured Cargo)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 142,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 5 - Truck/Trailer (Loose Cargo)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 143,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 6 - Truck/Trailer (Large Assembly)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 144,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 7 - Aircraft (Jet Cargo)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 145,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 8 - Aircraft (Propeller)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 146,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 9 - Aircraft (Helicopter)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 147,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 10 - Watercraft (Marine Vehicles)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 148,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 11 - Railroad (Train)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 149,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 12 - Fixed Wing Aircraft (Jet) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 150,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 13 - Propeller Aircraft Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 151,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 14 - Rotary Wing Aircraft (Helicopter) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 152,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 15 - Aircraft Stores (Assembled, Jet)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 153,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 16 - Aircraft Stores (Materiel, Jet)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 154,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 17 - Aircraft Stores (Propeller Aircraft)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 155,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 18 - Aircraft Stores (Helicopter)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 156,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 19 - Missiles (Tactical Free Flight)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 157,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 20 - Ground Vehicles (Mobile)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 158,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 21 - Watercraft (Marine Vehicles) Operational",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 159,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 22 - Engines (Turbine)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 160,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 23 - Personnel (Materiel Carried By/On Personnel)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 161,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 24 - General Minimal Integrity",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 162,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure I - General Vibration > Category 25 - All Vehicles (Cantilevered External Materiel)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 163,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure II - Loose Cargo Transportation > Category 5 - Loose Cargo",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 164,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure III - Large Assembly Transport > Large Assembly Transport",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 165,
+    "std": "mil",
+    "combo": "Method 514.8 - Vibration > Procedure IV - Assembled Aircraft Store Captive Carriage and Free Flight > Aircraft Store Vibration",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 166,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure I - Diffuse Field Acoustic Noise > Standard Acoustic Testing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 167,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure IA - Uniform Intensity Shaped Spectrum > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 168,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure IA - Uniform Intensity Shaped Spectrum > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 169,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure IB - Normal Incident Plane Waves > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 170,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure IB - Normal Incident Plane Waves > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 171,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure II - Grazing Incidence Acoustic Noise Testing > Grazing Incidence",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 172,
+    "std": "mil",
+    "combo": "Method 515.8 - Acoustic Noise > Procedure III - Cavity Resonance Acoustic Noise Testing > Cavity Resonance",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 173,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure I - Functional Shock > Standard Operational Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 174,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure II - Transportation Shock > Transportation Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 175,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure III - Fragility > Fragility",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 176,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure IV - Transit Drop > Packaged Equipment Drop",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 177,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure V - Crash Hazard Shock > Ground/Flight Vehicle Crash",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 178,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure VI - Bench Handling > Maintenance/Repair Drop",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 179,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure VII - Pendulum Impact > Pendulum Impact",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 180,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure VIII - Catapult Launch/Arrested Landing > Catapult Launch/Arrested Landing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 181,
+    "std": "mil",
+    "combo": "Method 517.3 - Pyroshock > Procedure I - Near-Field with Real Configuration > Pyrotechnic Device Firing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 182,
+    "std": "mil",
+    "combo": "Method 517.3 - Pyroshock > Procedure II - Near-Field with Simulated Configuration > Simulated Near-Field Pyroshock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 183,
+    "std": "mil",
+    "combo": "Method 517.3 - Pyroshock > Procedure III - Mid-Field with Mechanical Test Device > Mid-Field Mechanical Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 184,
+    "std": "mil",
+    "combo": "Method 517.3 - Pyroshock > Procedure IV - Far-Field with Mechanical Test Device > Far-Field Mechanical Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 185,
+    "std": "mil",
+    "combo": "Method 517.3 - Pyroshock > Procedure V - Far-Field with Electrodynamic Shaker > Far-Field Shaker Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 186,
+    "std": "mil",
+    "combo": "Method 518.2 - Acidic Atmosphere > Procedure I - Acidic Atmosphere > Corrosive Industrial/Exhaust Environment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 187,
+    "std": "mil",
+    "combo": "Method 519.8 - Gunfire Shock > Procedure I - Direct Operation > Aircraft/Vehicle Mounted Gunfire",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 188,
+    "std": "mil",
+    "combo": "Method 519.8 - Gunfire Shock > Procedure II - SRS Generated Shock Time History Pulse Sequence > SRS Generated Pulse",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 189,
+    "std": "mil",
+    "combo": "Method 519.8 - Gunfire Shock > Procedure III - Stochastically Generated Materiel Input > Stochastic Gunfire",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 190,
+    "std": "mil",
+    "combo": "Method 520.5 - Temperature, Humidity, Vibration, and Altitude > Procedure I - Engineering Development > Temp/Humidity/Vibration/Altitude",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 191,
+    "std": "mil",
+    "combo": "Method 520.5 - Temperature, Humidity, Vibration, and Altitude > Procedure II - Flight or Mission Support > Mission Profile Support",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 192,
+    "std": "mil",
+    "combo": "Method 520.5 - Temperature, Humidity, Vibration, and Altitude > Procedure III - Platform Envelope > Platform Envelope Testing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 193,
+    "std": "mil",
+    "combo": "Method 521.4 - Icing/Freezing Rain > Procedure I - Icing > Marine/Aircraft Ice Accumulation",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 194,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure I - Hull and Turret > Armor Impact Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 195,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure IS - Default Shock Level > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 196,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure IS - Default Shock Level > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 197,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure II - Large Scale Tactical Simulator (LSTS) > LSTS Testing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 198,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure III - Limited Spectrum, Light Weight Shock Machine (LWSM) > LWSM Testing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 199,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure IV - Limited Spectrum, Medium Weight Shock Machine (MWSM) > MWSM Testing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 200,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure V - Drop Table > Drop Table Testing",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 201,
+    "std": "mil",
+    "combo": "Method 522.2 - Ballistic Shock > Procedure VI - Drop Table (Light weight components) > Drop Table Light Weight",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 202,
+    "std": "mil",
+    "combo": "Method 523.4 - Vibro-Acoustic/Temperature > Procedure I - External Stores > Aircraft Store Environment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 203,
+    "std": "mil",
+    "combo": "Method 524.1 - Freeze / Thaw > Procedure I - Diurnal Cycling Effects > Freezing and Thawing Cycle",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 204,
+    "std": "mil",
+    "combo": "Method 524.1 - Freeze / Thaw > Procedure II - Fogging > Fogging Simulation",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 205,
+    "std": "mil",
+    "combo": "Method 524.1 - Freeze / Thaw > Procedure III - Rapid Temperature Change > Rapid Temp Change (Freeze/Thaw)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 206,
+    "std": "mil",
+    "combo": "Method 525.2 - Time Waveform Replication > Procedure I - Single Exciter TWR > Field Data Replication",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 207,
+    "std": "mil",
+    "combo": "Method 525.2 - Time Waveform Replication > Procedure II - SESA Replication > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 208,
+    "std": "mil",
+    "combo": "Method 525.2 - Time Waveform Replication > Procedure II - SESA Replication > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 209,
+    "std": "mil",
+    "combo": "Method 526.2 - Rail Impact > Procedure I - Rail Impact > Railcar Humping/Coupling",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 210,
+    "std": "mil",
+    "combo": "Method 527.2 - Multi-Exciter > Procedure I - Time Domain Reference Criteria > MIMO Vibration",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 211,
+    "std": "mil",
+    "combo": "Method 527.2 - Multi-Exciter > Procedure II - Frequency Domain Reference Criteria > Frequency Domain MIMO",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 212,
+    "std": "mil",
+    "combo": "Method 528.1 - Mechanical Vibrations of Shipboard Equipment > Procedure I - Environmental Vibration > Type I / Type II Naval Shipboard",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 213,
+    "std": "mil",
+    "combo": "Method 528.1 - Mechanical Vibrations of Shipboard Equipment > Procedure II - Internally Excited Vibration > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 214,
+    "std": "mil",
+    "combo": "Method 528.1 - Mechanical Vibrations of Shipboard Equipment > Procedure II - Internally Excited Vibration > tests",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 215,
+    "std": "astm",
+    "combo": "DC 1: General schedule (一般寄送) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 216,
+    "std": "astm",
+    "combo": "DC 1: General schedule (一般寄送) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 217,
+    "std": "astm",
+    "combo": "DC 1: General schedule (一般寄送) > Step 3: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 218,
+    "std": "astm",
+    "combo": "DC 1: General schedule (一般寄送) > Step 4: Schedule G - Rail Switching (鐵路切換衝擊) > Rail Switching Impact (鐵路切換衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 219,
+    "std": "astm",
+    "combo": "DC 1: General schedule (一般寄送) > Step 5: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 220,
+    "std": "astm",
+    "combo": "DC 1: General schedule (一般寄送) > Step 6: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 221,
+    "std": "astm",
+    "combo": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 222,
+    "std": "astm",
+    "combo": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 223,
+    "std": "astm",
+    "combo": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統) > Step 3: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 224,
+    "std": "astm",
+    "combo": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統) > Step 4: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 225,
+    "std": "astm",
+    "combo": "DC 2: Specially defined distribution system, user specified (特殊定義運輸系統) > Step 5: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 226,
+    "std": "astm",
+    "combo": "DC 3: Single package environment (單一小包裹環境) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 227,
+    "std": "astm",
+    "combo": "DC 3: Single package environment (單一小包裹環境) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 228,
+    "std": "astm",
+    "combo": "DC 3: Single package environment (單一小包裹環境) > Step 3: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 229,
+    "std": "astm",
+    "combo": "DC 3: Single package environment (單一小包裹環境) > Step 4: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 230,
+    "std": "astm",
+    "combo": "DC 3: Single package environment (單一小包裹環境) > Step 5: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 231,
+    "std": "astm",
+    "combo": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 232,
+    "std": "astm",
+    "combo": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 233,
+    "std": "astm",
+    "combo": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL) > Step 3: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 234,
+    "std": "astm",
+    "combo": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL) > Step 4: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 235,
+    "std": "astm",
+    "combo": "DC 4: Single package with pallet or skid, LTL motor freight (單一包裝含棧板 - LTL) > Step 5: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 236,
+    "std": "astm",
+    "combo": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 237,
+    "std": "astm",
+    "combo": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 238,
+    "std": "astm",
+    "combo": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化) > Step 3: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Air (空運隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 239,
+    "std": "astm",
+    "combo": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化) > Step 3: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Truck (卡車隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 240,
+    "std": "astm",
+    "combo": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化) > Step 4: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 241,
+    "std": "astm",
+    "combo": "DC 5: Motor freight, TL, not unitized (卡車運輸 - 整車/非單元化) > Step 5: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 242,
+    "std": "astm",
+    "combo": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 243,
+    "std": "astm",
+    "combo": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 244,
+    "std": "astm",
+    "combo": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化) > Step 3: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 245,
+    "std": "astm",
+    "combo": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化) > Step 4: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 246,
+    "std": "astm",
+    "combo": "DC 6: Motor freight, TL, or LTL - unitized (卡車運輸 - 整車或零擔/單元化) > Step 5: Schedule B - Warehouse Stacking (倉庫堆碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 247,
+    "std": "astm",
+    "combo": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 248,
+    "std": "astm",
+    "combo": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 249,
+    "std": "astm",
+    "combo": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝) > Step 3: Schedule G - Rail Switching (鐵路切換衝擊) > Rail Switching Impact (鐵路切換衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 250,
+    "std": "astm",
+    "combo": "DC 7: Rail only, bulk loaded (鐵路運輸 - 散裝) > Step 4: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 251,
+    "std": "astm",
+    "combo": "DC 8: Rail only, unitized (鐵路運輸 - 單元化) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 252,
+    "std": "astm",
+    "combo": "DC 8: Rail only, unitized (鐵路運輸 - 單元化) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 253,
+    "std": "astm",
+    "combo": "DC 8: Rail only, unitized (鐵路運輸 - 單元化) > Step 3: Schedule G - Rail Switching (鐵路切換衝擊) > Rail Switching Impact (鐵路切換衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 254,
+    "std": "astm",
+    "combo": "DC 8: Rail only, unitized (鐵路運輸 - 單元化) > Step 4: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 255,
+    "std": "astm",
+    "combo": "DC 8: Rail only, unitized (鐵路運輸 - 單元化) > Step 5: Schedule B - Warehouse Stacking (倉庫堆碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 256,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 257,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 258,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 3: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Air (空運隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 259,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 3: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Truck (卡車隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 260,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 4: Schedule G - Rail Switching (鐵路切換衝擊) > Rail Switching Impact (鐵路切換衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 261,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 5: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 262,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 6: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 263,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 7: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 264,
+    "std": "astm",
+    "combo": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 265,
+    "std": "astm",
+    "combo": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 266,
+    "std": "astm",
+    "combo": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化) > Step 3: Schedule G - Rail Switching (鐵路切換衝擊) > Rail Switching Impact (鐵路切換衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 267,
+    "std": "astm",
+    "combo": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化) > Step 4: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 268,
+    "std": "astm",
+    "combo": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化) > Step 5: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 269,
+    "std": "astm",
+    "combo": "DC 10: Rail and motor freight, unitized (鐵路與卡車運輸 - 單元化) > Step 6: Schedule B - Warehouse Stacking (倉庫堆碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 270,
+    "std": "astm",
+    "combo": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 271,
+    "std": "astm",
+    "combo": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC) > Step 2: Schedule G - Rail Switching (鐵路切換衝擊) > Rail Switching Impact (鐵路切換衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 272,
+    "std": "astm",
+    "combo": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC) > Step 3: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 273,
+    "std": "astm",
+    "combo": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC) > Step 4: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 274,
+    "std": "astm",
+    "combo": "DC 11: Rail, TOFC and COFC (鐵路 - TOFC/COFC) > Step 5: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 275,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 276,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 2: Schedule D - Stacked Vibration (帶載振動) > Vibration under Compressive Load (帶載振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 277,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 3: Schedule I - Low Pressure (低氣壓/空運) > Low Pressure Vacuum (低氣壓真空測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 278,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 4: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Air (空運隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 279,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 4: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Truck (卡車隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 280,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 5: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 281,
+    "std": "astm",
+    "combo": "DC 12: Air (intercity) and motor freight (local), over 150 lb, or unitized (航空與卡車 - 大於150磅/單元化) > Step 6: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 282,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 283,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 284,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 3: Schedule F - Loose Load Vibration (鬆散振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 285,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 4: Schedule I - Low Pressure (低氣壓/空運) > Low Pressure Vacuum (低氣壓真空測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 286,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 5: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Air (空運隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 287,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 5: Schedule E - Vehicle Vibration (車輛振動) > Random Vibration - Truck (卡車隨機振動 PSD)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 288,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 6: Schedule J - Concentrated Impact (集中衝擊) > Hazard Box Drop (尖銳物掉落衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 289,
+    "std": "astm",
+    "combo": "DC 13: Air and mixed freight (空運與公路混合) > Step 7: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 290,
+    "std": "astm",
+    "combo": "DC 14: LTL motor freight (零擔物流運輸) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 291,
+    "std": "astm",
+    "combo": "DC 14: LTL motor freight (零擔物流運輸) > Step 2: Schedule B - Warehouse Stacking (倉庫堆碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 292,
+    "std": "astm",
+    "combo": "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 293,
+    "std": "astm",
+    "combo": "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 294,
+    "std": "astm",
+    "combo": "DC 15: Export/Import shipment for intermodal container or roll on/roll off trailer (進出口海運 - 貨櫃/駛上駛下船) > Step 3: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 295,
+    "std": "astm",
+    "combo": "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 296,
+    "std": "astm",
+    "combo": "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 297,
+    "std": "astm",
+    "combo": "DC 16: Export/Import shipment for palletized cargo ship (進出口海運 - 棧板貨船) > Step 3: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 298,
+    "std": "astm",
+    "combo": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 299,
+    "std": "astm",
+    "combo": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 300,
+    "std": "astm",
+    "combo": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船) > Step 3: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 301,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 1: Schedule A - Handling (第一階段：人工與機械搬運) > Manual Drop Test (人工跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 302,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 1: Schedule A - Handling (第一階段：人工與機械搬運) > Mechanical Handling Test (機械搬運)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 303,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 2: Schedule B/C - Warehouse or Vehicle Stacking (第二階段：倉庫或車輛堆碼) > Warehouse Stacking (倉庫堆碼)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 304,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 3: Schedule A - Handling (第三階段：第二輪人工與機械搬運) > Manual Drop Test (人工跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 305,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 4: Schedule I - Low Pressure (第四階段：低氣壓高空模擬) > Low Pressure Vacuum (低氣壓真空測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 306,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 5: Schedule H - Environmental Hazard (第五階段：軍用循環氣候曝露) > MIL Cyclic Exposure (溫度與淋雨循環)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 307,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 6: Schedule F - Loose Load Vibration (第六階段：鬆散跳動振動) > Loose Load Bounce (跳動測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 308,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 7: Schedule E - Vehicle Vibration (第七階段：隨機載具振動) > MIL Random Vibration (軍用三軸隨機振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 309,
+    "std": "astm",
+    "combo": "DC 18: Non-Commercial Government shipments in accordance with MIL-STD-2073-1 (非商業政府運輸) > Step 8: Schedule A - Handling (第八階段：最後人工與機械搬運) > Manual Drop Test (人工跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 310,
+    "std": "gr63",
+    "combo": "Section 2/3 - Facility & Spatial Planning > Equipment Framework & Floor Loading > Facility Planning (機房與設備空間規劃)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 311,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Altitude (高海拔環境) > Operating Altitude Simulation",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 312,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Fan-Cooled Equipment & Airflow > Fan Performance & Airflow (風扇與氣流要求)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 313,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Long-Term Operating Environment > ASHRAE A1/A2 Equipment Class",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 314,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Long-Term Operating Environment > Short-Term Operating (Emergency)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 315,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Short-Term Operating Environment > Short-Term Operation",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 316,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Storage Environment > Warehouse Storage",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 317,
+    "std": "gr63",
+    "combo": "Section 4.1 - Temperature, Humidity, and Altitude > Surface Temperature > Surface Temperature Limit (表面溫度限制)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 318,
+    "std": "gr63",
+    "combo": "Section 4.2 - Fire Resistance > Equipment Fire Spread (設備火災蔓延) > Burner Flame Test (開放式火源測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 319,
+    "std": "gr63",
+    "combo": "Section 4.2 - Fire Resistance > Equipment Fire Spread (設備火災蔓延) > Needle-Flame / UL Flammability",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 320,
+    "std": "gr63",
+    "combo": "Section 4.2 - Fire Resistance > Wire, Cable, and Materials Fire-Resistance > Component Fire-Resistance (元件與線材防焰)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 321,
+    "std": "gr63",
+    "combo": "Section 4.3 - Equipment Handling (Shock) > Physical Shock and Vibration > Packaged Equipment Drop",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 322,
+    "std": "gr63",
+    "combo": "Section 4.3 - Equipment Handling (Shock) > Physical Shock and Vibration > Packaged Vibration",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 323,
+    "std": "gr63",
+    "combo": "Section 4.3 - Equipment Handling (Shock) > Unpackaged Equipment Shock > Unpackaged Drop",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 324,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > Framework and Anchor Criteria > Framework and Anchor (機架與地錨)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 325,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > NEBS Seismic Zone 1 (Low Risk) > Zone 1 - Office Vibratory Motion (OVM)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 326,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > NEBS Seismic Zone 2/3 (Moderate Risk) > Zone 2/3 Earthquake",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 327,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > NEBS Seismic Zone 4 (High Risk) > Zone 4 - Earthquake Motion (EQM)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 328,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > NEBS Seismic Zone 4 (High Risk) > Zone 4 - Office Vibratory Motion (OVM)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 329,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > Office Vibration (辦公環境振動) > Random Vibration - Office",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 330,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > Transportation Vibration > Transport Vibration",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 331,
+    "std": "gr63",
+    "combo": "Section 4.5 - Airborne Contaminants > Hygroscopic Dust Testing > Hygroscopic Dust",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 332,
+    "std": "gr63",
+    "combo": "Section 4.5 - Airborne Contaminants > Mixed Flowing Gas (MFG 混和氣體腐蝕) > Indoor Equipment Gas Exposure",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 333,
+    "std": "gr63",
+    "combo": "Section 4.6 - Acoustic Noise > Acoustic Noise (聲學噪音) > Equipment Subassembly Acoustic Emission",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 334,
+    "std": "gr63",
+    "combo": "Section 4.7 - Illumination > Illumination Criteria for Network Equipment > Surface Reflectance and Glare (表面反光與防眩光)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 335,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 336,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method II-D - Lab Data (結合實驗室數據)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 337,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method III-D - Field Data (結合現場實際追蹤數據)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 338,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level II (嚴格級, 具採購規範與批次管控) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 339,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level III (最高級, 具週期重新認證與100%篩選) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 340,
+    "std": "sr332",
+    "combo": "GF - Ground Fixed (地面固定且環境不可控, 如戶外電信箱) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 341,
+    "std": "sr332",
+    "combo": "GM - Ground Mobile (地面移動式, 如車載設備) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 342,
+    "std": "ista",
+    "combo": "ISTA 1A (Non-Simulation Integrity, < 150 lb) > Standard Package (標準包裹) > Sequence 1 - Fixed Displacement Vibration",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 343,
+    "std": "ista",
+    "combo": "ISTA 1A (Non-Simulation Integrity, < 150 lb) > Standard Package (標準包裹) > Sequence 2 - Drop Test (基礎跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 344,
+    "std": "ista",
+    "combo": "ISTA 2A (Partial Simulation, < 150 lb) > Standard Package (標準包裹) > Sequence 1 - Atmospheric Conditioning",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 345,
+    "std": "ista",
+    "combo": "ISTA 2A (Partial Simulation, < 150 lb) > Standard Package (標準包裹) > Sequence 2 - Compression (抗壓)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 346,
+    "std": "ista",
+    "combo": "ISTA 2A (Partial Simulation, < 150 lb) > Standard Package (標準包裹) > Sequence 3 - Random Vibration & Drop",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 347,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Standard Package (< 70kg / 150lb) > Sequence 1 - Drop (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 348,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Standard Package (< 70kg / 150lb) > Sequence 2 - Random Vibration (隨機振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 349,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Small Package (體積 < 800in³, 重量 < 10lb) > Sequence 3 - Drop (袋裝跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 350,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Flat / Elongated (扁平與長條型包裹) > Sequence 4 - Rotational Edge Drop (旋轉邊緣跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 351,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Flat / Elongated (扁平與長條型包裹) > Sequence 5 - Hazard Block Impact (重錘橋接衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 352,
+    "std": "ista",
+    "combo": "ISTA 3B (LTL Delivery, Less-Than-Truckload) > Standard Package (LTL 零擔卡車) > Sequence 1 - Tip/Tip-Over (傾倒翻覆)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 353,
+    "std": "ista",
+    "combo": "ISTA 3B (LTL Delivery, Less-Than-Truckload) > Standard Package (LTL 零擔卡車) > Sequence 2 - Horizontal Impact (水平撞擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 354,
+    "std": "ista",
+    "combo": "ISTA 3E (Unitized Loads, 滿載棧板) > Palletized Load (打棧板貨物) > Sequence 2 - Compression (抗壓測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 355,
+    "std": "ista",
+    "combo": "ISTA 3E (Unitized Loads, 滿載棧板) > Palletized Load (打棧板貨物) > Sequence 3 - Random Vibration (隨機振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 356,
+    "std": "ista",
+    "combo": "ISTA 3E (Unitized Loads, 滿載棧板) > Palletized Load (打棧板貨物) > Sequence 5 - Rotational Edge Drop (棧板邊緣旋轉跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 357,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com Over-Boxing (OB) > Master Carton (二次外箱包裝) > Sequence 3 - Drop (內裝與外箱落摔)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 358,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com-SIOC (Parcel Delivery) > Type A (Standard < 50 lb) > Sequence 2 - Free-Fall Drop (自由跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 359,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com-SIOC (Parcel Delivery) > Type A (Standard < 50 lb) > Sequence 3 - Random Vibration (運輸振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 360,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com-SIOC (Parcel Delivery) > Type B (Standard 50 lb - 100 lb) > Sequence 2 - Free-Fall Drop (中級重量跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 361,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com-SIOC (Parcel Delivery) > Type C (Standard > 100 lb) > Sequence 2 - Drop & Rotational (重型裝載跌落)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 362,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com-SIOC (Parcel Delivery) > Type D (LTL Delivery < 100 lb) > Sequence 3 - Tip / Tip-Over (傾倒翻覆)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 363,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com-SIOC (Parcel Delivery) > Type D (LTL Delivery < 100 lb) > Sequence 4 - Concentrated Edge Impact",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 364,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test A: Cold (IEC 60068-2-1:2007) > Ad/Ae: Cold for heat-dissipating specimen (漸變溫低溫測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 365,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test B: Dry heat (IEC 60068-2-2:2007) > Bd/Be: Dry heat for heat-dissipating specimen (發熱體高溫測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 366,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test N: Change of temperature (IEC 60068-2-14:2023) > Test Na: Rapid change of temperature (兩箱/三箱冷熱衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 367,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test N: Change of temperature (IEC 60068-2-14:2023) > Test Nb: Change of temperature with specified rate (單箱溫迴圈變化)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 368,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test Db: Damp heat, cyclic (IEC 60068-2-30:2005) > 12h + 12h cycle (濕熱循環凝露測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 369,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test Cab: Damp heat, steady state (IEC 60068-2-78:2012) > Steady state (恆定濕熱測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 370,
+    "std": "iec60068",
+    "combo": "Vibration (振動測試) > Test Fc: Vibration Sinusoidal (IEC 60068-2-6:2007) > Resonance Search and Dwell (正弦振動: 掃頻與駐留)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 371,
+    "std": "iec60068",
+    "combo": "Vibration (振動測試) > Test Fh: Broadband Random Vibration (IEC 60068-2-64:2008+AMD1) > Random Vibration Profile (寬頻隨機振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 372,
+    "std": "iec60068",
+    "combo": "Shock & Mechanical (衝擊與機械測試) > Test Eh: Hammer tests (IEC 60068-2-75:2014) > Pendulum / Spring Hammer (衝擊槌測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 373,
+    "std": "iec60068",
+    "combo": "Shock & Mechanical (衝擊與機械測試) > Test Ea: Shock (IEC 60068-2-27:2008) > Classical Shock Pulses (經典波形衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 374,
+    "std": "iec60068",
+    "combo": "Shock & Mechanical (衝擊與機械測試) > Test Ec: Rough handling shocks (IEC 60068-2-31:2008) > Free fall (自由跌落與傾倒)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 375,
+    "std": "iec60068",
+    "combo": "Corrosion & Pressure (腐蝕與大氣壓力) > Test Ka: Salt mist (IEC 60068-2-11:2021) > Continuous Salt Mist (連續中性鹽霧)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 376,
+    "std": "iec60068",
+    "combo": "Corrosion & Pressure (腐蝕與大氣壓力) > Test Kb: Salt mist, cyclic (IEC 60068-2-52:2017) > Cyclic Salt Mist (循環鹽霧測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 377,
+    "std": "iec60068",
+    "combo": "Corrosion & Pressure (腐蝕與大氣壓力) > Test M: Low air pressure (IEC 60068-2-13:2021) > Altitude Simulation (高海拔低壓模擬)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 378,
+    "std": "iec60068",
+    "combo": "Sealing & Water (防水與氣密測試) > Test Q: Sealing (IEC 60068-2-17:1994) > Gross / Fine Leak Testing (粗/細微漏判斷)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 379,
+    "std": "iec60068",
+    "combo": "Sealing & Water (防水與氣密測試) > Test R: Water (IEC 60068-2-18:2017) > Water Ingress and Immersion (防水/水滴/浸水測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 380,
+    "std": "iec60068",
+    "combo": "Soldering & PCBA (焊接與主機板測試) > Test T: Soldering (IEC 60068-2-20/-58) > Solderability and Heat Resistance (引腳吃錫與耐熱力)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 381,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP0X to IP3X (大型異物與工具防護) > Protection Scope (防護範圍與定義)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 382,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP4X to IP6X (金屬線與細微粉塵防護) > Dust Penetration Scope (細微粉塵防護與檢測)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 383,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX1 to IPX4 (水滴、噴灑與潑濺) > Dripping & Splashing (垂直/傾斜水滴與噴灑)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 384,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX5 to IPX6 (中高壓強制水柱) > Water Jets (噴嘴強制水流衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 385,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX7 to IPX9K (浸水與蒸汽清洗) > Immersion & Exteme Jets (沒水與蒸氣清洗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 386,
+    "std": "ip",
+    "combo": "Additional Letters (附加字母說明) > Optional Letters (可選代號) > Extra Identifiers (特殊防護字母)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  }
+]
