@@ -16,8 +16,6 @@ import { togglePin, renderDashboard, navigateToSpec } from './modules/dashboard.
 import { initPhotoPanel } from './modules/photo-processor.js';
 import { initReportPanel, addToReport } from './modules/report-generator.js';
 import { calculateSchedule, startScheduleProgress, initScheduler, addScheduleToReportAction } from './modules/scheduler.js';
-import { initRagEngine, askQuestion, saveApiKey, loadApiKey } from './modules/rag_engine.js';
-
 // ─── 🛡️ Global Error Boundary (Cycle 7) ──────────────────────────────────
 window.onerror = function(msg, url, lineNo, columnNo, error) {
   console.error("Global Error Caught:", msg, url, lineNo, columnNo, error);
@@ -77,11 +75,6 @@ window.vcHandleRandInput = vcHandleRandInput;
 window.vcRecalcSlopes = vcRecalcSlopes;
 window.vcCalcAndPlotRandom = vcCalcAndPlotRandom;
 
-// RAG Engine
-window.ragInitEngine = initRagEngine;
-window.ragAskQuestion = askQuestion;
-window.ragSaveApiKey = saveApiKey;
-
 // ─── Close sidebar when clicking outside on mobile ─────────────────────────
 document.addEventListener('click', function(e) {
   const sidebar = document.getElementById('sidebar');
@@ -100,7 +93,6 @@ window.addEventListener('DOMContentLoaded', () => {
   initPhotoPanel();
   initReportPanel();
   initScheduler();
-  loadApiKey();
 });
 
 initPWA();
