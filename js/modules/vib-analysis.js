@@ -89,7 +89,7 @@ export function renderVibAnalysis(params, tests, specLabel) {
       <div class="vib-panel-title">〰️ Vibration Profile Analysis (Auto-Feed)</div>
       <div class="vib-metrics">
         <div class="vib-metric"><div class="vib-metric-label">Grms (RMS Accel)</div><div class="vib-metric-value" style="${isVaries?'font-size:16px':''}">${displayGrms}${unitSuffix}</div></div>
-        <div class="vib-metric"><div class="vib-metric-label">3σ Peak (Max)</div><div class="vib-metric-value">${peakG}<span class="vib-metric-unit">g</span></div></div>
+        <div class="vib-metric"><div class="vib-metric-label">預估測試量值 (3σ)</div><div class="vib-metric-value">${peakG}<span class="vib-metric-unit">g</span></div></div>
         <div class="vib-metric"><div class="vib-metric-label">Peak Velocity ≈</div><div class="vib-metric-value">${peakV}<span class="vib-metric-unit">m/s</span></div></div>
         <div class="vib-metric"><div class="vib-metric-label">P-P Disp ≈</div><div class="vib-metric-value">${grmsDisp}<span class="vib-metric-unit">mm</span></div></div>
       </div>

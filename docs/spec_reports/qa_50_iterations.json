@@ -1,0 +1,402 @@
+[
+  {
+    "iter": 1,
+    "std": "sr332",
+    "combo": "GF - Ground Fixed (地面固定且環境不可控, 如戶外電信箱) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 2,
+    "std": "iec60068",
+    "combo": "Sealing & Water (防水與氣密測試) > Test Q: Sealing (IEC 60068-2-17:1994) > Gross / Fine Leak Testing (粗/細微漏判斷)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 3,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX5 to IPX6 (中高壓強制水柱) > Water Jets (噴嘴強制水流衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 4,
+    "std": "sr332",
+    "combo": "GM - Ground Mobile (地面移動式, 如車載設備) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 5,
+    "std": "mil",
+    "combo": "Method 518.2 - Acidic Atmosphere > Procedure I - Acidic Atmosphere > Corrosive Industrial/Exhaust Environment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 6,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX5 to IPX6 (中高壓強制水柱) > Water Jets (噴嘴強制水流衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 7,
+    "std": "ista",
+    "combo": "ISTA 6-Amazon.com Over-Boxing (OB) > Master Carton (二次外箱包裝) > Sequence 3 - Drop (內裝與外箱落摔)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 8,
+    "std": "iec60068",
+    "combo": "Temperature (溫濕度相關測試) > Test Cab: Damp heat, steady state (IEC 60068-2-78:2012) > Steady state (恆定濕熱測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 9,
+    "std": "iec",
+    "combo": "9 — 產品內部微氣候 Microclimates Inside Products > K > 9K2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 10,
+    "std": "sr332",
+    "combo": "GM - Ground Mobile (地面移動式, 如車載設備) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 11,
+    "std": "gr63",
+    "combo": "Section 4.4 - Earthquake & Vibration > Transportation Vibration > Transport Vibration",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 12,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP0X to IP3X (大型異物與工具防護) > Protection Scope (防護範圍與定義)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 13,
+    "std": "astm",
+    "combo": "DC 8: Rail only, unitized (鐵路運輸 - 單元化) > Step 4: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 14,
+    "std": "gr63",
+    "combo": "Section 2/3 - Facility & Spatial Planning > Equipment Framework & Floor Loading > Facility Planning (機房與設備空間規劃)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 15,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP0X to IP3X (大型異物與工具防護) > Protection Scope (防護範圍與定義)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 16,
+    "std": "ista",
+    "combo": "ISTA 2A (Partial Simulation, < 150 lb) > Standard Package (標準包裹) > Sequence 2 - Compression (抗壓)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 17,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method III-D - Field Data (結合現場實際追蹤數據)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 18,
+    "std": "astm",
+    "combo": "DC 17: Export/Import shipment for break bulk cargo ship (進出口海運 - 散裝貨船) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 19,
+    "std": "ip",
+    "combo": "Additional Letters (附加字母說明) > Optional Letters (可選代號) > Extra Identifiers (特殊防護字母)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 20,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method II-D - Lab Data (結合實驗室數據)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 21,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 22,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP0X to IP3X (大型異物與工具防護) > Protection Scope (防護範圍與定義)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 23,
+    "std": "iec60068",
+    "combo": "Sealing & Water (防水與氣密測試) > Test R: Water (IEC 60068-2-18:2017) > Water Ingress and Immersion (防水/水滴/浸水測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 24,
+    "std": "iec60068",
+    "combo": "Corrosion & Pressure (腐蝕與大氣壓力) > Test M: Low air pressure (IEC 60068-2-13:2021) > Altitude Simulation (高海拔低壓模擬)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 25,
+    "std": "sr332",
+    "combo": "GM - Ground Mobile (地面移動式, 如車載設備) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 26,
+    "std": "sr332",
+    "combo": "GB - Ground Benign (地面固定且環境良好, 如辦公室/機房) > Quality Level III (最高級, 具週期重新認證與100%篩選) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 27,
+    "std": "astm",
+    "combo": "DC 9: Rail and motor freight, not unitized (鐵路與卡車運輸 - 非單元化) > Step 2: Schedule C - Vehicle Stacking (車輛推碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 28,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP4X to IP6X (金屬線與細微粉塵防護) > Dust Penetration Scope (細微粉塵防護與檢測)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 29,
+    "std": "ista",
+    "combo": "ISTA 3B (LTL Delivery, Less-Than-Truckload) > Standard Package (LTL 零擔卡車) > Sequence 2 - Horizontal Impact (水平撞擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 30,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Flat / Elongated (扁平與長條型包裹) > Sequence 5 - Hazard Block Impact (重錘橋接衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 31,
+    "std": "gr63",
+    "combo": "Section 4.2 - Fire Resistance > Wire, Cable, and Materials Fire-Resistance > Component Fire-Resistance (元件與線材防焰)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 32,
+    "std": "iec",
+    "combo": "3 — 室內定點使用 Stationary Indoor > S (Mechanically Active / Sand & Dust) > 3S2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 33,
+    "std": "sr332",
+    "combo": "GF - Ground Fixed (地面固定且環境不可控, 如戶外電信箱) > Quality Level I (商業級, 具備相容性抽測與回饋機制) > Method I-D - Parts Count (零件計數法)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 34,
+    "std": "mil",
+    "combo": "Method 507.6 - Humidity > Procedure IA - Induced (Storage and Transit) Cycles > parameters",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 35,
+    "std": "gr63",
+    "combo": "Section 4.3 - Equipment Handling (Shock) > Physical Shock and Vibration > Packaged Equipment Drop",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 36,
+    "std": "iec60068",
+    "combo": "Soldering & PCBA (焊接與主機板測試) > Test T: Soldering (IEC 60068-2-20/-58) > Solderability and Heat Resistance (引腳吃錫與耐熱力)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 37,
+    "std": "astm",
+    "combo": "DC 14: LTL motor freight (零擔物流運輸) > Step 1: Schedule A - Handling (人工搬運與跌落) > Drop Test (跌落測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 38,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX5 to IPX6 (中高壓強制水柱) > Water Jets (噴嘴強制水流衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 39,
+    "std": "mil",
+    "combo": "Method 516.8 - Shock > Procedure II - Transportation Shock > Transportation Shock",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 40,
+    "std": "ista",
+    "combo": "ISTA 3A (General Simulation, Parcel < 150 lb) > Standard Package (< 70kg / 150lb) > Sequence 2 - Random Vibration (隨機振動)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 41,
+    "std": "iec60068",
+    "combo": "Corrosion & Pressure (腐蝕與大氣壓力) > Test Ka: Salt mist (IEC 60068-2-11:2021) > Continuous Salt Mist (連續中性鹽霧)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 42,
+    "std": "astm",
+    "combo": "DC 14: LTL motor freight (零擔物流運輸) > Step 2: Schedule B - Warehouse Stacking (倉庫堆碼) > Machine Apply and Release/Hold (抗壓機壓放試驗)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 43,
+    "std": "ip",
+    "combo": "Additional Letters (附加字母說明) > Optional Letters (可選代號) > Extra Identifiers (特殊防護字母)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 44,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP4X to IP6X (金屬線與細微粉塵防護) > Dust Penetration Scope (細微粉塵防護與檢測)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 45,
+    "std": "ip",
+    "combo": "First Numeral: Solid Particle Protection (第一碼：固態粉塵防護) > IP4X to IP6X (金屬線與細微粉塵防護) > Dust Penetration Scope (細微粉塵防護與檢測)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 46,
+    "std": "ista",
+    "combo": "ISTA 3E (Unitized Loads, 滿載棧板) > Palletized Load (打棧板貨物) > Sequence 2 - Compression (抗壓測試)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 47,
+    "std": "iec",
+    "combo": "7 — 攜帶式與行動設備 Portable / Non-stationary > M > 7M2",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 48,
+    "std": "iec",
+    "combo": "2 — 運輸環境 Transportation > C (Chemically Active) > 2C1",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 49,
+    "std": "ip",
+    "combo": "Second Numeral: Liquid Ingress Protection (第二碼：液體防水防護) > IPX5 to IPX6 (中高壓強制水柱) > Water Jets (噴嘴強制水流衝擊)",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  },
+  {
+    "iter": 50,
+    "std": "mil",
+    "combo": "Method 511.7 - Explosive Atmosphere > Procedure II - Explosion Containment > Explosion Containment",
+    "status": "success",
+    "errors": [],
+    "is_empty": false
+  }
+]
