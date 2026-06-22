@@ -1,0 +1,41 @@
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+env.bak/
+venv.bak/
+
+# Environment Variables
+.env
+ailam_api.env
+
+# Raw Standards & Large Files (Excluded from GitHub)
+standard/**/*.pdf
+standard/*.pdf
+*.pdf
+*.zip
+*.tar.gz
+
+# Data Backups & Output
+*_backup.json
+data_output/
+logs/
+*.log
+transcript.jsonl
+
+# Agents/Skills configuration (Internal workflow)
+.agents/
+
+# IDE / OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Deprecated APIs & Secrets
+CLIProxyAPI/

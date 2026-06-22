@@ -78,6 +78,11 @@ export function renderVibAnalysis(params, tests, specLabel) {
   const displayGrms = grms ? grms.toFixed(3) : (storedGrms || '--');
   const unitSuffix = isVaries && !grms ? '' : '<span class="vib-metric-unit">g</span>';
 
+  const existingPlot = document.getElementById('psdPlotDiv');
+  if (existingPlot && window.Plotly) {
+    try { Plotly.purge(existingPlot); } catch(e){}
+  }
+
   wrap.style.display = 'block';
   wrap.innerHTML = `
     <div class="vib-panel">
@@ -92,12 +97,14 @@ export function renderVibAnalysis(params, tests, specLabel) {
     </div>`;
 
   if (finalPsdPts && window.Plotly) {
+    const safePsdPts = finalPsdPts.map(d => ({ f: Math.max(d.f, 0.1), p: Math.max(d.p, 1e-10) }));
     const trace = {
-      x: finalPsdPts.map(d=>d.f), y: finalPsdPts.map(d=>d.p),
+      x: safePsdPts.map(d=>d.f), y: safePsdPts.map(d=>d.p),
       mode:'lines+markers', type:'scatter',
       line:{color:'#00d284',width:3,shape:'linear'},
       marker:{size:7,color:'#ffffff',line:{color:'#00d284',width:2}},
-      fill:'tozeroy', fillcolor:'rgba(0,210,132,0.05)'
+      fill:'tozeroy', fillcolor:'rgba(0,210,132,0.05)',
+      hovertemplate: '%{x:.2f} Hz<br>%{y:.5f} g²/Hz<extra></extra>'
     };
     const layout = {
       margin:{l:55,r:15,t:15,b:45}, paper_bgcolor:'rgba(13,20,71,0)', plot_bgcolor:'rgba(13,20,71,0)',

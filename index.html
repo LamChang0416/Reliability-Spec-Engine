@@ -85,7 +85,7 @@ select option{background:#0d1b3e}
 .metric-value{color:var(--blue3);font-size:14px;font-weight:600;line-height:1.3;word-break:break-word}
 
 /* TABLE */
-.table-wrap{overflow-x:auto;border-radius:10px;border:1px solid rgba(99,179,237,.15);margin-bottom:14px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid rgba(99,179,237,.15);margin-bottom:14px}
 table{width:100%;border-collapse:collapse;background:rgba(13,20,71,.5)}
 th{background:rgba(26,58,107,.6);color:var(--blue2);font-size:11px;font-weight:600;padding:10px 12px;text-align:left;text-transform:uppercase;letter-spacing:.05em}
 td{color:var(--text);font-size:12px;padding:9px 12px;border-top:1px solid rgba(99,179,237,.08)}
@@ -159,7 +159,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="logo">🛡️ <span id="appTitle">Spec Engine 2.0</span><span class="author-badge">by Lam</span></div>
-      <button class="mobile-menu-btn" onclick="window.toggleSidebar()">✕</button>
+      <button class="mobile-menu-btn" aria-label="Close Sidebar" onclick="window.toggleSidebar()">✕</button>
     </div>
     <div class="sidebar-nav" id="tabBar">
       <div class="nav-group">
@@ -206,6 +206,9 @@ tr:hover td{background:rgba(99,179,237,.05)}
         <button class="tab-btn" onclick="window._showTab('vibcalc',this);setTimeout(vcInit,80)" id="tabVIBCALC">
           〰️ <span data-zh="振動計算器" data-en="Vib Calculator"></span><span class="badge new-badge">NEW</span>
         </button>
+        <button class="tab-btn" onclick="window._showTab('rag',this)" id="tabRAG">
+          🤖 AI 查規助理 <span class="badge new-badge">Beta</span>
+        </button>
       </div>
     </div>
     <div class="nav-group">
@@ -222,7 +225,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
   <!-- MAIN CONTENT -->
   <div class="main-content" id="mainContent">
     <header>
-      <button class="mobile-menu-btn" onclick="window.toggleSidebar()">☰</button>
+      <button class="mobile-menu-btn" aria-label="Open Sidebar" onclick="window.toggleSidebar()">☰</button>
       <div class="header-right">
         <span class="offline-badge" id="offlineBadge">✈ Offline</span>
         
@@ -240,7 +243,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
         
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
-          <input id="searchInput" type="search" placeholder="Search specs..." oninput="window._doSearch(this.value)">
+          <input id="searchInput" type="search" placeholder="Search specs..." aria-label="Search" oninput="clearTimeout(window._searchTimer); window._searchTimer=setTimeout(()=>window._doSearch(this.value), 300)">
         </div>
       </div>
     </header>
@@ -260,6 +263,51 @@ tr:hover td{background:rgba(99,179,237,.05)}
         </div>
       </div>
 
+      <!-- AI RAG Assistant Panel -->
+      <div class="panel" id="panel-rag">
+        <div class="panel-caption" data-zh="【AI 查規助理】純前端的 Serverless RAG 引擎，支援離線向量檢索與 Gemini 語意問答。" data-en="[AI Assistant] Pure frontend Serverless RAG engine with offline vector search and Gemini semantic Q&A."></div>
+        
+        <div style="display:flex;flex-wrap:wrap;gap:15px;">
+          <!-- Left: Settings & Status -->
+          <div style="flex:1;min-width:280px;max-width:350px;">
+            <div style="background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;padding:16px;margin-bottom:15px;">
+              <div style="color:var(--blue2);font-size:12px;font-weight:700;margin-bottom:12px;">⚙️ 設定與狀態</div>
+              <div style="margin-bottom:12px;">
+                <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">Gemini API Key</label>
+                <input type="password" id="ragApiKey" placeholder="AIzaSy..." style="width:100%;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:6px;color:var(--text);padding:8px 12px;font-family:inherit;font-size:13px;" onchange="window.ragSaveApiKey()">
+                <div style="color:var(--dim);font-size:10px;margin-top:4px;">金鑰僅儲存於您的瀏覽器本地端，不會回傳任何伺服器。</div>
+              </div>
+              <div style="margin-bottom:12px;">
+                <label style="display:block;color:var(--muted);font-size:11px;margin-bottom:4px;">資料庫過濾 (Namespace)</label>
+                <select id="ragNamespace" style="width:100%;">
+                  <option value="ALL">全部規範 (All Standards)</option>
+                  <option value="MIL-STD-810H" selected>MIL-STD-810H</option>
+                </select>
+              </div>
+              <div class="vib-metric" style="margin-bottom:0;background:rgba(26,58,107,.3)">
+                <div class="vib-metric-label">引擎狀態</div>
+                <div class="vib-metric-value" id="ragStatusText" style="font-size:14px;color:var(--blue2)">等待初始化...</div>
+              </div>
+            </div>
+            <button class="btn btn-dl" style="width:100%" onclick="window.ragInitEngine()" id="ragInitBtn">🚀 載入模型與向量庫 (約 20MB)</button>
+          </div>
+          
+          <!-- Right: Chat Interface -->
+          <div style="flex:2;min-width:300px;display:flex;flex-direction:column;background:rgba(13,20,71,.5);border:1px solid rgba(99,179,237,.15);border-radius:10px;height:550px;">
+            <div style="padding:12px 16px;border-bottom:1px solid rgba(99,179,237,.15);color:var(--blue2);font-size:13px;font-weight:700;">
+              💬 對話視窗
+            </div>
+            <div id="ragChatArea" style="flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;">
+              <div style="color:var(--muted);font-size:12px;text-align:center;margin-top:20px;">請先在左側輸入 API Key 並點擊「載入模型」啟動引擎。</div>
+            </div>
+            <div style="padding:12px;border-top:1px solid rgba(99,179,237,.15);display:flex;gap:8px;">
+              <input type="text" id="ragQueryInput" placeholder="詢問規範細節 (例如: 高溫測試的溫度是多少？)" style="flex:1;background:rgba(13,27,62,.9);border:1px solid rgba(99,179,237,.25);border-radius:20px;color:var(--text);padding:10px 16px;font-size:13px;" disabled onkeypress="if(event.key==='Enter') window.ragAskQuestion()">
+              <button id="ragSendBtn" class="btn btn-dl" style="border-radius:20px;padding:10px 20px;" disabled onclick="window.ragAskQuestion()">送出</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
   <!-- IEC Panel -->
   <div class="panel" id="panel-iec">
     <p class="panel-caption" data-zh="【環境條件分類】IEC 60721-3 定義了產品在各類運輸、儲存與操作環境下可能遭遇的嚴苛度分類，為實驗室建立測試基準。" data-en="【Environmental Classification】IEC 60721-3 defines severity classes for transportation, storage, and operation environments to establish testing baselines."></p>
@@ -272,7 +320,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
       <div class="result-section">
         <h3 data-zh="② 查詢結果" data-en="② Results"></h3>
-        <div id="iec-result"><div class="empty" data-zh="← 請先選擇規格" data-en="← Please select criteria"></div></div>
+        <div id="iec-result"><div class="empty" data-zh="📭 請先選擇左側選項" data-en="📭 Please select criteria"></div></div>
       </div>
     </div>
   </div>
@@ -289,7 +337,7 @@ tr:hover td{background:rgba(99,179,237,.05)}
       </div>
       <div class="result-section">
         <h3 data-zh="② 測試規範輸出" data-en="② Test Specification"></h3>
-        <div id="mil-result"><div class="empty" data-zh="← 請先選擇方法" data-en="← Please select a method"></div></div>
+        <div id="mil-result"><div class="empty" data-zh="📭 請先選擇測試方法" data-en="📭 Please select a method"></div></div>
       </div>
     </div>
   </div>

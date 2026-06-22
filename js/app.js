@@ -16,8 +16,18 @@ import { togglePin, renderDashboard, navigateToSpec } from './modules/dashboard.
 import { initPhotoPanel } from './modules/photo-processor.js';
 import { initReportPanel, addToReport } from './modules/report-generator.js';
 import { calculateSchedule, startScheduleProgress, initScheduler, addScheduleToReportAction } from './modules/scheduler.js';
+import { initRagEngine, askQuestion, saveApiKey, loadApiKey } from './modules/rag_engine.js';
 
-
+// ─── 🛡️ Global Error Boundary (Cycle 7) ──────────────────────────────────
+window.onerror = function(msg, url, lineNo, columnNo, error) {
+  console.error("Global Error Caught:", msg, url, lineNo, columnNo, error);
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:20px;right:20px;background:#e53e3e;color:white;padding:12px 20px;border-radius:8px;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.3);font-family:Inter,sans-serif;font-size:14px;';
+  toast.innerHTML = '🚨 <b>System Error</b><br><span style="font-size:12px;opacity:0.9">' + msg + '</span>';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 5000);
+  return false;
+};
 // ─── Wire showResult with dependencies ────────────────────────────────────
 function showResultWired(std) {
   showResult(std, {
@@ -67,6 +77,11 @@ window.vcHandleRandInput = vcHandleRandInput;
 window.vcRecalcSlopes = vcRecalcSlopes;
 window.vcCalcAndPlotRandom = vcCalcAndPlotRandom;
 
+// RAG Engine
+window.ragInitEngine = initRagEngine;
+window.ragAskQuestion = askQuestion;
+window.ragSaveApiKey = saveApiKey;
+
 // ─── Close sidebar when clicking outside on mobile ─────────────────────────
 document.addEventListener('click', function(e) {
   const sidebar = document.getElementById('sidebar');
@@ -85,6 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initPhotoPanel();
   initReportPanel();
   initScheduler();
+  loadApiKey();
 });
 
 initPWA();

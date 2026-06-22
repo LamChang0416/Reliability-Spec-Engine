@@ -1,4 +1,4 @@
-const CACHE_NAME = 'reliability-spec-v4.0';
+const CACHE_NAME = 'reliability-spec-v4.2';
 const ASSETS = [
   './',
   './index.html',
@@ -17,6 +17,9 @@ const ASSETS = [
   './js/modules/dashboard.js',
   './js/modules/photo-processor.js',
   './js/modules/report-generator.js',
+  './js/modules/scheduler.js',
+  './js/modules/rag_engine.js',
+  './data_output/vector_db.json',
   './api/validator.js',
   './mil810_database.json',
   './gr63_database.json',

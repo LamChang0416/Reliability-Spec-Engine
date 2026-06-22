@@ -24,7 +24,7 @@ const VC_SINE_PRESETS = {
 export function vcAddSineRow(f='', a='', d='') {
   const tr = document.createElement('tr');
   tr.innerHTML = `
-    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" oninput="vcUpdateSineChart()"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" min="0" oninput="if(this.value<0)this.value=Math.abs(this.value); vcUpdateSineChart()"></td>
     <td style="padding:4px"><input type="number" class="vc-input" value="${a}" step="any" placeholder="Auto" oninput="vcUpdateSineChart()"></td>
     <td style="padding:4px"><input type="number" class="vc-input" value="${d}" step="any" placeholder="Auto" oninput="vcUpdateSineChart()"></td>
     <td style="padding:4px;text-align:center"><button class="vc-del" onclick="this.closest('tr').remove();vcUpdateSineChart()">✕</button></td>`;
@@ -135,8 +135,8 @@ const VC_RAND_PROFILES = {
 export function vcAddRandRow(f='', p='', isFirst=false) {
   const tr = document.createElement('tr');
   tr.innerHTML = `
-    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" oninput="vcHandleRandInput(this,'f')"></td>
-    <td style="padding:4px"><input type="number" class="vc-input" value="${p}" step="any" oninput="vcHandleRandInput(this,'p')"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" value="${f}" step="any" min="0" oninput="if(this.value<0)this.value=Math.abs(this.value); vcHandleRandInput(this,'f')"></td>
+    <td style="padding:4px"><input type="number" class="vc-input" value="${p}" step="any" min="0" oninput="if(this.value<0)this.value=Math.abs(this.value); vcHandleRandInput(this,'p')"></td>
     <td style="padding:4px"><input type="number" class="vc-input" step="any" oninput="vcHandleRandInput(this,'s')" ${isFirst?'disabled placeholder="N/A"':''}></td>
     <td style="padding:4px;text-align:center">${isFirst?'':`<button class="vc-del" onclick="this.closest('tr').remove();vcRecalcSlopes()">✕</button>`}</td>`;
   document.getElementById('vcRandTbody').appendChild(tr);

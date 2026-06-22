@@ -5,14 +5,14 @@ export let CURRENT_UNIT = 'SI';
 export const DBS = { iec: null, mil: null, astm: null, gr63: null, sr332: null, ista: null, iec60068: null, ip: null };
 
 export const DB_FILES = {
-  iec:      'iec_database.json',
-  mil:      'mil810_database.json',
-  astm:     'astm4169_database.json',
-  gr63:     'gr63_database.json',
-  sr332:    'sr332_database.json',
-  ista:     'ista_database.json',
-  iec60068: 'iec60068_database.json',
-  ip:       'ip_code_database.json'
+  iec:      'data/databases/iec_database.json',
+  mil:      'data/databases/mil810_database.json',
+  astm:     'data/databases/astm4169_database.json',
+  gr63:     'data/databases/gr63_database.json',
+  sr332:    'data/databases/sr332_database.json',
+  ista:     'data/databases/ista_database.json',
+  iec60068: 'data/databases/iec60068_database.json',
+  ip:       'data/databases/ip_code_database.json'
 };
 
 export const SKIP_KEYS = new Set(['Standard','Description_ZH','Description_EN','Description','_meta']);

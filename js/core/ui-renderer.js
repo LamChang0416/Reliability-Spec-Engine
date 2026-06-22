@@ -11,7 +11,18 @@ export function showResult(std, deps = {}) {
   const entry = DBS[std]?.[v1]?.[v2]?.[v3];
   if (!entry) { box.innerHTML='<div class="empty">No data</div>'; return; }
   const params = entry.parameters || {};
-  const desc = LANG==='ZH' ? (params.Description_ZH||params.Description||'') : (params.Description_EN||params.Description_ZH||'');
+  const rawDesc = LANG==='ZH' ? (params.Description_ZH||params.Description||'') : (params.Description_EN||params.Description_ZH||'');
+  
+  // 🔄 Cycle 4: Smart Extraction (Test Purpose vs Details)
+  let testPurpose = rawDesc;
+  let testDetails = '';
+  const purposeRegex = /(.*?(?:目的|範圍|適用於|Simulates|This test aims to)[^。.]*[。.]?)/i;
+  const match = rawDesc.match(purposeRegex);
+  if (match && match[1].length < rawDesc.length) {
+    testPurpose = match[1].trim();
+    testDetails = rawDesc.replace(match[1], '').trim();
+    if (testDetails.startsWith('。') || testDetails.startsWith('.')) testDetails = testDetails.slice(1).trim();
+  }
   const tests = entry.tests || [];
 
   // Physical boundary validation
@@ -26,13 +37,17 @@ export function showResult(std, deps = {}) {
     .map(([k,v])=>`<div class="metric"><div class="metric-label">${k}</div><div class="metric-value">${convertUnit(v)}</div></div>`)
     .join('');
 
-  // Table
+  // 🔄 Cycle 9: Table Null/Empty Cell Replacement
   let tableHTML = '';
   if (tests.length) {
     const cols = Object.keys(tests[0]);
     tableHTML = `<div class="table-wrap"><table>
       <tr>${cols.map(c=>`<th>${convertUnit(c)}</th>`).join('')}</tr>
-      ${tests.map(row=>`<tr>${cols.map(c=>`<td>${convertUnit(row[c]??'')}</td>`).join('')}</tr>`).join('')}
+      ${tests.map(row=>`<tr>${cols.map(c=>{
+        let val = row[c];
+        let displayVal = (val === null || val === undefined || String(val).trim() === '') ? '<span style="color:var(--dim)">--</span>' : convertUnit(val);
+        return `<td>${displayVal}</td>`;
+      }).join('')}</tr>`).join('')}
     </table></div>`;
   }
 
@@ -40,7 +55,10 @@ export function showResult(std, deps = {}) {
   box._entry = entry;
   box._prefix = `${std.toUpperCase()}_${v3.replace(/[^a-zA-Z0-9]/g,'_').slice(0,20)}`;
 
-  let chartWrap = `<div id="chartWrap" style="display:none; margin-bottom:14px; background:rgba(13,20,71,.5); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:20px; position:relative;"><canvas id="profileChart" style="max-height:220px;"></canvas></div>`;
+  // 🔄 Cycle 8: Offline Fallback for Plotly
+  const hasPlotly = typeof window.Plotly !== 'undefined';
+  let chartWrap = hasPlotly ? `<div id="chartWrap" style="display:none; margin-bottom:14px; background:rgba(13,20,71,.5); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:20px; position:relative;"><canvas id="profileChart" style="max-height:220px;"></canvas></div>` 
+                            : `<div id="chartWrap" style="display:none; margin-bottom:14px; padding:12px; border-radius:8px; background:rgba(252,129,129,0.1); color:#fc8181; font-size:12px;">⚠️ 離線模式下無法繪圖 (Plotly CDN not loaded)</div>`;
 
   // Interactive Calculator injection
   let calcHTML = '';
@@ -55,13 +73,29 @@ export function showResult(std, deps = {}) {
   box.innerHTML = `
     <div class="result-banner">
       <h4>🎯 ${v3}</h4>
-      <div class="result-desc">${desc}</div>
     </div>
+    
+    <div style="background:rgba(13,20,71,.6); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:16px; margin-bottom:14px;">
+      <h5 style="color:var(--blue2); font-size:14px; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+        📝 測試的目的 (Test Purpose)
+      </h5>
+      <div class="result-desc" style="color:var(--text); line-height:1.6;">${testPurpose || '<span style="color:var(--muted)">無詳細說明</span>'}</div>
+      ${testDetails ? `<div style="margin-top:10px; padding:10px; background:rgba(0,0,0,0.2); border-left:3px solid var(--dim); color:var(--muted); font-size:12px; line-height:1.5;">${testDetails}</div>` : ''}
+    </div>
+
     ${warningHTML}
-    <div class="metrics">${metricHTML}</div>
-    ${chartWrap}
-    ${tableHTML}
+
+    <div style="background:rgba(13,20,71,.6); border:1px solid rgba(99,179,237,.15); border-radius:10px; padding:16px; margin-bottom:14px;">
+      <h5 style="color:var(--blue2); font-size:14px; margin-bottom:16px; display:flex; align-items:center; gap:6px;">
+        📋 測試詳細規格 (Test Specification)
+      </h5>
+      <div class="metrics">${metricHTML}</div>
+      ${tableHTML ? `<div style="margin-top:16px;">${tableHTML}</div>` : ''}
+      ${chartWrap}
+    </div>
+
     ${calcHTML}
+
     <div class="btn-row">
       <button class="btn btn-dl" onclick="window._togglePin('${std}', '${sv1}', '${sv2}', '${sv3}')">📌 Pin to Dashboard</button>
       <button class="btn btn-dl" onclick="window._dlJSON('${std}')">📥 JSON</button>
